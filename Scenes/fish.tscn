@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://3m7wd5aup2pi"]
+
+[ext_resource type="Script" uid="uid://cvubvd5btl87h" path="res://Scripts/fish.gd" id="1_c4ibo"]
+[ext_resource type="PackedScene" uid="uid://bklil44bcm1yg" path="res://Components/interactable.tscn" id="2_4fqy1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_urn1o"]
+
+[node name="Fish" type="Node3D"]
+script = ExtResource("1_c4ibo")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(3.902763, 0, 0, 0, 3.902763, 0, 0, 0, 3.902763, 0, 0.31936863, 0)
+text = "Fish"
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(3.902763, 0, 0, 0, 3.902763, 0, 0, 0, 3.902763, 0, 0.31936863, 0)
+visible = false
+text = "Sushi"
+
+[node name="Interactable" parent="." instance=ExtResource("2_4fqy1")]
+interact_name = "Pickup Fish"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+shape = SubResource("SphereShape3D_urn1o")

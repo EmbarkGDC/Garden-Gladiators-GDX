@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfpjfnol8r0u6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pgg05"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_oncj3"]
+radius = 3.0
+
+[node name="CuttingBoard" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.4696351, 0, 0, 0, 0.21817032, 0, 0, 0, 1, 0, 0.8575014, 0)
+mesh = SubResource("BoxMesh_pgg05")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_oncj3")
