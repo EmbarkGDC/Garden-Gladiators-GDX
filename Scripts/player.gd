@@ -4,7 +4,8 @@ extends CharacterBody3D
 @export var player_id:int = 0
 @export var is_AI:bool = false
 
-#var held_item: holdable = null
+var held_item: fish = null
+var now_holding: bool = false
 
 const SPEED:float = 5.0
 const JUMP_VELOCITY:float = 4.5
@@ -34,3 +35,11 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact"):
+		if held_item and now_holding:
+			held_item.put_down()
+			now_holding = false
+			return
+		now_holding = true
