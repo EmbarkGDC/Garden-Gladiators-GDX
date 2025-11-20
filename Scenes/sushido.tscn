@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckgj8ao3gbuxc"]
+[gd_scene load_steps=10 format=3 uid="uid://ckgj8ao3gbuxc"]
 
 [ext_resource type="PackedScene" uid="uid://dvel4y8xml4ko" path="res://Scenes/player.tscn" id="1_c41nv"]
 [ext_resource type="PackedScene" uid="uid://dfpjfnol8r0u6" path="res://Scenes/cutting_board.tscn" id="2_2y2d3"]
 [ext_resource type="PackedScene" uid="uid://3m7wd5aup2pi" path="res://Scenes/fish.tscn" id="3_mvubj"]
+[ext_resource type="PackedScene" uid="uid://kcpilqmr7xaf" path="res://Scenes/cut_meter.tscn" id="4_bdb33"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c41nv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -51,3 +52,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6644044, 9.536743e-07, -1.7
 
 [node name="Fish" parent="." instance=ExtResource("3_mvubj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.609551, 9.536743e-07, -1.6370506)
+
+[node name="CutMeter" parent="." instance=ExtResource("4_bdb33")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7593087, 1.5108471, 4.0823345)
