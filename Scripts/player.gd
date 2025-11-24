@@ -4,11 +4,16 @@ extends CharacterBody3D
 @export var player_id:int = 0
 @export var is_AI:bool = false
 
+@onready var calculator: scoring_calculator = $ScoringCalculator
+
 var held_item: fish = null
 var now_holding: bool = false
 
+var is_cutting: bool = false
+
 const SPEED:float = 5.0
 const JUMP_VELOCITY:float = 4.5
+
 
 func _ready() -> void:
 	$InteractingComponent.player_ref = self
@@ -18,10 +23,12 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	
+	if is_cutting:
+		return
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	#	velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -38,8 +45,13 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
-		if held_item and now_holding:
+		if held_item and now_holding and not $InteractingComponent.current_interactions:
 			held_item.put_down()
 			now_holding = false
 			return
 		now_holding = true
+
+
+
+func _on_scoring_calculator_finished_cutting() -> void:
+	is_cutting = false

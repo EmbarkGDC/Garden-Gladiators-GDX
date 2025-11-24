@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfpjfnol8r0u6"]
+[gd_scene load_steps=5 format=3 uid="uid://dfpjfnol8r0u6"]
+
+[ext_resource type="Script" uid="uid://uo2liwq6xaxf" path="res://Scripts/cutting_board.gd" id="1_0mqgb"]
+[ext_resource type="PackedScene" uid="uid://bklil44bcm1yg" path="res://Components/interactable.tscn" id="2_8sgqr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_pgg05"]
 
@@ -6,12 +9,16 @@
 radius = 3.0
 
 [node name="CuttingBoard" type="Node3D"]
+script = ExtResource("1_0mqgb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.4696351, 0, 0, 0, 0.21817032, 0, 0, 0, 1, 0, 0.8575014, 0)
 mesh = SubResource("BoxMesh_pgg05")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Interactable" parent="." instance=ExtResource("2_8sgqr")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
 shape = SubResource("SphereShape3D_oncj3")
+
+[node name="HoldingPosition" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2235049, 0)
