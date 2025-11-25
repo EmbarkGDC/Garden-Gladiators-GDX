@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4beyhqgowfg4"]
+
+[ext_resource type="Script" uid="uid://msg2xuglrx3j" path="res://Scripts/player_score.gd" id="1_6k3gh"]
+
+[sub_resource type="Theme" id="Theme_wviqb"]
+default_font_size = 20
+
+[sub_resource type="Theme" id="Theme_jxero"]
+default_font_size = 60
+
+[node name="PlayerScore" type="VBoxContainer"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 115.0
+offset_bottom = 127.0
+script = ExtResource("1_6k3gh")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme = SubResource("Theme_wviqb")
+text = "Player"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+theme = SubResource("Theme_jxero")
+text = "000"
+horizontal_alignment = 1

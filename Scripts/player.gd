@@ -14,6 +14,7 @@ var is_cutting: bool = false
 const SPEED:float = 5.0
 const JUMP_VELOCITY:float = 4.5
 
+signal player_just_scored
 
 func _ready() -> void:
 	$InteractingComponent.player_ref = self
@@ -53,5 +54,6 @@ func _input(event: InputEvent) -> void:
 
 
 
-func _on_scoring_calculator_finished_cutting() -> void:
+func _on_scoring_calculator_finished_cutting(score: int, mult: bool) -> void:
 	is_cutting = false
+	player_just_scored.emit(player_id, score, mult)

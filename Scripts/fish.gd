@@ -1,12 +1,14 @@
 class_name fish extends Node3D
 
 @onready var interactable: Area3D = $Interactable
-@onready var label_3d: Label3D = $Label3D
-@onready var label_3d_2: Label3D = $Label3D2
+@export var fish_sprite: Node3D
+@export var sushi_sprite: Node3D
 
 @export var difficulty: float = 1.0
 @export var speed: float = 1.0
+@export var penalty_value: int = 0
 @export var score_value: int = 0
+@export var perfect_value: int = 0
 @export var multiply_on_perfect: bool = false
 
 var old_parent: Node3D = null
@@ -37,5 +39,6 @@ func put_down() -> void:
 	position.y = old_position.y
 
 func change_to_sushi() -> void:
-	$Label3D.visible = false
-	$Label3D2.visible = true
+	fish_sprite.visible = false
+	sushi_sprite.visible = true
+	$AnimationPlayer.play("despawn")

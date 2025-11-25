@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct8b4edhgi56v"]
+
+[ext_resource type="PackedScene" uid="uid://b4beyhqgowfg4" path="res://Scenes/player_score.tscn" id="1_jxero"]
+[ext_resource type="Script" uid="uid://b3fajt8p6iegp" path="res://Scripts/ui.gd" id="1_qdvrb"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qdvrb")
+
+[node name="PlayerScore" parent="." instance=ExtResource("1_jxero")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 7.0
+offset_right = 103.0
+offset_bottom = 122.0
+
+[node name="PlayerScore2" parent="." instance=ExtResource("1_jxero")]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 7.0
+offset_right = 447.0
+offset_bottom = 122.0
+
+[node name="PlayerScore3" parent="." instance=ExtResource("1_jxero")]
+layout_mode = 0
+offset_left = 715.0
+offset_top = 7.0
+offset_right = 818.0
+offset_bottom = 122.0
+
+[node name="PlayerScore4" parent="." instance=ExtResource("1_jxero")]
+layout_mode = 0
+offset_left = 1037.0
+offset_top = 7.0
+offset_right = 1140.0
+offset_bottom = 122.0
