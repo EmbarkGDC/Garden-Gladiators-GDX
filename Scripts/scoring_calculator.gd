@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 			cut_meter.cut_result.Perfect:
 				score = cut_fish.perfect_value
 		await get_tree().create_timer(1.0).timeout
-		finished_cutting.emit(score, cut_fish.multiply_on_perfect)
+		finished_cutting.emit(score, cut_fish.multiply_on_perfect if result == cut_meter.cut_result.Perfect else false)
 		cut_fish.change_to_sushi()
 		cut.visible = false
 		self.process_mode = Node.PROCESS_MODE_DISABLED
