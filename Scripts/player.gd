@@ -2,9 +2,12 @@ class_name Player
 extends CharacterBody3D
 
 @export var player_id:int = 0
+var device:int = player_id
 @export var is_AI:bool = false
 
+
 @onready var calculator: scoring_calculator = $ScoringCalculator
+
 
 var held_item: fish = null
 var now_holding: bool = false
@@ -32,7 +35,7 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	var input_dir := MultiplayerInput.get_vector(device, "move_left", "move_right", "move_up", "move_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
