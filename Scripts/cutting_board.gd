@@ -14,6 +14,8 @@ func _process(_delta: float) -> void:
 
 func _on_interact(player: Player) -> void:
 	print("cutting board")
+	if not player.now_holding:
+		return
 	held_item = player.held_item
 	held_item.reparent(self, false)
 	held_item.global_position = $HoldingPosition.global_position

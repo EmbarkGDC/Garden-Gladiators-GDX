@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ckgj8ao3gbuxc"]
+[gd_scene load_steps=24 format=3 uid="uid://ckgj8ao3gbuxc"]
 
 [ext_resource type="Script" uid="uid://cfytfxx4ds6ek" path="res://Scripts/score_manager.gd" id="1_bdb33"]
 [ext_resource type="PackedScene" uid="uid://dvel4y8xml4ko" path="res://Scenes/player.tscn" id="1_c41nv"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bykdkmw0wbf6v" path="res://Scenes/Fish/Moontail.tscn" id="7_wq143"]
 [ext_resource type="PackedScene" uid="uid://crqpk2dxk2iy2" path="res://Scenes/Fish/Palgram.tscn" id="8_he5xv"]
 [ext_resource type="PackedScene" uid="uid://cycpmwaln76yq" path="res://Scenes/Fish/Squipper.tscn" id="9_ifpe6"]
+[ext_resource type="PackedScene" uid="uid://n4041h8u2bkx" path="res://Scenes/fish_spawner.tscn" id="10_51tw5"]
+[ext_resource type="Script" uid="uid://b04vn8hodm3tr" path="res://Scripts/spawn_entry.gd" id="11_wq143"]
+[ext_resource type="PackedScene" uid="uid://brawlb8o5r6av" path="res://Scenes/lazy_susan.tscn" id="12_he5xv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c41nv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -28,6 +31,38 @@ size = Vector2(30, 15)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c41nv"]
 data = PackedVector3Array(15, 0, 7.5, -15, 0, 7.5, 15, 0, -7.5, -15, 0, 7.5, -15, 0, -7.5, 15, 0, -7.5)
+
+[sub_resource type="Resource" id="Resource_hvfsd"]
+script = ExtResource("11_wq143")
+item = ExtResource("6_51tw5")
+rarity = 0.93
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="Resource" id="Resource_a5xh1"]
+script = ExtResource("11_wq143")
+item = ExtResource("7_wq143")
+rarity = 0.78
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="Resource" id="Resource_4uj10"]
+script = ExtResource("11_wq143")
+item = ExtResource("9_ifpe6")
+rarity = 0.58
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="Resource" id="Resource_ifpe6"]
+script = ExtResource("11_wq143")
+item = ExtResource("8_he5xv")
+rarity = 0.23
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="Resource" id="Resource_he5xv"]
+script = ExtResource("11_wq143")
+item = ExtResource("5_hpdnn")
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wq143"]
+size = Vector3(18.177979, 1, 10.743164)
 
 [node name="Sushido" type="Node3D"]
 
@@ -53,7 +88,7 @@ shape = SubResource("ConcavePolygonShape3D_c41nv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38450742, 0, 2.5418181)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7355204, 8)
+transform = Transform3D(1, 0, 0, 0, 0.79853046, 0.6019544, 0, -0.6019544, 0.79853046, 0, 4.6537385, 6.5531225)
 
 [node name="CuttingBoard" parent="." instance=ExtResource("2_2y2d3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6644044, 9.536743e-07, -1.7848067)
@@ -74,6 +109,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 1)
 
 [node name="Squipper" parent="." instance=ExtResource("9_ifpe6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
+
+[node name="FishSpawner" parent="." instance=ExtResource("10_51tw5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19761527, 0.3339734, 0.42407417)
+min_spawn_time = 0.5
+max_spawn_time = 4.0
+elements = [SubResource("Resource_hvfsd"), SubResource("Resource_a5xh1"), SubResource("Resource_4uj10"), SubResource("Resource_ifpe6"), SubResource("Resource_he5xv")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FishSpawner"]
+shape = SubResource("BoxShape3D_wq143")
+
+[node name="LazySusan" parent="." instance=ExtResource("12_he5xv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3382926, -4.7683716e-07, 3.9761286)
 
 [connection signal="scores_updated" from="ScoreManager" to="UI" method="_on_score_manager_scores_updated"]
 [connection signal="player_just_scored" from="Player" to="ScoreManager" method="_on_player_player_just_scored"]

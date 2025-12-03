@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://ou7svefdtg1l"]
+
+[ext_resource type="PackedScene" uid="uid://bj860y27g33u4" path="res://Scenes/player_select_item.tscn" id="1_fco13"]
+[ext_resource type="Script" uid="uid://dpgmno15t81ju" path="res://Scripts/player_select.gd" id="1_m1vjl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m1vjl"]
+font_size = 40
+
+[node name="PlayerSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m1vjl")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -544.0
+offset_right = 544.0
+offset_bottom = 236.0
+grow_horizontal = 2
+
+[node name="CountdownTimer" type="VBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2/CountdownTimer"]
+layout_mode = 2
+text = "Time Left:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer2/CountdownTimer"]
+layout_mode = 2
+text = "00"
+label_settings = SubResource("LabelSettings_m1vjl")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="PlayerSelectItem1" parent="VBoxContainer2/HBoxContainer" instance=ExtResource("1_fco13")]
+layout_mode = 2
+
+[node name="PlayerSelectItem2" parent="VBoxContainer2/HBoxContainer" instance=ExtResource("1_fco13")]
+layout_mode = 2
+
+[node name="PlayerSelectItem3" parent="VBoxContainer2/HBoxContainer" instance=ExtResource("1_fco13")]
+layout_mode = 2
+
+[node name="PlayerSelectItem4" parent="VBoxContainer2/HBoxContainer" instance=ExtResource("1_fco13")]
+layout_mode = 2
