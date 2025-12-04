@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b23v3kylt55pk"
-path="res://.godot/imported/LazySusan.glb-fd3f91e90c40cf87939e2c5f6bc0c5f0.scn"
+uid="uid://c6ukaiox0uae"
+path="res://.godot/imported/BasketPavillion.glb-67b67a672fe51c1906cacefc7dec9a1a.scn"
 
 [deps]
 
-source_file="res://Models/LazySusan.glb"
-dest_files=["res://.godot/imported/LazySusan.glb-fd3f91e90c40cf87939e2c5f6bc0c5f0.scn"]
+source_file="res://Models/BasketPavillion.glb"
+dest_files=["res://.godot/imported/BasketPavillion.glb-67b67a672fe51c1906cacefc7dec9a1a.scn"]
 
 [params]
 

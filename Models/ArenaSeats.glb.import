@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b23v3kylt55pk"
-path="res://.godot/imported/LazySusan.glb-fd3f91e90c40cf87939e2c5f6bc0c5f0.scn"
+uid="uid://cun3seb5v6klm"
+path="res://.godot/imported/ArenaSeats.glb-3fbe6c8575c9cf581ac9191b4afa9592.scn"
 
 [deps]
 
-source_file="res://Models/LazySusan.glb"
-dest_files=["res://.godot/imported/LazySusan.glb-fd3f91e90c40cf87939e2c5f6bc0c5f0.scn"]
+source_file="res://Models/ArenaSeats.glb"
+dest_files=["res://.godot/imported/ArenaSeats.glb-3fbe6c8575c9cf581ac9191b4afa9592.scn"]
 
 [params]
 
