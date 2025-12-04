@@ -15,11 +15,13 @@ var is_cutting: bool = false
 
 const SPEED:float = 5.0
 const JUMP_VELOCITY:float = 4.5
+var original_location: Vector3
 
 signal player_just_scored
 
 func _ready() -> void:
 	$InteractingComponent.player_ref = self
+	original_location = global_position
 	#var device: int = PlayerManager.get_player_device(player_id)
 	#input = DeviceInput.new(device)
 
@@ -62,3 +64,8 @@ func _input(event: InputEvent) -> void:
 func _on_scoring_calculator_finished_cutting(score: int, mult: bool) -> void:
 	is_cutting = false
 	player_just_scored.emit(player_id, score, mult)
+
+func reset() -> void:
+	global_position = original_location
+	for entry: Node3D in $HoldPosition.get_children():
+		$HoldPosition.remove_child(entry)

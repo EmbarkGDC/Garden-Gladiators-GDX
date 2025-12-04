@@ -13,3 +13,9 @@ func _ready() -> void:
 
 func _on_score_manager_scores_updated(player_id: int, score: int) -> void:
 	score_displays[player_id].set_score(score)
+
+func reset() -> void:
+	score_displays[0].set_score(0)
+	score_displays[1].set_score(0)
+	score_displays[2].set_score(0)
+	score_displays[3].set_score(0)

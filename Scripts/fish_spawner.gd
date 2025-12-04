@@ -27,7 +27,7 @@ func spawn_fish() -> void:
 		if rand_float >= entry.rarity:
 			print(rand_float)
 			var new_fish: fish = entry.item.instantiate()
-			get_parent().add_child(new_fish)
+			add_child(new_fish)
 			new_fish.global_position = determine_position()
 			return
 
@@ -39,3 +39,7 @@ func determine_position() -> Vector3:
 
 func set_time() -> void:
 	time_til_spawn = randf_range(min_spawn_time, max_spawn_time)
+
+func reset_area() -> void:
+	for entry: Node3D in get_children():
+		remove_child(entry)

@@ -14,10 +14,13 @@ script = ExtResource("1_qdvrb")
 
 [node name="PlayerScore" parent="." instance=ExtResource("1_jxero")]
 layout_mode = 0
+offset_left = 0.0
 offset_top = 7.0
+offset_right = 103.0
 offset_bottom = 122.0
 
 [node name="PlayerScore2" parent="." instance=ExtResource("1_jxero")]
+visible = false
 layout_mode = 0
 offset_left = 344.0
 offset_top = 7.0
@@ -25,6 +28,7 @@ offset_right = 447.0
 offset_bottom = 122.0
 
 [node name="PlayerScore3" parent="." instance=ExtResource("1_jxero")]
+visible = false
 layout_mode = 0
 offset_left = 715.0
 offset_top = 7.0
@@ -32,6 +36,7 @@ offset_right = 818.0
 offset_bottom = 122.0
 
 [node name="PlayerScore4" parent="." instance=ExtResource("1_jxero")]
+visible = false
 layout_mode = 0
 offset_left = 1037.0
 offset_top = 7.0

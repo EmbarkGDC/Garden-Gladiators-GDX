@@ -14,10 +14,12 @@ func _process(_delta: float) -> void:
 
 func _on_interact(player: Player) -> void:
 	print("cutting board")
-	if not player.now_holding:
+	print(player.held_item)
+	if player.held_item == null:
 		return
 	held_item = player.held_item
 	held_item.reparent(self, false)
+	player.held_item = null
 	held_item.global_position = $HoldingPosition.global_position
 	player.calculator.process_mode = Node.PROCESS_MODE_PAUSABLE
 	player.calculator.start_cut_sequence(held_item)

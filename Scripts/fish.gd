@@ -41,4 +41,5 @@ func put_down() -> void:
 func change_to_sushi() -> void:
 	fish_sprite.visible = false
 	sushi_sprite.visible = true
+	$Interactable.process_mode = Node.PROCESS_MODE_DISABLED
 	$AnimationPlayer.play("despawn")
