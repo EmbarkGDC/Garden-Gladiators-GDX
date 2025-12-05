@@ -55,11 +55,11 @@ libraries = {
 
 [node name="FishSprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.77044034, 0)
-billboard = 2
+billboard = 1
 texture = ExtResource("3_p27ol")
 
 [node name="SushiSprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84514296, 0)
 visible = false
-billboard = 2
+billboard = 1
 texture = ExtResource("4_xsiqs")
