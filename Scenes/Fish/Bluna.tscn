@@ -37,7 +37,7 @@ _data = {
 [node name="Bluna" type="Node3D" node_paths=PackedStringArray("fish_sprite", "sushi_sprite")]
 script = ExtResource("1_bf0jc")
 fish_sprite = NodePath("FishSprite3D")
-sushi_sprite = NodePath("")
+sushi_sprite = NodePath("SushiSprite3D")
 penalty_value = -1
 score_value = 5
 perfect_value = 10
