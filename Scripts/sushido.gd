@@ -27,9 +27,11 @@ func _process(delta: float) -> void:
 		$Player.process_mode = Node.PROCESS_MODE_DISABLED
 		#REPLACE THIS LATER
 		$GameScreen.on_game_end($ScoreManager.scores[0])
+		$FishSpawner.process_mode = Node.PROCESS_MODE_DISABLED
 
 func countdown() -> void:
 	$Countdown.visible = true
+	$Countdown.text = "3"
 	await  get_tree().create_timer(1.0).timeout
 	$Countdown.text = "2"
 	await  get_tree().create_timer(1.0).timeout
@@ -40,6 +42,7 @@ func countdown() -> void:
 	await  get_tree().create_timer(1.0).timeout
 	$Countdown.visible = false
 	after_countdown = true
+	$FishSpawner.spawn_number(5)
 	$FishSpawner.process_mode = Node.PROCESS_MODE_PAUSABLE
 
 

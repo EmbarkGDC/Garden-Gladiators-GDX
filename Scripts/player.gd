@@ -13,7 +13,7 @@ var now_holding: bool = false
 
 var is_cutting: bool = false
 
-const SPEED:float = 5.0
+const SPEED:float = 7.0
 const JUMP_VELOCITY:float = 4.5
 var original_location: Vector3
 
@@ -53,8 +53,8 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
-		if held_item and now_holding and not $InteractingComponent.current_interactions:
-			held_item.put_down()
+		if held_item != null and now_holding and not $InteractingComponent.current_interactions:
+			held_item.put_down(self)
 			now_holding = false
 			return
 		now_holding = true

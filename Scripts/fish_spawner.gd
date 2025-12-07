@@ -43,3 +43,7 @@ func set_time() -> void:
 func reset_area() -> void:
 	for entry: Node3D in get_children():
 		remove_child(entry)
+
+func spawn_number(count: int) -> void:
+	for i in count:
+		spawn_fish()
