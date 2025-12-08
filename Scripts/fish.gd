@@ -20,8 +20,10 @@ func _ready() -> void:
 
 func _on_interact(player: Player) -> void:
 	print("fish has been interacted with by " + player.name)
+	if player.held_item != null:
+		return
 	if old_parent:
-		put_down()
+		put_down(player)
 	else:
 		start_holding(player)
 
@@ -33,12 +35,14 @@ func start_holding(player: Player) -> void:
 	reparent(new_parent, false)
 	position = Vector3.ZERO
 
-func put_down() -> void:
+func put_down(player: Player) -> void:
 	reparent(old_parent)
+	player.held_item = null
 	old_parent = null
 	position.y = old_position.y
 
 func change_to_sushi() -> void:
 	fish_sprite.visible = false
 	sushi_sprite.visible = true
+	$Interactable.process_mode = Node.PROCESS_MODE_DISABLED
 	$AnimationPlayer.play("despawn")
