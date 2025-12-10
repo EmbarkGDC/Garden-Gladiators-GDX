@@ -998,8 +998,8 @@ animations = [{
 }]
 
 [node name="Bladez_AnimatedSprite3D" type="AnimatedSprite3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4551349, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10033727, 2.4551349, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_orfp7")
-animation = &"idle_pX"
-frame_progress = 0.30052888
+animation = &"slash_nX"
+frame_progress = 0.581253
