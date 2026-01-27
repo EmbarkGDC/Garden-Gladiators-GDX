@@ -1,12 +1,14 @@
 class_name fish extends Node3D
 
 @onready var interactable: Area3D = $Interactable
-@onready var label_3d: Label3D = $Label3D
-@onready var label_3d_2: Label3D = $Label3D2
+@export var fish_sprite: Node3D
+@export var sushi_sprite: Node3D
 
 @export var difficulty: float = 1.0
 @export var speed: float = 1.0
+@export var penalty_value: int = 0
 @export var score_value: int = 0
+@export var perfect_value: int = 0
 @export var multiply_on_perfect: bool = false
 
 var old_parent: Node3D = null
@@ -18,8 +20,10 @@ func _ready() -> void:
 
 func _on_interact(player: Player) -> void:
 	print("fish has been interacted with by " + player.name)
+	if player.held_item != null:
+		return
 	if old_parent:
-		put_down()
+		put_down(player)
 	else:
 		start_holding(player)
 
@@ -31,11 +35,14 @@ func start_holding(player: Player) -> void:
 	reparent(new_parent, false)
 	position = Vector3.ZERO
 
-func put_down() -> void:
+func put_down(player: Player) -> void:
 	reparent(old_parent)
+	player.held_item = null
 	old_parent = null
 	position.y = old_position.y
 
 func change_to_sushi() -> void:
-	$Label3D.visible = false
-	$Label3D2.visible = true
+	fish_sprite.visible = false
+	sushi_sprite.visible = true
+	$Interactable.process_mode = Node.PROCESS_MODE_DISABLED
+	$AnimationPlayer.play("despawn")

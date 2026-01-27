@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://bj860y27g33u4"]
+
+[ext_resource type="Texture2D" uid="uid://dto4t8eurbbid" path="res://icon.png" id="1_13the"]
+
+[sub_resource type="Theme" id="Theme_up13o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy2wf"]
+bg_color = Color(0, 0, 0, 0.34117648)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_blend = true
+
+[sub_resource type="Theme" id="Theme_w4xa6"]
+
+[node name="PlayerSelectItem" type="PanelContainer"]
+offset_right = 248.0
+offset_bottom = 366.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_up13o")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dy2wf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Player"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_w4xa6")
+texture = ExtResource("1_13the")
+expand_mode = 5
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Waiting..."
+horizontal_alignment = 1

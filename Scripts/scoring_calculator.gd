@@ -5,13 +5,22 @@ var cut_fish: fish
 var difficulty: float
 var offset: float
 
+
 signal finished_cutting
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("cut"):
-		cut.cut()
+		var result: = cut.cut()
+		var score: int = 0
+		match result:
+			cut_meter.cut_result.Miss:
+				score = cut_fish.penalty_value
+			cut_meter.cut_result.Hit:
+				score = cut_fish.score_value
+			cut_meter.cut_result.Perfect:
+				score = cut_fish.perfect_value
 		await get_tree().create_timer(1.0).timeout
-		finished_cutting.emit()
+		finished_cutting.emit(score, cut_fish.multiply_on_perfect if result == cut_meter.cut_result.Perfect else false)
 		cut_fish.change_to_sushi()
 		cut.visible = false
 		self.process_mode = Node.PROCESS_MODE_DISABLED
