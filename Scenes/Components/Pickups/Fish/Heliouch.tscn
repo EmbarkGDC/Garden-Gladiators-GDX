@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cs6xa6jwq28s"]
 
 [ext_resource type="Script" uid="uid://cvubvd5btl87h" path="res://Code/fish.gd" id="1_j31lq"]
-[ext_resource type="PackedScene" uid="uid://bklil44bcm1yg" path="res://Components/interactable.tscn" id="2_syji5"]
+[ext_resource type="PackedScene" uid="uid://bklil44bcm1yg" path="res://Scenes/Components/Gameplay/interactable.tscn" id="2_syji5"]
 [ext_resource type="Texture2D" uid="uid://bmixlhlyt5isi" path="res://Graphics/Sprites/Props/heliouch_rough.png" id="3_un0j7"]
 [ext_resource type="Texture2D" uid="uid://b30vstv3500ey" path="res://Graphics/Sprites/Props/Sushi_heliouch.png" id="4_v1x05"]
 

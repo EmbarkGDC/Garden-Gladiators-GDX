@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://3m7wd5aup2pi"]
 
 [ext_resource type="Script" uid="uid://cvubvd5btl87h" path="res://Code/fish.gd" id="1_c4ibo"]
-[ext_resource type="PackedScene" uid="uid://bklil44bcm1yg" path="res://Components/interactable.tscn" id="2_4fqy1"]
+[ext_resource type="PackedScene" uid="uid://bklil44bcm1yg" path="res://Scenes/Components/Gameplay/interactable.tscn" id="2_4fqy1"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_urn1o"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cycpmwaln76yq"]
 
 [ext_resource type="Script" uid="uid://cvubvd5btl87h" path="res://Code/fish.gd" id="1_lxyv1"]
-[ext_resource type="PackedScene" uid="uid://bklil44bcm1yg" path="res://Components/interactable.tscn" id="2_q6t65"]
+[ext_resource type="PackedScene" uid="uid://bklil44bcm1yg" path="res://Scenes/Components/Gameplay/interactable.tscn" id="2_q6t65"]
 [ext_resource type="Texture2D" uid="uid://b4tri2c51f51b" path="res://Graphics/Sprites/Props/squipper_rough.png" id="3_0wgvq"]
 [ext_resource type="Texture2D" uid="uid://c4x7avb8dor5h" path="res://Graphics/Sprites/Props/Sushi_squipper.png" id="4_1cqbg"]
 

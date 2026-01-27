@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bykdkmw0wbf6v"]
 
 [ext_resource type="Script" uid="uid://cvubvd5btl87h" path="res://Code/fish.gd" id="1_jh10w"]
-[ext_resource type="PackedScene" uid="uid://bklil44bcm1yg" path="res://Components/interactable.tscn" id="2_4ie5t"]
+[ext_resource type="PackedScene" uid="uid://bklil44bcm1yg" path="res://Scenes/Components/Gameplay/interactable.tscn" id="2_4ie5t"]
 [ext_resource type="Texture2D" uid="uid://2pxqgxda1ue7" path="res://Graphics/Sprites/Props/moontail_rough.png" id="3_7up1g"]
 [ext_resource type="Texture2D" uid="uid://cq51k23eptqm1" path="res://Graphics/Sprites/Props/Sushi_moontail.png" id="4_2gbrq"]
 
