@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b4beyhqgowfg4"]
 
-[ext_resource type="Script" uid="uid://msg2xuglrx3j" path="res://Scripts/player_score.gd" id="1_6k3gh"]
+[ext_resource type="Script" uid="uid://msg2xuglrx3j" path="res://Code/player_score.gd" id="1_6k3gh"]
 
 [sub_resource type="Theme" id="Theme_wviqb"]
 default_font_size = 20

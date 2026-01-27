@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfpjfnol8r0u6"]
+
+[ext_resource type="Script" uid="uid://uo2liwq6xaxf" path="res://Code/cutting_board.gd" id="1_0mqgb"]
+[ext_resource type="PackedScene" uid="uid://bklil44bcm1yg" path="res://Scenes/Components/Gameplay/interactable.tscn" id="2_8sgqr"]
+[ext_resource type="Texture2D" uid="uid://d1gf4dyfxcmp" path="res://Graphics/Textures/LazySusan_pexels-fwstudio-512.jpg" id="2_tot3v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_irrlf"]
+albedo_texture = ExtResource("2_tot3v")
+
+[sub_resource type="BoxMesh" id="BoxMesh_pgg05"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_oncj3"]
+radius = 2.5
+
+[node name="CuttingBoard" type="Node3D"]
+script = ExtResource("1_0mqgb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.4696351, 0, 0, 0, 0.21817032, 0, 0, 0, 1, 0, 0.8575014, 0)
+material_override = SubResource("StandardMaterial3D_irrlf")
+mesh = SubResource("BoxMesh_pgg05")
+
+[node name="Interactable" parent="." instance=ExtResource("2_8sgqr")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+shape = SubResource("SphereShape3D_oncj3")
+
+[node name="HoldingPosition" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2235049, 0)

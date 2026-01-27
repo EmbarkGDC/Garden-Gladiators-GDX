@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://sbrsdkqfhhe4"]
+
+[ext_resource type="Shader" uid="uid://cd7j8j64r1jsq" path="res://Code/Shaders/cut_meter.gdshader" id="1_h5bjm"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_h5bjm")
+shader_parameter/offset = 0.0
+shader_parameter/difficulty = 1.0
+shader_parameter/perfect_difficulty = 1.0
