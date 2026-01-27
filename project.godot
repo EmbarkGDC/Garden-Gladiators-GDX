@@ -17,8 +17,8 @@ config/icon="uid://c8al1j6moioy6"
 
 [autoload]
 
-MultiplayerInput="*res://addons/multiplayer_input/multiplayer_input.gd"
-PlayerManager="*res://Scripts/player_manager.gd"
+MultiplayerInput="*res://Resource/addons/multiplayer_input/multiplayer_input.gd"
+PlayerManager="*res://Code/player_manager.gd"
 
 [debug]
 
@@ -30,7 +30,7 @@ project/assembly_name="Garden Gladiators GDX"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/multiplayer_input/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
