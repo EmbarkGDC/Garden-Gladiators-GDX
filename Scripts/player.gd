@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody3D
 
 @export var player_id:int = 0
+@export var using_device: int = -1
 @export var is_AI:bool = false
 
 #var input: DeviceInput
@@ -39,8 +40,8 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	#var input_dir := MultiplayerInput.get_vector(player_id, "move_left", "move_right", "move_up", "move_down")
+	#var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	var input_dir := MultiplayerInput.get_vector(using_device, "move_left", "move_right", "move_up", "move_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
@@ -51,8 +52,9 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
+func _input(_event: InputEvent) -> void:
+	#if event.is_action_pressed("interact"):
+	if MultiplayerInput.is_action_pressed(using_device, "interact"):
 		if held_item != null and now_holding and not $InteractingComponent.current_interactions:
 			held_item.put_down(self)
 			now_holding = false

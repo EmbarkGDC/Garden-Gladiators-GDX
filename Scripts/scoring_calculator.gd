@@ -1,6 +1,8 @@
 class_name scoring_calculator extends Node
 
 @export var cut: cut_meter
+@export var player_ref: Player
+
 var cut_fish: fish
 var difficulty: float
 var offset: float
@@ -9,7 +11,7 @@ var offset: float
 signal finished_cutting
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("cut"):
+	if MultiplayerInput.is_action_just_pressed(player_ref.using_device, "cut"):
 		var result: = cut.cut()
 		var score: int = 0
 		match result:

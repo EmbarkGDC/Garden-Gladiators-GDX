@@ -25,9 +25,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1279612, 0)
 
 [node name="InteractingComponent" parent="." instance=ExtResource("2_cvnsp")]
 
-[node name="ScoringCalculator" parent="." node_paths=PackedStringArray("cut") instance=ExtResource("3_6t5aa")]
+[node name="ScoringCalculator" parent="." node_paths=PackedStringArray("cut", "player_ref") instance=ExtResource("3_6t5aa")]
 process_mode = 4
 cut = NodePath("../CutMeter")
+player_ref = NodePath("..")
 
 [node name="CutMeter" parent="." instance=ExtResource("4_vgqql")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3922575, 0)
