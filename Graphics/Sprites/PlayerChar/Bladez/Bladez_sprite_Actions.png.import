@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpclkth0wb5he"
-path="res://.godot/imported/Bladez_sprite_Actions.png-5e95d76a00cd6cce79cb02a00578240d.ctex"
+path="res://.godot/imported/Bladez_sprite_Actions.png-9042359fb010aed1c3fc723cb6361544.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/PlayerChar/Bladez/Bladez_sprite_Actions.png"
-dest_files=["res://.godot/imported/Bladez_sprite_Actions.png-5e95d76a00cd6cce79cb02a00578240d.ctex"]
+source_file="res://Graphics/Sprites/PlayerChar/Bladez/Bladez_sprite_Actions.png"
+dest_files=["res://.godot/imported/Bladez_sprite_Actions.png-9042359fb010aed1c3fc723cb6361544.ctex"]
 
 [params]
 
