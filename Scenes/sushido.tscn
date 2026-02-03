@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://ckgj8ao3gbuxc"]
+[gd_scene format=3 uid="uid://ckgj8ao3gbuxc"]
 
 [ext_resource type="Script" uid="uid://cfytfxx4ds6ek" path="res://Code/score_manager.gd" id="1_bdb33"]
 [ext_resource type="PackedScene" uid="uid://dvel4y8xml4ko" path="res://Scenes/Components/Character/player.tscn" id="1_c41nv"]
 [ext_resource type="Script" uid="uid://svdn72ttlrih" path="res://Code/sushido.gd" id="1_he5xv"]
 [ext_resource type="PackedScene" uid="uid://dfpjfnol8r0u6" path="res://Scenes/Components/Gameplay/cutting_board.tscn" id="2_2y2d3"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_a5xh1"]
 [ext_resource type="PackedScene" uid="uid://ct8b4edhgi56v" path="res://Scenes/Components/UI/ui.tscn" id="5_074qc"]
 [ext_resource type="PackedScene" uid="uid://dbx4bcuqlhaoq" path="res://Scenes/Components/Pickups/Fish/Bluna.tscn" id="5_hpdnn"]
 [ext_resource type="PackedScene" uid="uid://cs6xa6jwq28s" path="res://Scenes/Components/Pickups/Fish/Heliouch.tscn" id="6_51tw5"]
@@ -13,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://n4041h8u2bkx" path="res://Scenes/Components/Gameplay/fish_spawner.tscn" id="10_51tw5"]
 [ext_resource type="Script" uid="uid://b04vn8hodm3tr" path="res://Code/spawn_entry.gd" id="11_wq143"]
 [ext_resource type="PackedScene" uid="uid://dgpllce1hw02q" path="res://Scenes/game_screen.tscn" id="13_ifpe6"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="15_hvfsd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c41nv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -80,90 +82,96 @@ font_size = 120
 [sub_resource type="LabelSettings" id="LabelSettings_ifpe6"]
 font_size = 60
 
-[node name="Sushido" type="Node3D" node_paths=PackedStringArray("timer_label")]
+[node name="Sushido" type="Node3D" unique_id=2126599092 node_paths=PackedStringArray("timer_label")]
 script = ExtResource("1_he5xv")
 time_limit = 120.0
 timer_label = NodePath("Time")
 
-[node name="ScoreManager" type="Node" parent="."]
+[node name="ScoreManager" type="Node" parent="." unique_id=1457649071]
 script = ExtResource("1_bdb33")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=976728253]
 environment = SubResource("Environment_mvubj")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=801478088]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="World" type="Node3D" parent="."]
+[node name="World" type="Node3D" parent="." unique_id=1588259986]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World" unique_id=1871789383]
 mesh = SubResource("PlaneMesh_2y2d3")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/MeshInstance3D" unique_id=307813672]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/MeshInstance3D/StaticBody3D" unique_id=1978778435]
 shape = SubResource("ConcavePolygonShape3D_c41nv")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="World"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="World" unique_id=1923172760]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.222441, 0.2650298, 0.043134212)
 mesh = SubResource("BoxMesh_wq143")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/MeshInstance3D2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/MeshInstance3D2" unique_id=1758343163]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/MeshInstance3D2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/MeshInstance3D2/StaticBody3D" unique_id=1761533683]
 shape = SubResource("ConvexPolygonShape3D_he5xv")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="World"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="World" unique_id=119226906]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.853033, 0.2650298, 0.043134212)
 mesh = SubResource("BoxMesh_wq143")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/MeshInstance3D3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/MeshInstance3D3" unique_id=1973519062]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/MeshInstance3D3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/MeshInstance3D3/StaticBody3D" unique_id=192289787]
 shape = SubResource("ConvexPolygonShape3D_he5xv")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World" unique_id=131619150]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.272915)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/StaticBody3D" unique_id=1196772734]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9935913, 0)
 shape = SubResource("BoxShape3D_ifpe6")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="World"]
+[node name="StaticBody3D2" type="StaticBody3D" parent="World" unique_id=114428627]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.9714785)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/StaticBody3D2" unique_id=703054969]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9935913, 0)
 shape = SubResource("BoxShape3D_ifpe6")
 
-[node name="Player" parent="." instance=ExtResource("1_c41nv")]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=900862750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6537385, 6.5531225)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1912069437]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("3_a5xh1")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="Player" parent="." unique_id=1526472183 instance=ExtResource("1_c41nv")]
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38450742, 0, 2.5418181)
 
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.79853046, 0.6019544, 0, -0.6019544, 0.79853046, -0.38450742, 4.6537385, 4.0113044)
-
-[node name="CuttingBoard" parent="." instance=ExtResource("2_2y2d3")]
+[node name="CuttingBoard" parent="." unique_id=1417931483 instance=ExtResource("2_2y2d3")]
 transform = Transform3D(0.23573583, 0, -0.9718172, 0, 1, 0, 0.9718172, 0, 0.23573583, 9.793604, 9.536743e-07, -3.6459951)
 
-[node name="CuttingBoard2" parent="." instance=ExtResource("2_2y2d3")]
+[node name="CuttingBoard2" parent="." unique_id=858391721 instance=ExtResource("2_2y2d3")]
 transform = Transform3D(0.97221494, 0, 0.23409028, 0, 1, 0, -0.23409028, 0, 0.97221494, -10.130833, 2.861023e-06, 3.6967225)
 
-[node name="UI" parent="." instance=ExtResource("5_074qc")]
+[node name="UI" parent="." unique_id=1621099835 instance=ExtResource("5_074qc")]
 
-[node name="FishSpawner" parent="." instance=ExtResource("10_51tw5")]
+[node name="FishSpawner" parent="." unique_id=903959962 instance=ExtResource("10_51tw5")]
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19761527, 0.3339734, 0.42407417)
 min_spawn_time = 0.5
 max_spawn_time = 4.0
 elements = [SubResource("Resource_hvfsd"), SubResource("Resource_a5xh1"), SubResource("Resource_4uj10"), SubResource("Resource_ifpe6"), SubResource("Resource_he5xv")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FishSpawner"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FishSpawner" unique_id=345345539]
 shape = SubResource("BoxShape3D_wq143")
 
-[node name="Countdown" type="Label" parent="."]
+[node name="Countdown" type="Label" parent="." unique_id=1838704456]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -180,9 +188,9 @@ size_flags_horizontal = 4
 text = "3"
 label_settings = SubResource("LabelSettings_he5xv")
 
-[node name="GameScreen" parent="." instance=ExtResource("13_ifpe6")]
+[node name="GameScreen" parent="." unique_id=133392864 instance=ExtResource("13_ifpe6")]
 
-[node name="Time" type="Label" parent="."]
+[node name="Time" type="Label" parent="." unique_id=1966148506]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -192,6 +200,17 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "00:00"
 label_settings = SubResource("LabelSettings_ifpe6")
+
+[node name="PhantomCamera3D" type="Node3D" parent="." unique_id=557888123 node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(1, 0, 0, 0, 0.45056602, 0.89274305, 0, -0.89274305, 0.45056602, -0.1630497, 4.2031913, 6.007509)
+script = ExtResource("15_hvfsd")
+follow_mode = 6
+follow_target = NodePath("../Node3D")
+tween_on_load = false
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1716045706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58211493, 3.498463, 2.6946263)
 
 [connection signal="scores_updated" from="ScoreManager" to="UI" method="_on_score_manager_scores_updated"]
 [connection signal="player_just_scored" from="Player" to="ScoreManager" method="_on_player_player_just_scored"]
