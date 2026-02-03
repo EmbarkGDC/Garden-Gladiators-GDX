@@ -1,7 +1,8 @@
-[gd_scene load_steps=112 format=3 uid="uid://cml7amem26ak0"]
+[gd_scene load_steps=121 format=3 uid="uid://cml7amem26ak0"]
 
 [ext_resource type="Texture2D" uid="uid://b88aeenoq40uf" path="res://Graphics/Sprites/PlayerChar/Bladez/Bladez_Action_SpriteSheet.png" id="1_lp0uq"]
 [ext_resource type="Texture2D" uid="uid://dt4rufyox4urg" path="res://Graphics/Sprites/PlayerChar/Bladez/Bladez_Idle_SpriteSheet.png" id="2_hu1ps"]
+[ext_resource type="Texture2D" uid="uid://cpclkth0wb5he" path="res://Graphics/Sprites/PlayerChar/Bladez/Bladez_sprite_Actions.png" id="2_w46be"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_clbiv"]
 atlas = ExtResource("1_lp0uq")
@@ -130,6 +131,38 @@ region = Rect2(3072, 1024, 512, 512)
 [sub_resource type="AtlasTexture" id="AtlasTexture_xcjt5"]
 atlas = ExtResource("1_lp0uq")
 region = Rect2(3584, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrpic"]
+atlas = ExtResource("2_w46be")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g53m"]
+atlas = ExtResource("2_w46be")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72ay6"]
+atlas = ExtResource("2_w46be")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03nt2"]
+atlas = ExtResource("2_w46be")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbmfg"]
+atlas = ExtResource("2_w46be")
+region = Rect2(2048, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6six"]
+atlas = ExtResource("2_w46be")
+region = Rect2(2560, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4ik5"]
+atlas = ExtResource("2_w46be")
+region = Rect2(3072, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0q72m"]
+atlas = ExtResource("2_w46be")
+region = Rect2(3584, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d20s3"]
 atlas = ExtResource("2_hu1ps")
@@ -553,12 +586,36 @@ animations = [{
 "name": &"carry_pX",
 "speed": 12.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrpic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0g53m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72ay6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03nt2")
+}],
 "loop": true,
 "name": &"grab_nX",
 "speed": 12.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbmfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6six")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4ik5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0q72m")
+}],
 "loop": true,
 "name": &"grab_pX",
 "speed": 12.0
@@ -1001,5 +1058,4 @@ animations = [{
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10033727, 2.4551349, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_orfp7")
-animation = &"slash_nX"
-frame_progress = 0.581253
+animation = &"idle_nX"
