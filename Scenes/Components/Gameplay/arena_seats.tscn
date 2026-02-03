@@ -12,26 +12,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044797897, 2.8228502, -0.8
 shape = SubResource("BoxShape3D_isjut")
 
 [node name="ArenaSeats" parent="." instance=ExtResource("1_2mts5")]
-
-[node name="RiceCooker" parent="ArenaSeats" index="0"]
-visible = false
-
-[node name="refences" parent="ArenaSeats" index="1"]
-visible = false
-
-[node name="popsiclestick_mods_015" parent="ArenaSeats" index="3"]
-visible = false
-
-[node name="popsiclestick_mods_016" parent="ArenaSeats" index="4"]
-visible = false
-
-[node name="Basket" parent="ArenaSeats" index="5"]
-visible = false
-
-[node name="L_Lid" parent="ArenaSeats/Basket" index="0"]
-visible = false
-
-[node name="R_LId" parent="ArenaSeats/Basket" index="1"]
-visible = false
-
-[editable path="ArenaSeats"]
