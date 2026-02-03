@@ -16,14 +16,14 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Garden Gladiators GDX"
 run/main_scene="uid://ckgj8ao3gbuxc"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://c8al1j6moioy6"
 
 [autoload]
 
-MultiplayerInput="*uid://dhmg75mp5e4s4"
+MultiplayerInput="*res://addons/multiplayer_input/multiplayer_input.gd"
 PlayerManager="*res://Code/player_manager.gd"
-PhantomCameraManager="*uid://duq6jhf6unyis"
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
 [debug]
 
