@@ -690,7 +690,11 @@ billboard = 2
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"walk_nX"
 <<<<<<< HEAD
+<<<<<<< HEAD
 frame_progress = 0.13843314
+=======
+frame_progress = 0.4599526
+>>>>>>> 0cfcfa5d489f3c68c5db568596d7f9e294c64a48
 =======
 frame_progress = 0.4599526
 >>>>>>> 0cfcfa5d489f3c68c5db568596d7f9e294c64a48
