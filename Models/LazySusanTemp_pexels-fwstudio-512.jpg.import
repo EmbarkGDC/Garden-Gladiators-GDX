@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpclkth0wb5he"
-path.s3tc="res://.godot/imported/Bladez_sprite_Actions.png-9042359fb010aed1c3fc723cb6361544.s3tc.ctex"
+uid="uid://ntm6lse60tcg"
+path.s3tc="res://.godot/imported/LazySusanTemp_pexels-fwstudio-512.jpg-cc286024bf1bc51388be69ab65087ad8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "83677a97fd6311e47223d3ab7b4254b4"
+}
 
 [deps]
 
-source_file="res://Graphics/Sprites/PlayerChar/Bladez/Bladez_sprite_Actions.png"
-dest_files=["res://.godot/imported/Bladez_sprite_Actions.png-9042359fb010aed1c3fc723cb6361544.s3tc.ctex"]
+source_file="res://Models/LazySusanTemp_pexels-fwstudio-512.jpg"
+dest_files=["res://.godot/imported/LazySusanTemp_pexels-fwstudio-512.jpg-cc286024bf1bc51388be69ab65087ad8.s3tc.ctex"]
 
 [params]
 

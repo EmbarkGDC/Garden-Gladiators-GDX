@@ -614,7 +614,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0g53m")
 }],
-"loop": true,
+"loop": false,
 "name": &"grab_nX",
 "speed": 12.0
 }, {
@@ -631,7 +631,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w6six")
 }],
-"loop": true,
+"loop": false,
 "name": &"grab_pX",
 "speed": 12.0
 }, {
@@ -776,7 +776,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fmd51")
 }],
-"loop": true,
+"loop": false,
 "name": &"slash_nX",
 "speed": 12.0
 }, {
@@ -805,7 +805,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h4myq")
 }],
-"loop": true,
+"loop": false,
 "name": &"slash_pX",
 "speed": 12.0
 }, {
@@ -834,7 +834,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_djlnm")
 }],
-"loop": true,
+"loop": false,
 "name": &"taunt_nx",
 "speed": 12.0
 }, {
@@ -863,7 +863,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_848vs")
 }],
-"loop": true,
+"loop": false,
 "name": &"taunt_px",
 "speed": 12.0
 }, {
@@ -930,4 +930,4 @@ animations = [{
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10033727, 2.4551349, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_orfp7")
-animation = &"walk_pX"
+animation = &"carry_pX"

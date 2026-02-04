@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://ddk0cywtr4cxq"]
+[gd_scene load_steps=76 format=3 uid="uid://18mtrg1kf2ek"]
 
 [ext_resource type="Texture2D" uid="uid://dtlsoboqwly0y" path="res://Graphics/Sprites/PlayerChar/Maguro/Maguro_ActionIdle_Spritesheet.png" id="1_kgryj"]
 [ext_resource type="Texture2D" uid="uid://d3l5xgpuuyxkw" path="res://Graphics/Sprites/PlayerChar/Maguro/Maguro_Slice_spritesheet.png" id="2_bkne4"]
@@ -305,10 +305,16 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hjxo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0pkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ok2bs")
 }],
 "loop": true,
 "name": &"anticipSlash_nX",
-"speed": 12.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -322,10 +328,16 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_23ain")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyviy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6at8")
 }],
 "loop": true,
 "name": &"anticipSlash_pX",
-"speed": 12.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -398,7 +410,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4okn1")
 }],
-"loop": true,
+"loop": false,
 "name": &"grab_nX",
 "speed": 12.0
 }, {
@@ -415,7 +427,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_aepcm")
 }],
-"loop": true,
+"loop": false,
 "name": &"grab_pX",
 "speed": 12.0
 }, {
@@ -431,6 +443,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_c1ilg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee0w3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gagdc")
 }],
 "loop": true,
 "name": &"hold_nX",
@@ -448,6 +466,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0y4kc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2g1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hy3ik")
 }],
 "loop": true,
 "name": &"hold_pX",
@@ -465,6 +489,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u6baa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h62w5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aryyb")
 }],
 "loop": true,
 "name": &"idle_nX",
@@ -482,6 +512,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_leaow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awu88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_481ym")
 }],
 "loop": true,
 "name": &"idle_pX",
@@ -500,7 +536,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_emogi")
 }],
-"loop": true,
+"loop": false,
 "name": &"slash_nX",
 "speed": 12.0
 }, {
@@ -517,7 +553,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bixdg")
 }],
-"loop": true,
+"loop": false,
 "name": &"slash_pX",
 "speed": 12.0
 }, {
@@ -584,4 +620,6 @@ animations = [{
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10033727, 2.4551349, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_orfp7")
-animation = &"walk_pX"
+animation = &"grab_nX"
+frame = 3
+frame_progress = 1.0
