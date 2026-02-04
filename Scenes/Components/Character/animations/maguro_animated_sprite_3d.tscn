@@ -452,7 +452,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"hold_nX",
-"speed": 12.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -475,7 +475,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"hold_pX",
-"speed": 12.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -498,7 +498,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_nX",
-"speed": 12.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -521,7 +521,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_pX",
-"speed": 12.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -620,6 +620,5 @@ animations = [{
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10033727, 2.4551349, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_orfp7")
-animation = &"walk_nX"
-frame = 4
-frame_progress = 0.082852215
+animation = &"anticipSlash_nX"
+frame_progress = 0.7031989
