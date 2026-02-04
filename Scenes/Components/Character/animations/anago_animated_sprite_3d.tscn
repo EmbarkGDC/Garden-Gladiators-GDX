@@ -1026,4 +1026,6 @@ animations = [{
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4551349, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_orfp7")
-animation = &"hold_pX"
+animation = &"hold_nX"
+frame = 7
+frame_progress = 0.67867386
