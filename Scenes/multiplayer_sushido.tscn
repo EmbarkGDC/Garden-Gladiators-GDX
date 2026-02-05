@@ -1,0 +1,231 @@
+[gd_scene load_steps=32 format=3 uid="uid://depjbb02bdlv5"]
+
+[ext_resource type="Script" uid="uid://svdn72ttlrih" path="res://Code/sushido.gd" id="1_0pslh"]
+[ext_resource type="Script" uid="uid://cfytfxx4ds6ek" path="res://Code/score_manager.gd" id="2_drnuo"]
+[ext_resource type="PackedScene" uid="uid://dvel4y8xml4ko" path="res://Scenes/Components/Character/player.tscn" id="3_7w6xu"]
+[ext_resource type="PackedScene" uid="uid://bha0e5a62h4hw" path="res://Scenes/Components/Gameplay/basket_pavillion.tscn" id="3_drnuo"]
+[ext_resource type="PackedScene" uid="uid://dxf7fem281gi0" path="res://Scenes/Components/Gameplay/kitchen_counter.tscn" id="4_7w6xu"]
+[ext_resource type="PackedScene" uid="uid://dfpjfnol8r0u6" path="res://Scenes/Components/Gameplay/cutting_board.tscn" id="4_k781c"]
+[ext_resource type="PackedScene" uid="uid://brawlb8o5r6av" path="res://Scenes/Components/Gameplay/lazy_susan.tscn" id="4_kfyma"]
+[ext_resource type="PackedScene" uid="uid://ct8b4edhgi56v" path="res://Scenes/Components/UI/ui.tscn" id="5_kfyma"]
+[ext_resource type="PackedScene" uid="uid://btflc2b7rcto3" path="res://Scenes/Components/Gameplay/arena_seats.tscn" id="6_kfyma"]
+[ext_resource type="PackedScene" uid="uid://n4041h8u2bkx" path="res://Scenes/Components/Gameplay/fish_spawner.tscn" id="6_r6o08"]
+[ext_resource type="PackedScene" uid="uid://cs6xa6jwq28s" path="res://Scenes/Components/Pickups/Fish/Heliouch.tscn" id="7_v40ff"]
+[ext_resource type="Script" uid="uid://b04vn8hodm3tr" path="res://Code/spawn_entry.gd" id="8_b7hrd"]
+[ext_resource type="PackedScene" uid="uid://bykdkmw0wbf6v" path="res://Scenes/Components/Pickups/Fish/Moontail.tscn" id="9_2w3yi"]
+[ext_resource type="PackedScene" uid="uid://cycpmwaln76yq" path="res://Scenes/Components/Pickups/Fish/Squipper.tscn" id="10_uhsb4"]
+[ext_resource type="PackedScene" uid="uid://crqpk2dxk2iy2" path="res://Scenes/Components/Pickups/Fish/Palgram.tscn" id="11_xilja"]
+[ext_resource type="PackedScene" uid="uid://dbx4bcuqlhaoq" path="res://Scenes/Components/Pickups/Fish/Bluna.tscn" id="12_k1f5r"]
+[ext_resource type="PackedScene" uid="uid://dgpllce1hw02q" path="res://Scenes/game_screen.tscn" id="13_wvftd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c41nv"]
+sky_top_color = Color(0.49657845, 0.09118567, 0.23824784, 1)
+sky_horizon_color = Color(0.41433975, 0.15260696, 0.1168481, 1)
+ground_bottom_color = Color(0.18011147, 0.06394079, 0.042438492, 1)
+ground_horizon_color = Color(0.41433975, 0.15260696, 0.1168481, 1)
+
+[sub_resource type="Sky" id="Sky_2y2d3"]
+sky_material = SubResource("ProceduralSkyMaterial_c41nv")
+
+[sub_resource type="Environment" id="Environment_mvubj"]
+background_mode = 2
+sky = SubResource("Sky_2y2d3")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2y2d3"]
+size = Vector2(30, 15)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c41nv"]
+data = PackedVector3Array(15, 0, 7.5, -15, 0, 7.5, 15, 0, -7.5, -15, 0, 7.5, -15, 0, -7.5, 15, 0, -7.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ifpe6"]
+size = Vector3(3.654, 2.292, 1)
+
+[sub_resource type="Resource" id="Resource_hvfsd"]
+script = ExtResource("8_b7hrd")
+item = ExtResource("7_v40ff")
+rarity = 0.93
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="Resource" id="Resource_a5xh1"]
+script = ExtResource("8_b7hrd")
+item = ExtResource("9_2w3yi")
+rarity = 0.78
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="Resource" id="Resource_4uj10"]
+script = ExtResource("8_b7hrd")
+item = ExtResource("10_uhsb4")
+rarity = 0.58
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="Resource" id="Resource_ifpe6"]
+script = ExtResource("8_b7hrd")
+item = ExtResource("11_xilja")
+rarity = 0.23
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="Resource" id="Resource_he5xv"]
+script = ExtResource("8_b7hrd")
+item = ExtResource("12_k1f5r")
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wq143"]
+size = Vector3(4, 1, 4)
+
+[sub_resource type="LabelSettings" id="LabelSettings_he5xv"]
+font_size = 120
+
+[sub_resource type="LabelSettings" id="LabelSettings_ifpe6"]
+font_size = 60
+
+[node name="Sushido" type="Node3D" node_paths=PackedStringArray("timer_label")]
+script = ExtResource("1_0pslh")
+time_limit = 120.0
+timer_label = NodePath("Time")
+
+[node name="ScoreManager" type="Node" parent="."]
+script = ExtResource("2_drnuo")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mvubj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
+transform = Transform3D(3.3406174, 0, 0, 0, 1, 0, 0, 0, 3.3406174, 0, 0, 0)
+mesh = SubResource("PlaneMesh_2y2d3")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_c41nv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55483246, 0, -7.457747)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5469141, 1.1529119, 0)
+shape = SubResource("BoxShape3D_ifpe6")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55483246, 0, 7.1682177)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5469141, 1.1529119, 0)
+shape = SubResource("BoxShape3D_ifpe6")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="World"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.4306784, 0, -0.5870001)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5469141, 1.1529119, 0)
+shape = SubResource("BoxShape3D_ifpe6")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="World"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.1952868, 0, -0.58700067)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/StaticBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5469141, 1.1529119, 0)
+shape = SubResource("BoxShape3D_ifpe6")
+
+[node name="BasketPavillion" parent="World" instance=ExtResource("3_drnuo")]
+transform = Transform3D(0.0010820702, 0, -0.99999946, 0, 1, 0, 0.99999946, 0, 0.0010820702, 0.23124218, 0.16195297, -0.120215654)
+
+[node name="Lazy Susan" parent="World" instance=ExtResource("4_kfyma")]
+
+[node name="KitchenCounter" parent="World" instance=ExtResource("4_7w6xu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.048888206, 0.049999177, -0.15173244)
+
+[node name="KitchenCounter2" parent="World" instance=ExtResource("4_7w6xu")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.048888206, 0.049999177, -0.15173244)
+
+[node name="KitchenCounter3" parent="World" instance=ExtResource("4_7w6xu")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.048888206, 0.049999177, -0.15173244)
+
+[node name="KitchenCounter4" parent="World" instance=ExtResource("4_7w6xu")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.048888206, 0.049999177, -0.15173244)
+
+[node name="arena seats" parent="World" instance=ExtResource("6_kfyma")]
+transform = Transform3D(-0.644444, 0, -0.7646516, 0, 1, 0, 0.7646516, 0, -0.644444, -13.324917, 0, -11.025635)
+
+[node name="arena seats2" parent="World" instance=ExtResource("6_kfyma")]
+transform = Transform3D(-0.670362, 0, 0.7420344, 0, 1, 0, -0.7420344, 0, -0.670362, 13.385561, 0, -11.025635)
+
+[node name="arena seats3" parent="World" instance=ExtResource("6_kfyma")]
+transform = Transform3D(0.7098167, 0, -0.7043864, 0, 1, 0, 0.7043864, 0, 0.7098167, -13.324917, 0, 11.392831)
+
+[node name="arena seats4" parent="World" instance=ExtResource("6_kfyma")]
+transform = Transform3D(0.69825286, 0, 0.7158513, 0, 1, 0, -0.7158513, 0, 0.69825286, 13.385561, 0, 11.277269)
+
+[node name="Player" parent="." instance=ExtResource("3_7w6xu")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38450742, 0, 2.5418181)
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.79853046, 0.6019544, 0, -0.6019544, 0.79853046, -0.38450742, 4.6537385, 4.0113044)
+
+[node name="CuttingBoard" parent="." instance=ExtResource("4_k781c")]
+transform = Transform3D(0.3340701, 0, -0.9425482, 0, 1, 0, 0.9425482, 0, 0.3340701, 4.8852844, 0.78042245, -5.9110193)
+
+[node name="CuttingBoard2" parent="." instance=ExtResource("4_k781c")]
+transform = Transform3D(0.9431125, 0, 0.33247396, 0, 1, 0, -0.33247396, 0, 0.9431125, -5.7591124, 0.78042436, -4.8592434)
+
+[node name="CuttingBoard3" parent="." instance=ExtResource("4_k781c")]
+transform = Transform3D(0.9233108, 0, -0.3840536, 0, 1, 0, 0.3840536, 0, 0.9233108, -5.016719, 0.78042436, 5.4431276)
+
+[node name="CuttingBoard4" parent="." instance=ExtResource("4_k781c")]
+transform = Transform3D(-0.33584616, 0, -0.9419168, 0, 1, 0, 0.9419168, 0, -0.33584616, 5.8913784, 0.78042436, 4.5758386)
+
+[node name="UI" parent="." instance=ExtResource("5_kfyma")]
+
+[node name="FishSpawner" parent="." instance=ExtResource("6_r6o08")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19761527, 0.3339734, 0.42407417)
+min_spawn_time = 0.5
+max_spawn_time = 4.0
+elements = [SubResource("Resource_hvfsd"), SubResource("Resource_a5xh1"), SubResource("Resource_4uj10"), SubResource("Resource_ifpe6"), SubResource("Resource_he5xv")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FishSpawner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20389271, 1.1374459, -0.45344573)
+shape = SubResource("BoxShape3D_wq143")
+
+[node name="Countdown" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = -82.5
+offset_right = 34.5
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "3"
+label_settings = SubResource("LabelSettings_he5xv")
+
+[node name="GameScreen" parent="." instance=ExtResource("13_wvftd")]
+
+[node name="Time" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.5
+offset_right = 20.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "00:00"
+label_settings = SubResource("LabelSettings_ifpe6")
+
+[connection signal="scores_updated" from="ScoreManager" to="UI" method="_on_score_manager_scores_updated"]
+[connection signal="player_just_scored" from="Player" to="ScoreManager" method="_on_player_player_just_scored"]
+[connection signal="new_game" from="GameScreen" to="." method="_on_game_screen_new_game"]
