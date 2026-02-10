@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ckgj8ao3gbuxc"]
+[gd_scene load_steps=31 format=3 uid="uid://ckgj8ao3gbuxc"]
 
 [ext_resource type="Script" uid="uid://cfytfxx4ds6ek" path="res://Code/score_manager.gd" id="1_bdb33"]
 [ext_resource type="PackedScene" uid="uid://dvel4y8xml4ko" path="res://Scenes/Components/Character/player.tscn" id="1_c41nv"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://n4041h8u2bkx" path="res://Scenes/Components/Gameplay/fish_spawner.tscn" id="10_51tw5"]
 [ext_resource type="Script" uid="uid://b04vn8hodm3tr" path="res://Code/spawn_entry.gd" id="11_wq143"]
 [ext_resource type="PackedScene" uid="uid://dgpllce1hw02q" path="res://Scenes/game_screen.tscn" id="13_ifpe6"]
+[ext_resource type="PackedScene" uid="uid://brawlb8o5r6av" path="res://Scenes/Components/Gameplay/lazy_susan.tscn" id="14_4uj10"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c41nv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -192,6 +193,9 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "00:00"
 label_settings = SubResource("LabelSettings_ifpe6")
+
+[node name="LazySusan" parent="." instance=ExtResource("14_4uj10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.051563263, -4.7683716e-07, -2.5386724)
 
 [connection signal="scores_updated" from="ScoreManager" to="UI" method="_on_score_manager_scores_updated"]
 [connection signal="player_just_scored" from="Player" to="ScoreManager" method="_on_player_player_just_scored"]
