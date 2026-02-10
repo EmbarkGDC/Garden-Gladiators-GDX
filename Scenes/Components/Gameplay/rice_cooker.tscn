@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bisj412oltc2q"]
+
+[ext_resource type="PackedScene" uid="uid://oo1hm6ig3kwm" path="res://Models/Ricecooker.glb" id="1_uxge1"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_im6io"]
+height = 13.14
+radius = 6.482
+
+[node name="RiceCooker" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10439682, 6.527777, 0.4175911)
+shape = SubResource("CylinderShape3D_im6io")
+
+[node name="Ricecooker" parent="." instance=ExtResource("1_uxge1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5485084, 0)

@@ -4,6 +4,7 @@ extends Area3D
 @export var max_spawn_time: float
 @export var elements: Array
 
+
 @onready var box: BoxShape3D = $CollisionShape3D.shape
 @onready var shape_pos: Vector3 = $CollisionShape3D.global_position
 
@@ -34,8 +35,10 @@ func spawn_fish() -> void:
 func determine_position() -> Vector3:
 	var x_out: float = randf_range(shape_pos.x - (box.size.x / 2), shape_pos.x + (box.size.x / 2))
 	var z_out: float = randf_range(shape_pos.z - (box.size.z / 2), shape_pos.z + (box.size.z / 2))
+	var y_out: float = 1
+
 	
-	return Vector3(x_out, global_position.y, z_out)
+	return Vector3(x_out, y_out, z_out)
 
 func set_time() -> void:
 	time_til_spawn = randf_range(min_spawn_time, max_spawn_time)
