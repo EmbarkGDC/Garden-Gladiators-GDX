@@ -194,5 +194,4 @@ text = "00:00"
 label_settings = SubResource("LabelSettings_ifpe6")
 
 [connection signal="scores_updated" from="ScoreManager" to="UI" method="_on_score_manager_scores_updated"]
-[connection signal="player_just_scored" from="Player" to="ScoreManager" method="_on_player_player_just_scored"]
 [connection signal="new_game" from="GameScreen" to="." method="_on_game_screen_new_game"]
