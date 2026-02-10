@@ -637,7 +637,7 @@ animations = [{
 }]
 
 [node name="NPC_PurpleEmperorCaterpillar_AnimatedSprite3D" type="AnimatedSprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0224566, 0)
+billboard = 2
 sprite_frames = SubResource("SpriteFrames_hr0pi")
-animation = &"yum_pX"
-frame = 4
-frame_progress = 0.3944377
+animation = &"walk_nX"
