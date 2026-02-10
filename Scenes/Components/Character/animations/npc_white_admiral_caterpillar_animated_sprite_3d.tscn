@@ -321,7 +321,8 @@ animations = [{
 }]
 
 [node name="NPC_WhiteAdmiral_Caterpillar_AnimatedSprite3D" type="AnimatedSprite3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0224566, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9749308, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_hr0pi")
 animation = &"amazed"
+frame_progress = 0.69882846
