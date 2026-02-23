@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://depjbb02bdlv5"]
+[gd_scene load_steps=33 format=3 uid="uid://depjbb02bdlv5"]
 
 [ext_resource type="Script" uid="uid://svdn72ttlrih" path="res://Code/sushido.gd" id="1_0pslh"]
 [ext_resource type="Script" uid="uid://cfytfxx4ds6ek" path="res://Code/score_manager.gd" id="2_drnuo"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ct8b4edhgi56v" path="res://Scenes/Components/UI/ui.tscn" id="5_kfyma"]
 [ext_resource type="PackedScene" uid="uid://btflc2b7rcto3" path="res://Scenes/Components/Gameplay/arena_seats.tscn" id="6_kfyma"]
 [ext_resource type="PackedScene" uid="uid://n4041h8u2bkx" path="res://Scenes/Components/Gameplay/fish_spawner.tscn" id="6_r6o08"]
+[ext_resource type="PackedScene" uid="uid://bisj412oltc2q" path="res://Scenes/Components/Gameplay/rice_cooker.tscn" id="7_r6o08"]
 [ext_resource type="PackedScene" uid="uid://cs6xa6jwq28s" path="res://Scenes/Components/Pickups/Fish/Heliouch.tscn" id="7_v40ff"]
 [ext_resource type="Script" uid="uid://b04vn8hodm3tr" path="res://Code/spawn_entry.gd" id="8_b7hrd"]
 [ext_resource type="PackedScene" uid="uid://bykdkmw0wbf6v" path="res://Scenes/Components/Pickups/Fish/Moontail.tscn" id="9_2w3yi"]
@@ -71,7 +72,7 @@ script = ExtResource("8_b7hrd")
 item = ExtResource("12_k1f5r")
 metadata/_custom_type_script = "uid://b04vn8hodm3tr"
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wq143"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_r6o08"]
 size = Vector3(4, 1, 4)
 
 [sub_resource type="LabelSettings" id="LabelSettings_he5xv"]
@@ -107,6 +108,36 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_c41nv")
 
+[node name="BasketPavillion" parent="World" instance=ExtResource("3_drnuo")]
+transform = Transform3D(0.0010820702, 0, -0.99999946, 0, 1, 0, 0.99999946, 0, 0.0010820702, 0.23124218, 0.16195297, -0.120215654)
+
+[node name="Lazy Susan" parent="World" instance=ExtResource("4_kfyma")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.010214031, 0)
+
+[node name="KitchenCounter" parent="World" instance=ExtResource("4_7w6xu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.048888206, 0.049999177, -0.15173244)
+
+[node name="KitchenCounter2" parent="World" instance=ExtResource("4_7w6xu")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.048888206, 0.049999177, -0.15173244)
+
+[node name="KitchenCounter3" parent="World" instance=ExtResource("4_7w6xu")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.048888206, 0.049999177, -0.15173244)
+
+[node name="KitchenCounter4" parent="World" instance=ExtResource("4_7w6xu")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.048888206, 0.049999177, -0.15173244)
+
+[node name="arena seats" parent="World" instance=ExtResource("6_kfyma")]
+transform = Transform3D(-0.644444, 0, -0.7646516, 0, 1, 0, 0.7646516, 0, -0.644444, -13.324917, 0, -11.025635)
+
+[node name="arena seats2" parent="World" instance=ExtResource("6_kfyma")]
+transform = Transform3D(-0.670362, 0, 0.7420344, 0, 1, 0, -0.7420344, 0, -0.670362, 13.385561, 0, -11.025635)
+
+[node name="arena seats3" parent="World" instance=ExtResource("6_kfyma")]
+transform = Transform3D(0.7098167, 0, -0.7043864, 0, 1, 0, 0.7043864, 0, 0.7098167, -13.324917, 0, 11.392831)
+
+[node name="arena seats4" parent="World" instance=ExtResource("6_kfyma")]
+transform = Transform3D(0.69825286, 0, 0.7158513, 0, 1, 0, -0.7158513, 0, 0.69825286, 13.385561, 0, 11.277269)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="World"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55483246, 0, -7.457747)
 
@@ -135,38 +166,13 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5469141, 1.1529119, 0)
 shape = SubResource("BoxShape3D_ifpe6")
 
-[node name="BasketPavillion" parent="World" instance=ExtResource("3_drnuo")]
-transform = Transform3D(0.0010820702, 0, -0.99999946, 0, 1, 0, 0.99999946, 0, 0.0010820702, 0.23124218, 0.16195297, -0.120215654)
-
-[node name="Lazy Susan" parent="World" instance=ExtResource("4_kfyma")]
-
-[node name="KitchenCounter" parent="World" instance=ExtResource("4_7w6xu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.048888206, 0.049999177, -0.15173244)
-
-[node name="KitchenCounter2" parent="World" instance=ExtResource("4_7w6xu")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.048888206, 0.049999177, -0.15173244)
-
-[node name="KitchenCounter3" parent="World" instance=ExtResource("4_7w6xu")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.048888206, 0.049999177, -0.15173244)
-
-[node name="KitchenCounter4" parent="World" instance=ExtResource("4_7w6xu")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.048888206, 0.049999177, -0.15173244)
-
-[node name="arena seats" parent="World" instance=ExtResource("6_kfyma")]
-transform = Transform3D(-0.644444, 0, -0.7646516, 0, 1, 0, 0.7646516, 0, -0.644444, -13.324917, 0, -11.025635)
-
-[node name="arena seats2" parent="World" instance=ExtResource("6_kfyma")]
-transform = Transform3D(-0.670362, 0, 0.7420344, 0, 1, 0, -0.7420344, 0, -0.670362, 13.385561, 0, -11.025635)
-
-[node name="arena seats3" parent="World" instance=ExtResource("6_kfyma")]
-transform = Transform3D(0.7098167, 0, -0.7043864, 0, 1, 0, 0.7043864, 0, 0.7098167, -13.324917, 0, 11.392831)
-
-[node name="arena seats4" parent="World" instance=ExtResource("6_kfyma")]
-transform = Transform3D(0.69825286, 0, 0.7158513, 0, 1, 0, -0.7158513, 0, 0.69825286, 13.385561, 0, 11.277269)
+[node name="RiceCooker" parent="World" instance=ExtResource("7_r6o08")]
+transform = Transform3D(0.9370384, 0, -0.34922633, 0, 1, 0, 0.34922633, 0, 0.9370384, 1.6536617, 0.110912085, -21.79818)
 
 [node name="Player" parent="." instance=ExtResource("3_7w6xu")]
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38450742, 0, 2.5418181)
+floor_block_on_wall = false
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.79853046, 0.6019544, 0, -0.6019544, 0.79853046, -0.38450742, 4.6537385, 4.0113044)
@@ -187,14 +193,13 @@ transform = Transform3D(-0.33584616, 0, -0.9419168, 0, 1, 0, 0.9419168, 0, -0.33
 
 [node name="FishSpawner" parent="." instance=ExtResource("6_r6o08")]
 process_mode = 4
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19761527, 0.3339734, 0.42407417)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19761527, 1.5765765, 0.42407417)
 min_spawn_time = 0.5
 max_spawn_time = 4.0
 elements = [SubResource("Resource_hvfsd"), SubResource("Resource_a5xh1"), SubResource("Resource_4uj10"), SubResource("Resource_ifpe6"), SubResource("Resource_he5xv")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FishSpawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20389271, 1.1374459, -0.45344573)
-shape = SubResource("BoxShape3D_wq143")
+shape = SubResource("BoxShape3D_r6o08")
 
 [node name="Countdown" type="Label" parent="."]
 visible = false
