@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody3D
 
 @export var player_id:int = 0
-@export var using_device: int = 0
+@export var using_device: int = -1
 @export var is_AI:bool = false
 
 #var input: DeviceInput

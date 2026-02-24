@@ -17,8 +17,9 @@ config/icon="uid://c8al1j6moioy6"
 
 [autoload]
 
-MultiplayerInput="*res://Resource/addons/multiplayer_input/multiplayer_input.gd"
+MultiplayerInput="*res://addons/multiplayer_input/multiplayer_input.gd"
 PlayerManager="*res://Code/player_manager.gd"
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
 [debug]
 
@@ -30,7 +31,7 @@ project/assembly_name="Garden Gladiators GDX"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/multiplayer_input/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
 [input]
 
@@ -85,3 +86,4 @@ interact={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+common/physics_interpolation=true
