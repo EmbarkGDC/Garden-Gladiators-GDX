@@ -9,3 +9,7 @@ scale = Vector2(0.3196875, 0.3196875)
 texture = ExtResource("1_qes2a")
 offset = Vector2(0, 300)
 script = ExtResource("2_51gh2")
+cursor_speed = 50.0
+
+[node name="TokenCoord" type="Node2D" parent="."]
+position = Vector2(0, 478.5924)
