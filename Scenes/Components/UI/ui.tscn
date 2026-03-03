@@ -20,7 +20,6 @@ offset_right = 103.0
 offset_bottom = 122.0
 
 [node name="PlayerScore2" parent="." instance=ExtResource("1_jxero")]
-visible = false
 layout_mode = 0
 offset_left = 344.0
 offset_top = 7.0

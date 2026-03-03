@@ -1,10 +1,12 @@
 shader_type spatial;
-render_mode unshaded;
+render_mode unshaded, cull_disabled;
 
 //uniform sampler2D tex: filter_nearest, repeat_disable;
 uniform float offset = 0.0;
 uniform float difficulty = 1.0;
 uniform float perfect_difficulty = 1.0;
+
+uniform sampler2D colors;
 
 varying vec3 local_pos;
 
@@ -18,11 +20,12 @@ void fragment() {
 	//vec2 coord = ((UV * difficulty) - (difficulty - 1.0) / 2.0) + offset;
 	vec2 coord = ((local_pos.xy * difficulty) - (difficulty - 1.0) / 2.0) + offset;
 	//vec3 output = texture(tex, coord).rgb;
-	float hit_area = step(abs(coord.x), 0.5);
-	float perfect_area = step(abs(coord.x), perfect_difficulty * 0.1);
+	float hit_area = step(abs(coord.x), 0.2);
+	float perfect_area = step(abs(coord.x), perfect_difficulty * 0.05);
 	vec3 output = vec3(0) + (vec3(0.5) * hit_area) + (vec3(1) * perfect_area);
+	output = texture(colors, clamp(output, 0.0, 1.0).xy).rgb;
 	
-	ALBEDO = clamp(output, 0.0, 1.0);
+	ALBEDO = output;
 }
 
 //void light() {
