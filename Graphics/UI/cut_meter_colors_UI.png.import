@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cigpbg30y0rdo"
-path.s3tc="res://.godot/imported/cut_pointer_UI.png-419ee8fcb06fd89881c0036dbfdd4464.s3tc.ctex"
+uid="uid://ixd3w1cns5an"
+path="res://.godot/imported/cut_meter_colors_UI.png-fb8bac330c82d06cd015f08c574b3549.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/UI/cut_pointer_UI.png"
-dest_files=["res://.godot/imported/cut_pointer_UI.png-419ee8fcb06fd89881c0036dbfdd4464.s3tc.ctex"]
+source_file="res://Graphics/UI/cut_meter_colors_UI.png"
+dest_files=["res://.godot/imported/cut_meter_colors_UI.png-fb8bac330c82d06cd015f08c574b3549.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

@@ -26,7 +26,8 @@ func _process(delta: float) -> void:
 		after_countdown = false
 		$GameScreen.visible = true
 		$Player.process_mode = Node.PROCESS_MODE_DISABLED
-		$Player2.process_mode = Node.PROCESS_MODE_DISABLED
+		if not single_player:
+			$Player2.process_mode = Node.PROCESS_MODE_DISABLED
 		#REPLACE THIS LATER
 		var winner: int = $ScoreManager.determine_winner()
 		
@@ -46,7 +47,8 @@ func countdown() -> void:
 	await  get_tree().create_timer(1.0).timeout
 	$Countdown.text = "GO!"
 	$Player.process_mode = Node.PROCESS_MODE_PAUSABLE
-	$Player2.process_mode = Node.PROCESS_MODE_PAUSABLE
+	if not single_player:
+		$Player2.process_mode = Node.PROCESS_MODE_PAUSABLE
 	await  get_tree().create_timer(1.0).timeout
 	$Countdown.visible = false
 	after_countdown = true
@@ -60,5 +62,7 @@ func _on_game_screen_new_game() -> void:
 	countdown()
 	$FishSpawner.reset_area()
 	$Player.reset()
+	if not single_player:
+		$Player2.reset()
 	$ScoreManager.reset()
 	$UI.reset()
