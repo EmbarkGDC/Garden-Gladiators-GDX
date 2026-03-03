@@ -102,7 +102,7 @@ outline_width={
 }
 outline_color={
 "type": "color",
-"value": Color(0, 0, 0, 1)
+"value": Color(0.022009317, 0.0034803392, 0.0043684547, 1)
 }
 diffuse_curve={
 "type": "sampler2D",
