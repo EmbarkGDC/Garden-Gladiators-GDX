@@ -85,3 +85,26 @@ interact={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+
+[shader_globals]
+
+specular_smoothness={
+"type": "float",
+"value": 0.05
+}
+fresnel_smoothness={
+"type": "float",
+"value": 0.05
+}
+outline_width={
+"type": "float",
+"value": 6.0
+}
+outline_color={
+"type": "color",
+"value": Color(0, 0, 0, 1)
+}
+diffuse_curve={
+"type": "sampler2D",
+"value": "res://Graphics/Textures/cel_shading_gradient.tres"
+}
