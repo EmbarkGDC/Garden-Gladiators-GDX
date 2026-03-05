@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bj8l7502yi8qu" path="res://Graphics/UI/GG_TitleArt.svg" id="1_28flt"]
 [ext_resource type="Script" uid="uid://dq84yilipupnx" path="res://Code/main_menu.gd" id="1_48xlc"]
 [ext_resource type="FontFile" uid="uid://bgd1ydpqw50e6" path="res://Graphics/UI/Fonts/UI_Fonts.zip (Unzipped Files)/Header_Sigmar.ttf" id="2_1ehe0"]
-[ext_resource type="Texture2D" uid="uid://5mxcgcg1pmyb" path="res://Graphics/UI/Artwork/SushidoPromoArt.png" id="2_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://5mxcgcg1pmyb" path="res://Graphics/UI/Artwork/Main_SplashArt.png" id="2_ce3w2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ce3w2"]
 texture = ExtResource("2_ce3w2")
