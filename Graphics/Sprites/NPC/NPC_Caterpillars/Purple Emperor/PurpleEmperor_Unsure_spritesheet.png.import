@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diog2ecbamc42"
-path.s3tc="res://.godot/imported/SpiderWaiter_SpriteSheet_Land.png-a4dc3844d5345fd840665b28ef77ceb6.s3tc.ctex"
+uid="uid://dvikrlpiuuvyg"
+path.s3tc="res://.godot/imported/PurpleEmperor_Unsure_spritesheet.png-73b89e19518831167886bd50b25a324b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Graphics/Sprites/NPC/SpiderWaiter/SpiderWaiter_SpriteSheet_Land.png"
-dest_files=["res://.godot/imported/SpiderWaiter_SpriteSheet_Land.png-a4dc3844d5345fd840665b28ef77ceb6.s3tc.ctex"]
+source_file="res://Graphics/Sprites/NPC/NPC_Caterpillars/Purple Emperor/PurpleEmperor_Unsure_spritesheet.png"
+dest_files=["res://.godot/imported/PurpleEmperor_Unsure_spritesheet.png-73b89e19518831167886bd50b25a324b.s3tc.ctex"]
 
 [params]
 
