@@ -1,0 +1,234 @@
+[gd_scene load_steps=34 format=3 uid="uid://ckd2dniykokj6"]
+
+[ext_resource type="Script" uid="uid://svdn72ttlrih" path="res://Code/sushido.gd" id="1_ddijl"]
+[ext_resource type="Script" uid="uid://cfytfxx4ds6ek" path="res://Code/score_manager.gd" id="2_q4ge6"]
+[ext_resource type="PackedScene" uid="uid://dvel4y8xml4ko" path="res://Scenes/Components/Character/player.tscn" id="3_pjd64"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_5ocxn"]
+[ext_resource type="PackedScene" uid="uid://dfpjfnol8r0u6" path="res://Scenes/Components/Gameplay/cutting_board.tscn" id="4_pa2k6"]
+[ext_resource type="PackedScene" uid="uid://ct8b4edhgi56v" path="res://Scenes/Components/UI/ui.tscn" id="5_5ocxn"]
+[ext_resource type="PackedScene" uid="uid://n4041h8u2bkx" path="res://Scenes/Components/Gameplay/fish_spawner.tscn" id="6_q3dse"]
+[ext_resource type="PackedScene" uid="uid://cs6xa6jwq28s" path="res://Scenes/Components/Pickups/Fish/Heliouch.tscn" id="7_jjhy0"]
+[ext_resource type="Script" uid="uid://b04vn8hodm3tr" path="res://Code/spawn_entry.gd" id="8_ib4bk"]
+[ext_resource type="PackedScene" uid="uid://bykdkmw0wbf6v" path="res://Scenes/Components/Pickups/Fish/Moontail.tscn" id="9_0r580"]
+[ext_resource type="PackedScene" uid="uid://cycpmwaln76yq" path="res://Scenes/Components/Pickups/Fish/Squipper.tscn" id="10_qy1in"]
+[ext_resource type="PackedScene" uid="uid://crqpk2dxk2iy2" path="res://Scenes/Components/Pickups/Fish/Palgram.tscn" id="11_b1kbc"]
+[ext_resource type="PackedScene" uid="uid://dbx4bcuqlhaoq" path="res://Scenes/Components/Pickups/Fish/Bluna.tscn" id="12_54yj3"]
+[ext_resource type="PackedScene" uid="uid://dgpllce1hw02q" path="res://Scenes/game_screen.tscn" id="13_7ku1i"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="15_q3dse"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="16_jjhy0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c41nv"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_2y2d3"]
+sky_material = SubResource("ProceduralSkyMaterial_c41nv")
+
+[sub_resource type="Environment" id="Environment_mvubj"]
+background_mode = 2
+sky = SubResource("Sky_2y2d3")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2y2d3"]
+size = Vector2(30, 15)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c41nv"]
+data = PackedVector3Array(15, 0, 7.5, -15, 0, 7.5, 15, 0, -7.5, -15, 0, 7.5, -15, 0, -7.5, 15, 0, -7.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wq143"]
+size = Vector3(1.735, 1, 16)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_he5xv"]
+points = PackedVector3Array(0.8675, 0.5, 8, 0.8675, -0.5, 8, 0.8675, 0.5, -8, -0.8675, 0.5, 8, -0.8675, -0.5, 8, 0.8675, -0.5, -8, -0.8675, 0.5, -8, -0.8675, -0.5, -8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ifpe6"]
+size = Vector3(19.55371, 2.9871826, 1)
+
+[sub_resource type="Resource" id="Resource_hvfsd"]
+script = ExtResource("8_ib4bk")
+item = ExtResource("7_jjhy0")
+rarity = 0.93
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="Resource" id="Resource_a5xh1"]
+script = ExtResource("8_ib4bk")
+item = ExtResource("9_0r580")
+rarity = 0.78
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="Resource" id="Resource_4uj10"]
+script = ExtResource("8_ib4bk")
+item = ExtResource("10_qy1in")
+rarity = 0.58
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="Resource" id="Resource_ifpe6"]
+script = ExtResource("8_ib4bk")
+item = ExtResource("11_b1kbc")
+rarity = 0.23
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="Resource" id="Resource_he5xv"]
+script = ExtResource("8_ib4bk")
+item = ExtResource("12_54yj3")
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wq143"]
+size = Vector3(14.029297, 1, 13.7717285)
+
+[sub_resource type="LabelSettings" id="LabelSettings_he5xv"]
+font_size = 120
+
+[sub_resource type="LabelSettings" id="LabelSettings_ifpe6"]
+font_size = 60
+
+[sub_resource type="Resource" id="Resource_ib4bk"]
+script = ExtResource("16_jjhy0")
+
+[node name="Sushido" type="Node3D" node_paths=PackedStringArray("timer_label")]
+script = ExtResource("1_ddijl")
+single_player = false
+time_limit = 120.0
+timer_label = NodePath("Time")
+
+[node name="ScoreManager" type="Node" parent="."]
+script = ExtResource("2_q4ge6")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mvubj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
+mesh = SubResource("PlaneMesh_2y2d3")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_c41nv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.222441, 0.2650298, 0.043134212)
+mesh = SubResource("BoxMesh_wq143")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_he5xv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.853033, 0.2650298, 0.043134212)
+mesh = SubResource("BoxMesh_wq143")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_he5xv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.272915)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9935913, 0)
+shape = SubResource("BoxShape3D_ifpe6")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.9714785)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9935913, 0)
+shape = SubResource("BoxShape3D_ifpe6")
+
+[node name="Player" parent="." instance=ExtResource("3_pjd64")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5039861, 0, 2.5418181)
+
+[node name="Player2" parent="." instance=ExtResource("3_pjd64")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9625003, 0, 2.5418181)
+player_id = 1
+using_device = 0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+physics_interpolation_mode = 1
+transform = Transform3D(0.9999341, 0, 0, 0, 0.66119313, 0.7501641, 0, -0.7502136, 0.6611495, -0.2707429, 7.315403, 8.989174)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("4_5ocxn")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="CuttingBoard" parent="." instance=ExtResource("4_pa2k6")]
+transform = Transform3D(0.23573583, 0, -0.9718172, 0, 1, 0, 0.9718172, 0, 0.23573583, 9.793604, 9.536743e-07, -3.6459951)
+
+[node name="CuttingBoard2" parent="." instance=ExtResource("4_pa2k6")]
+transform = Transform3D(0.97221494, 0, 0.23409028, 0, 1, 0, -0.23409028, 0, 0.97221494, -10.130833, 2.861023e-06, 3.6967225)
+
+[node name="UI" parent="." instance=ExtResource("5_5ocxn")]
+
+[node name="FishSpawner" parent="." instance=ExtResource("6_q3dse")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19761527, 0.3339734, 0.42407417)
+min_spawn_time = 0.5
+max_spawn_time = 4.0
+elements = [SubResource("Resource_hvfsd"), SubResource("Resource_a5xh1"), SubResource("Resource_4uj10"), SubResource("Resource_ifpe6"), SubResource("Resource_he5xv")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FishSpawner"]
+shape = SubResource("BoxShape3D_wq143")
+
+[node name="Countdown" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = -82.5
+offset_right = 34.5
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "3"
+label_settings = SubResource("LabelSettings_he5xv")
+
+[node name="GameScreen" parent="." instance=ExtResource("13_7ku1i")]
+
+[node name="Time" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.5
+offset_right = 20.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "00:00"
+label_settings = SubResource("LabelSettings_ifpe6")
+
+[node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_targets")]
+transform = Transform3D(0.9999341, 0, 0, 0, 0.66119313, 0.7501641, 0, -0.7502136, 0.6611495, -0.2707429, 7.315403, 8.989174)
+top_level = true
+script = ExtResource("15_q3dse")
+priority = 1
+follow_mode = 3
+follow_targets = [NodePath("../Player"), NodePath("../Player2")]
+look_at_mode = 3
+tween_resource = SubResource("Resource_ib4bk")
+follow_offset = Vector3(0, 5.225, 4.605)
+auto_follow_distance = true
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+
+[connection signal="scores_updated" from="ScoreManager" to="UI" method="_on_score_manager_scores_updated"]
+[connection signal="player_just_scored" from="Player" to="ScoreManager" method="_on_player_player_just_scored"]
+[connection signal="player_just_scored" from="Player2" to="ScoreManager" method="_on_player_player_just_scored"]
+[connection signal="new_game" from="GameScreen" to="." method="_on_game_screen_new_game"]

@@ -7,7 +7,7 @@ var player_ref: Player = null
 
 func _input(_event: InputEvent) -> void:
 	#if event.is_action_pressed("interact") and can_interact:
-	if MultiplayerInput.is_action_pressed(player_ref.using_device, "interact") and can_interact:
+	if MultiplayerInput.is_action_just_pressed(player_ref.using_device, "interact") and can_interact:
 		if current_interactions:
 			# start interaction
 			can_interact = false

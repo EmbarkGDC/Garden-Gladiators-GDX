@@ -16,5 +16,17 @@ func _on_player_player_just_scored(player_id: int, score: int, mult: bool) -> vo
 	print(scores)
 	scores_updated.emit(player_id, scores[player_id])
 
+func determine_winner() -> int:
+	var winner: int = 0
+	
+	for i: int in scores:
+		if i + 1 >= scores.size():
+			break
+		
+		if scores[i+1] > scores[i]:
+			winner = i+1
+	
+	return winner
+
 func reset() -> void:
 	scores = [0, 0, 0, 0]
