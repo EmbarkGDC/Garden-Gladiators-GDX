@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://btflc2b7rcto3"]
+
+[ext_resource type="PackedScene" uid="uid://cun3seb5v6klm" path="res://Models/ArenaSeats.glb" id="1_2mts5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_isjut"]
+size = Vector3(6.25, 6, 6.25)
+
+[node name="arena seats" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044797897, 2.8228502, -0.8063402)
+shape = SubResource("BoxShape3D_isjut")
+
+[node name="ArenaSeats" parent="." instance=ExtResource("1_2mts5")]

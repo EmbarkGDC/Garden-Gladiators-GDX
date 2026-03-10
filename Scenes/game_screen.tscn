@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgpllce1hw02q"]
 
-[ext_resource type="Script" uid="uid://7qhq1e7grvhw" path="res://Scripts/game_screen.gd" id="1_h8xao"]
+[ext_resource type="Script" uid="uid://7qhq1e7grvhw" path="res://Code/game_screen.gd" id="1_h8xao"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5224c"]
 font_size = 50
@@ -66,12 +66,15 @@ text = "New Game"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = 3
 anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
-offset_left = -204.0
-offset_bottom = 35.0
+anchor_bottom = 1.0
+offset_left = -211.0
+offset_top = -35.0
 grow_horizontal = 0
+grow_vertical = 0
 text = "Sushido v: INDEV "
 label_settings = SubResource("LabelSettings_a68iv")
 

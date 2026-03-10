@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0j1ilgocdfps"]
+
+[ext_resource type="Texture2D" uid="uid://bbo1ddxgf6112" path="res://Scenes/Components/Character Select/Placeholder assets/Placeholder token tex.png" id="1_j4aqa"]
+[ext_resource type="Script" uid="uid://dxsl7rggcvcko" path="res://Code/Character Select/base_token.gd" id="2_n00cx"]
+
+[node name="Token" type="Sprite2D"]
+position = Vector2(1.9073486e-06, -5.722046e-06)
+scale = Vector2(0.7777778, 0.7777778)
+texture = ExtResource("1_j4aqa")
+script = ExtResource("2_n00cx")

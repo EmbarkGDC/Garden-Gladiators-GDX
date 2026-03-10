@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhd1ganu0nhb0"]
+
+[ext_resource type="Script" uid="uid://bah76nuh24mhm" path="res://Code/scoring_calculator.gd" id="1_s6j2p"]
+
+[node name="ScoringCalculator" type="Node"]
+script = ExtResource("1_s6j2p")

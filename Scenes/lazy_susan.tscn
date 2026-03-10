@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://brawlb8o5r6av"]
-
-[ext_resource type="Script" uid="uid://c1jabdktvw5sy" path="res://Scripts/lazy_susan.gd" id="1_8onpt"]
-[ext_resource type="PackedScene" uid="uid://cxejrn8628erv" path="res://Models/LazySusanTemp.glb" id="2_nqvln"]
-
-[node name="LazySusan" type="Node3D"]
-script = ExtResource("1_8onpt")
-
-[node name="Model" parent="." instance=ExtResource("2_nqvln")]

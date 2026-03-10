@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=3 uid="uid://kcpilqmr7xaf"]
+
+[ext_resource type="Material" uid="uid://sbrsdkqfhhe4" path="res://Graphics/Materials/cut_meter.tres" id="1_jyguu"]
+[ext_resource type="Script" uid="uid://pl3nc2taffre" path="res://Code/cut_meter.gd" id="1_tbuqg"]
+[ext_resource type="Texture2D" uid="uid://cigpbg30y0rdo" path="res://Graphics/UI/cut_pointer_UI.png" id="3_1co62"]
+[ext_resource type="Texture2D" uid="uid://c6unwf75b4wa8" path="res://Graphics/UI/cut_frame_UI.png" id="3_ms8cc"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_tbuqg"]
+material = ExtResource("1_jyguu")
+size = Vector2(2, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ob5ip"]
+render_priority = 1
+transparency = 1
+cull_mode = 2
+no_depth_test = true
+albedo_texture = ExtResource("3_1co62")
+
+[sub_resource type="QuadMesh" id="QuadMesh_n3o68"]
+material = SubResource("StandardMaterial3D_ob5ip")
+
+[sub_resource type="Animation" id="Animation_tbuqg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cursor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jyguu"]
+resource_name = "back_and_forth"
+loop_mode = 2
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cursor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1, 0, 0), Vector3(1, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lyylk"]
+_data = {
+&"RESET": SubResource("Animation_tbuqg"),
+&"back_and_forth": SubResource("Animation_jyguu")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1co62"]
+transparency = 1
+cull_mode = 1
+albedo_texture = ExtResource("3_ms8cc")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ob5ip"]
+material = SubResource("StandardMaterial3D_1co62")
+size = Vector2(2.31, 0.55)
+
+[node name="CutMeter" type="Node3D"]
+script = ExtResource("1_tbuqg")
+
+[node name="Bar" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.9405038, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_tbuqg")
+
+[node name="Cursor" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cursor"]
+transform = Transform3D(0.10163528, 0, 0, 0, 0.37836218, 0, 0, 0, 1, 0, -0.08201137, -0.06575978)
+mesh = SubResource("QuadMesh_n3o68")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lyylk")
+}
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+
+[node name="Marker3D2" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17662328, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.037882924, -0.018427014)
+mesh = SubResource("QuadMesh_ob5ip")
