@@ -30,8 +30,8 @@ func start_meter(hit: float, perfecrt: float) -> void:
 	anim.speed_scale = speed
 	var mat: Material = bar.get_active_material(0)
 	mat.set_shader_parameter("offset", cut_offset)
-	mat.set_shader_parameter("hit_area", cut_hit_area)
-	mat.set_shader_parameter("perfect_hit_area", perfect_hit_area)
+	mat.set_shader_parameter("difficulty", cut_hit_area)
+	mat.set_shader_parameter("perfect_difficulty", perfect_hit_area)
 
 func cut() -> cut_result:
 	anim.pause()
