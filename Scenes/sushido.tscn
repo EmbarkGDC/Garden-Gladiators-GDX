@@ -195,7 +195,7 @@ text = "00:00"
 label_settings = SubResource("LabelSettings_ifpe6")
 
 [node name="LazySusan" parent="." instance=ExtResource("14_4uj10")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.051563263, -4.7683716e-07, -2.5386724)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.051563263, -4.7683716e-07, -0.7909281)
 
 [connection signal="scores_updated" from="ScoreManager" to="UI" method="_on_score_manager_scores_updated"]
 [connection signal="new_game" from="GameScreen" to="." method="_on_game_screen_new_game"]
