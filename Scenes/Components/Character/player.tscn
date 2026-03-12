@@ -42,3 +42,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3922575, 0)
 visible = false
 
 [connection signal="finished_cutting" from="ScoringCalculator" to="." method="_on_scoring_calculator_finished_cutting"]
+
+[editable path="AnimationManager/AnimatedSprite3D"]

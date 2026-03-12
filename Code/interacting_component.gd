@@ -1,7 +1,5 @@
 extends Node3D
 
-@onready var animation_tree: AnimationTree = $"../AnimationPlayer/AnimationTree"
-
 @onready var interact_label: Label3D = $InteractLabel
 var current_interactions := []
 var can_interact: bool = true
@@ -10,14 +8,12 @@ var player_ref: Player = null
 func _input(_event: InputEvent) -> void:
 	#if event.is_action_pressed("interact") and can_interact:
 	if MultiplayerInput.is_action_just_pressed(player_ref.using_device, "interact") and can_interact:
-		animation_tree.set("parameters/conditions/button_pressed", true)
 		if current_interactions:
 			# start interaction
 			can_interact = false
 			interact_label.hide()
 			
 			await current_interactions[0].interact.call(player_ref)
-			animation_tree.set("parameters/conditions/button_pressed", false)
 			
 			can_interact = true
 
