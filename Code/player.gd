@@ -2,13 +2,14 @@ class_name Player
 extends CharacterBody3D
 
 @export var player_id:int = 0
-@export var chosen_character := Enums.PlayerCharacter.ANAGO
+@export var chosen_character := Enums.PlayerCharacter.SYLKIE
 @export var using_device: int = -1
 @export var is_AI:bool = false
 
 #var input: DeviceInput
 
 @onready var calculator: scoring_calculator = $ScoringCalculator
+@onready var animation_tree: AnimationTree = $CharacterSprite/AnimationPlayer/AnimationTree
 
 var held_item: fish = null
 var now_holding: bool = false
@@ -45,9 +46,13 @@ func _physics_process(delta: float) -> void:
 	var input_dir :Vector2 = MultiplayerInput.get_vector(using_device, "move_left", "move_right", "move_up", "move_down")
 	var direction :Vector3 = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
+	#player is moving
+		animation_tree.set("parameters/conditions/is_walking", true)
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
+	#player is idle
+		animation_tree.set("parameters/conditions/is_walking", false)
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
@@ -59,8 +64,10 @@ func _input(_event: InputEvent) -> void:
 		if held_item != null and now_holding and not $InteractingComponent.current_interactions:
 			held_item.put_down(self)
 			now_holding = false
+			animation_tree.set("parameters/conditions/now_holding", now_holding)
 			return
 		now_holding = true
+		animation_tree.set("parameters/conditions/now_holding", now_holding)
 
 
 
