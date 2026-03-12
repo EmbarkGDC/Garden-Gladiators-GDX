@@ -41,7 +41,7 @@ func cut() -> cut_result:
 	#result = snappedf(abs(result), 0.5)
 	result = abs(result)
 	if result <= 0.2:
-		if result <= perfect_hit_area * 0.05:
+		if result <= perfect_hit_area * 0.2:
 			print("Perfect!")
 			return cut_result.Perfect
 		print("Hit")

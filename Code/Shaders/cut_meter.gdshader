@@ -21,7 +21,7 @@ void fragment() {
 	vec2 coord = ((local_pos.xy * difficulty) - (difficulty - 1.0) / 2.0) + offset;
 	//vec3 output = texture(tex, coord).rgb;
 	float hit_area = step(abs(coord.x), 0.2);
-	float perfect_area = step(abs(coord.x), perfect_difficulty * 0.05);
+	float perfect_area = step(abs(coord.x), perfect_difficulty * 0.2);
 	float output = (0.5 * hit_area) + min(0.9, perfect_area);
 	float newOutput = clamp(output, 0.0, 1.0);
 	
