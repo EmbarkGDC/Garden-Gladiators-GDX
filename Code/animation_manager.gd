@@ -1,7 +1,7 @@
-extends Node3D
+extends AnimationPlayer
 
-# Export the character type so it can be set in the editor
-@export var chosen_character := Enums.PlayerCharacter.ANAGO
+# Retrieve chosen character enum value from player script
+@onready var chosen_character = get_parent().chosen_character
 
 # Path to the animation scenes
 const ANIMATION_SCENE_PATH = "res://Scenes/Components/Character/animations/"

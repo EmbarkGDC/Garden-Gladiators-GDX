@@ -34,6 +34,18 @@ project/assembly_name="Garden Gladiators GDX"
 
 enabled=PackedStringArray("res://addons/multiplayer_input/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://Audio/": "blue",
+"res://Code/": "teal",
+"res://Graphics/": "yellow",
+"res://Models/": "orange",
+"res://Resource/": "pink",
+"res://Scenes/": "purple",
+"res://addons/": "gray"
+}
+
 [input]
 
 join={

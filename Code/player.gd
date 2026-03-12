@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody3D
 
 @export var player_id:int = 0
+@export var chosen_character := Enums.PlayerCharacter.ANAGO
 @export var using_device: int = -1
 @export var is_AI:bool = false
 
