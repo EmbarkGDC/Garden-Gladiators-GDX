@@ -1,4 +1,4 @@
-[gd_resource type="AnimationNodeStateMachine" load_steps=35 format=3 uid="uid://den80y2xpsces"]
+[gd_resource type="AnimationNodeStateMachine" load_steps=36 format=3 uid="uid://den80y2xpsces"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ab1ip"]
 animation = &"anticipslash_nX"
@@ -92,38 +92,43 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_45q5w"]
 advance_mode = 2
-advance_condition = &"is_walking"
+advance_expression = "velocity > 0"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vsers"]
 advance_mode = 2
+advance_expression = "velocity == 0"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0id62"]
 advance_mode = 2
+advance_condition = &"button_pressed"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l8orn"]
+switch_mode = 2
 advance_mode = 2
 advance_condition = &"now_holding"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1sfns"]
 advance_mode = 2
-advance_condition = &"is_walking"
+advance_expression = "velocity > 0"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ti2to"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1xb4t"]
 advance_mode = 2
+advance_expression = "velocity == 0"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3qfgg"]
 advance_mode = 2
-advance_condition = &"is_cutting"
+advance_expression = "is_cutting == true"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bds7q"]
 advance_mode = 2
 advance_condition = &"button_pressed"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2j2nn"]
-advance_mode = 0
+switch_mode = 2
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ma63p"]
 advance_mode = 2
@@ -133,22 +138,26 @@ advance_condition = &"button_pressed"
 advance_mode = 2
 advance_condition = &"gameend"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8eqod"]
+advance_mode = 2
+advance_expression = "is_cutting == true"
+
 [resource]
 states/Anticipslash/node = SubResource("AnimationNodeBlendSpace1D_petqt")
-states/Anticipslash/position = Vector2(603, 476)
+states/Anticipslash/position = Vector2(544, 404)
 states/Carry/node = SubResource("AnimationNodeBlendSpace1D_oa2pa")
-states/Carry/position = Vector2(920, 67)
+states/Carry/position = Vector2(448, 153)
 states/End/position = Vector2(920, 476)
 states/Grab/node = SubResource("AnimationNodeBlendSpace1D_r7hf8")
 states/Grab/position = Vector2(762, 158)
 states/Hold/node = SubResource("AnimationNodeBlendSpace1D_qjqox")
-states/Hold/position = Vector2(603, 62)
+states/Hold/position = Vector2(626, -11)
 states/Idle/node = SubResource("AnimationNodeBlendSpace1D_oo3k1")
 states/Idle/position = Vector2(603, 245)
 states/Slash/node = SubResource("AnimationNodeBlendSpace1D_ouq86")
-states/Slash/position = Vector2(448, 354)
+states/Slash/position = Vector2(322, 351)
 states/Start/position = Vector2(322, 243)
 states/Walk/node = SubResource("AnimationNodeBlendSpace1D_2ulif")
 states/Walk/position = Vector2(920, 248)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_4xixu"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_45q5w"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_vsers"), "Walk", "Grab", SubResource("AnimationNodeStateMachineTransition_0id62"), "Grab", "Hold", SubResource("AnimationNodeStateMachineTransition_l8orn"), "Hold", "Carry", SubResource("AnimationNodeStateMachineTransition_1sfns"), "Grab", "Carry", SubResource("AnimationNodeStateMachineTransition_ti2to"), "Carry", "Hold", SubResource("AnimationNodeStateMachineTransition_1xb4t"), "Idle", "Anticipslash", SubResource("AnimationNodeStateMachineTransition_3qfgg"), "Anticipslash", "Slash", SubResource("AnimationNodeStateMachineTransition_bds7q"), "Slash", "Idle", SubResource("AnimationNodeStateMachineTransition_2j2nn"), "Idle", "Grab", SubResource("AnimationNodeStateMachineTransition_ma63p"), "Idle", "End", SubResource("AnimationNodeStateMachineTransition_skyf3")]
-graph_offset = Vector2(-281.2406, 9.143133)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_4xixu"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_45q5w"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_vsers"), "Walk", "Grab", SubResource("AnimationNodeStateMachineTransition_0id62"), "Grab", "Hold", SubResource("AnimationNodeStateMachineTransition_l8orn"), "Hold", "Carry", SubResource("AnimationNodeStateMachineTransition_1sfns"), "Grab", "Carry", SubResource("AnimationNodeStateMachineTransition_ti2to"), "Carry", "Hold", SubResource("AnimationNodeStateMachineTransition_1xb4t"), "Idle", "Anticipslash", SubResource("AnimationNodeStateMachineTransition_3qfgg"), "Anticipslash", "Slash", SubResource("AnimationNodeStateMachineTransition_bds7q"), "Slash", "Idle", SubResource("AnimationNodeStateMachineTransition_2j2nn"), "Idle", "Grab", SubResource("AnimationNodeStateMachineTransition_ma63p"), "Idle", "End", SubResource("AnimationNodeStateMachineTransition_skyf3"), "Carry", "Anticipslash", SubResource("AnimationNodeStateMachineTransition_8eqod")]
+graph_offset = Vector2(101.7594, -19.856873)

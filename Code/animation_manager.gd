@@ -1,4 +1,4 @@
-extends AnimationPlayer
+extends Node3D
 
 # Retrieve chosen character enum value from player script
 @onready var chosen_character = get_parent().chosen_character
