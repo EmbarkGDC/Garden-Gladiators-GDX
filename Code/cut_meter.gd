@@ -7,8 +7,8 @@ var result: float
 @onready var bar: MeshInstance3D = $Bar
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
 var speed: float = 1.0
-var cut_hit_area: float = 1.0
-var perfect_hit_area: float = 1.0
+var cut_hit_area: float = 0.2
+var perfect_hit_area: float = 0.05
 var cut_offset: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
