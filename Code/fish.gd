@@ -29,7 +29,7 @@ func _on_interact(player: Player) -> void:
 		start_holding(player)
 
 func start_holding(player: Player) -> void:
-	var new_parent: Node3D = player.get_node("HoldPosition")
+	var new_parent: Node3D = player.get_node("AnimatedSprite3D/HoldPosition")
 	player.held_item = self
 	old_parent = get_parent()
 	old_position = position

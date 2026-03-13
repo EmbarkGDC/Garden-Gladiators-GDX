@@ -39,6 +39,7 @@ func _physics_process(delta: float) -> void:
 	
 	if is_cutting:
 		animation_tree["parameters/conditions/ready_to_cut"] = true
+		animation_tree["parameters/conditions/grabs"] = false
 		return
 	# Handle jump.
 	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -108,5 +109,5 @@ func _on_scoring_calculator_finished_cutting(score: int, mult: bool) -> void:
 
 func reset() -> void:
 	global_position = original_location
-	for entry: Node3D in $HoldPosition.get_children():
-		$HoldPosition.remove_child(entry)
+	for entry: Node3D in $AnimationManager/AnimatedSprite3D/HoldPosition.get_children():
+		$AnimationManager/AnimatedSprite3D/HoldPosition.remove_child(entry)

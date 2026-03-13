@@ -81,6 +81,7 @@ libraries = {
 
 [node name="FishSprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5819746, 0)
+sorting_offset = 0.1
 billboard = 1
 texture = ExtResource("3_0wgvq")
 

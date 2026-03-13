@@ -681,7 +681,7 @@ animations = [{
 }]
 
 [node name="Sylkie_AnimatedSprite3D" type="AnimatedSprite3D"]
-sorting_offset = -0.5
+sorting_offset = -0.1
 offset = Vector2(0, 228.14)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_orfp7")

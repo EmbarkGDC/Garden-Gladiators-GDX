@@ -78,6 +78,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cursor"]
 transform = Transform3D(0.10163528, 0, 0, 0, 0.37836218, 0, 0, 0, 1, 0, -0.08201137, -0.06575978)
+sorting_offset = 2.0
 mesh = SubResource("QuadMesh_n3o68")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
