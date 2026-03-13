@@ -1029,7 +1029,7 @@ animations = [{
 }]
 
 [node name="Anago_AnimatedSprite3D" type="AnimatedSprite3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4551349, 0)
+offset = Vector2(0, 251.895)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_orfp7")
-animation = &"slash_nX"
+animation = &"idle_nX"
