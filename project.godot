@@ -20,6 +20,7 @@ config/icon="uid://c8al1j6moioy6"
 MultiplayerInput="*res://addons/multiplayer_input/multiplayer_input.gd"
 PlayerManager="*res://Code/player_manager.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+Enums="*res://Code/Autoload/enums.gd"
 
 [debug]
 
@@ -31,7 +32,19 @@ project/assembly_name="Garden Gladiators GDX"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/multiplayer_input/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
+enabled=PackedStringArray("res://addons/multiplayer_input/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://Audio/": "blue",
+"res://Code/": "teal",
+"res://Graphics/": "yellow",
+"res://Models/": "orange",
+"res://Resource/": "pink",
+"res://Scenes/": "purple",
+"res://addons/": "gray"
+}
 
 [input]
 
@@ -87,3 +100,26 @@ interact={
 
 3d/physics_engine="Jolt Physics"
 common/physics_interpolation=true
+
+[shader_globals]
+
+specular_smoothness={
+"type": "float",
+"value": 0.5
+}
+fresnel_smoothness={
+"type": "float",
+"value": 0.5
+}
+outline_width={
+"type": "float",
+"value": 6.0
+}
+outline_color={
+"type": "color",
+"value": Color(0.00807392, 0.0020987338, 0.0012462488, 1)
+}
+diffuse_curve={
+"type": "sampler2D",
+"value": "res://Graphics/Textures/cel_shading_gradient.tres"
+}
