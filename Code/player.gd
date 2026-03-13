@@ -38,8 +38,6 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	if is_cutting:
-		animation_tree["parameters/conditions/ready_to_cut"] = true
-		animation_tree["parameters/conditions/grabs"] = false
 		return
 	# Handle jump.
 	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -64,13 +62,16 @@ func _physics_process(delta: float) -> void:
 func _input(_event: InputEvent) -> void:
 	#if event.is_action_pressed("interact"):
 	if MultiplayerInput.is_action_just_pressed(using_device, "interact"):
+		print_debug("Now_holding reads as: " + str(now_holding))
 		if held_item != null and now_holding and not $InteractingComponent.current_interactions:
 			held_item.put_down(self)
 			now_holding = false
 			animation_tree["parameters/conditions/grabs"] = false
 			animation_tree["parameters/conditions/drops_item"] = true
 			return
-		now_holding = true
+		if now_holding:
+			animation_tree["parameters/conditions/grabs"] = true
+			animation_tree["parameters/conditions/drops_item"] = false
 
 func update_animation_parameters() -> void:
 	#runs idle/hold animations if true or walk/carry if false 
@@ -86,11 +87,6 @@ func update_animation_parameters() -> void:
 		animation_tree["parameters/conditions/is_walking"] = true
 		animation_tree["parameters/conditions/is_idle"] = false
 		animation_tree["parameters/conditions/cuts"] = false
-	
-	#checks to see if player is holding an item
-	if now_holding:
-		animation_tree["parameters/conditions/grabs"] = true
-		animation_tree["parameters/conditions/drops_item"] = false
 		
 		
 func flip_sprites(blend_position: float) -> void:
@@ -104,8 +100,7 @@ func flip_sprites(blend_position: float) -> void:
 
 func _on_scoring_calculator_finished_cutting(score: int, mult: bool) -> void:
 	is_cutting = false
-	animation_tree["parameters/conditions/ready_to_cut"] = false
-	animation_tree["parameters/conditions/cuts"] = true
+	animation_tree["parameters/conditions/cuts"] = false
 	player_just_scored.emit(player_id, score, mult)
 
 func reset() -> void:

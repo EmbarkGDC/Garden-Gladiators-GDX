@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://kcpilqmr7xaf" path="res://Scenes/Components/Gameplay/cut_meter.tscn" id="4_vgqql"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f60y1"]
+radius = 0.9350586
+height = 2.7426758
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_v0iea"]
 
@@ -21,7 +23,7 @@ script = ExtResource("1_v0iea")
 parameters/Idle/blend_position = 0.013922
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3005371, 0)
 shape = SubResource("CapsuleShape3D_f60y1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
