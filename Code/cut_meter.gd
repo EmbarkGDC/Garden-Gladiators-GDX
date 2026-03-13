@@ -7,8 +7,8 @@ var result: float
 @onready var bar: MeshInstance3D = $Bar
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
 var speed: float = 1.0
-var cut_hit_area: float = 1.0
-var perfect_hit_area: float = 1.0
+var cut_hit_area: float = 0.2
+var perfect_hit_area: float = 0.05
 var cut_offset: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
@@ -30,8 +30,8 @@ func start_meter(hit: float, perfecrt: float) -> void:
 	anim.speed_scale = speed
 	var mat: Material = bar.get_active_material(0)
 	mat.set_shader_parameter("offset", cut_offset)
-	mat.set_shader_parameter("hit_area", cut_hit_area)
-	mat.set_shader_parameter("perfect_hit_area", perfect_hit_area)
+	mat.set_shader_parameter("difficulty", cut_hit_area)
+	mat.set_shader_parameter("perfect_difficulty", perfect_hit_area)
 
 func cut() -> cut_result:
 	anim.pause()
@@ -41,7 +41,7 @@ func cut() -> cut_result:
 	#result = snappedf(abs(result), 0.5)
 	result = abs(result)
 	if result <= 0.2:
-		if result <= perfect_hit_area * 0.05:
+		if result <= perfect_hit_area * 0.2:
 			print("Perfect!")
 			return cut_result.Perfect
 		print("Hit")
