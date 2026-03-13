@@ -94,12 +94,44 @@ environment = SubResource("Environment_mvubj")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.9851391, 0.8477992, 0.9046948, 1)
+light_energy = 0.31
 shadow_enabled = true
+
+[node name="Spotlights" type="Node" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.8455496, 6.642641, -5.737017)
+light_color = Color(0.95, 0.8629167, 0.42749998, 1)
+spot_range = 9.687
+spot_attenuation = 0.45
+spot_angle = 30.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -5.8069973, 6.642641, -4.763689)
+light_color = Color(0.95, 0.8629167, 0.42749998, 1)
+spot_range = 9.687
+spot_attenuation = 0.45
+spot_angle = 30.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -5.049962, 6.642641, 5.4292293)
+light_color = Color(0.95, 0.8629167, 0.42749998, 1)
+spot_range = 9.687
+spot_attenuation = 0.45
+spot_angle = 30.0
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.4191284, 6.642641, 5.306202)
+light_color = Color(0.95, 0.8629167, 0.42749998, 1)
+spot_range = 9.687
+spot_attenuation = 0.45
+spot_angle = 30.0
 
 [node name="World" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
-transform = Transform3D(3.3406174, 0, 0, 0, 1, 0, 0, 0, 3.3406174, 0, 0, 0)
+transform = Transform3D(36.52525, 0, 0, 0, 1, 0, 0, 0, 67.48799, 0, 0, 0)
 mesh = SubResource("PlaneMesh_2y2d3")
 skeleton = NodePath("../..")
 
@@ -187,7 +219,7 @@ transform = Transform3D(0.9431125, 0, 0.33247396, 0, 1, 0, -0.33247396, 0, 0.943
 transform = Transform3D(0.9233108, 0, -0.3840536, 0, 1, 0, 0.3840536, 0, 0.9233108, -5.016719, 0.78042436, 5.4431276)
 
 [node name="CuttingBoard4" parent="." instance=ExtResource("4_k781c")]
-transform = Transform3D(-0.33584616, 0, -0.9419168, 0, 1, 0, 0.9419168, 0, -0.33584616, 5.8913784, 0.78042436, 4.5758386)
+transform = Transform3D(-0.33584616, 0, -0.9419168, 0, 1, 0, 0.9419168, 0, -0.33584616, 5.4114757, 0.78042436, 5.398178)
 
 [node name="UI" parent="." instance=ExtResource("5_kfyma")]
 
