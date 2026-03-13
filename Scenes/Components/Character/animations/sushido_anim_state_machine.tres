@@ -126,16 +126,15 @@ advance_condition = &"is_idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3qfgg"]
 advance_mode = 2
-advance_expression = "is_cutting == true"
+advance_condition = &"ready_to_cut"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bds7q"]
 advance_mode = 2
-advance_condition = &"button_pressed"
+advance_condition = &"cuts"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2j2nn"]
 switch_mode = 2
 advance_mode = 2
-advance_condition = &"cuts"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ma63p"]
 advance_mode = 2
@@ -183,4 +182,4 @@ states/Start/position = Vector2(66, 238)
 states/Walk/node = SubResource("AnimationNodeBlendSpace1D_2ulif")
 states/Walk/position = Vector2(1039, 203)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_4xixu"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_45q5w"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_vsers"), "Walk", "Grab", SubResource("AnimationNodeStateMachineTransition_0id62"), "Grab", "Hold", SubResource("AnimationNodeStateMachineTransition_l8orn"), "Hold", "Carry", SubResource("AnimationNodeStateMachineTransition_1sfns"), "Grab", "Carry", SubResource("AnimationNodeStateMachineTransition_ti2to"), "Carry", "Hold", SubResource("AnimationNodeStateMachineTransition_1xb4t"), "Idle", "Anticipslash", SubResource("AnimationNodeStateMachineTransition_3qfgg"), "Anticipslash", "Slash", SubResource("AnimationNodeStateMachineTransition_bds7q"), "Slash", "Idle", SubResource("AnimationNodeStateMachineTransition_2j2nn"), "Idle", "Grab", SubResource("AnimationNodeStateMachineTransition_ma63p"), "Idle", "End", SubResource("AnimationNodeStateMachineTransition_skyf3"), "Carry", "Anticipslash", SubResource("AnimationNodeStateMachineTransition_8eqod"), "Hold", "Idle", SubResource("AnimationNodeStateMachineTransition_cctwk"), "Hold", "Walk", SubResource("AnimationNodeStateMachineTransition_cnndy"), "Carry", "Idle", SubResource("AnimationNodeStateMachineTransition_anqvd"), "Carry", "Walk", SubResource("AnimationNodeStateMachineTransition_nl1qn")]
-graph_offset = Vector2(130.7594, 135.14313)
+graph_offset = Vector2(-89.2406, 50.143127)

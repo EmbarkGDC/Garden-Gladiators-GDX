@@ -109,5 +109,5 @@ func _on_scoring_calculator_finished_cutting(score: int, mult: bool) -> void:
 
 func reset() -> void:
 	global_position = original_location
-	for entry: Node3D in $AnimationManager/AnimatedSprite3D/HoldPosition.get_children():
-		$AnimationManager/AnimatedSprite3D/HoldPosition.remove_child(entry)
+	for entry: Node3D in $HoldPosition.get_children():
+		$HoldPosition.remove_child(entry)
