@@ -67,6 +67,7 @@ material = SubResource("StandardMaterial3D_1co62")
 size = Vector2(2.31, 0.55)
 
 [node name="CutMeter" type="Node3D"]
+transform = Transform3D(1.51, 0, 0, 0, 1.51, 0, 0, 0, 1.51, 0, 0, 0)
 script = ExtResource("1_tbuqg")
 
 [node name="Bar" type="MeshInstance3D" parent="."]
