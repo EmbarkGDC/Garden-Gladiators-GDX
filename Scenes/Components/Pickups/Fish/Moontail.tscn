@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cq51k23eptqm1" path="res://Graphics/Sprites/Props/Sushi_moontail.png" id="4_2gbrq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_urn1o"]
+radius = 1.0
 
 [sub_resource type="Animation" id="Animation_4fqy1"]
 length = 0.001

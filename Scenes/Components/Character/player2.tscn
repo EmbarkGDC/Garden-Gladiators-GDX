@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://wsvkisnd2y5k"]
+
+[ext_resource type="Script" uid="uid://bxphi2i77rc7u" path="res://Code/player.gd" id="1_xt1h1"]
+[ext_resource type="PackedScene" uid="uid://25iigg58d72v" path="res://Scenes/Components/Character/animations/alternates/frosty_animated_sprite_3d.tscn" id="2_xt1h1"]
+[ext_resource type="PackedScene" uid="uid://dhfmx5sfx1rek" path="res://Scenes/Components/Gameplay/interacting_component.tscn" id="3_ph7yn"]
+[ext_resource type="PackedScene" uid="uid://dhd1ganu0nhb0" path="res://Scenes/Components/Gameplay/scoring_calculator.tscn" id="4_qh8bi"]
+[ext_resource type="PackedScene" uid="uid://kcpilqmr7xaf" path="res://Scenes/Components/Gameplay/cut_meter.tscn" id="5_dpg8t"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f60y1"]
+radius = 0.9350586
+height = 2.7426758
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_v0iea"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_xt1h1")
+using_device = 1
+
+[node name="AnimationManager" type="Node3D" parent="."]
+
+[node name="AnimatedSprite3D" parent="AnimationManager" instance=ExtResource("2_xt1h1")]
+replace_textures = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3005371, 0)
+shape = SubResource("CapsuleShape3D_f60y1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_v0iea")
+
+[node name="HoldPosition" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1279612, 0)
+
+[node name="InteractingComponent" parent="." instance=ExtResource("3_ph7yn")]
+
+[node name="ScoringCalculator" parent="." node_paths=PackedStringArray("cut", "player_ref") instance=ExtResource("4_qh8bi")]
+process_mode = 4
+cut = NodePath("../CutMeter")
+player_ref = NodePath("..")
+
+[node name="CutMeter" parent="." instance=ExtResource("5_dpg8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0.5)
+visible = false
+
+[connection signal="finished_cutting" from="ScoringCalculator" to="." method="_on_scoring_calculator_finished_cutting"]
+
+[editable path="AnimationManager/AnimatedSprite3D"]
