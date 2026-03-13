@@ -67,6 +67,8 @@ func _input(_event: InputEvent) -> void:
 		if held_item != null and now_holding and not $InteractingComponent.current_interactions:
 			held_item.put_down(self)
 			now_holding = false
+			animation_tree["parameters/conditions/grabs"] = false
+			animation_tree["parameters/conditions/drops_item"] = true
 			return
 		now_holding = true
 
@@ -75,6 +77,7 @@ func update_animation_parameters() -> void:
 	if velocity == Vector3.ZERO:
 		animation_tree["parameters/conditions/is_walking"] = false
 		animation_tree["parameters/conditions/is_idle"] = true
+	#flips direction of animation depending on 
 	else:
 		if velocity.x < 0:
 			flip_sprites(-1)
@@ -88,9 +91,7 @@ func update_animation_parameters() -> void:
 	if now_holding:
 		animation_tree["parameters/conditions/grabs"] = true
 		animation_tree["parameters/conditions/drops_item"] = false
-	else:
-		animation_tree["parameters/conditions/grabs"] = false
-		animation_tree["parameters/conditions/drops_item"] = true
+		
 		
 func flip_sprites(blend_position: float) -> void:
 	animation_tree.set("parameters/Anticipslash/blend_position", blend_position)
