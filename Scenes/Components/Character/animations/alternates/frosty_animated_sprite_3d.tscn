@@ -682,7 +682,8 @@ animations = [{
 [node name="AnimatedSprite3D" type="AnimatedSprite3D"]
 sorting_offset = -0.1
 offset = Vector2(0, 228.14)
-billboard = 2
+billboard = 1
+render_priority = 5
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
 
