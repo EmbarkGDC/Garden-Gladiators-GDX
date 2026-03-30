@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://depjbb02bdlv5"]
+[gd_scene load_steps=43 format=3 uid="uid://depjbb02bdlv5"]
 
 [ext_resource type="Script" uid="uid://svdn72ttlrih" path="res://Code/sushido.gd" id="1_0pslh"]
 [ext_resource type="Script" uid="uid://cfytfxx4ds6ek" path="res://Code/score_manager.gd" id="2_drnuo"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dxf7fem281gi0" path="res://Scenes/Components/Gameplay/kitchen_counter.tscn" id="4_7w6xu"]
 [ext_resource type="PackedScene" uid="uid://dfpjfnol8r0u6" path="res://Scenes/Components/Gameplay/cutting_board.tscn" id="4_k781c"]
 [ext_resource type="PackedScene" uid="uid://brawlb8o5r6av" path="res://Scenes/Components/Gameplay/lazy_susan.tscn" id="4_kfyma"]
+[ext_resource type="Texture2D" uid="uid://bh2uymhjmtrrc" path="res://Graphics/Textures/FloorTexture_n.png" id="4_ndkw1"]
 [ext_resource type="PackedScene" uid="uid://ct8b4edhgi56v" path="res://Scenes/Components/UI/ui.tscn" id="5_kfyma"]
 [ext_resource type="PackedScene" uid="uid://btflc2b7rcto3" path="res://Scenes/Components/Gameplay/arena_seats.tscn" id="6_kfyma"]
 [ext_resource type="PackedScene" uid="uid://n4041h8u2bkx" path="res://Scenes/Components/Gameplay/fish_spawner.tscn" id="6_r6o08"]
@@ -46,6 +47,9 @@ size = Vector2(30, 15)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b7hrd"]
 albedo_texture = ExtResource("3_v40ff")
+normal_enabled = true
+normal_scale = 1.02
+normal_texture = ExtResource("4_ndkw1")
 uv1_scale = Vector3(1.575, 1.575, 1.575)
 uv1_triplanar = true
 
