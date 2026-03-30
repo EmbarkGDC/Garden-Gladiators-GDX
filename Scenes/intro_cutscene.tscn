@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcrs5k6d1p46n"]
+
+[ext_resource type="VideoStream" uid="uid://bhe72ff8dkk7v" path="res://Scenes/Components/Video/vid_Sample.ogv" id="1_485iv"]
+
+[node name="IntroCutscene" type="Node2D"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = -960.0
+offset_top = -536.0
+offset_right = 960.0
+offset_bottom = 544.0
+stream = ExtResource("1_485iv")
+autoplay = true
+loop = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
