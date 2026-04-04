@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://dxsl7rggcvcko" path="res://Code/Character Select/base_token.gd" id="2_n00cx"]
 
 [node name="Token" type="Sprite2D"]
-position = Vector2(1.9073486e-06, -5.722046e-06)
-scale = Vector2(0.7777778, 0.7777778)
+scale = Vector2(0.55228764, 0.55228764)
 texture = ExtResource("1_j4aqa")
 script = ExtResource("2_n00cx")

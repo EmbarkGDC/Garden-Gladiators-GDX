@@ -5,7 +5,7 @@
 
 [node name="Cursor" type="Sprite2D"]
 z_index = 4096
-scale = Vector2(0.3196875, 0.3196875)
+scale = Vector2(0.18246095, 0.18246095)
 texture = ExtResource("1_qes2a")
 offset = Vector2(0, 300)
 script = ExtResource("2_51gh2")

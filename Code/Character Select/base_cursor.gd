@@ -7,6 +7,7 @@ extends Sprite2D
 
 var controllerID : int
 var token : PlayerToken
+var PlayerColor: Color = Color(0.0, 0.0, 0.0, 1.0)
 
 func _ready() -> void:
 	var newToken = preload("res://Scenes/Components/Character Select/BaseToken.tscn")
