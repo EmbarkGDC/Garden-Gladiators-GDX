@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqwhqvgbfmd56"]
+
+[ext_resource type="Script" uid="uid://u23f1j117vll" path="res://Code/fish_spawner_ls.gd" id="1_c6107"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ekoy5"]
+
+[node name="Fish_Spawner_LS" type="Area3D"]
+script = ExtResource("1_c6107")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ekoy5")
+
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
