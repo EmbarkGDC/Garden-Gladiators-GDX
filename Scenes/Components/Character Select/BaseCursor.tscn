@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://btcojqyy08rpm"]
+[gd_scene load_steps=4 format=3 uid="uid://btcojqyy08rpm"]
 
 [ext_resource type="Texture2D" uid="uid://dc2k6i2f8ov88" path="res://Scenes/Components/Character Select/Placeholder assets/Placeholder cursor tex.png" id="1_qes2a"]
 [ext_resource type="Script" uid="uid://cxq1dxy7djab1" path="res://Code/Character Select/base_cursor.gd" id="2_51gh2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_51gh2"]
+radius = 109.612495
+height = 624.79114
 
 [node name="Cursor" type="Sprite2D"]
 z_index = 4096
@@ -9,7 +13,13 @@ scale = Vector2(0.18246095, 0.18246095)
 texture = ExtResource("1_qes2a")
 offset = Vector2(0, 300)
 script = ExtResource("2_51gh2")
-cursor_speed = 50.0
+cursor_speed = 25.0
+
+[node name="CursorCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CursorCollision"]
+position = Vector2(0, 306.91498)
+shape = SubResource("CapsuleShape2D_51gh2")
 
 [node name="TokenCoord" type="Node2D" parent="."]
 position = Vector2(0, 478.5924)

@@ -13,14 +13,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_portrait_collision_body_entered(body: Node2D) -> void:
+func _on_portrait_collision_area_entered(area: Area2D) -> void:
 	print("Enter")
-	if body is Cursor:
-		color_tex.modulate = body.PlayerColor
+	var entered_cursor : Cursor = area.get_parent()
+	color_tex.modulate = entered_cursor.PlayerColor
 
 
-func _on_portrait_collision_body_exited(body: Node2D) -> void:
+func _on_portrait_collision_area_exited(area: Area2D) -> void:
 	print("Exit")
-	if body is Cursor:
-		color_tex.modulate = Color()
+	color_tex.modulate = Color(1.0, 1.0, 1.0, 1.0)
