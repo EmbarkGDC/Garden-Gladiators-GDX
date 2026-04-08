@@ -1,21 +1,20 @@
-extends Node3D
+class_name interacting_component extends Node3D
 
 @onready var interact_label: Label3D = $InteractLabel
 var current_interactions := []
 var can_interact: bool = true
 var player_ref: Player = null
 
-func _input(_event: InputEvent) -> void:
+func interact_input() -> void:
 	#if event.is_action_pressed("interact") and can_interact:
-	if MultiplayerInput.is_action_just_pressed(player_ref.using_device, "interact") and can_interact:
-		if current_interactions:
-			# start interaction
-			can_interact = false
-			interact_label.hide()
-			
-			await current_interactions[0].interact.call(player_ref)
-			
-			can_interact = true
+	if current_interactions and can_interact:
+		# start interaction
+		can_interact = false
+		interact_label.hide()
+		
+		await current_interactions[0].interact.call(player_ref)
+		
+		can_interact = true
 
 func _process(_delta: float) -> void:
 	if current_interactions and can_interact:

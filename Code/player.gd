@@ -9,6 +9,7 @@ extends CharacterBody3D
 #var input: DeviceInput
 
 @onready var calculator: scoring_calculator = $ScoringCalculator
+@onready var interactor: interacting_component = $InteractingComponent
 @onready var animation_tree:= $AnimationManager/AnimatedSprite3D/AnimationPlayer/AnimationTree
 
 var held_item: fish = null
@@ -29,10 +30,12 @@ func _ready() -> void:
 	#var device: int = PlayerManager.get_player_device(player_id)
 	#input = DeviceInput.new(device)
 
-func _process(delta: float) -> void:
-	update_animation_parameters()
-
 func _physics_process(delta: float) -> void:
+	# Check if device is valid
+	if not Input.get_connected_joypads().has(using_device) && using_device != -1:
+		print("Device missing")
+		return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -58,11 +61,17 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	update_animation_parameters()
 
 func _input(_event: InputEvent) -> void:
+	# Check if device is valid
+	if not Input.get_connected_joypads().has(using_device) && using_device != -1:
+		print("Device missing")
+		return
 	#if event.is_action_pressed("interact"):
 	if MultiplayerInput.is_action_just_pressed(using_device, "interact"):
 		print_debug("Now_holding reads as: " + str(now_holding))
+		interactor.interact_input()
 		if held_item != null and now_holding and not $InteractingComponent.current_interactions:
 			held_item.put_down(self)
 			now_holding = false
@@ -72,6 +81,9 @@ func _input(_event: InputEvent) -> void:
 		if now_holding:
 			animation_tree["parameters/conditions/grabs"] = true
 			animation_tree["parameters/conditions/drops_item"] = false
+			
+	if MultiplayerInput.is_action_just_pressed(using_device, "cut"):
+		pass
 
 func update_animation_parameters() -> void:
 	#runs idle/hold animations if true or walk/carry if false 
