@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bum44igbaf770" path="res://Graphics/Sprites/Props/Sushi_palgram.png" id="4_quycx"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_urn1o"]
+radius = 1.0
 
 [sub_resource type="Animation" id="Animation_4fqy1"]
 length = 0.001
@@ -81,7 +82,9 @@ libraries = {
 
 [node name="FishSprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.32536656, 0)
+sorting_offset = 0.1
 billboard = 1
+render_priority = 5
 texture = ExtResource("3_di2r3")
 
 [node name="SushiSprite3D" type="Sprite3D" parent="."]

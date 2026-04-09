@@ -7,9 +7,13 @@ var result: float
 @onready var bar: MeshInstance3D = $Bar
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
 var speed: float = 1.0
-var cut_hit_area: float = 1.0
-var perfect_hit_area: float = 1.0
+var cut_hit_area: float = 0.2
+var perfect_hit_area: float = 0.05
 var cut_offset: float = 0.0
+
+#Character animation
+@onready var char_anim_tree:= $"../AnimationManager/AnimatedSprite3D/AnimationPlayer/AnimationTree"
+@onready var now_holding: bool = get_parent().now_holding
 
 # Called when the node enters the scene tree for the first time.
 #func _ready() -> void:
@@ -24,16 +28,22 @@ func _process(_delta: float) -> void:
 		#cut(1.0, 0.0)
 
 func start_meter(hit: float, perfecrt: float) -> void:
+	now_holding = false
+	char_anim_tree["parameters/conditions/grabs"] = false
+	char_anim_tree["parameters/conditions/drops_item"] = true
+	char_anim_tree["parameters/conditions/ready_to_cut"] = true
 	cut_hit_area = hit
 	perfect_hit_area = perfecrt
 	anim.play("back_and_forth")
 	anim.speed_scale = speed
 	var mat: Material = bar.get_active_material(0)
 	mat.set_shader_parameter("offset", cut_offset)
-	mat.set_shader_parameter("hit_area", cut_hit_area)
-	mat.set_shader_parameter("perfect_hit_area", perfect_hit_area)
+	mat.set_shader_parameter("difficulty", cut_hit_area)
+	mat.set_shader_parameter("perfect_difficulty", perfect_hit_area)
 
 func cut() -> cut_result:
+	char_anim_tree["parameters/conditions/ready_to_cut"] = false
+	char_anim_tree["parameters/conditions/cuts"] = true
 	anim.pause()
 	var location: float = anim.current_animation_position / anim.current_animation_length
 	location = location * 2.0 - 1.0
@@ -41,7 +51,7 @@ func cut() -> cut_result:
 	#result = snappedf(abs(result), 0.5)
 	result = abs(result)
 	if result <= 0.2:
-		if result <= perfect_hit_area * 0.05:
+		if result <= perfect_hit_area * 0.2:
 			print("Perfect!")
 			return cut_result.Perfect
 		print("Hit")

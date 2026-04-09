@@ -13,11 +13,12 @@ func _process(delta: float) -> void:
 
 func _on_minigames_pressed() -> void:
 	print("Sushido")
-	get_tree().change_scene_to_file("res://Scenes/multiplayer_sushido.tscn")
+	get_tree().change_scene_to_file("res://Scenes/minigames.tscn")
 
 
 func _on_credits_pressed() -> void:
 	print("Credits")
+	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
 
 
 func _on_exit_pressed() -> void:

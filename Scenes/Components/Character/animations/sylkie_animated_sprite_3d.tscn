@@ -1,7 +1,9 @@
-[gd_scene load_steps=90 format=3 uid="uid://cdi7ld4cq2dwu"]
+[gd_scene load_steps=92 format=3 uid="uid://cdi7ld4cq2dwu"]
 
 [ext_resource type="Texture2D" uid="uid://bw53ghb22rmc4" path="res://Graphics/Sprites/PlayerChar/Sylkie/Sylkie_Idle_SpriteSheet.png" id="1_m5kwv"]
 [ext_resource type="Texture2D" uid="uid://dfi875argdmua" path="res://Graphics/Sprites/PlayerChar/Sylkie/Sylkie_Action_SpriteSheet.png" id="2_ygge4"]
+[ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="3_ndf68"]
+[ext_resource type="AnimationLibrary" uid="uid://bagpuxalkkp5h" path="res://Scenes/Components/Character/animations/sylkie_animations.res" id="3_yvxx6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5kwv"]
 atlas = ExtResource("1_m5kwv")
@@ -511,7 +513,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"hold_nX",
-"speed": 12.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -525,7 +527,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"hold_pX",
-"speed": 12.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -554,7 +556,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_nX",
-"speed": 12.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -583,7 +585,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_pX",
-"speed": 12.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -678,8 +680,36 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Bladez_AnimatedSprite3D" type="AnimatedSprite3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10033727, 2.4551349, 0)
-billboard = 2
+[node name="Sylkie_AnimatedSprite3D" type="AnimatedSprite3D"]
+sorting_offset = -0.1
+offset = Vector2(0, 228.14)
+billboard = 1
+render_priority = 5
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
+
+[node name="HoldPosition" type="Node3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": ExtResource("3_yvxx6")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+root_node = NodePath("../..")
+tree_root = ExtResource("3_ndf68")
+anim_player = NodePath("..")
+parameters/conditions/cuts = false
+parameters/conditions/drops_item = false
+parameters/conditions/gameend = false
+parameters/conditions/grabs = false
+parameters/conditions/is_idle = false
+parameters/conditions/is_walking = false
+parameters/conditions/ready_to_cut = false
+parameters/Anticipslash/blend_position = -1.0
+parameters/Carry/blend_position = -1.0
+parameters/Grab/blend_position = -1.0
+parameters/Hold/blend_position = -1.0
+parameters/Idle/blend_position = 1.0
+parameters/Slash/blend_position = -1.0
+parameters/Walk/blend_position = -1.0
