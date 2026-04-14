@@ -30,4 +30,5 @@ func _on_interact(player: Player) -> void:
 
 func _on_player_player_action(player: Player) -> void:
 	if player.is_cutting:
-		pass
+		calculator.get_cut_result()
+		player.is_cutting = false

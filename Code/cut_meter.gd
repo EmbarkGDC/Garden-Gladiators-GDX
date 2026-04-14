@@ -12,7 +12,7 @@ var perfect_hit_area: float = 0.05
 var cut_offset: float = 0.0
 
 #Character animation
-@onready var char_anim_tree:= $"../AnimationManager/AnimatedSprite3D/AnimationPlayer/AnimationTree"
+#@onready var char_anim_tree:= $"../AnimationManager/AnimatedSprite3D/AnimationPlayer/AnimationTree"
 #@onready var now_holding: bool = get_parent().now_holding
 
 # Called when the node enters the scene tree for the first time.

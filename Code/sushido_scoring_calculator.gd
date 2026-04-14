@@ -37,4 +37,4 @@ func get_cut_result() -> void:
 	finished_cutting.emit(score, cut_fish.multiply_on_perfect if result == cut_meter.cut_result.Perfect else false)
 	cut_fish.change_to_sushi()
 	cut.visible = false
-	self.process_mode = Node.PROCESS_MODE_DISABLED
+	#self.process_mode = Node.PROCESS_MODE_DISABLED
