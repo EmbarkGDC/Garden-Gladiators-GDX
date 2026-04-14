@@ -52,17 +52,17 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_jermr")
 blend_point_1/pos = 1.0
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sgnke"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8eqod"]
 animation = &"idle_nX"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ux68r"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cctwk"]
 animation = &"idle_pX"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_oo3k1"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_sgnke")
-blend_point_0/pos = -1.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_ux68r")
-blend_point_1/pos = 1.0
+blend_point_0/node = SubResource("AnimationNodeAnimation_8eqod")
+blend_point_0/pos = -0.90000004
+blend_point_1/node = SubResource("AnimationNodeAnimation_cctwk")
+blend_point_1/pos = 0.90000004
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ew0jp"]
@@ -166,7 +166,7 @@ advance_condition = &"ready_to_cut"
 
 [resource]
 states/Anticipslash/node = SubResource("AnimationNodeBlendSpace1D_petqt")
-states/Anticipslash/position = Vector2(544, 404)
+states/Anticipslash/position = Vector2(567, 463)
 states/Carry/node = SubResource("AnimationNodeBlendSpace1D_oa2pa")
 states/Carry/position = Vector2(362.5, 141.5)
 states/End/position = Vector2(920, 476)
@@ -175,11 +175,11 @@ states/Grab/position = Vector2(774, 129)
 states/Hold/node = SubResource("AnimationNodeBlendSpace1D_qjqox")
 states/Hold/position = Vector2(626, -11)
 states/Idle/node = SubResource("AnimationNodeBlendSpace1D_oo3k1")
-states/Idle/position = Vector2(746.5, 299.5)
+states/Idle/position = Vector2(735.5, 292.5)
 states/Slash/node = SubResource("AnimationNodeBlendSpace1D_ouq86")
-states/Slash/position = Vector2(322, 351)
+states/Slash/position = Vector2(278, 373)
 states/Start/position = Vector2(66, 238)
 states/Walk/node = SubResource("AnimationNodeBlendSpace1D_2ulif")
 states/Walk/position = Vector2(1039, 203)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_4xixu"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_45q5w"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_vsers"), "Walk", "Grab", SubResource("AnimationNodeStateMachineTransition_0id62"), "Grab", "Hold", SubResource("AnimationNodeStateMachineTransition_l8orn"), "Hold", "Carry", SubResource("AnimationNodeStateMachineTransition_1sfns"), "Grab", "Carry", SubResource("AnimationNodeStateMachineTransition_ti2to"), "Carry", "Hold", SubResource("AnimationNodeStateMachineTransition_1xb4t"), "Anticipslash", "Slash", SubResource("AnimationNodeStateMachineTransition_bds7q"), "Slash", "Idle", SubResource("AnimationNodeStateMachineTransition_2j2nn"), "Idle", "Grab", SubResource("AnimationNodeStateMachineTransition_ma63p"), "Idle", "End", SubResource("AnimationNodeStateMachineTransition_skyf3"), "Carry", "Anticipslash", SubResource("AnimationNodeStateMachineTransition_8eqod"), "Hold", "Idle", SubResource("AnimationNodeStateMachineTransition_cctwk"), "Hold", "Walk", SubResource("AnimationNodeStateMachineTransition_cnndy"), "Carry", "Idle", SubResource("AnimationNodeStateMachineTransition_anqvd"), "Carry", "Walk", SubResource("AnimationNodeStateMachineTransition_nl1qn"), "Hold", "Anticipslash", SubResource("AnimationNodeStateMachineTransition_ckgvn")]
-graph_offset = Vector2(-133.2406, -70.035774)
+graph_offset = Vector2(-308.27457, -59.708027)

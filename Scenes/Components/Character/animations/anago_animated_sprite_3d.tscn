@@ -1,7 +1,9 @@
-[gd_scene load_steps=125 format=3 uid="uid://byluudcct606"]
+[gd_scene load_steps=127 format=3 uid="uid://byluudcct606"]
 
 [ext_resource type="Texture2D" uid="uid://d2786a47ffxip" path="res://Graphics/Sprites/PlayerChar/Anago/Anago_Action_SpriteSheet.png" id="1_imf3a"]
 [ext_resource type="Texture2D" uid="uid://kv3ln5brbjou" path="res://Graphics/Sprites/PlayerChar/Anago/Anago_Idle_SpriteSheet.png" id="2_ttp4u"]
+[ext_resource type="AnimationLibrary" uid="uid://bagpuxalkkp5h" path="res://Scenes/Components/Character/animations/PC_animations.res" id="3_f5nsl"]
+[ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="4_nl8tt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3cxta"]
 atlas = ExtResource("1_imf3a")
@@ -1032,4 +1034,31 @@ animations = [{
 offset = Vector2(0, 251.895)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_orfp7")
-animation = &"idle_nX"
+animation = &"carry_nX"
+
+[node name="HoldPosition" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.995, 1.97, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"sylkie_animations": ExtResource("3_f5nsl")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+root_node = NodePath("../..")
+tree_root = ExtResource("4_nl8tt")
+anim_player = NodePath("..")
+parameters/conditions/cuts = false
+parameters/conditions/drops_item = false
+parameters/conditions/gameend = false
+parameters/conditions/grabs = false
+parameters/conditions/is_idle = false
+parameters/conditions/is_walking = false
+parameters/conditions/ready_to_cut = false
+parameters/Anticipslash/blend_position = 0.0
+parameters/Carry/blend_position = 0.0
+parameters/Grab/blend_position = 0.0
+parameters/Hold/blend_position = 0.0
+parameters/Idle/blend_position = 0.0
+parameters/Slash/blend_position = 0.0
+parameters/Walk/blend_position = 0.0
