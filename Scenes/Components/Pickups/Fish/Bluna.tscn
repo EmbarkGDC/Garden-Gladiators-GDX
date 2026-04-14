@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbx4bcuqlhaoq"]
+[gd_scene load_steps=10 format=3 uid="uid://dbx4bcuqlhaoq"]
 
 [ext_resource type="Script" uid="uid://cvubvd5btl87h" path="res://Code/fish.gd" id="1_bf0jc"]
 [ext_resource type="PackedScene" uid="uid://bklil44bcm1yg" path="res://Scenes/Components/Gameplay/interactable.tscn" id="2_jvb4v"]
 [ext_resource type="Texture2D" uid="uid://biskb2yyschlq" path="res://Graphics/Sprites/Props/bluna_rough.png" id="3_p27ol"]
 [ext_resource type="Texture2D" uid="uid://ccv0ttiggadji" path="res://Graphics/Sprites/Props/Sushi_bluna.png" id="4_xsiqs"]
+[ext_resource type="AudioStream" uid="uid://2jff65ikec3a" path="res://Audio/SFX/SFX_Fish_Pick_Up.ogg" id="5_6kgic"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_urn1o"]
 radius = 1.0
@@ -93,3 +94,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.43048525, 0)
 visible = false
 billboard = 1
 texture = ExtResource("4_xsiqs")
+
+[node name="SFX_Fish_Pick_Up" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_6kgic")
+bus = &"SFX"

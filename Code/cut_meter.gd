@@ -29,6 +29,7 @@ func _process(_delta: float) -> void:
 
 func start_meter(hit: float, perfecrt: float) -> void:
 	now_holding = false
+	$SFX_Cut_Meter_Hyōshigi.play()
 	char_anim_tree["parameters/conditions/grabs"] = false
 	char_anim_tree["parameters/conditions/drops_item"] = true
 	char_anim_tree["parameters/conditions/ready_to_cut"] = true
