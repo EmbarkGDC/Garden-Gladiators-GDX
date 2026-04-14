@@ -8,7 +8,6 @@ extends CharacterBody3D
 
 #var input: DeviceInput
 
-@onready var calculator: scoring_calculator = $ScoringCalculator
 @onready var interactor: interacting_component = $InteractingComponent
 @onready var animation_tree:= $AnimationManager/AnimatedSprite3D/AnimationPlayer/AnimationTree
 
@@ -22,6 +21,7 @@ const JUMP_VELOCITY:float = 4.5
 var original_location: Vector3
 
 signal player_just_scored
+signal player_action
 
 func _ready() -> void:
 	$InteractingComponent.player_ref = self
@@ -61,7 +61,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-	update_animation_parameters()
+	#update_animation_parameters()
 
 func _input(_event: InputEvent) -> void:
 	# Check if device is valid
@@ -72,43 +72,43 @@ func _input(_event: InputEvent) -> void:
 	if MultiplayerInput.is_action_just_pressed(using_device, "interact"):
 		print_debug("Now_holding reads as: " + str(now_holding))
 		interactor.interact_input()
-		if held_item != null and now_holding and not $InteractingComponent.current_interactions:
-			held_item.put_down(self)
-			now_holding = false
-			animation_tree["parameters/conditions/grabs"] = false
-			animation_tree["parameters/conditions/drops_item"] = true
-			return
-		if now_holding:
-			animation_tree["parameters/conditions/grabs"] = true
-			animation_tree["parameters/conditions/drops_item"] = false
-			
+		#if held_item != null and now_holding and not $InteractingComponent.current_interactions:
+		#	held_item.put_down(self)
+		#	now_holding = false
+		#	animation_tree["parameters/conditions/grabs"] = false
+		#	animation_tree["parameters/conditions/drops_item"] = true
+		#	return
+		#if now_holding:
+		#	animation_tree["parameters/conditions/grabs"] = true
+		#	animation_tree["parameters/conditions/drops_item"] = false
+		
 	if MultiplayerInput.is_action_just_pressed(using_device, "cut"):
-		pass
+		player_action.emit(self)
 
-func update_animation_parameters() -> void:
-	#runs idle/hold animations if true or walk/carry if false 
-	if velocity == Vector3.ZERO:
-		animation_tree["parameters/conditions/is_walking"] = false
-		animation_tree["parameters/conditions/is_idle"] = true
-	#flips direction of animation depending on 
-	else:
-		if velocity.x < 0:
-			flip_sprites(-1)
-		else:
-			flip_sprites(1)
-		animation_tree["parameters/conditions/is_walking"] = true
-		animation_tree["parameters/conditions/is_idle"] = false
-		animation_tree["parameters/conditions/cuts"] = false
+#func update_animation_parameters() -> void:
+#	#runs idle/hold animations if true or walk/carry if false 
+#	if velocity == Vector3.ZERO:
+#		animation_tree["parameters/conditions/is_walking"] = false
+#		animation_tree["parameters/conditions/is_idle"] = true
+#	#flips direction of animation depending on 
+#	else:
+#		if velocity.x < 0:
+#			flip_sprites(-1)
+#		else:
+#			flip_sprites(1)
+#		animation_tree["parameters/conditions/is_walking"] = true
+#		animation_tree["parameters/conditions/is_idle"] = false
+#		animation_tree["parameters/conditions/cuts"] = false
 		
 		
-func flip_sprites(blend_position: float) -> void:
-	animation_tree.set("parameters/Anticipslash/blend_position", blend_position)
-	animation_tree.set("parameters/Carry/blend_position", blend_position)
-	animation_tree.set("parameters/Grab/blend_position", blend_position)
-	animation_tree.set("parameters/Hold/blend_position", blend_position)
-	animation_tree.set("parameters/Idle/blend_position", blend_position)
-	animation_tree.set("parameters/Slash/blend_position", blend_position)
-	animation_tree.set("parameters/Walk/blend_position", blend_position)
+#func flip_sprites(blend_position: float) -> void:
+#	animation_tree.set("parameters/Anticipslash/blend_position", blend_position)
+#	animation_tree.set("parameters/Carry/blend_position", blend_position)
+#	animation_tree.set("parameters/Grab/blend_position", blend_position)
+#	animation_tree.set("parameters/Hold/blend_position", blend_position)
+#	animation_tree.set("parameters/Idle/blend_position", blend_position)
+#	animation_tree.set("parameters/Slash/blend_position", blend_position)
+#	animation_tree.set("parameters/Walk/blend_position", blend_position)
 
 func _on_scoring_calculator_finished_cutting(score: int, mult: bool) -> void:
 	is_cutting = false

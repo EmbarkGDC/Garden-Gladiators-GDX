@@ -13,7 +13,7 @@ var cut_offset: float = 0.0
 
 #Character animation
 @onready var char_anim_tree:= $"../AnimationManager/AnimatedSprite3D/AnimationPlayer/AnimationTree"
-@onready var now_holding: bool = get_parent().now_holding
+#@onready var now_holding: bool = get_parent().now_holding
 
 # Called when the node enters the scene tree for the first time.
 #func _ready() -> void:
@@ -28,10 +28,10 @@ func _process(_delta: float) -> void:
 		#cut(1.0, 0.0)
 
 func start_meter(hit: float, perfecrt: float) -> void:
-	now_holding = false
-	char_anim_tree["parameters/conditions/grabs"] = false
-	char_anim_tree["parameters/conditions/drops_item"] = true
-	char_anim_tree["parameters/conditions/ready_to_cut"] = true
+	#now_holding = false
+	#char_anim_tree["parameters/conditions/grabs"] = false
+	#char_anim_tree["parameters/conditions/drops_item"] = true
+	#char_anim_tree["parameters/conditions/ready_to_cut"] = true
 	cut_hit_area = hit
 	perfect_hit_area = perfecrt
 	anim.play("back_and_forth")
@@ -42,8 +42,8 @@ func start_meter(hit: float, perfecrt: float) -> void:
 	mat.set_shader_parameter("perfect_difficulty", perfect_hit_area)
 
 func cut() -> cut_result:
-	char_anim_tree["parameters/conditions/ready_to_cut"] = false
-	char_anim_tree["parameters/conditions/cuts"] = true
+	#char_anim_tree["parameters/conditions/ready_to_cut"] = false
+	#char_anim_tree["parameters/conditions/cuts"] = true
 	anim.pause()
 	var location: float = anim.current_animation_position / anim.current_animation_length
 	location = location * 2.0 - 1.0

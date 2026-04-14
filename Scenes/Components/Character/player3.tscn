@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bxphi2i77rc7u" path="res://Code/player.gd" id="1_kdcci"]
 [ext_resource type="PackedScene" uid="uid://bv1ykhvactqfs" path="res://Scenes/Components/Character/animations/alternates/sparky_animated_sprite_3d.tscn" id="2_kdcci"]
 [ext_resource type="PackedScene" uid="uid://dhfmx5sfx1rek" path="res://Scenes/Components/Gameplay/interacting_component.tscn" id="3_chyq8"]
-[ext_resource type="PackedScene" uid="uid://dhd1ganu0nhb0" path="res://Scenes/Components/Gameplay/scoring_calculator.tscn" id="4_smldn"]
+[ext_resource type="PackedScene" uid="uid://dhd1ganu0nhb0" path="res://Scenes/Components/Gameplay/sushido_scoring_calculator.tscn" id="4_smldn"]
 [ext_resource type="PackedScene" uid="uid://kcpilqmr7xaf" path="res://Scenes/Components/Gameplay/cut_meter.tscn" id="5_bpfsh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f60y1"]

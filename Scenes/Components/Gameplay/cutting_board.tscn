@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfpjfnol8r0u6"]
+[gd_scene load_steps=8 format=3 uid="uid://dfpjfnol8r0u6"]
 
 [ext_resource type="Script" uid="uid://uo2liwq6xaxf" path="res://Code/cutting_board.gd" id="1_0mqgb"]
 [ext_resource type="PackedScene" uid="uid://bklil44bcm1yg" path="res://Scenes/Components/Gameplay/interactable.tscn" id="2_8sgqr"]
 [ext_resource type="PackedScene" uid="uid://i1vrvas2mjhe" path="res://Models/cuttingboard.glb" id="2_n4jer"]
 [ext_resource type="Material" uid="uid://8gg820lrelmo" path="res://Graphics/Materials/lightwood_m.tres" id="3_pcdu8"]
+[ext_resource type="PackedScene" uid="uid://dhd1ganu0nhb0" path="res://Scenes/Components/Gameplay/sushido_scoring_calculator.tscn" id="5_uexg8"]
+[ext_resource type="PackedScene" uid="uid://kcpilqmr7xaf" path="res://Scenes/Components/Gameplay/cut_meter.tscn" id="6_ht8fl"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_oncj3"]
 radius = 2.5
@@ -24,5 +26,12 @@ shape = SubResource("SphereShape3D_oncj3")
 
 [node name="HoldingPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2235049, 0)
+
+[node name="SushidoScoringCalculator" parent="." node_paths=PackedStringArray("cut") instance=ExtResource("5_uexg8")]
+cut = NodePath("../CutMeter")
+
+[node name="CutMeter" parent="." instance=ExtResource("6_ht8fl")]
+transform = Transform3D(1.51, 0, 0, 0, 1.51, 0, 0, 0, 1.51, 0.41891587, 4.0241675, 0.39676285)
+visible = false
 
 [editable path="cuttingboard"]

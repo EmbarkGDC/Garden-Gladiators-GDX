@@ -1,8 +1,10 @@
 extends Node3D
 
 @onready var interactable: Area3D = $Interactable
+@onready var calculator: scoring_calculator = $SushidoScoringCalculator
 
 var held_item: fish
+var is_active: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,6 +23,11 @@ func _on_interact(player: Player) -> void:
 	held_item.reparent(self, false)
 	player.held_item = null
 	held_item.global_position = $HoldingPosition.global_position
-	player.calculator.process_mode = Node.PROCESS_MODE_PAUSABLE
-	player.calculator.start_cut_sequence(held_item)
+	#calculator.process_mode = Node.PROCESS_MODE_PAUSABLE
+	calculator.start_cut_sequence(held_item)
 	player.is_cutting = true
+
+
+func _on_player_player_action(player: Player) -> void:
+	if player.is_cutting:
+		pass
