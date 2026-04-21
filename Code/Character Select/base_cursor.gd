@@ -5,7 +5,11 @@ extends Sprite2D
 
 @export var cursor_speed: float
 
-var controllerID : int
+var controllerID : int:
+	set(ID):
+		controllerID = ID
+		if token != null:
+			token.controllerID = controllerID
 var token : PlayerToken
 var currentHoverPortrait: Portrait
 var hasChosen := false
@@ -16,8 +20,6 @@ func _ready() -> void:
 	token = newToken.instantiate()
 	add_child(token)
 	token.position = token_coord.position
-	if controllerID != null:
-		token.controllerID = controllerID
 
 func _process(_delta: float) -> void:
 	var move : Vector2 = Input.get_vector("move_left", "move_right","move_up","move_down")
