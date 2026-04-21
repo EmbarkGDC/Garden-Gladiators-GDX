@@ -143,7 +143,7 @@ shape = SubResource("BoxShape3D_ifpe6")
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38450742, 0, 2.5418181)
 player_id = null
-chosen_character = null
+chosen_character = 0
 is_AI = null
 
 [node name="Camera3D" type="Camera3D" parent="Player"]

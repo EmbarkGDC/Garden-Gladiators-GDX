@@ -1,6 +1,6 @@
 [gd_scene load_steps=91 format=3 uid="uid://25iigg58d72v"]
 
-[ext_resource type="AnimationLibrary" uid="uid://bagpuxalkkp5h" path="res://Scenes/Components/Character/animations/PC_animations.res" id="3_8jmj1"]
+[ext_resource type="AnimationLibrary" uid="uid://bagpuxalkkp5h" path="res://Scenes/Components/Character/animations/Sylkie_animations.res" id="3_8jmj1"]
 [ext_resource type="Texture2D" uid="uid://k7tsdffrjrxr" path="res://Graphics/Sprites/PlayerChar/Sylkie/Frosty_Action_SpriteSheet.png" id="4_qdgpo"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="4_tdgyq"]
 
