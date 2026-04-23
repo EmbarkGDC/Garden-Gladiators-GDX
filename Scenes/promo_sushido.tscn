@@ -52,10 +52,9 @@ data = PackedVector3Array(15, 0, 7.5, -15, 0, 7.5, 15, 0, -7.5, -15, 0, 7.5, -15
 [sub_resource type="Resource" id="Resource_rkpu0"]
 script = ExtResource("25_mn3jj")
 
-[node name="Sushido" type="Node3D" node_paths=PackedStringArray("timer_label")]
+[node name="Sushido" type="Node3D"]
 script = ExtResource("1_vsedq")
 time_limit = 120.0
-timer_label = NodePath("")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mvubj")
@@ -214,16 +213,13 @@ transform = Transform3D(1, 0, 0, 0, 0.83580613, 0.54902196, 0, -0.54902196, 0.83
 top_level = true
 script = ExtResource("24_o2ivs")
 follow_mode = 3
-follow_targets = [NodePath(""), NodePath(""), NodePath(""), NodePath("")]
+follow_targets = [null, null, null, null]
 tween_resource = SubResource("Resource_rkpu0")
 follow_offset = Vector3(0, 7.47, 8.465)
 auto_follow_distance = true
 auto_follow_distance_min = -10.735
-align_transform_with_view = Callable()
-align_position_with_view = Callable()
 
 [node name="Camera3D" type="Camera3D" parent="."]
-physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 0.83580613, 0.54902196, 0, -0.54902196, 0.83580613, 0, 1.5762491, -0.5073786)
 top_level = true
 
@@ -263,7 +259,7 @@ vframes = 8
 frame = 13
 
 [node name="SpiderWaitor" type="Sprite3D" parent="Actors"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22289014, 8.638502, 0.46143293)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22289014, 8.638502, -1.1507944)
 texture = ExtResource("17_guuo6")
 hframes = 8
 vframes = 2
