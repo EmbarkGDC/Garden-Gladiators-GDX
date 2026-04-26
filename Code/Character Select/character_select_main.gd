@@ -7,7 +7,7 @@ signal character_unchosen
 signal player_dropout
 signal all_players_ready
 
-@onready var device_assign: Node = $DeviceAssign
+@onready var DeviceAssign: device_assign = $DeviceAssign
 
 
 @export var packed_cursor : PackedScene
@@ -28,16 +28,32 @@ func _process(delta: float) -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("join"):
-		var newCursor : Cursor = packed_cursor.instantiate()
-		device_assign.using
-		newCursor.controllerID = event.device
-		if cursors.size() == 0:
-			newCursor.PlayerColor = Player1Color
-		elif cursors.size() == 1:
-			newCursor.PlayerColor = Player2Color
-		elif cursors.size() == 2:
-			newCursor.PlayerColor = Player3Color
+	var same : bool = false
+	var num : int = 0
+	while !same and num < DeviceAssign.using_device.size():
+		if event.device == DeviceAssign.using_device[num]:
+			same = true
 		else:
+			num += 1
+	if !same:
+		var newCursor : Cursor
+		if cursors.size() == 0:
+			newCursor = packed_cursor.instantiate()
+			newCursor.controllerID = event.device
+			newCursor.PlayerColor = Player1Color
+			cursors.append(newCursor)
+		elif cursors.size() == 1:
+			newCursor = packed_cursor.instantiate()
+			newCursor.controllerID = event.device
+			newCursor.PlayerColor = Player2Color
+			cursors.append(newCursor)
+		elif cursors.size() == 2:
+			newCursor = packed_cursor.instantiate()
+			newCursor.controllerID = event.device
+			newCursor.PlayerColor = Player3Color
+			cursors.append(newCursor)
+		elif cursors.size() == 3:
+			newCursor = packed_cursor.instantiate()
+			newCursor.controllerID = event.device
 			newCursor.PlayerColor = Player4Color
-		cursors.append(newCursor)
+			cursors.append(newCursor)

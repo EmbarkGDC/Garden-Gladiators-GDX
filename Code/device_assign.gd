@@ -1,7 +1,8 @@
+class_name device_assign
 extends Node
 
 var using_device: Array
-var searching: bool = false
+var searching: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
