@@ -1,9 +1,7 @@
-[gd_scene load_steps=129 format=3 uid="uid://byluudcct606"]
+[gd_scene load_steps=125 format=3 uid="uid://byluudcct606"]
 
 [ext_resource type="Texture2D" uid="uid://d2786a47ffxip" path="res://Graphics/Sprites/PlayerChar/Anago/Anago_Action_SpriteSheet.png" id="1_imf3a"]
 [ext_resource type="Texture2D" uid="uid://kv3ln5brbjou" path="res://Graphics/Sprites/PlayerChar/Anago/Anago_Idle_SpriteSheet.png" id="2_ttp4u"]
-[ext_resource type="AnimationLibrary" uid="uid://dseiby0xvaeqs" path="res://Scenes/Components/Character/animations/Anago_animations.res" id="3_f5nsl"]
-[ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="4_nl8tt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3cxta"]
 atlas = ExtResource("1_imf3a")
@@ -515,9 +513,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lxa8c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3cxta")
 }],
 "loop": true,
 "name": &"anticipSlash_nX",
@@ -547,9 +542,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4t3bm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6nov1")
 }],
 "loop": true,
 "name": &"anticipSlash_pX",
@@ -626,7 +618,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_25xlw")
 }],
-"loop": false,
+"loop": true,
 "name": &"grab_nX",
 "speed": 12.0
 }, {
@@ -643,7 +635,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ncfro")
 }],
-"loop": false,
+"loop": true,
 "name": &"grab_pX",
 "speed": 12.0
 }, {
@@ -938,7 +930,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y2ww4")
 }],
-"loop": false,
+"loop": true,
 "name": &"slash_nX",
 "speed": 12.0
 }, {
@@ -967,7 +959,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ldkon")
 }],
-"loop": false,
+"loop": true,
 "name": &"slash_pX",
 "speed": 12.0
 }, {
@@ -1030,56 +1022,8 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="Animation" id="Animation_nl8tt"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HoldPosition:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.81413376, 2.1966953, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_max6w"]
-_data = {
-&"RESET": SubResource("Animation_nl8tt")
-}
-
 [node name="Anago_AnimatedSprite3D" type="AnimatedSprite3D"]
-offset = Vector2(0, 251.895)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4551349, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_orfp7")
-animation = &"carry_nX"
-
-[node name="HoldPosition" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81413376, 2.1966953, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_max6w"),
-&"PC_animations": ExtResource("3_f5nsl")
-}
-
-[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
-root_node = NodePath("../..")
-tree_root = ExtResource("4_nl8tt")
-anim_player = NodePath("..")
-parameters/conditions/cuts = false
-parameters/conditions/drops_item = false
-parameters/conditions/gameend = false
-parameters/conditions/grabs = false
-parameters/conditions/is_idle = false
-parameters/conditions/is_walking = false
-parameters/conditions/ready_to_cut = false
-parameters/Anticipslash/blend_position = 0.0
-parameters/Carry/blend_position = 0.0
-parameters/Grab/blend_position = 0.0
-parameters/Hold/blend_position = 0.0
-parameters/Idle/blend_position = 0.0
-parameters/Slash/blend_position = 0.0
-parameters/Walk/blend_position = 0.0
+animation = &"hold_pX"

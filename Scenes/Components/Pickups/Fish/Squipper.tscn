@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c4x7avb8dor5h" path="res://Graphics/Sprites/Props/Sushi_squipper.png" id="4_1cqbg"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_urn1o"]
-radius = 1.0
 
 [sub_resource type="Animation" id="Animation_4fqy1"]
 length = 0.001
@@ -63,9 +62,6 @@ _data = {
 script = ExtResource("1_lxyv1")
 fish_sprite = NodePath("FishSprite3D")
 sushi_sprite = NodePath("SushiSprite3D")
-hit_area = 3.5
-perfect_hit_area = 1.5
-speed = 1.5
 penalty_value = -5
 perfect_value = 30
 
@@ -82,9 +78,7 @@ libraries = {
 
 [node name="FishSprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5819746, 0)
-sorting_offset = 0.1
 billboard = 1
-render_priority = 5
 texture = ExtResource("3_0wgvq")
 
 [node name="SushiSprite3D" type="Sprite3D" parent="."]

@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var model:Node3D
+@onready var model: Node3D = $Model
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

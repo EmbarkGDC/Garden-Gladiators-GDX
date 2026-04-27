@@ -4,7 +4,7 @@ class_name scoring_calculator extends Node
 @export var player_ref: Player
 
 var cut_fish: fish
-var hit_area: float
+var difficulty: float
 var offset: float
 
 
@@ -28,11 +28,11 @@ func _process(_delta: float) -> void:
 		self.process_mode = Node.PROCESS_MODE_DISABLED
 
 func start_cut_sequence(target: fish) -> void:
-	hit_area = target.hit_area * 0.1
-	offset = randf_range(-cut.cut_hit_area / 2, cut.cut_hit_area / 2)
+	difficulty = target.difficulty
+	offset = randf_range(-cut.cut_difficulty / 2, cut.cut_difficulty / 2)
 	print(offset)
 	cut_fish = target
 	cut.speed = target.speed
 	cut.cut_offset = offset
 	cut.visible = true
-	cut.start_meter(target.hit_area * 0.1, target.perfect_hit_area * 0.1)
+	cut.start_meter()
