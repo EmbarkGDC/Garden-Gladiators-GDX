@@ -3,5 +3,5 @@ extends Area3D
 @export var interact_name: String = ""
 @export var is_interactable: bool = true
 
-var interact: Callable = func(_player: Player) -> void:
+var interact: Callable = func(_mechanic: Node) -> void:
 	pass

@@ -1,9 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://ckgj8ao3gbuxc"]
+[gd_scene load_steps=32 format=3 uid="uid://ckgj8ao3gbuxc"]
 
 [ext_resource type="Script" uid="uid://cfytfxx4ds6ek" path="res://Code/score_manager.gd" id="1_bdb33"]
 [ext_resource type="PackedScene" uid="uid://dvel4y8xml4ko" path="res://Scenes/Components/Character/player.tscn" id="1_c41nv"]
 [ext_resource type="Script" uid="uid://svdn72ttlrih" path="res://Code/sushido.gd" id="1_he5xv"]
 [ext_resource type="PackedScene" uid="uid://dfpjfnol8r0u6" path="res://Scenes/Components/Gameplay/cutting_board.tscn" id="2_2y2d3"]
+[ext_resource type="Script" uid="uid://1fieyi1rotuk" path="res://Code/hold_mechanic.gd" id="4_a5xh1"]
 [ext_resource type="PackedScene" uid="uid://ct8b4edhgi56v" path="res://Scenes/Components/UI/ui.tscn" id="5_074qc"]
 [ext_resource type="PackedScene" uid="uid://dbx4bcuqlhaoq" path="res://Scenes/Components/Pickups/Fish/Bluna.tscn" id="5_hpdnn"]
 [ext_resource type="PackedScene" uid="uid://cs6xa6jwq28s" path="res://Scenes/Components/Pickups/Fish/Heliouch.tscn" id="6_51tw5"]
@@ -143,8 +144,15 @@ shape = SubResource("BoxShape3D_ifpe6")
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38450742, 0, 2.5418181)
 
+[node name="InteractingComponent" parent="Player" index="4" node_paths=PackedStringArray("mechanic_node")]
+mechanic_node = NodePath("../hold_mechanic")
+
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.79853046, 0.6019544, 0, -0.6019544, 0.79853046, -0.38450742, 4.6537385, 4.0113044)
+
+[node name="hold_mechanic" type="Node" parent="Player"]
+script = ExtResource("4_a5xh1")
+metadata/_custom_type_script = "uid://1fieyi1rotuk"
 
 [node name="CuttingBoard" parent="." instance=ExtResource("2_2y2d3")]
 transform = Transform3D(0.23573583, 0, -0.9718172, 0, 1, 0, 0.9718172, 0, 0.23573583, 9.793604, 9.536743e-07, -3.6459951)
@@ -200,3 +208,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.051563263, -4.7683716e-07, 
 [connection signal="scores_updated" from="ScoreManager" to="UI" method="_on_score_manager_scores_updated"]
 [connection signal="player_action" from="Player" to="CuttingBoard" method="_on_player_player_action"]
 [connection signal="new_game" from="GameScreen" to="." method="_on_game_screen_new_game"]
+
+[editable path="Player"]
+[editable path="Player/AnimationManager/AnimatedSprite3D"]

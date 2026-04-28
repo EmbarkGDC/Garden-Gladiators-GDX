@@ -1,6 +1,9 @@
-extends Node
+class_name hold_mechanic extends Node
+
+@export var placeable: bool = false
 
 var held_object: Node3D: set = start_holding, get = holding_what
+var old_parent: Node
 
 signal pick_up
 signal put_down

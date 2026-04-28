@@ -2,14 +2,20 @@ class_name Player extends CharacterBody3D
 
 @export var can_jump: bool = false
 
+@onready var interactor: interacting_component = $InteractingComponent
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 var using_device: int = -1
+var initial_position: Vector3
 
 signal player_move
 signal player_interact
 signal player_action
+
+func _ready() -> void:
+	initial_position = global_position
 
 func _physics_process(delta: float) -> void:
 	#Check if device is valid
@@ -40,8 +46,12 @@ func _physics_process(delta: float) -> void:
 	
 	if MultiplayerInput.is_action_just_pressed(using_device, "interact"):
 		player_interact.emit()
+		interactor.interact_input()
 	
 	if MultiplayerInput.is_action_just_pressed(using_device, "action"):
 		player_action.emit()
 
 	move_and_slide()
+
+func reset() -> void:
+	global_position = initial_position

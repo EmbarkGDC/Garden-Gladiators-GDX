@@ -1,9 +1,9 @@
 class_name interacting_component extends Node3D
 
+@export var mechanic_node: Node
 @onready var interact_label: Label3D = $InteractLabel
 var current_interactions := []
 var can_interact: bool = true
-var player_ref: Player = null
 
 func interact_input() -> void:
 	#if event.is_action_pressed("interact") and can_interact:
@@ -12,7 +12,7 @@ func interact_input() -> void:
 		can_interact = false
 		interact_label.hide()
 		
-		await current_interactions[0].interact.call(player_ref)
+		await current_interactions[0].interact.call(mechanic_node)
 		
 		can_interact = true
 
