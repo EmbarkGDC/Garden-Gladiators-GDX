@@ -19,6 +19,10 @@ Player2Color = Color(0.81136674, 0.00051345886, 0.811361, 1)
 Player3Color = Color(0.3647059, 1, 1, 1)
 Player4Color = Color(0.6522269, 2.7675183e-06, 4.3317675e-07, 1)
 
+[node name="CursorSpawn" type="Node2D" parent="."]
+visible = false
+position = Vector2(577, 327)
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8

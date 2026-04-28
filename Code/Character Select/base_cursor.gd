@@ -26,16 +26,17 @@ func _process(_delta: float) -> void:
 	position = position + move * cursor_speed
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		#Determine whether the cursor is hover over a portrait and hasen't droppedit's token yet
-		if currentHoverPortrait != null and !hasChosen:
-			token.reparent(currentHoverPortrait)
-			token.getCharacter()
-			hasChosen = true
-	if event.is_action_pressed("ui_cancel"):
-		#determines whether the token is dropped on a portrait
-		if hasChosen:
-			token.remove()
-			token.reparent(self)
-			token.position = token_coord.position
-			hasChosen = false
+	if event.device == controllerID:
+		if event.is_action_pressed("ui_accept"):
+			#Determine whether the cursor is hover over a portrait and hasen't droppedit's token yet
+			if currentHoverPortrait != null and !hasChosen:
+				token.reparent(currentHoverPortrait)
+				token.getCharacter()
+				hasChosen = true
+		if event.is_action_pressed("ui_cancel"):
+			#determines whether the token is dropped on a portrait
+			if hasChosen:
+				token.remove()
+				token.reparent(self)
+				token.position = token_coord.position
+				hasChosen = false
