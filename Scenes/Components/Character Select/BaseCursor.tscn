@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://btcojqyy08rpm"]
+[gd_scene load_steps=7 format=3 uid="uid://btcojqyy08rpm"]
 
-[ext_resource type="Texture2D" uid="uid://dc2k6i2f8ov88" path="res://Scenes/Components/Character Select/Placeholder assets/Placeholder cursor tex.png" id="1_qes2a"]
 [ext_resource type="Shader" uid="uid://cqwtpu6anqpxh" path="res://Scenes/Components/Character Select/Shaders/Color_Range.tres" id="1_rbjcs"]
 [ext_resource type="Script" uid="uid://cxq1dxy7djab1" path="res://Code/Character Select/base_cursor.gd" id="2_51gh2"]
+[ext_resource type="Texture2D" uid="uid://8xy00khk6u5k" path="res://Graphics/UI/Cursor.png" id="2_g8esf"]
+[ext_resource type="Texture2D" uid="uid://dbw5g4q3r2cqq" path="res://Graphics/UI/Cursor_Badge.png" id="4_2dpyi"]
+[ext_resource type="Texture2D" uid="uid://dcsc7kyg8ascq" path="res://Graphics/UI/BadgeLabel_P1.png" id="5_3mbs5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x6psk"]
 shader = ExtResource("1_rbjcs")
@@ -12,10 +14,20 @@ shader_parameter/TargetColor = Color(0.898275, 3e-06, 2e-06, 1)
 z_index = 4096
 material = SubResource("ShaderMaterial_x6psk")
 scale = Vector2(0.3196875, 0.3196875)
-texture = ExtResource("1_qes2a")
+texture = ExtResource("2_g8esf")
 offset = Vector2(0, 300)
 script = ExtResource("2_51gh2")
 cursor_speed = 50.0
 
 [node name="TokenCoord" type="Node2D" parent="."]
 position = Vector2(0, 478.5924)
+
+[node name="Badge" type="Sprite2D" parent="TokenCoord"]
+z_index = -1
+position = Vector2(10.948191, -154.83871)
+scale = Vector2(0.88706034, 0.98043495)
+texture = ExtResource("4_2dpyi")
+
+[node name="BadgeLabel" type="Sprite2D" parent="TokenCoord"]
+position = Vector2(15.640274, -150.14664)
+texture = ExtResource("5_3mbs5")
