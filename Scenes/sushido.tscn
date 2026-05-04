@@ -143,8 +143,7 @@ shape = SubResource("BoxShape3D_ifpe6")
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38450742, 0, 2.5418181)
 player_id = null
-chosen_character = null
-using_device = null
+chosen_character = 0
 is_AI = null
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
@@ -161,8 +160,7 @@ transform = Transform3D(0.97221494, 0, 0.23409028, 0, 1, 0, -0.23409028, 0, 0.97
 [node name="FishSpawner" parent="." instance=ExtResource("10_51tw5")]
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19761527, 0.3339734, 0.42407417)
-min_spawn_time = 0.5
-max_spawn_time = 4.0
+visible = false
 elements = [SubResource("Resource_hvfsd"), SubResource("Resource_a5xh1"), SubResource("Resource_4uj10"), SubResource("Resource_ifpe6"), SubResource("Resource_he5xv")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FishSpawner"]

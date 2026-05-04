@@ -1,9 +1,9 @@
-[gd_scene load_steps=92 format=3 uid="uid://cdi7ld4cq2dwu"]
+[gd_scene load_steps=94 format=3 uid="uid://cdi7ld4cq2dwu"]
 
 [ext_resource type="Texture2D" uid="uid://bw53ghb22rmc4" path="res://Graphics/Sprites/PlayerChar/Sylkie/Sylkie_Idle_SpriteSheet.png" id="1_m5kwv"]
 [ext_resource type="Texture2D" uid="uid://dfi875argdmua" path="res://Graphics/Sprites/PlayerChar/Sylkie/Sylkie_Action_SpriteSheet.png" id="2_ygge4"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="3_ndf68"]
-[ext_resource type="AnimationLibrary" uid="uid://bagpuxalkkp5h" path="res://Scenes/Components/Character/animations/sylkie_animations.res" id="3_yvxx6"]
+[ext_resource type="AnimationLibrary" uid="uid://bagpuxalkkp5h" path="res://Scenes/Components/Character/animations/Sylkie_animations.res" id="3_yvxx6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5kwv"]
 atlas = ExtResource("1_m5kwv")
@@ -680,18 +680,41 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Animation" id="Animation_ngjtu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HoldPosition:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.8704053, 1.4280639, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m3or2"]
+_data = {
+&"RESET": SubResource("Animation_ngjtu")
+}
+
 [node name="Sylkie_AnimatedSprite3D" type="AnimatedSprite3D"]
 sorting_offset = -0.1
 offset = Vector2(0, 228.14)
-billboard = 2
+billboard = 1
+render_priority = 5
 sprite_frames = SubResource("SpriteFrames_orfp7")
-animation = &"idle_nX"
+animation = &"carry_pX"
 
 [node name="HoldPosition" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8704053, 1.4280639, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": ExtResource("3_yvxx6")
+&"": SubResource("AnimationLibrary_m3or2"),
+&"PC_animations": ExtResource("3_yvxx6")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
@@ -705,10 +728,10 @@ parameters/conditions/grabs = false
 parameters/conditions/is_idle = false
 parameters/conditions/is_walking = false
 parameters/conditions/ready_to_cut = false
-parameters/Anticipslash/blend_position = -1.0
-parameters/Carry/blend_position = -1.0
-parameters/Grab/blend_position = -1.0
-parameters/Hold/blend_position = -1.0
-parameters/Idle/blend_position = 1.0
-parameters/Slash/blend_position = -1.0
-parameters/Walk/blend_position = -1.0
+parameters/Anticipslash/blend_position = 0.0
+parameters/Carry/blend_position = 0.0
+parameters/Grab/blend_position = 0.0
+parameters/Hold/blend_position = 0.0
+parameters/Idle/blend_position = 0.0
+parameters/Slash/blend_position = 0.0
+parameters/Walk/blend_position = 0.0

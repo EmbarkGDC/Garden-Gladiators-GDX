@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2jff65ikec3a"
+path="res://.godot/imported/SFX_Fish Pick Up.ogg-9ca2cd13eb1e6e97ea5229a3df207247.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/SFX/SFX_Fish Pick Up.ogg"
+dest_files=["res://.godot/imported/SFX_Fish Pick Up.ogg-9ca2cd13eb1e6e97ea5229a3df207247.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

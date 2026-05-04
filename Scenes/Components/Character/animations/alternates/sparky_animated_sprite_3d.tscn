@@ -1,9 +1,7 @@
-[gd_scene load_steps=93 format=3 uid="uid://bv1ykhvactqfs"]
+[gd_scene load_steps=91 format=3 uid="uid://bv1ykhvactqfs"]
 
 [ext_resource type="Texture2D" uid="uid://djwijg50qwvkg" path="res://Graphics/Sprites/PlayerChar/Sylkie/Sparky_Action_SpriteSheet.png" id="1_pt205"]
-[ext_resource type="Texture2D" uid="uid://dfi875argdmua" path="res://Graphics/Sprites/PlayerChar/Sylkie/Sylkie_Action_SpriteSheet.png" id="2_4heqn"]
-[ext_resource type="AnimationLibrary" uid="uid://bagpuxalkkp5h" path="res://Scenes/Components/Character/animations/sylkie_animations.res" id="3_bf0nt"]
-[ext_resource type="Script" uid="uid://e0hlenwxc6pf" path="res://Code/Tools/SpriteReplacer.gd" id="3_pt205"]
+[ext_resource type="AnimationLibrary" uid="uid://bagpuxalkkp5h" path="res://Scenes/Components/Character/animations/Sylkie_animations.res" id="3_bf0nt"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="4_g5cls"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5kwv"]
@@ -684,12 +682,10 @@ animations = [{
 [node name="sparky_AnimatedSprite3D" type="AnimatedSprite3D"]
 sorting_offset = -0.1
 offset = Vector2(0, 228.14)
-billboard = 2
+billboard = 1
+render_priority = 5
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
-script = ExtResource("3_pt205")
-old_texture = ExtResource("2_4heqn")
-new_texture = ExtResource("1_pt205")
 
 [node name="HoldPosition" type="Node3D" parent="."]
 

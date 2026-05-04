@@ -1,7 +1,9 @@
-[gd_scene load_steps=76 format=3 uid="uid://18mtrg1kf2ek"]
+[gd_scene load_steps=80 format=3 uid="uid://18mtrg1kf2ek"]
 
 [ext_resource type="Texture2D" uid="uid://dtlsoboqwly0y" path="res://Graphics/Sprites/PlayerChar/Maguro/Maguro_ActionIdle_Spritesheet.png" id="1_kgryj"]
 [ext_resource type="Texture2D" uid="uid://d3l5xgpuuyxkw" path="res://Graphics/Sprites/PlayerChar/Maguro/Maguro_Slice_spritesheet.png" id="2_bkne4"]
+[ext_resource type="AnimationLibrary" uid="uid://kbvo7bvy1hh4" path="res://Scenes/Components/Character/animations/Maguro_animations.res" id="3_f5kft"]
+[ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="4_ok2bs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f5kft"]
 atlas = ExtResource("1_kgryj")
@@ -616,9 +618,57 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Animation" id="Animation_ok2bs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HoldPosition:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.2724506, 1.5496216, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a0pkk"]
+_data = {
+&"RESET": SubResource("Animation_ok2bs")
+}
+
 [node name="Maguro_AnimatedSprite3D" type="AnimatedSprite3D"]
 offset = Vector2(0, 223.985)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_orfp7")
-animation = &"idle_pX"
-frame_progress = 0.56798464
+animation = &"hold_pX"
+frame = 3
+
+[node name="HoldPosition" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2724506, 1.5496216, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_a0pkk"),
+&"PC_animations": ExtResource("3_f5kft")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+root_node = NodePath("../..")
+tree_root = ExtResource("4_ok2bs")
+anim_player = NodePath("..")
+parameters/conditions/cuts = false
+parameters/conditions/drops_item = false
+parameters/conditions/gameend = false
+parameters/conditions/grabs = false
+parameters/conditions/is_idle = false
+parameters/conditions/is_walking = false
+parameters/conditions/ready_to_cut = false
+parameters/Anticipslash/blend_position = 0.0
+parameters/Carry/blend_position = 0.0
+parameters/Grab/blend_position = 0.0
+parameters/Hold/blend_position = 0.0
+parameters/Idle/blend_position = 0.0
+parameters/Slash/blend_position = 0.0
+parameters/Walk/blend_position = 0.0

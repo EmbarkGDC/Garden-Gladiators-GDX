@@ -1,12 +1,14 @@
-[gd_scene load_steps=33 format=3 uid="uid://depjbb02bdlv5"]
+[gd_scene load_steps=43 format=3 uid="uid://depjbb02bdlv5"]
 
 [ext_resource type="Script" uid="uid://svdn72ttlrih" path="res://Code/sushido.gd" id="1_0pslh"]
 [ext_resource type="Script" uid="uid://cfytfxx4ds6ek" path="res://Code/score_manager.gd" id="2_drnuo"]
 [ext_resource type="PackedScene" uid="uid://dvel4y8xml4ko" path="res://Scenes/Components/Character/player.tscn" id="3_7w6xu"]
 [ext_resource type="PackedScene" uid="uid://bha0e5a62h4hw" path="res://Scenes/Components/Gameplay/basket_pavillion.tscn" id="3_drnuo"]
+[ext_resource type="Texture2D" uid="uid://chbd5kf48xuep" path="res://Graphics/Textures/FloorTexture.png" id="3_v40ff"]
 [ext_resource type="PackedScene" uid="uid://dxf7fem281gi0" path="res://Scenes/Components/Gameplay/kitchen_counter.tscn" id="4_7w6xu"]
 [ext_resource type="PackedScene" uid="uid://dfpjfnol8r0u6" path="res://Scenes/Components/Gameplay/cutting_board.tscn" id="4_k781c"]
 [ext_resource type="PackedScene" uid="uid://brawlb8o5r6av" path="res://Scenes/Components/Gameplay/lazy_susan.tscn" id="4_kfyma"]
+[ext_resource type="Texture2D" uid="uid://bh2uymhjmtrrc" path="res://Graphics/Textures/FloorTexture_n.png" id="4_ndkw1"]
 [ext_resource type="PackedScene" uid="uid://ct8b4edhgi56v" path="res://Scenes/Components/UI/ui.tscn" id="5_kfyma"]
 [ext_resource type="PackedScene" uid="uid://btflc2b7rcto3" path="res://Scenes/Components/Gameplay/arena_seats.tscn" id="6_kfyma"]
 [ext_resource type="PackedScene" uid="uid://n4041h8u2bkx" path="res://Scenes/Components/Gameplay/fish_spawner.tscn" id="6_r6o08"]
@@ -18,6 +20,12 @@
 [ext_resource type="PackedScene" uid="uid://crqpk2dxk2iy2" path="res://Scenes/Components/Pickups/Fish/Palgram.tscn" id="11_xilja"]
 [ext_resource type="PackedScene" uid="uid://dbx4bcuqlhaoq" path="res://Scenes/Components/Pickups/Fish/Bluna.tscn" id="12_k1f5r"]
 [ext_resource type="PackedScene" uid="uid://dgpllce1hw02q" path="res://Scenes/game_screen.tscn" id="13_wvftd"]
+[ext_resource type="PackedScene" uid="uid://wsvkisnd2y5k" path="res://Scenes/Components/Character/player2.tscn" id="20_uhsb4"]
+[ext_resource type="PackedScene" uid="uid://dsa0g70vv8r4d" path="res://Scenes/Components/Character/player3.tscn" id="21_xilja"]
+[ext_resource type="PackedScene" uid="uid://nxe1nj3536xw" path="res://Scenes/Components/Character/player4.tscn" id="22_k1f5r"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="23_wvftd"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="24_ndkw1"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="25_dkwre"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c41nv"]
 sky_top_color = Color(0.49657845, 0.09118567, 0.23824784, 1)
@@ -36,6 +44,14 @@ glow_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2y2d3"]
 size = Vector2(30, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b7hrd"]
+albedo_texture = ExtResource("3_v40ff")
+normal_enabled = true
+normal_scale = 1.02
+normal_texture = ExtResource("4_ndkw1")
+uv1_scale = Vector3(1.575, 1.575, 1.575)
+uv1_triplanar = true
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c41nv"]
 data = PackedVector3Array(15, 0, 7.5, -15, 0, 7.5, 15, 0, -7.5, -15, 0, 7.5, -15, 0, -7.5, 15, 0, -7.5)
@@ -81,6 +97,9 @@ font_size = 120
 [sub_resource type="LabelSettings" id="LabelSettings_ifpe6"]
 font_size = 60
 
+[sub_resource type="Resource" id="Resource_rkpu0"]
+script = ExtResource("24_ndkw1")
+
 [node name="Sushido" type="Node3D" node_paths=PackedStringArray("timer_label")]
 script = ExtResource("1_0pslh")
 time_limit = 120.0
@@ -94,18 +113,91 @@ environment = SubResource("Environment_mvubj")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+visible = false
+light_color = Color(0.9851391, 0.8477992, 0.9046948, 1)
+light_energy = 0.31
 shadow_enabled = true
+
+[node name="Spotlights" type="Node" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(0.9478569, -0.108557515, 0.29963756, -0.31864718, -0.33934313, 0.88504803, 0.0056013484, -0.9343776, -0.3562403, 7.932987, 11.459595, -9.042019)
+light_color = Color(0.95, 0.8629167, 0.42749998, 1)
+light_energy = 3.0
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 3.0
+spot_range = 19.274689
+spot_attenuation = 0.45
+spot_angle = 22.276114
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(0.90963525, 2.991178e-08, -0.41540784, 0.3808874, -0.39911717, 0.8340445, -0.1657964, -0.9169, -0.36305112, -7.7998333, 11.459595, -8.02027)
+light_color = Color(0.95, 0.8629167, 0.42749998, 1)
+light_energy = 3.0
+light_indirect_energy = 3.0
+spot_range = 15.442401
+spot_attenuation = 0.45
+spot_angle = 30.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(0.9188662, -0.050053816, -0.39138144, 0.38533697, 0.32715586, 0.8628352, 0.08485454, -0.94364387, 0.3199001, -8.105199, 11.459595, 8.055611)
+light_color = Color(0.95, 0.8629167, 0.42749998, 1)
+light_energy = 3.0
+light_indirect_energy = 3.0
+spot_range = 17.541298
+spot_attenuation = 0.45
+spot_angle = 24.072691
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(0.9432957, -0.00432487, 0.3319256, -0.31215262, 0.3286239, 0.89138496, -0.1129338, -0.944451, 0.30863947, 7.98408, 11.459595, 7.9149675)
+light_color = Color(0.95, 0.8629167, 0.42749998, 1)
+light_energy = 3.0
+light_indirect_energy = 3.0
+spot_range = 23.699015
+spot_attenuation = 0.45
+spot_angle = 22.672447
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 12.223078, 0)
+light_color = Color(1, 0.8745098, 0.5019608, 1)
+light_energy = 2.0
+light_indirect_energy = 3.0
+spot_range = 16.202047
+spot_angle = 22.496113
 
 [node name="World" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
-transform = Transform3D(3.3406174, 0, 0, 0, 1, 0, 0, 0, 3.3406174, 0, 0, 0)
+[node name="FloorMesh" type="MeshInstance3D" parent="World"]
+transform = Transform3D(36.52525, 0, 0, 0, 1, 0, 0, 0, 67.48799, 0, 0, 0)
 mesh = SubResource("PlaneMesh_2y2d3")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b7hrd")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/FloorMesh"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/FloorMesh/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_c41nv")
+
+[node name="FloorMesh2" type="MeshInstance3D" parent="World"]
+transform = Transform3D(36.52525, 0, 0, 0, -4.371139e-08, -67.48799, 0, 1, -2.9499938e-06, 0, 0, -49.701317)
+mesh = SubResource("PlaneMesh_2y2d3")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b7hrd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/FloorMesh2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/FloorMesh2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_c41nv")
+
+[node name="FloorMesh3" type="MeshInstance3D" parent="World"]
+transform = Transform3D(-1.5965694e-06, 1, -2.9499938e-06, 0, -4.371139e-08, -67.48799, -36.52525, -4.371139e-08, 1.2894832e-13, -40.814415, 0, -49.701317)
+mesh = SubResource("PlaneMesh_2y2d3")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b7hrd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/FloorMesh3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/FloorMesh3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_c41nv")
 
 [node name="BasketPavillion" parent="World" instance=ExtResource("3_drnuo")]
@@ -171,11 +263,9 @@ transform = Transform3D(0.9370384, 0, -0.34922633, 0, 1, 0, 0.34922633, 0, 0.937
 
 [node name="Player" parent="." instance=ExtResource("3_7w6xu")]
 process_mode = 4
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38450742, 0, 2.5418181)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6367872, 0, 3.4688025)
 floor_block_on_wall = false
-
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.79853046, 0.6019544, 0, -0.6019544, 0.79853046, -0.38450742, 4.6537385, 4.0113044)
+using_device = 0
 
 [node name="CuttingBoard" parent="." instance=ExtResource("4_k781c")]
 transform = Transform3D(0.3340701, 0, -0.9425482, 0, 1, 0, 0.9425482, 0, 0.3340701, 4.8852844, 0.78042245, -5.9110193)
@@ -184,10 +274,10 @@ transform = Transform3D(0.3340701, 0, -0.9425482, 0, 1, 0, 0.9425482, 0, 0.33407
 transform = Transform3D(0.9431125, 0, 0.33247396, 0, 1, 0, -0.33247396, 0, 0.9431125, -5.7591124, 0.78042436, -4.8592434)
 
 [node name="CuttingBoard3" parent="." instance=ExtResource("4_k781c")]
-transform = Transform3D(0.9233108, 0, -0.3840536, 0, 1, 0, 0.3840536, 0, 0.9233108, -5.016719, 0.78042436, 5.4431276)
+transform = Transform3D(0.9233108, 0, -0.3840536, 0, 1, 0, 0.3840536, 0, 0.9233108, -4.504876, 0.78042436, 5.3926663)
 
 [node name="CuttingBoard4" parent="." instance=ExtResource("4_k781c")]
-transform = Transform3D(-0.33584616, 0, -0.9419168, 0, 1, 0, 0.9419168, 0, -0.33584616, 5.8913784, 0.78042436, 4.5758386)
+transform = Transform3D(-0.61680233, 0, -0.787118, 0, 1, 0, 0.787118, 0, -0.61680233, 4.7965775, 0.78042436, 5.4327908)
 
 [node name="UI" parent="." instance=ExtResource("5_kfyma")]
 
@@ -230,6 +320,43 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "00:00"
 label_settings = SubResource("LabelSettings_ifpe6")
+
+[node name="Player2" parent="." instance=ExtResource("20_uhsb4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7881918, 0.27859986, 3.1880102)
+using_device = -1
+
+[node name="Player3" parent="." instance=ExtResource("21_xilja")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.285459, 0.2785989, -3.1279964)
+visible = false
+
+[node name="Player4" parent="." instance=ExtResource("22_k1f5r")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.205165, 0.27859795, -3.1343918)
+visible = false
+
+[node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_targets")]
+transform = Transform3D(1, 0, 0, 0, 0.83580613, 0.54902196, 0, -0.54902196, 0.83580613, -0.54014707, 8.186594, 9.511053)
+top_level = true
+script = ExtResource("23_wvftd")
+follow_mode = 3
+follow_targets = [NodePath("../Player"), NodePath("../Player2"), NodePath("../Player3"), NodePath("../Player4")]
+tween_resource = SubResource("Resource_rkpu0")
+follow_offset = Vector3(0, 7.47, 8.465)
+auto_follow_distance = true
+auto_follow_distance_min = -10.735
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+
+[node name="Camera3D" type="Camera3D" parent="."]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 0.83580613, 0.54902196, 0, -0.54902196, 0.83580613, -0.54014707, 8.186594, 9.511053)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("25_dkwre")
 
 [connection signal="scores_updated" from="ScoreManager" to="UI" method="_on_score_manager_scores_updated"]
 [connection signal="player_just_scored" from="Player" to="ScoreManager" method="_on_player_player_just_scored"]
