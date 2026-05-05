@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0j1ilgocdfps"]
+
+[ext_resource type="Material" uid="uid://dwa4a384wmvk3" path="res://Graphics/Materials/player_cursor_color.tres" id="1_timmu"]
+[ext_resource type="Texture2D" uid="uid://dbw5g4q3r2cqq" path="res://Graphics/UI/Cursor_Badge.png" id="2_4yxl3"]
+[ext_resource type="Script" uid="uid://dxsl7rggcvcko" path="res://Code/Character Select/base_token.gd" id="3_8hqyr"]
+[ext_resource type="Texture2D" uid="uid://dcsc7kyg8ascq" path="res://Graphics/UI/BadgeLabel_P1.png" id="4_u7h76"]
+
+[sub_resource type="Animation" id="Animation_timmu"]
+resource_name = "badge_drop_pickup"
+length = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4yxl3"]
+_data = {
+&"badge_drop_pickup": SubResource("Animation_timmu")
+}
+
+[node name="Badge" type="Sprite2D"]
+material = ExtResource("1_timmu")
+position = Vector2(1.9073486e-06, -5.722046e-06)
+texture = ExtResource("2_4yxl3")
+script = ExtResource("3_8hqyr")
+
+[node name="BadgeLabel" type="Sprite2D" parent="."]
+position = Vector2(6.235, 5.63)
+texture = ExtResource("4_u7h76")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4yxl3")
+}

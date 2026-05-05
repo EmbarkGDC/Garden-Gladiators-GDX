@@ -2,7 +2,7 @@ shader_type canvas_item;
 
 uniform float _min;
 uniform float _max;
-uniform vec4 color : hint_color;
+uniform vec4 color : source_color;
 
 vec3 rgb2hsv(vec3 c)
 {
