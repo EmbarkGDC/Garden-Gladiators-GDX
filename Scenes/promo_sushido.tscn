@@ -90,8 +90,8 @@ spot_attenuation = 0.45
 spot_angle = 30.0
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Spotlights"]
-transform = Transform3D(0.9188662, -0.050053816, -0.39138144, 0.38533697, 0.32715586, 0.8628352, 0.08485454, -0.94364387, 0.3199001, -8.105199, 11.459595, 8.055611)
-light_color = Color(0.95, 0.8629167, 0.42749998, 1)
+transform = Transform3D(0.9159333, -0.027455691, -0.40039036, 0.3791331, 0.38639084, 0.8408094, 0.13162217, -0.92192644, 0.3643176, -8.105199, 11.459595, 8.055611)
+light_color = Color(0.9490196, 0.8627451, 0.5176471, 1)
 light_energy = 3.0
 light_indirect_energy = 3.0
 shadow_enabled = true
@@ -116,6 +116,17 @@ light_energy = 2.0
 light_indirect_energy = 3.0
 spot_range = 16.202047
 spot_angle = 22.496113
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Spotlights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.0133324, 0)
+light_color = Color(0.9607843, 0.9607843, 0.72156864, 1)
+light_energy = 3.673
+light_indirect_energy = 1.395
+light_volumetric_fog_energy = 1.615
+light_specular = 0.0
+shadow_enabled = true
+omni_range = 9.066
+omni_attenuation = 1.075
 
 [node name="World" type="Node3D" parent="."]
 
@@ -236,7 +247,8 @@ script = ExtResource("26_7wvso")
 
 [node name="Maguro" type="Sprite3D" parent="Actors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6128592, 2.3583846, -3.251894)
-billboard = 2
+billboard = 1
+shaded = true
 alpha_cut = 2
 alpha_antialiasing_mode = 1
 texture = ExtResource("13_tcxas")
@@ -246,6 +258,8 @@ frame = 43
 
 [node name="Anago" type="Sprite3D" parent="Actors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.110365, 2.3583846, 4.1663055)
+billboard = 1
+shaded = true
 alpha_cut = 2
 alpha_antialiasing_mode = 1
 texture = ExtResource("14_7q1vy")
@@ -255,6 +269,8 @@ frame = 33
 
 [node name="Sylkie" type="Sprite3D" parent="Actors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4650364, 2.3701835, 4.101759)
+billboard = 1
+shaded = true
 alpha_cut = 2
 alpha_antialiasing_mode = 1
 texture = ExtResource("15_wp887")
@@ -264,6 +280,8 @@ frame = 28
 
 [node name="Bladez" type="Sprite3D" parent="Actors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0870588, 2.4402072, -0.2265606)
+billboard = 1
+shaded = true
 alpha_cut = 2
 alpha_antialiasing_mode = 1
 texture = ExtResource("16_vuv55")
@@ -273,6 +291,9 @@ frame = 13
 
 [node name="SpiderWaitor" type="Sprite3D" parent="Actors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22289014, 8.638502, -1.1507944)
+shaded = true
+alpha_cut = 2
+alpha_antialiasing_mode = 1
 texture = ExtResource("17_guuo6")
 hframes = 8
 vframes = 2
