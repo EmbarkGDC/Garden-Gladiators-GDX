@@ -1,33 +1,74 @@
-[gd_scene load_steps=7 format=3 uid="uid://btcojqyy08rpm"]
+[gd_scene load_steps=10 format=3 uid="uid://btcojqyy08rpm"]
 
-[ext_resource type="Shader" uid="uid://cqwtpu6anqpxh" path="res://Scenes/Components/Character Select/Shaders/Color_Range.tres" id="1_rbjcs"]
+[ext_resource type="Shader" uid="uid://u6n663yjr2ie" path="res://Code/Shaders/colorrangeswap.gdshader" id="1_g8esf"]
 [ext_resource type="Script" uid="uid://cxq1dxy7djab1" path="res://Code/Character Select/base_cursor.gd" id="2_51gh2"]
 [ext_resource type="Texture2D" uid="uid://8xy00khk6u5k" path="res://Graphics/UI/Cursor.png" id="2_g8esf"]
 [ext_resource type="Texture2D" uid="uid://dbw5g4q3r2cqq" path="res://Graphics/UI/Cursor_Badge.png" id="4_2dpyi"]
 [ext_resource type="Texture2D" uid="uid://dcsc7kyg8ascq" path="res://Graphics/UI/BadgeLabel_P1.png" id="5_3mbs5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x6psk"]
-shader = ExtResource("1_rbjcs")
-shader_parameter/TargetColor = Color(0.898275, 3e-06, 2e-06, 1)
+shader = ExtResource("1_g8esf")
+
+[sub_resource type="Animation" id="Animation_g8esf"]
+resource_name = "badge_drop"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TokenCoord/Badge:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_2dpyi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TokenCoord/Badge:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.905, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3mbs5"]
+_data = {
+&"RESET": SubResource("Animation_2dpyi"),
+&"badge_drop": SubResource("Animation_g8esf")
+}
 
 [node name="Cursor" type="Sprite2D"]
 z_index = 4096
 material = SubResource("ShaderMaterial_x6psk")
-scale = Vector2(0.3196875, 0.3196875)
 texture = ExtResource("2_g8esf")
-offset = Vector2(0, 300)
+offset = Vector2(16.065, 23.75)
 script = ExtResource("2_51gh2")
 cursor_speed = 50.0
 
 [node name="TokenCoord" type="Node2D" parent="."]
-position = Vector2(0, 478.5924)
+position = Vector2(40.664715, 59.433044)
 
 [node name="Badge" type="Sprite2D" parent="TokenCoord"]
 z_index = -1
-position = Vector2(10.948191, -154.83871)
-scale = Vector2(0.88706034, 0.98043495)
+position = Vector2(-11.664717, -7.4330444)
+scale = Vector2(0.905, 1)
 texture = ExtResource("4_2dpyi")
 
-[node name="BadgeLabel" type="Sprite2D" parent="TokenCoord"]
-position = Vector2(15.640274, -150.14664)
+[node name="BadgeLabel" type="Sprite2D" parent="TokenCoord/Badge"]
+position = Vector2(6.629837, 9)
+scale = Vector2(1.1049724, 0.99999994)
 texture = ExtResource("5_3mbs5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3mbs5")
+}
