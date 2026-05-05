@@ -704,9 +704,12 @@ _data = {
 sorting_offset = -0.1
 offset = Vector2(0, 228.14)
 billboard = 1
+alpha_cut = 2
+alpha_antialiasing_mode = 1
 render_priority = 5
 sprite_frames = SubResource("SpriteFrames_orfp7")
-animation = &"carry_pX"
+animation = &"idle_nX"
+frame = 7
 
 [node name="HoldPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8704053, 1.4280639, 0)
