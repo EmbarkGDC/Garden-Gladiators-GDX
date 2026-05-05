@@ -1,4 +1,4 @@
-class_name PlayerToken
+class_name PlayerBadge
 extends Sprite2D
 
 var controllerID : int

@@ -61,6 +61,9 @@ func _input(event: InputEvent) -> void:
 				cursors.append(newCursor)
 			add_child(newCursor)
 			newCursor.position = cursor_spawn.position
+			newCursor.chosen.connect(character_chosen.emit)
+			newCursor.unchosen.connect(character_unchosen.emit)
+			player_joined.emit()
 
 func find_cursor(id: int) -> Cursor:
 	for i:int in cursors.size():
