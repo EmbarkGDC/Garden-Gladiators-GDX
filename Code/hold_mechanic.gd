@@ -1,4 +1,4 @@
-class_name hold_mechanic extends Node
+class_name hold_mechanic extends Node3D
 
 @export var placeable: bool = false
 @export var hold_point: Node3D

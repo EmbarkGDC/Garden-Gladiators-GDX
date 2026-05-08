@@ -1,6 +1,6 @@
 class_name interacting_component extends Node3D
 
-@export var mechanic_node: Node
+@export var mechanic_node: Node3D
 @onready var interact_label: Label3D = $InteractLabel
 var current_interactions := []
 var can_interact: bool = true

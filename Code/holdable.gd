@@ -14,7 +14,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func _on_interact(mechanic: Node) -> void:
+func _on_interact(mechanic: Node3D) -> void:
 	var hold_mech: hold_mechanic = mechanic as hold_mechanic
 	if not hold_mech:
 		printerr("not a valid hold mechanic node")
