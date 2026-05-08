@@ -17,30 +17,39 @@ func _process(_delta: float) -> void:
 func _on_interact(mechanic: Node) -> void:
 	var hold_mech: hold_mechanic = mechanic as hold_mechanic
 	if not hold_mech:
-		print("not a valid hold mechanic node")
+		printerr("not a valid hold mechanic node")
 		return
 	#holder.held_object = self
 	print("interact")
 	#print("fish has been interacted with by " + player.name)
-	#if player.held_item != null:
+	if !hold_mech.is_holding():
+		hold_mech.start_holding(self)
 	#	return
 	#if old_parent:
 	#	put_down(player)
 	#else:
 	#	start_holding(player)
 
-func start_holding(player: Player) -> void:
-	var new_parent: Node3D = player.get_node("HoldPosition")
-	player.now_holding = true
-	player.held_item = self
+func start_holding(mechanic: Node) -> void:
+	var hold_mech: hold_mechanic = mechanic as hold_mechanic
+	if not hold_mech:
+		printerr("not a valid hold mechanic node")
+		return
+	
+	mechanic.now_holding = true
 	old_parent = get_parent()
 	old_position = position
-	reparent(new_parent, false)
+	mechanic.held_object = self
 	position = Vector3.ZERO
 
-func put_down(player: Player) -> void:
+func put_down(mechanic: Node) -> void:
+	var hold_mech: hold_mechanic = mechanic as hold_mechanic
+	if not hold_mech:
+		printerr("not a valid hold mechanic node")
+		return
+	
 	reparent(old_parent)
-	player.held_item = null
-	player.now_holding = false
+	mechanic.now_holding = false
+	mechanic.held_object = null
 	old_parent = null
 	position.y = old_position.y
