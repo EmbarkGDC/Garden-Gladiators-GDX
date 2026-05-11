@@ -23,9 +23,11 @@ func start_holding(obj: holdable) -> void:
 	held_object = obj
 	if hold_point:
 		obj.reparent(hold_point, false)
+		obj.start_holding()
 		print("Reparenting...")
 	else:
 		obj.reparent(self, false)
+		obj.start_holding()
 		printerr("Hold point is null. Patenting to self instead.")
 	pick_up.emit()
 
@@ -33,7 +35,7 @@ func holding_what() -> holdable:
 	return held_object
 
 func stop_holding() -> void:
-	held_object.put_down(self)
+	held_object.put_down()
 	held_object = null
 	put_down.emit()
 

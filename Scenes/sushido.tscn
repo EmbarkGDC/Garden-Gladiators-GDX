@@ -152,6 +152,7 @@ transform = Transform3D(1, 0, 0, 0, 0.79853046, 0.6019544, 0, -0.6019544, 0.7985
 
 [node name="hold_mechanic" type="Node3D" parent="Player"]
 script = ExtResource("4_a5xh1")
+placeable = null
 
 [node name="CuttingBoard" parent="." instance=ExtResource("2_2y2d3")]
 transform = Transform3D(0.23573583, 0, -0.9718172, 0, 1, 0, 0.9718172, 0, 0.23573583, 9.793604, 9.536743e-07, -3.6459951)
