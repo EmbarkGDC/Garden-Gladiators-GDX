@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dwa4a384wmvk3"]
+
+[ext_resource type="Shader" uid="uid://u6n663yjr2ie" path="res://Code/Shaders/colorrangeswap.gdshader" id="1_q2oxj"]
+
+[resource]
+shader = ExtResource("1_q2oxj")
+shader_parameter/_min = 0.0
+shader_parameter/_max = 1.0
+shader_parameter/color = Color(1, 0, 0, 1)
