@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjlylqebsw67m"]
+[gd_scene load_steps=6 format=3 uid="uid://cjlylqebsw67m"]
 
 [ext_resource type="PackedScene" uid="uid://rhisk5kjf0ll" path="res://Scenes/Components/Character Select/base_portrait.tscn" id="1_16r56"]
 [ext_resource type="Script" uid="uid://cgtlffyhje30h" path="res://Code/Character Select/character_select_main.gd" id="1_fsati"]
 [ext_resource type="PackedScene" uid="uid://btcojqyy08rpm" path="res://Scenes/Components/Character Select/BaseCursor.tscn" id="2_716px"]
 [ext_resource type="Script" uid="uid://c8i53iwomntt3" path="res://Code/device_assign.gd" id="4_jcuwg"]
+[ext_resource type="Script" uid="uid://bhalsa22o7xhm" path="res://Code/Globals/PlayerColors.gd" id="5_5jgah"]
 
 [node name="CharacterSelectMain" type="Control"]
 layout_mode = 3
@@ -15,9 +16,9 @@ grow_vertical = 2
 script = ExtResource("1_fsati")
 packed_cursor = ExtResource("2_716px")
 Player1Color = Color(1, 0.7921569, 0, 1)
-Player2Color = Color(0.81136674, 0.00051345886, 0.811361, 1)
+Player2Color = Color(0.8117647, 0, 0.8117647, 1)
 Player3Color = Color(0.3647059, 1, 1, 1)
-Player4Color = Color(0.6522269, 2.7675183e-06, 4.3317675e-07, 1)
+Player4Color = Color(0.6509804, 0, 0, 1)
 
 [node name="CursorSpawn" type="Node2D" parent="."]
 visible = false
@@ -60,3 +61,7 @@ characterID = 3
 
 [node name="DeviceAssign" type="Node" parent="."]
 script = ExtResource("4_jcuwg")
+
+[node name="PlayerColors" type="Node" parent="."]
+script = ExtResource("5_5jgah")
+metadata/_custom_type_script = "uid://bhalsa22o7xhm"

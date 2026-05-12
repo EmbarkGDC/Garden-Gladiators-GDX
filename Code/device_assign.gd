@@ -16,15 +16,21 @@ func _process(_delta: float) -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
+	var device: int
 	if event is InputEventMouseMotion:
 		return
 	if not searching:
 		return
+	if event is InputEventKey:
+		device = -1
+	else:
+		device = event.device
 	var deviceint: int = find_controller(event.device)
 	if deviceint > 3:
 		for i:int in using_device.size():
 			if using_device[i] < -1:
-				using_device[i] = event.device
+				using_device[i] = device
+				print(event.device)
 				return
 
 func player_dropout(player: int) -> void:

@@ -21,5 +21,5 @@ cursor_speed = 25.0
 position = Vector2(0, 306.91498)
 shape = SubResource("CapsuleShape2D_51gh2")
 
-[node name="TokenCoord" type="Node2D" parent="."]
+[node name="BadgeCoord" type="Node2D" parent="."]
 position = Vector2(0, 478.5924)

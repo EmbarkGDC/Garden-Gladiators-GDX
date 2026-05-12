@@ -4,7 +4,7 @@ extends Sprite2D
 signal chosen
 signal unchosen
 
-@onready var badge_coord: Node2D = $TokenCoord
+@onready var badge_coord: Node2D = $BadgeCoord
 
 @export var cursor_speed: float
 

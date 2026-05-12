@@ -9,6 +9,7 @@ signal all_players_ready
 
 @onready var DeviceAssign: device_assign = $DeviceAssign
 @onready var cursor_spawn: Node2D = $CursorSpawn
+@onready var player_colors: PlayerColors = $PlayerColors
 
 
 @export var packed_cursor : PackedScene
@@ -29,40 +30,40 @@ func _process(delta: float) -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
+	var device:int
 	if event is InputEventMouseMotion:
 		return
+	if event is InputEventKey:
+		device = -1
+	else:
+		device = event.device
 	var same : bool = false
 	var num : int = 0
 	while !same and num < DeviceAssign.using_device.size():
-		if event.device == DeviceAssign.using_device[num]:
+		if device == DeviceAssign.using_device[num]:
 			same = true
 		else:
 			num += 1
 	if same:
-		var search: Cursor = find_cursor(event.device)
+		var search: Cursor = find_cursor(device)
 		if search == null:
 			var newCursor : Cursor
 			newCursor = packed_cursor.instantiate()
-			if cursors.size() == 0:
-				newCursor.controllerID = event.device
-				newCursor.PlayerColor = Player1Color
-				cursors.append(newCursor)
-			elif cursors.size() == 1:
-				newCursor.controllerID = event.device
-				newCursor.PlayerColor = Player2Color
-				cursors.append(newCursor)
-			elif cursors.size() == 2:
-				newCursor.controllerID = event.device
-				newCursor.PlayerColor = Player3Color
-				cursors.append(newCursor)
-			elif cursors.size() == 3:
-				newCursor.controllerID = event.device
-				newCursor.PlayerColor = Player4Color
-				cursors.append(newCursor)
-			add_child(newCursor)
-			newCursor.position = cursor_spawn.position
+			newCursor.controllerID = device
 			newCursor.chosen.connect(character_chosen.emit)
 			newCursor.unchosen.connect(character_unchosen.emit)
+			cursors.append(newCursor)
+			newCursor.PlayerColor = player_colors.PlayerColorList[num]
+			#if num == 0:
+				#newCursor.PlayerColor = Player1Color
+			#elif num == 1:
+				#newCursor.PlayerColor = Player2Color
+			#elif num == 2:
+				#newCursor.PlayerColor = Player3Color
+			#elif num == 3:
+				#newCursor.PlayerColor = Player4Color
+			add_child(newCursor)
+			newCursor.position = cursor_spawn.position
 			player_joined.emit()
 
 func find_cursor(id: int) -> Cursor:
