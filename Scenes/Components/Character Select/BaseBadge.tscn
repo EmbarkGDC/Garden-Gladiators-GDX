@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0j1ilgocdfps"]
+[gd_scene load_steps=10 format=3 uid="uid://dvkrmp3dcofku"]
 
 [ext_resource type="Material" uid="uid://dwa4a384wmvk3" path="res://Graphics/Materials/player_cursor_color.tres" id="1_timmu"]
 [ext_resource type="Texture2D" uid="uid://dbw5g4q3r2cqq" path="res://Graphics/UI/Cursor_Badge.png" id="2_4yxl3"]
@@ -8,15 +8,75 @@
 [sub_resource type="Animation" id="Animation_timmu"]
 resource_name = "badge_drop_pickup"
 length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.4333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.5, 1.5), Vector2(1.5, 0.5), Vector2(1.25, 1.25)]
+}
+
+[sub_resource type="Animation" id="Animation_4yxl3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8hqyr"]
+resource_name = "badge_dropped"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.25, 1.25)]
+}
+
+[sub_resource type="Animation" id="Animation_u7h76"]
+resource_name = "badge_picked_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4yxl3"]
 _data = {
-&"badge_drop_pickup": SubResource("Animation_timmu")
+&"RESET": SubResource("Animation_4yxl3"),
+&"badge_drop_pickup": SubResource("Animation_timmu"),
+&"badge_dropped": SubResource("Animation_8hqyr"),
+&"badge_picked_up": SubResource("Animation_u7h76")
 }
 
 [node name="Badge" type="Sprite2D"]
 material = ExtResource("1_timmu")
-position = Vector2(1.9073486e-06, -5.722046e-06)
+position = Vector2(1.9073486e-06, -24.300482)
 texture = ExtResource("2_4yxl3")
 script = ExtResource("3_8hqyr")
 
