@@ -21,13 +21,17 @@ func _ready() -> void:
 
 func start_holding(obj: holdable) -> void:
 	held_object = obj
+	
+	if !is_instance_valid(obj):
+		return
+	
 	if hold_point:
-		obj.reparent(hold_point, false)
 		obj.start_holding()
+		obj.reparent(hold_point, false)
 		print("Reparenting...")
 	else:
-		obj.reparent(self, false)
 		obj.start_holding()
+		obj.reparent(self, false)
 		printerr("Hold point is null. Patenting to self instead.")
 	pick_up.emit()
 

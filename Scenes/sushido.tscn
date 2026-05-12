@@ -150,9 +150,10 @@ mechanic_node = NodePath("../hold_mechanic")
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.79853046, 0.6019544, 0, -0.6019544, 0.79853046, -0.38450742, 4.6537385, 4.0113044)
 
-[node name="hold_mechanic" type="Node3D" parent="Player"]
+[node name="hold_mechanic" type="Node3D" parent="Player" node_paths=PackedStringArray("hold_point")]
 script = ExtResource("4_a5xh1")
-placeable = null
+placeable = true
+hold_point = NodePath("../AnimationManager/AnimatedSprite3D/HoldPosition")
 
 [node name="CuttingBoard" parent="." instance=ExtResource("2_2y2d3")]
 transform = Transform3D(0.23573583, 0, -0.9718172, 0, 1, 0, 0.9718172, 0, 0.23573583, 9.793604, 9.536743e-07, -3.6459951)

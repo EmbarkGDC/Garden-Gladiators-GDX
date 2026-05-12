@@ -24,6 +24,8 @@ func _on_interact(mechanic: Node3D) -> void:
 	#print("fish has been interacted with by " + player.name)
 	if !hold_mech.is_holding():
 		hold_mech.held_object = self
+	elif hold_mech.is_holding() && hold_mech.placeable:
+		hold_mech.stop_holding()
 	#	return
 	#if old_parent:
 	#	put_down(player)
@@ -38,4 +40,4 @@ func start_holding() -> void:
 func put_down() -> void:
 	reparent(old_parent)
 	old_parent = null
-	position.y = old_position.y
+	position = Vector3(global_position.x, old_position.y, global_position.z)
