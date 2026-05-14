@@ -20,6 +20,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9019165, 0)
 surface_material_override/0 = ExtResource("3_pcdu8")
 
 [node name="Interactable" parent="." instance=ExtResource("2_8sgqr")]
+priority = 10
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
 shape = SubResource("SphereShape3D_oncj3")

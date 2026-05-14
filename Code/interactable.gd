@@ -1,4 +1,4 @@
-extends Area3D
+class_name interactable extends Area3D
 
 @export var interact_name: String = ""
 @export var is_interactable: bool = true

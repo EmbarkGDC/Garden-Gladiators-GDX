@@ -12,6 +12,7 @@ func interact_input() -> void:
 		can_interact = false
 		interact_label.hide()
 		
+		# Call the first interactable (evreything has been sorted)
 		await current_interactions[0].interact.call(mechanic_node)
 		
 		can_interact = true
@@ -19,6 +20,7 @@ func interact_input() -> void:
 func _process(_delta: float) -> void:
 	if current_interactions and can_interact:
 		current_interactions.sort_custom(_sort_by_nearest)
+		current_interactions.sort_custom(_sort_by_priority)
 		if current_interactions[0].is_interactable:
 			interact_label.text = current_interactions[0].interact_name
 			interact_label.show()
@@ -29,6 +31,10 @@ func _sort_by_nearest(area1: Area3D, area2: Area3D) -> bool:
 	var area1_dist: float = global_position.distance_to(area1.global_position)
 	var area2_dist: float = global_position.distance_to(area2.global_position)
 	return area1_dist < area2_dist
+
+func _sort_by_priority(area1: Area3D, area2: Area3D) -> bool:
+	print("sorting")
+	return area1.priority < area2.priority
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	current_interactions.push_back(area)
