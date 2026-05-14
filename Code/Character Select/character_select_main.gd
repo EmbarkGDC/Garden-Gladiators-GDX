@@ -13,10 +13,6 @@ signal all_players_ready
 
 
 @export var packed_cursor : PackedScene
-@export var Player1Color : Color
-@export var Player2Color : Color
-@export var Player3Color : Color
-@export var Player4Color : Color
 
 var cursors : Array[Cursor]
 
@@ -54,14 +50,6 @@ func _input(event: InputEvent) -> void:
 			newCursor.unchosen.connect(character_unchosen.emit)
 			cursors.append(newCursor)
 			newCursor.PlayerColor = player_colors.PlayerColorList[num]
-			#if num == 0:
-				#newCursor.PlayerColor = Player1Color
-			#elif num == 1:
-				#newCursor.PlayerColor = Player2Color
-			#elif num == 2:
-				#newCursor.PlayerColor = Player3Color
-			#elif num == 3:
-				#newCursor.PlayerColor = Player4Color
 			add_child(newCursor)
 			newCursor.position = cursor_spawn.position
 			player_joined.emit()
