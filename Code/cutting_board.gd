@@ -14,18 +14,19 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func _on_interact(player: Node3D) -> void:
+func _on_interact(mechanic: Node3D) -> void:
 	print("cutting board")
 	
+	var hold_mech: hold_mechanic = mechanic as hold_mechanic
 	#print(player.held_item)
-	#if player.held_item == null:
-	#	return
-	#held_item = player.held_item
-	#held_item.reparent(self, false)
-	#player.held_item = null
-	#held_item.global_position = $HoldingPosition.global_position
-	#calculator.process_mode = Node.PROCESS_MODE_PAUSABLE
-	#calculator.start_cut_sequence(held_item)
+	if !is_instance_valid(hold_mech.held_object):
+		return
+	held_item = hold_mech.held_object as fish
+	held_item.reparent(self, false)
+	hold_mech.held_object = null
+	held_item.global_position = $HoldingPosition.global_position
+	calculator.process_mode = Node.PROCESS_MODE_PAUSABLE
+	calculator.start_cut_sequence(held_item)
 	#player.is_cutting = true
 
 

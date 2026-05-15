@@ -1,13 +1,13 @@
 class_name holdable extends Node3D
 
-@onready var interactable: Area3D = $Interactable
+@onready var interact_obj: Area3D = $Interactable
 
 var old_parent: Node3D = null
 var old_position: Vector3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	interactable.interact = _on_interact
+	interact_obj.interact = _on_interact
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

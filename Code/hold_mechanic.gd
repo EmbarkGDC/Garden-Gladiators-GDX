@@ -3,6 +3,8 @@ class_name hold_mechanic extends Node3D
 @export var placeable: bool = false
 @export var hold_point: Node3D
 
+@onready var my_player: Player = get_parent() as Player
+
 var now_holding: bool = false
 var held_object: holdable: set = start_holding, get = holding_what
 var old_parent: Node

@@ -14,7 +14,7 @@ class_name fish extends holdable
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	interactable.interact = _on_interact
+	interact_obj.interact = _on_interact
 
 func change_to_sushi() -> void:
 	fish_sprite.visible = false
