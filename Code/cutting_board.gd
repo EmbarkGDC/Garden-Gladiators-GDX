@@ -27,10 +27,11 @@ func _on_interact(mechanic: Node3D) -> void:
 	held_item.global_position = $HoldingPosition.global_position
 	calculator.process_mode = Node.PROCESS_MODE_PAUSABLE
 	calculator.start_cut_sequence(held_item)
-	#player.is_cutting = true
+	hold_mech.my_player.is_cutting = true
+	hold_mech.my_player.player_action.connect(player_cut)
 
-
-func _on_player_player_action(player: Player) -> void:
+func player_cut(player: Player) -> void:
 	if player.is_cutting:
 		calculator.get_cut_result()
 		player.is_cutting = false
+		player.player_action.disconnect(player_cut)

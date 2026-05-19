@@ -10,6 +10,8 @@ const JUMP_VELOCITY = 4.5
 var using_device: int = -1
 var initial_position: Vector3
 
+var is_cutting: bool = false
+
 signal player_move
 signal player_interact
 signal player_action
@@ -35,7 +37,7 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := MultiplayerInput.get_vector(using_device, "move_left", "move_right", "move_up", "move_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
+	if direction && not is_cutting:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		
@@ -49,7 +51,7 @@ func _physics_process(delta: float) -> void:
 		interactor.interact_input()
 	
 	if MultiplayerInput.is_action_just_pressed(using_device, "action"):
-		player_action.emit()
+		player_action.emit(self)
 
 	move_and_slide()
 

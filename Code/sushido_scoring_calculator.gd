@@ -3,7 +3,11 @@ class_name scoring_calculator extends Node
 @export var cut: cut_meter
 #@export var player_ref: Player
 
-var cut_fish: fish
+var cut_fish: fish:
+	get:
+		return cut_fish
+	set(value):
+		cut_fish = value
 var hit_area: float
 var offset: float
 
@@ -13,17 +17,22 @@ signal finished_cutting
 func _process(_delta: float) -> void:
 	pass
 
-func start_cut_sequence(target: fish) -> void:
+func start_cut_sequence(target: holdable) -> void:
 	hit_area = target.hit_area * 0.1
 	offset = randf_range(-cut.cut_hit_area / 2, cut.cut_hit_area / 2)
 	print(offset)
-	cut_fish = target
+	cut_fish = target as fish
+	if !is_instance_valid(cut_fish):
+		printerr("Fish is null")
 	cut.speed = target.speed
 	cut.cut_offset = offset
 	cut.visible = true
 	cut.start_meter(target.hit_area * 0.1, target.perfect_hit_area * 0.1)
 
 func get_cut_result() -> void:
+	print(self)
+	if !is_instance_valid(cut_fish):
+		printerr("Fish is null")
 	var result: = cut.cut()
 	var score: int = 0
 	match result:
