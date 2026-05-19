@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://depjbb02bdlv5"]
+[gd_scene load_steps=43 format=3 uid="uid://depjbb02bdlv5"]
 
 [ext_resource type="Script" uid="uid://svdn72ttlrih" path="res://Code/sushido.gd" id="1_0pslh"]
 [ext_resource type="Script" uid="uid://cfytfxx4ds6ek" path="res://Code/score_manager.gd" id="2_drnuo"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dbx4bcuqlhaoq" path="res://Scenes/Components/Pickups/Fish/Bluna.tscn" id="12_k1f5r"]
 [ext_resource type="PackedScene" uid="uid://dgpllce1hw02q" path="res://Scenes/game_screen.tscn" id="13_wvftd"]
 [ext_resource type="PackedScene" uid="uid://wsvkisnd2y5k" path="res://Scenes/Components/Character/player2.tscn" id="20_uhsb4"]
+[ext_resource type="Script" uid="uid://ct2w0nhoh3kp4" path="res://Code/player.gd" id="21_ndkw1"]
 [ext_resource type="PackedScene" uid="uid://dsa0g70vv8r4d" path="res://Scenes/Components/Character/player3.tscn" id="21_xilja"]
 [ext_resource type="PackedScene" uid="uid://nxe1nj3536xw" path="res://Scenes/Components/Character/player4.tscn" id="22_k1f5r"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="23_wvftd"]
@@ -261,7 +262,6 @@ transform = Transform3D(0.9370384, 0, -0.34922633, 0, 1, 0, 0.34922633, 0, 0.937
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6367872, 0, 3.4688025)
 floor_block_on_wall = false
-using_device = 0
 
 [node name="CuttingBoard" parent="." instance=ExtResource("4_k781c")]
 transform = Transform3D(0.3340701, 0, -0.9425482, 0, 1, 0, 0.9425482, 0, 0.3340701, 4.8852844, 0.78042245, -5.9110193)
@@ -319,7 +319,8 @@ label_settings = SubResource("LabelSettings_ifpe6")
 
 [node name="Player2" parent="." instance=ExtResource("20_uhsb4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7881918, 0.27859986, 3.1880102)
-using_device = -1
+script = ExtResource("21_ndkw1")
+using_device = 0
 
 [node name="Player3" parent="." instance=ExtResource("21_xilja")]
 process_mode = 4
@@ -355,5 +356,4 @@ process_physics_priority = 300
 script = ExtResource("25_dkwre")
 
 [connection signal="scores_updated" from="ScoreManager" to="UI" method="_on_score_manager_scores_updated"]
-[connection signal="player_just_scored" from="Player" to="ScoreManager" method="_on_player_player_just_scored"]
 [connection signal="new_game" from="GameScreen" to="." method="_on_game_screen_new_game"]

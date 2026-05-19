@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var interactable: Area3D = $Interactable
+@onready var interact_obj: Area3D = $Interactable
 @onready var calculator: scoring_calculator = $SushidoScoringCalculator
 
 var held_item: fish
@@ -8,7 +8,7 @@ var is_active: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	interactable.interact = _on_interact
+	interact_obj.interact = _on_interact
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

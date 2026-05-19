@@ -1,13 +1,13 @@
 class_name Player extends CharacterBody3D
 
 @export var can_jump: bool = false
+@export var using_device: int = -1
 
 @onready var interactor: interacting_component = $InteractingComponent
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
-var using_device: int = -1
 var initial_position: Vector3
 
 var is_cutting: bool = false
