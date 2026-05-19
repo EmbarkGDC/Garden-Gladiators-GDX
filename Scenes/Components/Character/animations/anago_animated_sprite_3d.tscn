@@ -1058,7 +1058,7 @@ alpha_scissor_threshold = 0.49
 alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
-frame = 5
+frame = 7
 
 [node name="HoldPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81413376, 2.1966953, 0)
@@ -1087,3 +1087,5 @@ parameters/Hold/blend_position = 0.0
 parameters/Idle/blend_position = 0.0
 parameters/Slash/blend_position = 0.0
 parameters/Walk/blend_position = 0.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

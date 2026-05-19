@@ -236,7 +236,6 @@ auto_follow_distance_min = -10.735
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.83580613, 0.54902196, 0, -0.54902196, 0.83580613, 0, 1.5762491, -0.5073786)
-top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 process_priority = 300

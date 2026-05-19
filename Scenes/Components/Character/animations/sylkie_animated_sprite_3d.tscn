@@ -1,9 +1,11 @@
-[gd_scene load_steps=94 format=3 uid="uid://cdi7ld4cq2dwu"]
+[gd_scene load_steps=96 format=3 uid="uid://cdi7ld4cq2dwu"]
 
 [ext_resource type="Texture2D" uid="uid://bw53ghb22rmc4" path="res://Graphics/Sprites/PlayerChar/Sylkie/Sylkie_Idle_SpriteSheet.png" id="1_m5kwv"]
 [ext_resource type="Texture2D" uid="uid://dfi875argdmua" path="res://Graphics/Sprites/PlayerChar/Sylkie/Sylkie_Action_SpriteSheet.png" id="2_ygge4"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="3_ndf68"]
 [ext_resource type="AnimationLibrary" uid="uid://bagpuxalkkp5h" path="res://Scenes/Components/Character/animations/Sylkie_animations.res" id="3_yvxx6"]
+[ext_resource type="AudioStream" uid="uid://cgqrvy7tyiwr0" path="res://Audio/Voice/Sylkie/Gameplay/Sylkie_Win.ogg" id="5_ngjtu"]
+[ext_resource type="Script" uid="uid://drayt88uh0hn8" path="res://Code/characater_audio.gd" id="5_yvxx6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5kwv"]
 atlas = ExtResource("1_m5kwv")
@@ -709,7 +711,7 @@ alpha_antialiasing_mode = 1
 render_priority = 5
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
-frame = 7
+frame = 6
 
 [node name="HoldPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8704053, 1.4280639, 0)
@@ -738,3 +740,8 @@ parameters/Hold/blend_position = 0.0
 parameters/Idle/blend_position = 0.0
 parameters/Slash/blend_position = 0.0
 parameters/Walk/blend_position = 0.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ngjtu")
+script = ExtResource("5_yvxx6")
+chosen_character = null
