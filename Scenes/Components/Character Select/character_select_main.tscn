@@ -15,10 +15,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fsati")
 packed_cursor = ExtResource("2_716px")
-Player1Color = Color(1, 0.7921569, 0, 1)
-Player2Color = Color(0.8117647, 0, 0.8117647, 1)
-Player3Color = Color(0.3647059, 1, 1, 1)
-Player4Color = Color(0.6509804, 0, 0, 1)
 
 [node name="CursorSpawn" type="Node2D" parent="."]
 visible = false
