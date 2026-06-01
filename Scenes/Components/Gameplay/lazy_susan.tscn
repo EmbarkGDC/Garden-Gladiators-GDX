@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://brawlb8o5r6av"]
+[gd_scene load_steps=20 format=3 uid="uid://brawlb8o5r6av"]
 
 [ext_resource type="Script" uid="uid://c1jabdktvw5sy" path="res://Code/lazy_susan.gd" id="1_8onpt"]
 [ext_resource type="PackedScene" uid="uid://w5psdx6ciyhg" path="res://Models/LazySusan_base.glb" id="2_3npv2"]
@@ -6,6 +6,42 @@
 [ext_resource type="PackedScene" uid="uid://bvxmdxklglmlv" path="res://Models/LazySusan_top.glb" id="3_q3lml"]
 [ext_resource type="Script" uid="uid://1t1l1nb0bxgl" path="res://Scenes/Components/Gameplay/rotation.gd" id="3_tm61e"]
 [ext_resource type="Material" uid="uid://cpvrh5yim5k8c" path="res://Graphics/Materials/countertop_m.tres" id="6_bwbej"]
+[ext_resource type="PackedScene" uid="uid://cqwhqvgbfmd56" path="res://Scenes/Components/Gameplay/fish_spawner_ls.tscn" id="7_kndf5"]
+[ext_resource type="PackedScene" uid="uid://cs6xa6jwq28s" path="res://Scenes/Components/Pickups/Fish/Heliouch.tscn" id="8_ivx8m"]
+[ext_resource type="Script" uid="uid://b04vn8hodm3tr" path="res://Code/spawn_entry.gd" id="9_1l0up"]
+[ext_resource type="PackedScene" uid="uid://bykdkmw0wbf6v" path="res://Scenes/Components/Pickups/Fish/Moontail.tscn" id="10_i618d"]
+[ext_resource type="PackedScene" uid="uid://cycpmwaln76yq" path="res://Scenes/Components/Pickups/Fish/Squipper.tscn" id="11_1spkl"]
+[ext_resource type="PackedScene" uid="uid://crqpk2dxk2iy2" path="res://Scenes/Components/Pickups/Fish/Palgram.tscn" id="12_2gbgw"]
+[ext_resource type="PackedScene" uid="uid://dbx4bcuqlhaoq" path="res://Scenes/Components/Pickups/Fish/Bluna.tscn" id="13_5vwm2"]
+
+[sub_resource type="Resource" id="Resource_hvfsd"]
+script = ExtResource("9_1l0up")
+item = ExtResource("8_ivx8m")
+rarity = 0.93
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="Resource" id="Resource_a5xh1"]
+script = ExtResource("9_1l0up")
+item = ExtResource("10_i618d")
+rarity = 0.78
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="Resource" id="Resource_4uj10"]
+script = ExtResource("9_1l0up")
+item = ExtResource("11_1spkl")
+rarity = 0.58
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="Resource" id="Resource_ifpe6"]
+script = ExtResource("9_1l0up")
+item = ExtResource("12_2gbgw")
+rarity = 0.23
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
+
+[sub_resource type="Resource" id="Resource_he5xv"]
+script = ExtResource("9_1l0up")
+item = ExtResource("13_5vwm2")
+metadata/_custom_type_script = "uid://b04vn8hodm3tr"
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_q3lml"]
 height = 0.34
@@ -27,6 +63,36 @@ script = ExtResource("3_tm61e")
 
 [node name="lazysusan_top" parent="Rotation/LazySusan_top" index="0"]
 surface_material_override/0 = ExtResource("6_bwbej")
+
+[node name="Fish_Spawner_LS" parent="Rotation/LazySusan_top" instance=ExtResource("7_kndf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.355669, 1.5167614, 0.9286771)
+elements = [SubResource("Resource_hvfsd"), SubResource("Resource_a5xh1"), SubResource("Resource_4uj10"), SubResource("Resource_ifpe6"), SubResource("Resource_he5xv")]
+min_spawn_time = 0.5
+max_spawn_time = 0.9
+
+[node name="Fish_Spawner_LS5" parent="Rotation/LazySusan_top" instance=ExtResource("7_kndf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022650719, 1.5167614, 2.5142262)
+elements = [SubResource("Resource_hvfsd"), SubResource("Resource_a5xh1"), SubResource("Resource_4uj10"), SubResource("Resource_ifpe6"), SubResource("Resource_he5xv")]
+min_spawn_time = 0.5
+max_spawn_time = 0.9
+
+[node name="Fish_Spawner_LS2" parent="Rotation/LazySusan_top" instance=ExtResource("7_kndf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.514223, 1.5167614, 0.9286771)
+elements = [SubResource("Resource_hvfsd"), SubResource("Resource_a5xh1"), SubResource("Resource_4uj10"), SubResource("Resource_ifpe6"), SubResource("Resource_he5xv")]
+min_spawn_time = 0.5
+max_spawn_time = 0.9
+
+[node name="Fish_Spawner_LS3" parent="Rotation/LazySusan_top" instance=ExtResource("7_kndf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3363895, 1.5167614, -1.9932592)
+elements = [SubResource("Resource_hvfsd"), SubResource("Resource_a5xh1"), SubResource("Resource_4uj10"), SubResource("Resource_ifpe6"), SubResource("Resource_he5xv")]
+min_spawn_time = 0.5
+max_spawn_time = 0.9
+
+[node name="Fish_Spawner_LS4" parent="Rotation/LazySusan_top" instance=ExtResource("7_kndf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4269924, 1.5167614, -1.9932592)
+elements = [SubResource("Resource_hvfsd"), SubResource("Resource_a5xh1"), SubResource("Resource_4uj10"), SubResource("Resource_ifpe6"), SubResource("Resource_he5xv")]
+min_spawn_time = 0.5
+max_spawn_time = 0.9
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

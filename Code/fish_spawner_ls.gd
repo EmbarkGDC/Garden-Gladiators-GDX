@@ -3,7 +3,7 @@ extends Area3D
 @export var elements: Array
 @export var min_spawn_time: float
 @export var max_spawn_time: float
-@onready var shape_pos: Vector3 =$CollisionShape3D.global_position
+@onready var shape_pos: Vector3 =$Marker3D.global_position
 
 
 var spawner_empty :bool = true
@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 
 func spawn_fish() -> void:
 	var rand_float: float = randf()
+	shape_pos = $Marker3D.global_position
 	for entry: spawn_entry in elements:
 		if rand_float >= entry.rarity:
 			print(rand_float)

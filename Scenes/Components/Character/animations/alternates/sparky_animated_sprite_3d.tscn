@@ -1,7 +1,7 @@
 [gd_scene load_steps=91 format=3 uid="uid://bv1ykhvactqfs"]
 
 [ext_resource type="Texture2D" uid="uid://djwijg50qwvkg" path="res://Graphics/Sprites/PlayerChar/Sylkie/Sparky_Action_SpriteSheet.png" id="1_pt205"]
-[ext_resource type="AnimationLibrary" uid="uid://bagpuxalkkp5h" path="res://Scenes/Components/Character/animations/sylkie_animations.res" id="3_bf0nt"]
+[ext_resource type="AnimationLibrary" uid="uid://bagpuxalkkp5h" path="res://Scenes/Components/Character/animations/Sylkie_animations.res" id="3_bf0nt"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="4_g5cls"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5kwv"]
@@ -683,6 +683,8 @@ animations = [{
 sorting_offset = -0.1
 offset = Vector2(0, 228.14)
 billboard = 1
+alpha_cut = 2
+alpha_antialiasing_mode = 1
 render_priority = 5
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"

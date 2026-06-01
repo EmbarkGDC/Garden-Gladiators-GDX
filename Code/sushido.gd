@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 			$GameScreen.on_game_end($ScoreManager.scores[0], 1)
 		else:
 			$GameScreen.on_game_end($ScoreManager.scores[winner], winner+1)
-		$FishSpawnerLS.process_mode = Node.PROCESS_MODE_DISABLED
+		#$FishSpawner.process_mode = Node.PROCESS_MODE_DISABLED
 
 func countdown() -> void:
 	$Countdown.visible = true
@@ -53,14 +53,14 @@ func countdown() -> void:
 	$Countdown.visible = false
 	after_countdown = true
 	"$FishSpawner.spawn_number(5)"
-	$FishSpawnerLS.process_mode = Node.PROCESS_MODE_PAUSABLE
+	#$FishSpawner.process_mode = Node.PROCESS_MODE_PAUSABLE
 
 
 func _on_game_screen_new_game() -> void:
 	$GameScreen.visible = false
 	time_left = time_limit
 	countdown()
-	$FishSpawnerLS.reset_area()
+	#$FishSpawner.reset_area()
 	$Player.reset()
 	if not single_player:
 		$Player2.reset()
