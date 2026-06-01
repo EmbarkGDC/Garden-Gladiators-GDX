@@ -1,7 +1,7 @@
 class_name Player extends CharacterBody3D
 
 @export var can_jump: bool = false
-@export var using_device: int = -1
+@export var using_device: int = 0
 
 @onready var interactor: interacting_component = $InteractingComponent
 
