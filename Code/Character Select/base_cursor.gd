@@ -36,6 +36,7 @@ func _input(event: InputEvent) -> void:
 				badge.reparent(currentHoverPortrait)
 				badge.getCharacter()
 				hasChosen = true
+				chosen.emit()
 		elif event.is_action_pressed("ui_cancel"):
 			#determines whether the token is dropped on a portrait
 			if hasChosen:
@@ -43,3 +44,4 @@ func _input(event: InputEvent) -> void:
 				badge.reparent(self)
 				badge.position = badge_coord.position
 				hasChosen = false
+				unchosen.emit()
