@@ -12,6 +12,7 @@ func determine_winner() -> int:
 	var winner: int = 0
 	
 	for i: int in scores:
+		# check for out of bounds
 		if i + 1 >= scores.size():
 			break
 		
@@ -25,7 +26,7 @@ func reset() -> void:
 
 
 func _on_player_scored(player_id: int, score: int, mult: bool) -> void:
-	print("id: %d score: %d", player_id, score)
+	#print("id: %d score: %d", player_id, score)
 	
 	if mult:
 		scores[player_id] *= score
