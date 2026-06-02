@@ -17,6 +17,10 @@ func interact_input() -> void:
 		
 		can_interact = true
 
+func  _ready() -> void:
+	if !is_instance_valid(mechanic_node):
+		printerr("Mechaninc node needed!")
+
 func _process(_delta: float) -> void:
 	if current_interactions and can_interact:
 		current_interactions.sort_custom(_sort_by_nearest)

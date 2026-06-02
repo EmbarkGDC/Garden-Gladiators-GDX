@@ -331,6 +331,7 @@ label_settings = SubResource("LabelSettings_ifpe6")
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7881918, 0.27859986, 3.1880102)
 script = ExtResource("21_ndkw1")
+player_id = 1
 
 [node name="InteractingComponent" parent="Player2" index="4" node_paths=PackedStringArray("mechanic_node")]
 mechanic_node = NodePath("../hold_mechanic")
@@ -373,6 +374,10 @@ process_physics_priority = 300
 script = ExtResource("25_dkwre")
 
 [connection signal="scores_updated" from="ScoreManager" to="UI" method="_on_score_manager_scores_updated"]
+[connection signal="player_scored" from="CuttingBoard" to="ScoreManager" method="_on_player_scored"]
+[connection signal="player_scored" from="CuttingBoard2" to="ScoreManager" method="_on_player_scored"]
+[connection signal="player_scored" from="CuttingBoard3" to="ScoreManager" method="_on_player_scored"]
+[connection signal="player_scored" from="CuttingBoard4" to="ScoreManager" method="_on_player_scored"]
 [connection signal="new_game" from="GameScreen" to="." method="_on_game_screen_new_game"]
 
 [editable path="Player"]

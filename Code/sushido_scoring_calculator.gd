@@ -29,12 +29,13 @@ func start_cut_sequence(target: holdable) -> void:
 	cut.visible = true
 	cut.start_meter(target.hit_area * 0.1, target.perfect_hit_area * 0.1)
 
-func get_cut_result() -> void:
+func get_cut_result() -> Dictionary:
 	print(self)
 	if !is_instance_valid(cut_fish):
 		printerr("Fish is null")
 	var result: = cut.cut()
 	var score: int = 0
+	var multiply: bool = false
 	match result:
 		cut_meter.cut_result.Miss:
 			score = cut_fish.penalty_value
@@ -43,7 +44,10 @@ func get_cut_result() -> void:
 		cut_meter.cut_result.Perfect:
 			score = cut_fish.perfect_value
 	await get_tree().create_timer(1.0).timeout
+	multiply = cut_fish.multiply_on_perfect if result == cut_meter.cut_result.Perfect else false
 	finished_cutting.emit(score, cut_fish.multiply_on_perfect if result == cut_meter.cut_result.Perfect else false)
 	cut_fish.change_to_sushi()
 	cut.visible = false
 	#self.process_mode = Node.PROCESS_MODE_DISABLED
+	var final_result := {"score": score, "multiply": multiply}
+	return final_result

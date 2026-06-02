@@ -6,6 +6,8 @@ extends Node3D
 var held_item: fish
 var is_active: bool
 
+signal player_scored
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	interact_obj.interact = _on_interact
@@ -32,6 +34,7 @@ func _on_interact(mechanic: Node3D) -> void:
 
 func player_cut(player: Player) -> void:
 	if player.is_cutting:
-		calculator.get_cut_result()
+		var score: Dictionary = await calculator.get_cut_result()
 		player.is_cutting = false
 		player.player_action.disconnect(player_cut)
+		player_scored.emit(player.player_id, score["score"], score["multiply"])

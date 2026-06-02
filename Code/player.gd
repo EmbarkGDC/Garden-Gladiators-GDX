@@ -1,5 +1,6 @@
 class_name Player extends CharacterBody3D
 
+@export var player_id: int = 0
 @export var can_jump: bool = false
 @export var using_device: int = 0
 

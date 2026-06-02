@@ -8,14 +8,6 @@ signal scores_updated
 func _ready() -> void:
 	reset()
 
-func _on_player_player_just_scored(player_id: int, score: int, mult: bool) -> void:
-	if mult:
-		scores[player_id] *= score
-	else:
-		scores[player_id] += score
-	print(scores)
-	scores_updated.emit(player_id, scores[player_id])
-
 func determine_winner() -> int:
 	var winner: int = 0
 	
@@ -30,3 +22,14 @@ func determine_winner() -> int:
 
 func reset() -> void:
 	scores = [0, 0, 0, 0]
+
+
+func _on_player_scored(player_id: int, score: int, mult: bool) -> void:
+	print("id: %d score: %d", player_id, score)
+	
+	if mult:
+		scores[player_id] *= score
+	else:
+		scores[player_id] += score
+	print(scores)
+	scores_updated.emit(player_id, scores[player_id])
