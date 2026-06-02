@@ -11,7 +11,7 @@ func _ready() -> void:
 func determine_winner() -> int:
 	var winner: int = 0
 	
-	for i: int in scores:
+	for i: int in range(scores.size()):
 		# check for out of bounds
 		if i + 1 >= scores.size():
 			break
