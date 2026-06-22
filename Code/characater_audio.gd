@@ -4,7 +4,7 @@ extends AudioStreamPlayer
 @export var chosen_character := Enums.PlayerCharacter.SYLKIE
 var chosen_char_string = Enums.PlayerCharacter.keys()[chosen_character]
 var char_voice_filepath = "res://Audio/Voice/" + chosen_char_string + "/Gameplay/"
-var char_voicelines: Array[string] = ["default", "temp", "stuff"]
+var char_voicelines: Array[String] = ["default", "temp", "stuff"]
 
 
 func _ready() -> void:
@@ -23,7 +23,7 @@ func _ready() -> void:
 func get_files_in_folder(path: String) -> Array[String]:
 	var files: Array[String] = []
 	#-- Takes all voice lines and loads them into the array --
-	files = ResourceLoader.list_directory(path)
+	files.assign(ResourceLoader.list_directory(path))
 	
 	#-- CODE I COPIED AND PASTED FROM INTERNET, NOT TESTED --
 	#var dir = DirAccess.open(path)
