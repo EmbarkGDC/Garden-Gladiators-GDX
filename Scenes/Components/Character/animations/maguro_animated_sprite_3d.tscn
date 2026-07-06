@@ -641,8 +641,10 @@ _data = {
 [node name="Maguro_AnimatedSprite3D" type="AnimatedSprite3D"]
 offset = Vector2(0, 223.985)
 billboard = 2
+alpha_cut = 2
+alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
-animation = &"hold_pX"
+animation = &"idle_nX"
 frame = 3
 
 [node name="HoldPosition" type="Node3D" parent="."]
