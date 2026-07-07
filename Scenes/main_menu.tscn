@@ -124,6 +124,10 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_1ehe0")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
 text = "EXIT"
 
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Test"
+
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = -1
