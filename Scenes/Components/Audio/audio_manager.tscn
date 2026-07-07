@@ -1,6 +1,71 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdau3wtaasyo0"]
+[gd_scene load_steps=21 format=3 uid="uid://cdau3wtaasyo0"]
 
 [ext_resource type="Script" uid="uid://bnw17xk6xsi8d" path="res://Code/Audio/AudioManager.gd" id="1_24ltg"]
+[ext_resource type="Script" uid="uid://dlj3ormcob3jy" path="res://Code/Audio/SoundEffectSetting.gd" id="2_gl20g"]
+[ext_resource type="AudioStream" uid="uid://jsw7pe73r7g4" path="res://Audio/Music/TitleScreen.ogg" id="2_j8u30"]
+[ext_resource type="AudioStream" uid="uid://bnb4hwo4qtd8j" path="res://Audio/Music/Sushido_gamplay.ogg" id="3_3ssdy"]
+[ext_resource type="AudioStream" uid="uid://c0ub06f0p7f4y" path="res://Audio/SFX/SFX_Cut_Meter_(Hyōshigi).ogg" id="3_f4lts"]
+[ext_resource type="AudioStream" uid="uid://dg6rv1ftshxlg" path="res://Audio/Music/Sushido_gameplay_loop.ogg" id="4_4w518"]
+[ext_resource type="AudioStream" uid="uid://b0yvpr1dyibcn" path="res://Audio/SFX/sfx_fish_getting_cut_on_cuttingborad.ogg" id="4_wc1df"]
+[ext_resource type="AudioStream" uid="uid://bp2do3wj0c235" path="res://Audio/Music/GameplayResults.ogg" id="5_7j3bo"]
+[ext_resource type="AudioStream" uid="uid://2jff65ikec3a" path="res://Audio/SFX/SFX_Fish_Pick_Up.ogg" id="5_x87l0"]
+[ext_resource type="AudioStream" uid="uid://dn8g3kjvbpdgg" path="res://Audio/SFX/sfx_last_part_fish_turning_into_finished_sushi_sounds.ogg" id="6_ayt68"]
+[ext_resource type="AudioStream" uid="uid://cyfpvdm8ocklf" path="res://Audio/SFX/sfx_miss_slash.ogg" id="7_3eibr"]
+[ext_resource type="AudioStream" uid="uid://jtsh28tr5kw3" path="res://Audio/SFX/sfx_normal_slash.ogg" id="8_n5n28"]
+[ext_resource type="AudioStream" uid="uid://ct66x47hva6f0" path="res://Audio/SFX/sfx_Perfect_Slash.ogg" id="9_42cun"]
+
+[sub_resource type="Resource" id="Resource_pfs4k"]
+script = ExtResource("2_gl20g")
+sound_effect = ExtResource("3_f4lts")
+audio_bus = 1
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_r51ia"]
+script = ExtResource("2_gl20g")
+type = 1
+sound_effect = ExtResource("4_wc1df")
+audio_bus = 1
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_vhi3u"]
+script = ExtResource("2_gl20g")
+type = 2
+sound_effect = ExtResource("5_x87l0")
+audio_bus = 1
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_rtmy4"]
+script = ExtResource("2_gl20g")
+type = 3
+sound_effect = ExtResource("6_ayt68")
+audio_bus = 1
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_sko21"]
+script = ExtResource("2_gl20g")
+type = 4
+sound_effect = ExtResource("7_3eibr")
+audio_bus = 1
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_4y4fi"]
+script = ExtResource("2_gl20g")
+type = 5
+sound_effect = ExtResource("8_n5n28")
+audio_bus = 1
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_1ejfx"]
+script = ExtResource("2_gl20g")
+type = 6
+sound_effect = ExtResource("9_42cun")
+audio_bus = 1
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
 [node name="AudioManager" type="Node3D"]
 script = ExtResource("1_24ltg")
+sound_effects = Array[ExtResource("2_gl20g")]([SubResource("Resource_pfs4k"), SubResource("Resource_r51ia"), SubResource("Resource_vhi3u"), SubResource("Resource_rtmy4"), SubResource("Resource_sko21"), SubResource("Resource_4y4fi"), SubResource("Resource_1ejfx")])
+music = Array[AudioStreamOggVorbis]([ExtResource("2_j8u30"), ExtResource("3_3ssdy"), ExtResource("4_4w518"), ExtResource("5_7j3bo")])
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+bus = &"Music"

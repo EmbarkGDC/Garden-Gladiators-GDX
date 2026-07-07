@@ -10,11 +10,36 @@ extends Node3D
 var sound_effect_dict: Dictionary = {} ## Loads all registered SoundEffects on ready as a reference.
 
 @export var sound_effects: Array[SoundEffect] ## Stores all possible SoundEffects that can be played.
+@export var music: Array[AudioStreamOggVorbis]
+@onready var bgm: AudioStreamPlayer = $BGM
 
 
 func _ready() -> void:
 	for sound_effect: SoundEffect in sound_effects:
 		sound_effect_dict[sound_effect.type] = sound_effect
+
+## Manages BGM per scene
+### Takes a enum SCENE as a parameter
+### Runs a match statement to play the correct music
+func play_BGM(scene: Util.SCENES) -> void:
+	match scene:
+		Util.SCENES.TITLE:
+			print("Title music playing.")
+			bgm.stream = music[0]
+			bgm.play()
+		Util.SCENES.SUSHIDO:
+			print ("Sushdio music is playing.")
+			bgm.stream = music[1]
+			bgm.play()
+			# Add crossfade here to the loop music[2]
+		Util.SCENES.GAMEPLAY_RESULTS:
+			print ("Gameplay results playing.")
+			bgm.stream = music[3]
+			bgm.play()
+		_:
+			print("Default (title) music playing.")
+			bgm.stream = music[0]
+			bgm.play()
 
 
 ## Creates a sound effect at a specific location if the limit has not been reached. Pass [param location] for the global position of the audio effect, and [param type] for the SoundEffect to be queued.
@@ -25,11 +50,12 @@ func create_3d_audio_at_location(location: Vector3, type: SoundEffect.SOUND_EFFE
 			sound_effect.change_audio_count(1)
 			var new_3d_audio: AudioStreamPlayer3D = AudioStreamPlayer3D.new()
 			add_child(new_3d_audio)
+			new_3d_audio.bus = str(sound_effect.audio_bus).capitalize()
 			new_3d_audio.position = location
 			new_3d_audio.stream = sound_effect.sound_effect
 			new_3d_audio.volume_db = sound_effect.volume
 			new_3d_audio.pitch_scale = sound_effect.pitch_scale
-			new_3d_audio.pitch_scale += Global.rng.randf_range(-sound_effect.pitch_randomness, sound_effect.pitch_randomness )
+			#new_3d_audio.pitch_scale += Global.rng.randf_range(-sound_effect.pitch_randomness, sound_effect.pitch_randomness )
 			new_3d_audio.finished.connect(sound_effect.on_audio_finished)
 			new_3d_audio.finished.connect(new_3d_audio.queue_free)
 			new_3d_audio.play()
@@ -45,10 +71,11 @@ func create_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
 			sound_effect.change_audio_count(1)
 			var new_audio: AudioStreamPlayer = AudioStreamPlayer.new()
 			add_child(new_audio)
+			new_audio.bus = str(sound_effect.audio_bus).capitalize()
 			new_audio.stream = sound_effect.sound_effect
 			new_audio.volume_db = sound_effect.volume
 			new_audio.pitch_scale = sound_effect.pitch_scale
-			new_audio.pitch_scale += Global.rng.randf_range(-sound_effect.pitch_randomness, sound_effect.pitch_randomness )
+			#new_audio.pitch_scale += Global.rng.randf_range(-sound_effect.pitch_randomness, sound_effect.pitch_randomness )
 			new_audio.finished.connect(sound_effect.on_audio_finished)
 			new_audio.finished.connect(new_audio.queue_free)
 			new_audio.play()

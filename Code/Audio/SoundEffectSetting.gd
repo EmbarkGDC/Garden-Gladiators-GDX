@@ -10,7 +10,19 @@ enum SOUND_EFFECT_TYPE {
 	SUSHI_CHIME, #The sound that plays when a fish is turned into Sushi
 	SLASH_MISS,
 	SLASH_NORMAL,
-	SLASH_PERFECT
+	SLASH_PERFECT,
+	_Attack1,
+	_Attack2,
+	_BattleStart1,
+	_BattleStart2,
+	_CharacterSelected,
+	_Lose1,
+	_Lose2,
+	_MissHit1,
+	_MissHit2,
+	_PerfectHit,
+	_Win1,
+	_Win2
 }
 
 @export_range(0, 10) var limit: int = 5 ## Maximum number of this SoundEffect to play simultaneously before culled.
@@ -19,6 +31,7 @@ enum SOUND_EFFECT_TYPE {
 @export_range(-40, 20) var volume: float = 0 ## The volume of the [member sound_effect].
 @export_range(0.0, 4.0,.01) var pitch_scale: float = 1.0 ## The pitch scale of the [member sound_effect].
 @export_range(0.0, 1.0,.01) var pitch_randomness: float = 0.0 ## The pitch randomness setting of the [member sound_effect].
+@export var audio_bus: Util.AUDIO_BUSES ## The audio bus associated with the sound
 
 var audio_count: int = 0 ## The instances of this [AudioStreamOggVorbis] currently playing.
 
