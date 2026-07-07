@@ -85,6 +85,8 @@ libraries = {
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.28958637, 0)
 sorting_offset = 0.1
 billboard = 1
+alpha_cut = 2
+alpha_antialiasing_mode = 1
 render_priority = 5
 texture = ExtResource("3_7up1g")
 
