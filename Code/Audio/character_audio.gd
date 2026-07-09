@@ -15,7 +15,7 @@ func _ready() -> void:
 	#load voice lines based off character directory
 	print("This is a message")
 	var _all_speech_effects: PackedStringArray = get_files_in_folder(char_voice_filepath)
-	char_voicelines.resize(_all_speech_effects.size())
+	#char_voicelines.resize(_all_speech_effects.size())
 	for i in range(char_voicelines.size()):
 		print ("Trying to add " + str(SoundEffect.SOUND_EFFECT_TYPE.find_key(speech_type_position+i)) + " to the array...")
 		var filepath = char_voice_filepath + _all_speech_effects[i]
