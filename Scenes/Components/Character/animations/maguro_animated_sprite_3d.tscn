@@ -1,9 +1,10 @@
-[gd_scene load_steps=80 format=3 uid="uid://18mtrg1kf2ek"]
+[gd_scene load_steps=81 format=3 uid="uid://18mtrg1kf2ek"]
 
 [ext_resource type="Texture2D" uid="uid://dtlsoboqwly0y" path="res://Graphics/Sprites/PlayerChar/Maguro/Maguro_ActionIdle_Spritesheet.png" id="1_kgryj"]
 [ext_resource type="Texture2D" uid="uid://d3l5xgpuuyxkw" path="res://Graphics/Sprites/PlayerChar/Maguro/Maguro_Slice_spritesheet.png" id="2_bkne4"]
 [ext_resource type="AnimationLibrary" uid="uid://kbvo7bvy1hh4" path="res://Scenes/Components/Character/animations/Maguro_animations.res" id="3_f5kft"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="4_ok2bs"]
+[ext_resource type="PackedScene" uid="uid://b634ji0ols64c" path="res://Scenes/Components/Audio/character_audio.tscn" id="5_ok2bs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f5kft"]
 atlas = ExtResource("1_kgryj")
@@ -645,7 +646,7 @@ alpha_cut = 2
 alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
-frame = 3
+frame = 5
 
 [node name="HoldPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2724506, 1.5496216, 0)
@@ -674,3 +675,5 @@ parameters/Hold/blend_position = 0.0
 parameters/Idle/blend_position = 0.0
 parameters/Slash/blend_position = 0.0
 parameters/Walk/blend_position = 0.0
+
+[node name="CharacterAudio" parent="." instance=ExtResource("5_ok2bs")]

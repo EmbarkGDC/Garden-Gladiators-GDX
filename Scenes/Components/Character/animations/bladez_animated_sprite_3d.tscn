@@ -1,9 +1,10 @@
-[gd_scene load_steps=128 format=3 uid="uid://cml7amem26ak0"]
+[gd_scene load_steps=129 format=3 uid="uid://cml7amem26ak0"]
 
 [ext_resource type="Texture2D" uid="uid://b88aeenoq40uf" path="res://Graphics/Sprites/PlayerChar/Bladez/Bladez_Action_SpriteSheet.png" id="1_lp0uq"]
 [ext_resource type="Texture2D" uid="uid://dt4rufyox4urg" path="res://Graphics/Sprites/PlayerChar/Bladez/Bladez_Idle_SpriteSheet.png" id="2_hu1ps"]
 [ext_resource type="AnimationLibrary" uid="uid://bltufge74ass1" path="res://Scenes/Components/Character/animations/Bladez_animations.res" id="3_xrpic"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="4_0g53m"]
+[ext_resource type="PackedScene" uid="uid://b634ji0ols64c" path="res://Scenes/Components/Audio/character_audio.tscn" id="5_0g53m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_clbiv"]
 atlas = ExtResource("1_lp0uq")
@@ -955,7 +956,7 @@ alpha_cut = 2
 alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
-frame = 5
+frame = 7
 
 [node name="HoldPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1136495, 2.1487668, 0)
@@ -984,3 +985,5 @@ parameters/Hold/blend_position = 0.0
 parameters/Idle/blend_position = 0.0
 parameters/Slash/blend_position = 0.0
 parameters/Walk/blend_position = 0.0
+
+[node name="CharacterAudio" parent="." instance=ExtResource("5_0g53m")]
