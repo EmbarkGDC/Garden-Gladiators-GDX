@@ -11,10 +11,11 @@ signal all_players_ready
 @onready var cursor_spawn: Node2D = $CursorSpawn
 @onready var player_colors: PlayerColors = $PlayerColors
 
-
 @export var packed_cursor : PackedScene
 
 var cursors : Array[Cursor]
+var PlayersReady: bool = false
+var ReadyPlayers: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -47,12 +48,18 @@ func _input(event: InputEvent) -> void:
 			newCursor = packed_cursor.instantiate()
 			newCursor.controllerID = device
 			newCursor.chosen.connect(character_chosen.emit)
+			newCursor.chosen.connect(new_ready_player)
 			newCursor.unchosen.connect(character_unchosen.emit)
+			newCursor.unchosen.connect(not_ready_player)
 			cursors.append(newCursor)
 			newCursor.PlayerColor = player_colors.PlayerColorList[num]
 			add_child(newCursor)
 			newCursor.position = cursor_spawn.position
 			player_joined.emit()
+		else:
+			if device == 0:
+				if PlayersReady and event.is_action_pressed("ui_accept"):
+					pass
 
 func find_cursor(id: int) -> Cursor:
 	for i:int in cursors.size():
@@ -60,3 +67,14 @@ func find_cursor(id: int) -> Cursor:
 		if cursor.controllerID == id:
 			return cursor
 	return null
+
+func new_ready_player() -> void:
+	ReadyPlayers += 1
+	if ReadyPlayers == cursors.size():
+		PlayersReady = true
+		all_players_ready.emit()
+
+func not_ready_player() -> void:
+	ReadyPlayers -= 1
+	if PlayersReady:
+		PlayersReady = false

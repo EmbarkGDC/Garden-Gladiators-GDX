@@ -2,7 +2,7 @@ class_name PlayerBadge
 extends Sprite2D
 
 var controllerID : int
-var characterID : int
+var characterID : Util.PlayerCharacter
 var currentPort : Portrait
 
 func getCharacter() -> void:

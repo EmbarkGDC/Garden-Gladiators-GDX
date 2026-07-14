@@ -15,11 +15,11 @@ var controllerID: int:
 			badge.controllerID = controllerID
 var badge: PlayerBadge
 var currentHoverPortrait: Portrait
-var hasChosen := false
+var hasChosen: bool= false
 var PlayerColor: Color = Color(0.0, 0.0, 0.0, 1.0)
 
 func _ready() -> void:
-	var newbadge = preload("res://Scenes/Components/Character Select/BaseBadge.tscn")
+	var newbadge: Resource = preload("res://Scenes/Components/Character Select/BaseBadge.tscn")
 	badge = newbadge.instantiate()
 	add_child(badge)
 	badge.position = badge_coord.position

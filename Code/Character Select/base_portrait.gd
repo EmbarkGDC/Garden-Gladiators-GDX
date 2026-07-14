@@ -2,7 +2,7 @@ class_name Portrait
 extends MarginContainer
 
 @onready var color_tex: TextureRect = $ColorTex
-@export var characterID: int = 0
+@export var CharacterID: Util.PlayerCharacter
 var currentController: int
 var isChosen := false
 var current_cursors: Array[Cursor]
