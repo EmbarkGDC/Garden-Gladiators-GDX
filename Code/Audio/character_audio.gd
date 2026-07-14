@@ -13,3 +13,22 @@ var sound_effect_dict: Dictionary = {} ## Loads all registered SoundEffects on r
 # 7-8 When character gets a miss on the cut meter
 # 9 When the character gets a perfect hit on the cut meter
 # 10-11 When the character wins a game (Gameplay Results Screen)
+
+func play_voiceline (type: int) -> void:
+	match type:
+		0:
+			print ("Sound: Character attacks!")
+		1:
+			print ("Sound: Character intro.")
+		2:
+			print("Sound: Character selected")
+		3:
+			print("Sound: Character lost")
+		4:
+			print("Sound: Character misses")
+		5:
+			print("Sound: Character perfect slice!")
+		6:
+			print("Sound: Character wins.")
+		_:
+			print("No sound associated.")
