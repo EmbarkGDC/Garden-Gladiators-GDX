@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=3 uid="uid://byluudcct606"]
+[gd_scene load_steps=137 format=3 uid="uid://byluudcct606"]
 
 [ext_resource type="Texture2D" uid="uid://d2786a47ffxip" path="res://Graphics/Sprites/PlayerChar/Anago/Anago_Action_SpriteSheet.png" id="1_imf3a"]
 [ext_resource type="Texture2D" uid="uid://kv3ln5brbjou" path="res://Graphics/Sprites/PlayerChar/Anago/Anago_Idle_SpriteSheet.png" id="2_ttp4u"]
@@ -6,6 +6,9 @@
 [ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="4_nl8tt"]
 [ext_resource type="PackedScene" uid="uid://b634ji0ols64c" path="res://Scenes/Components/Audio/character_audio.tscn" id="5_max6w"]
 [ext_resource type="Script" uid="uid://dlj3ormcob3jy" path="res://Code/Audio/SoundEffectSetting.gd" id="6_max6w"]
+[ext_resource type="AudioStream" uid="uid://bobf6rj2ym66b" path="res://Audio/Voice/Anago/Gameplay/Anago_Attack1.ogg" id="7_dvdbf"]
+[ext_resource type="AudioStream" uid="uid://cxm0dq2b47yd7" path="res://Audio/Voice/Anago/Gameplay/Anago_Attack2.ogg" id="8_6ermv"]
+[ext_resource type="AudioStream" uid="uid://bddh3gd480isc" path="res://Audio/Voice/Anago/Gameplay/Anago_BattleStart1.ogg" id="9_82mo4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3cxta"]
 atlas = ExtResource("1_imf3a")
@@ -1055,6 +1058,19 @@ _data = {
 [sub_resource type="Resource" id="Resource_31dua"]
 script = ExtResource("6_max6w")
 type = 7
+sound_effect = ExtResource("7_dvdbf")
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_s6idi"]
+script = ExtResource("6_max6w")
+type = 8
+sound_effect = ExtResource("8_6ermv")
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_44ya0"]
+script = ExtResource("6_max6w")
+type = 9
+sound_effect = ExtResource("9_82mo4")
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
 [node name="Anago_AnimatedSprite3D" type="AnimatedSprite3D"]
@@ -1065,7 +1081,7 @@ alpha_scissor_threshold = 0.49
 alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
-frame = 7
+frame = 3
 
 [node name="HoldPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81413376, 2.1966953, 0)
@@ -1096,4 +1112,4 @@ parameters/Slash/blend_position = 0.0
 parameters/Walk/blend_position = 0.0
 
 [node name="CharacterAudio" parent="." instance=ExtResource("5_max6w")]
-char_voicelines = Array[ExtResource("6_max6w")]([SubResource("Resource_31dua"), null, null, null, null, null, null])
+char_voicelines = Array[ExtResource("6_max6w")]([SubResource("Resource_31dua"), SubResource("Resource_s6idi"), SubResource("Resource_44ya0"), null, null, null, null, null, null, null, null, null])
