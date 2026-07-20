@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ds5nypkf6elqx"
-path="res://.godot/imported/Sylkie_BattleStart.ogg-9700bedb907a5569f440922cf308d1c5.oggvorbisstr"
+path="res://.godot/imported/Sylkie_BattleStart.ogg-e04aa89c2252f49eb51f22993d8d01cb.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/Voice/SYLKIE/Gameplay/Sylkie_BattleStart.ogg"
-dest_files=["res://.godot/imported/Sylkie_BattleStart.ogg-9700bedb907a5569f440922cf308d1c5.oggvorbisstr"]
+source_file="res://Audio/Voice/Sylkie/Gameplay/Sylkie_BattleStart.ogg"
+dest_files=["res://.godot/imported/Sylkie_BattleStart.ogg-e04aa89c2252f49eb51f22993d8d01cb.oggvorbisstr"]
 
 [params]
 
