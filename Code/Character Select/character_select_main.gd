@@ -16,6 +16,7 @@ signal all_players_ready
 var cursors : Array[Cursor]
 var PlayersReady: bool = false
 var ReadyPlayers: int = 0
+var playerdropped: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,6 +28,9 @@ func _process(delta: float) -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
+	if playerdropped:
+		playerdropped = false
+		return
 	var device:int
 	if event is InputEventMouseMotion:
 		return
@@ -47,10 +51,11 @@ func _input(event: InputEvent) -> void:
 			var newCursor : Cursor
 			newCursor = packed_cursor.instantiate()
 			newCursor.controllerID = device
-			newCursor.chosen.connect(character_chosen.emit)
 			newCursor.chosen.connect(new_ready_player)
-			newCursor.unchosen.connect(character_unchosen.emit)
+			newCursor.chosen.connect(character_chosen.emit)
 			newCursor.unchosen.connect(not_ready_player)
+			newCursor.unchosen.connect(character_unchosen.emit)
+			newCursor.PlayerDrop.connect(remove_cursor)
 			cursors.append(newCursor)
 			newCursor.PlayerColor = player_colors.PlayerColorList[num]
 			add_child(newCursor)
@@ -78,3 +83,13 @@ func not_ready_player() -> void:
 	ReadyPlayers -= 1
 	if PlayersReady:
 		PlayersReady = false
+
+func remove_cursor(cursor:Cursor) -> void:
+	if cursor.get_child_count() == 0:
+		cursor.add_child(cursor.badge)
+	
+	DeviceAssign.player_dropout(cursor.controllerID)
+	cursors.erase(cursor)
+	cursor.queue_free()
+	player_dropout.emit()
+	playerdropped = true

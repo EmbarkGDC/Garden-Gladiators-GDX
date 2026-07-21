@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjlylqebsw67m"]
+[gd_scene load_steps=7 format=3 uid="uid://cjlylqebsw67m"]
 
 [ext_resource type="PackedScene" uid="uid://rhisk5kjf0ll" path="res://Scenes/Components/Character Select/base_portrait.tscn" id="1_16r56"]
 [ext_resource type="Script" uid="uid://cgtlffyhje30h" path="res://Code/Character Select/character_select_main.gd" id="1_fsati"]
 [ext_resource type="PackedScene" uid="uid://btcojqyy08rpm" path="res://Scenes/Components/Character Select/BaseCursor.tscn" id="2_716px"]
 [ext_resource type="Script" uid="uid://c8i53iwomntt3" path="res://Code/device_assign.gd" id="4_jcuwg"]
 [ext_resource type="Script" uid="uid://bhalsa22o7xhm" path="res://Code/Globals/PlayerColors.gd" id="5_5jgah"]
+[ext_resource type="PackedScene" uid="uid://bnp188dndfyrx" path="res://Scenes/Components/Character Select/drop_button.tscn" id="6_nprsy"]
 
 [node name="CharacterSelectMain" type="Control"]
 layout_mode = 3
@@ -89,6 +90,11 @@ theme_override_font_sizes/font_size = 31
 text = "Sylkie"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Drop Button" parent="." instance=ExtResource("6_nprsy")]
+layout_mode = 1
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="DeviceAssign" type="Node" parent="."]
 script = ExtResource("4_jcuwg")

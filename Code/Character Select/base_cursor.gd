@@ -3,6 +3,7 @@ extends Sprite2D
 
 signal chosen
 signal unchosen
+signal PlayerDrop(Self:Cursor)
 
 @onready var badge_coord: Node2D = $BadgeCoord
 
@@ -17,6 +18,7 @@ var badge: PlayerBadge
 var currentHoverPortrait: Portrait
 var hasChosen: bool= false
 var PlayerColor: Color = Color(0.0, 0.0, 0.0, 1.0)
+var overdropbutton: bool = false
 
 func _ready() -> void:
 	var newbadge: Resource = preload("res://Scenes/Components/Character Select/BaseBadge.tscn")
@@ -29,7 +31,13 @@ func _process(_delta: float) -> void:
 	position = position + move * cursor_speed
 
 func _input(event: InputEvent) -> void:
+	print(event.device)
+	var valid: bool = false
 	if event.device == controllerID:
+		valid = true
+	if event is InputEventKey and controllerID == -1:
+		valid = true
+	if valid:
 		if event.is_action_pressed("ui_accept"):
 			#Determine whether the cursor is hover over a portrait and hasen't droppedit's token yet
 			if currentHoverPortrait != null and !hasChosen:
@@ -37,6 +45,8 @@ func _input(event: InputEvent) -> void:
 				badge.getCharacter()
 				hasChosen = true
 				chosen.emit()
+			elif overdropbutton:
+				PlayerDrop.emit(self)
 		elif event.is_action_pressed("ui_cancel"):
 			#determines whether the token is dropped on a portrait
 			if hasChosen:
