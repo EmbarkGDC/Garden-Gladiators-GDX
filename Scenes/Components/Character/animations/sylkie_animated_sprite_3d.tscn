@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dafan8irq5dix" path="res://Code/player_character_sprite.gd" id="3_ngjtu"]
 [ext_resource type="AnimationLibrary" uid="uid://bagpuxalkkp5h" path="res://Scenes/Components/Character/animations/Sylkie_animations.res" id="3_yvxx6"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://djr641f3k2cf4" path="res://Scenes/Components/Character/animations/sushido_anim_blend_tree.tres" id="5_yvxx6"]
+[ext_resource type="PackedScene" uid="uid://b634ji0ols64c" path="res://Scenes/Components/Audio/character_audio.tscn" id="7_m3or2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5kwv"]
 atlas = ExtResource("1_m5kwv")
@@ -747,3 +748,5 @@ parameters/movement_empty/current_index = 0
 parameters/slash_shot/active = false
 parameters/slash_shot/internal_active = false
 parameters/slash_shot/request = 0
+
+[node name="CharacterAudio" parent="." instance=ExtResource("7_m3or2")]

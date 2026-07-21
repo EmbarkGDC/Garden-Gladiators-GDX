@@ -5,6 +5,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://kbvo7bvy1hh4" path="res://Scenes/Components/Character/animations/Maguro_animations.res" id="3_f5kft"]
 [ext_resource type="Script" uid="uid://dafan8irq5dix" path="res://Code/player_character_sprite.gd" id="3_ok2bs"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://djr641f3k2cf4" path="res://Scenes/Components/Character/animations/sushido_anim_blend_tree.tres" id="5_ok2bs"]
+[ext_resource type="PackedScene" uid="uid://b634ji0ols64c" path="res://Scenes/Components/Audio/character_audio.tscn" id="5_ok2bs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f5kft"]
 atlas = ExtResource("1_kgryj")
@@ -683,3 +684,5 @@ parameters/movement_empty/current_index = -1
 parameters/slash_shot/active = false
 parameters/slash_shot/internal_active = false
 parameters/slash_shot/request = 0
+
+[node name="CharacterAudio" parent="." instance=ExtResource("5_ok2bs")]
