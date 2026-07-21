@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody3D
 
 @export var player_id:int = 0
-@export var chosen_character := Enums.PlayerCharacter.SYLKIE
+@export var chosen_character := Util.PlayerCharacter.SYLKIE
 @export var using_device: int = -1
 @export var is_AI:bool = false
 
@@ -10,6 +10,7 @@ extends CharacterBody3D
 
 @onready var calculator: scoring_calculator = $ScoringCalculator
 @onready var animation_tree:= $AnimationManager/AnimatedSprite3D/AnimationPlayer/AnimationTree
+@onready var character_audio:= $AnimationManager/AnimatedSprite3D/CharacterAudio
 
 var held_item: fish = null
 var now_holding: bool = false
@@ -99,6 +100,7 @@ func flip_sprites(blend_position: float) -> void:
 	animation_tree.set("parameters/Walk/blend_position", blend_position)
 
 func _on_scoring_calculator_finished_cutting(score: int, mult: bool) -> void:
+	character_audio.play_voice_line(SoundEffect.SOUND_EFFECT_TYPE.SLASH_NORMAL)
 	is_cutting = false
 	animation_tree["parameters/conditions/cuts"] = false
 	player_just_scored.emit(player_id, score, mult)

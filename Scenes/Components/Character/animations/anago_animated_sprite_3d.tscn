@@ -1064,79 +1064,79 @@ _data = {
 &"RESET": SubResource("Animation_nl8tt")
 }
 
-[sub_resource type="Resource" id="Resource_31dua"]
+[sub_resource type="Resource" id="Resource_pka4u"]
 script = ExtResource("6_max6w")
 type = 7
 sound_effect = ExtResource("7_dvdbf")
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
-[sub_resource type="Resource" id="Resource_s6idi"]
+[sub_resource type="Resource" id="Resource_2xq80"]
 script = ExtResource("6_max6w")
 type = 8
 sound_effect = ExtResource("8_6ermv")
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
-[sub_resource type="Resource" id="Resource_44ya0"]
+[sub_resource type="Resource" id="Resource_rfs87"]
 script = ExtResource("6_max6w")
 type = 9
 sound_effect = ExtResource("9_82mo4")
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
-[sub_resource type="Resource" id="Resource_3tjqy"]
+[sub_resource type="Resource" id="Resource_bswqg"]
 script = ExtResource("6_max6w")
 type = 10
 sound_effect = ExtResource("10_pka4u")
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
-[sub_resource type="Resource" id="Resource_i1ppl"]
+[sub_resource type="Resource" id="Resource_y6he5"]
 script = ExtResource("6_max6w")
 type = 11
 sound_effect = ExtResource("11_2xq80")
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
-[sub_resource type="Resource" id="Resource_fnu82"]
+[sub_resource type="Resource" id="Resource_uobaw"]
 script = ExtResource("6_max6w")
 type = 12
 sound_effect = ExtResource("12_rfs87")
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
-[sub_resource type="Resource" id="Resource_ffgbr"]
+[sub_resource type="Resource" id="Resource_nlrrw"]
 script = ExtResource("6_max6w")
 type = 13
 sound_effect = ExtResource("13_bswqg")
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
-[sub_resource type="Resource" id="Resource_ku0mn"]
+[sub_resource type="Resource" id="Resource_4lsb2"]
 script = ExtResource("6_max6w")
 type = 14
 sound_effect = ExtResource("14_y6he5")
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
-[sub_resource type="Resource" id="Resource_i8b0o"]
+[sub_resource type="Resource" id="Resource_a4eoo"]
 script = ExtResource("6_max6w")
 type = 15
 sound_effect = ExtResource("15_uobaw")
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
-[sub_resource type="Resource" id="Resource_ltuer"]
+[sub_resource type="Resource" id="Resource_3tjqy"]
 script = ExtResource("6_max6w")
 type = 16
 sound_effect = ExtResource("16_nlrrw")
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
-[sub_resource type="Resource" id="Resource_7svsh"]
+[sub_resource type="Resource" id="Resource_i1ppl"]
 script = ExtResource("6_max6w")
 type = 17
 sound_effect = ExtResource("17_4lsb2")
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
-[sub_resource type="Resource" id="Resource_pxsmt"]
+[sub_resource type="Resource" id="Resource_fnu82"]
 script = ExtResource("6_max6w")
 type = 18
 sound_effect = ExtResource("18_a4eoo")
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
-[node name="Anago_AnimatedSprite3D" type="AnimatedSprite3D"]
+[node name="AnimatedSprite3D" type="AnimatedSprite3D"]
 offset = Vector2(0, 251.895)
 billboard = 2
 alpha_cut = 2
@@ -1144,6 +1144,7 @@ alpha_scissor_threshold = 0.49
 alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
+frame = 2
 
 [node name="HoldPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81413376, 2.1966953, 0)
@@ -1174,4 +1175,4 @@ parameters/Slash/blend_position = 0.0
 parameters/Walk/blend_position = 0.0
 
 [node name="CharacterAudio" parent="." instance=ExtResource("5_max6w")]
-char_voicelines = Array[ExtResource("6_max6w")]([SubResource("Resource_31dua"), SubResource("Resource_s6idi"), SubResource("Resource_44ya0"), SubResource("Resource_3tjqy"), SubResource("Resource_i1ppl"), SubResource("Resource_fnu82"), SubResource("Resource_ffgbr"), SubResource("Resource_ku0mn"), SubResource("Resource_i8b0o"), SubResource("Resource_ltuer"), SubResource("Resource_7svsh"), SubResource("Resource_pxsmt")])
+char_voice_lines = Array[ExtResource("6_max6w")]([SubResource("Resource_pka4u"), SubResource("Resource_2xq80"), SubResource("Resource_rfs87"), SubResource("Resource_bswqg"), SubResource("Resource_y6he5"), SubResource("Resource_uobaw"), SubResource("Resource_nlrrw"), SubResource("Resource_4lsb2"), SubResource("Resource_a4eoo"), SubResource("Resource_3tjqy"), SubResource("Resource_i1ppl"), SubResource("Resource_fnu82")])
