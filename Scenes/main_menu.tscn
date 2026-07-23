@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dg0hauswjmtn"]
+[gd_scene load_steps=13 format=3 uid="uid://dg0hauswjmtn"]
 
 [ext_resource type="Texture2D" uid="uid://bj8l7502yi8qu" path="res://Graphics/UI/GG_TitleArt.svg" id="1_28flt"]
 [ext_resource type="Script" uid="uid://dq84yilipupnx" path="res://Code/main_menu.gd" id="1_48xlc"]
 [ext_resource type="FontFile" uid="uid://bgd1ydpqw50e6" path="res://Graphics/UI/Fonts/UI_Fonts.zip (Unzipped Files)/Header_Sigmar.ttf" id="2_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://5mxcgcg1pmyb" path="res://Graphics/UI/Artwork/Main_SplashArt.png" id="2_ce3w2"]
+[ext_resource type="PackedScene" uid="uid://besr42h4cs87m" path="res://Scenes/Components/UI/ui_button_mainmenu.tscn" id="4_n45e2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ce3w2"]
 texture = ExtResource("2_ce3w2")
@@ -47,6 +48,7 @@ grow_vertical = 2
 script = ExtResource("1_48xlc")
 
 [node name="Panel3" type="Panel" parent="."]
+z_index = -5
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,7 +70,37 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ce3w2")
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.432
+anchor_right = 0.26900002
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 9.440002
+offset_right = 509.51996
+offset_bottom = 610.0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = -156
+
+[node name="MenuButton" parent="VBoxContainer2" instance=ExtResource("4_n45e2")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="MenuButton2" parent="VBoxContainer2" instance=ExtResource("4_n45e2")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="MenuButton3" parent="VBoxContainer2" instance=ExtResource("4_n45e2")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -80,6 +112,7 @@ grow_vertical = 0
 theme_override_constants/separation = 20
 
 [node name="Minigames" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.20403318, 0.20403318, 0.20403318, 1)
@@ -95,6 +128,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
 text = "MINIGAMES"
 
 [node name="Credits" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.20403318, 0.20403318, 0.20403318, 1)
@@ -110,6 +144,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
 text = "CREDITS"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.20403318, 0.20403318, 0.20403318, 1)
@@ -123,10 +158,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_28flt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1ehe0")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
 text = "EXIT"
-
-[node name="Button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Test"
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
