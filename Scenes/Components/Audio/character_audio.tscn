@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b634ji0ols64c"]
+[gd_scene load_steps=3 format=3 uid="uid://b634ji0ols64c"]
 
 [ext_resource type="Script" uid="uid://drayt88uh0hn8" path="res://Code/Audio/character_audio.gd" id="1_ck78n"]
+[ext_resource type="Script" uid="uid://dlj3ormcob3jy" path="res://Code/Audio/SoundEffectSetting.gd" id="2_ae5qk"]
 
 [node name="CharacterAudio" type="AudioStreamPlayer3D"]
 script = ExtResource("1_ck78n")
+char_voice_lines = Array[ExtResource("2_ae5qk")]([null, null, null, null, null, null, null, null, null, null, null, null])

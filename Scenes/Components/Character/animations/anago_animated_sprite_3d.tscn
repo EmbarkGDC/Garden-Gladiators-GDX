@@ -1068,72 +1068,84 @@ _data = {
 script = ExtResource("6_max6w")
 type = 7
 sound_effect = ExtResource("7_dvdbf")
+audio_bus = 2
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
 [sub_resource type="Resource" id="Resource_2xq80"]
 script = ExtResource("6_max6w")
 type = 8
 sound_effect = ExtResource("8_6ermv")
+audio_bus = 2
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
 [sub_resource type="Resource" id="Resource_rfs87"]
 script = ExtResource("6_max6w")
 type = 9
 sound_effect = ExtResource("9_82mo4")
+audio_bus = 2
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
 [sub_resource type="Resource" id="Resource_bswqg"]
 script = ExtResource("6_max6w")
 type = 10
 sound_effect = ExtResource("10_pka4u")
+audio_bus = 2
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
 [sub_resource type="Resource" id="Resource_y6he5"]
 script = ExtResource("6_max6w")
 type = 11
 sound_effect = ExtResource("11_2xq80")
+audio_bus = 2
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
 [sub_resource type="Resource" id="Resource_uobaw"]
 script = ExtResource("6_max6w")
 type = 12
 sound_effect = ExtResource("12_rfs87")
+audio_bus = 2
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
 [sub_resource type="Resource" id="Resource_nlrrw"]
 script = ExtResource("6_max6w")
 type = 13
 sound_effect = ExtResource("13_bswqg")
+audio_bus = 2
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
 [sub_resource type="Resource" id="Resource_4lsb2"]
 script = ExtResource("6_max6w")
 type = 14
 sound_effect = ExtResource("14_y6he5")
+audio_bus = 2
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
 [sub_resource type="Resource" id="Resource_a4eoo"]
 script = ExtResource("6_max6w")
 type = 15
 sound_effect = ExtResource("15_uobaw")
+audio_bus = 2
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
 [sub_resource type="Resource" id="Resource_3tjqy"]
 script = ExtResource("6_max6w")
 type = 16
 sound_effect = ExtResource("16_nlrrw")
+audio_bus = 2
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
 [sub_resource type="Resource" id="Resource_i1ppl"]
 script = ExtResource("6_max6w")
 type = 17
 sound_effect = ExtResource("17_4lsb2")
+audio_bus = 2
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
 [sub_resource type="Resource" id="Resource_fnu82"]
 script = ExtResource("6_max6w")
 type = 18
 sound_effect = ExtResource("18_a4eoo")
+audio_bus = 2
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D"]
@@ -1144,7 +1156,7 @@ alpha_scissor_threshold = 0.49
 alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
-frame = 2
+frame = 7
 
 [node name="HoldPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81413376, 2.1966953, 0)
