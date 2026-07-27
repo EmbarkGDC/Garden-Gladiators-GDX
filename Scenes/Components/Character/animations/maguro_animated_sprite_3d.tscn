@@ -1,9 +1,23 @@
-[gd_scene load_steps=80 format=3 uid="uid://18mtrg1kf2ek"]
+[gd_scene load_steps=106 format=3 uid="uid://18mtrg1kf2ek"]
 
 [ext_resource type="Texture2D" uid="uid://dtlsoboqwly0y" path="res://Graphics/Sprites/PlayerChar/Maguro/Maguro_ActionIdle_Spritesheet.png" id="1_kgryj"]
 [ext_resource type="Texture2D" uid="uid://d3l5xgpuuyxkw" path="res://Graphics/Sprites/PlayerChar/Maguro/Maguro_Slice_spritesheet.png" id="2_bkne4"]
 [ext_resource type="AnimationLibrary" uid="uid://kbvo7bvy1hh4" path="res://Scenes/Components/Character/animations/Maguro_animations.res" id="3_f5kft"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="4_ok2bs"]
+[ext_resource type="PackedScene" uid="uid://b634ji0ols64c" path="res://Scenes/Components/Audio/character_audio.tscn" id="5_ok2bs"]
+[ext_resource type="Script" uid="uid://dlj3ormcob3jy" path="res://Code/Audio/SoundEffectSetting.gd" id="6_cwl7g"]
+[ext_resource type="AudioStream" uid="uid://bcckporvoxqtu" path="res://Audio/Voice/Maguro/Gameplay/Maguro_Attack1.ogg" id="7_aw7tp"]
+[ext_resource type="AudioStream" uid="uid://c8i74noj1e3rv" path="res://Audio/Voice/Maguro/Gameplay/Maguro_Attack2.ogg" id="8_e42f3"]
+[ext_resource type="AudioStream" uid="uid://jerh0jobt4in" path="res://Audio/Voice/Maguro/Gameplay/Maguro_BattleStart1.ogg" id="9_it61g"]
+[ext_resource type="AudioStream" uid="uid://cka0i6iv5ow1y" path="res://Audio/Voice/Maguro/Gameplay/Maguro_BattleStart2.ogg" id="10_jnluh"]
+[ext_resource type="AudioStream" uid="uid://bgm4k6yik5kyc" path="res://Audio/Voice/Maguro/Gameplay/Maguro_CharacterSelected.ogg" id="11_42qpd"]
+[ext_resource type="AudioStream" uid="uid://cqx0ml5d6ungh" path="res://Audio/Voice/Maguro/Gameplay/Maguro_Lose1.ogg" id="12_7t5am"]
+[ext_resource type="AudioStream" uid="uid://ciypqiwod8fur" path="res://Audio/Voice/Maguro/Gameplay/Maguro_Lose2.ogg" id="13_qfxtn"]
+[ext_resource type="AudioStream" uid="uid://d3qfmntfl7x5j" path="res://Audio/Voice/Maguro/Gameplay/Maguro_MissHit1.ogg" id="14_s6lmk"]
+[ext_resource type="AudioStream" uid="uid://dwam2tf21wlue" path="res://Audio/Voice/Maguro/Gameplay/Maguro_MissHit2.ogg" id="15_7d5xg"]
+[ext_resource type="AudioStream" uid="uid://cmi3kovraele7" path="res://Audio/Voice/Maguro/Gameplay/Maguro_PerfectHit.ogg" id="16_o3cya"]
+[ext_resource type="AudioStream" uid="uid://uq80s41cxe8q" path="res://Audio/Voice/Maguro/Gameplay/Maguro_Win1.ogg" id="17_eji0a"]
+[ext_resource type="AudioStream" uid="uid://d2f521q0ldyh4" path="res://Audio/Voice/Maguro/Gameplay/Maguro_Win2.ogg" id="18_l5vwk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f5kft"]
 atlas = ExtResource("1_kgryj")
@@ -638,14 +652,97 @@ _data = {
 &"RESET": SubResource("Animation_ok2bs")
 }
 
-[node name="Maguro_AnimatedSprite3D" type="AnimatedSprite3D"]
+[sub_resource type="Resource" id="Resource_4okn1"]
+script = ExtResource("6_cwl7g")
+type = 7
+sound_effect = ExtResource("7_aw7tp")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_0ldd3"]
+script = ExtResource("6_cwl7g")
+type = 8
+sound_effect = ExtResource("8_e42f3")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_h0dit"]
+script = ExtResource("6_cwl7g")
+type = 9
+sound_effect = ExtResource("9_it61g")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_7qd1e"]
+script = ExtResource("6_cwl7g")
+type = 10
+sound_effect = ExtResource("10_jnluh")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_aepcm"]
+script = ExtResource("6_cwl7g")
+type = 11
+sound_effect = ExtResource("11_42qpd")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_76boc"]
+script = ExtResource("6_cwl7g")
+type = 12
+sound_effect = ExtResource("12_7t5am")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_gagdc"]
+script = ExtResource("6_cwl7g")
+type = 13
+sound_effect = ExtResource("13_qfxtn")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_ee0w3"]
+script = ExtResource("6_cwl7g")
+type = 14
+sound_effect = ExtResource("14_s6lmk")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_c1ilg"]
+script = ExtResource("6_cwl7g")
+type = 15
+sound_effect = ExtResource("15_7d5xg")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_dabhh"]
+script = ExtResource("6_cwl7g")
+type = 16
+sound_effect = ExtResource("16_o3cya")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_hy3ik"]
+script = ExtResource("6_cwl7g")
+type = 17
+sound_effect = ExtResource("17_eji0a")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_x2g1a"]
+script = ExtResource("6_cwl7g")
+type = 18
+sound_effect = ExtResource("18_l5vwk")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D"]
 offset = Vector2(0, 223.985)
 billboard = 2
 alpha_cut = 2
 alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
-frame = 3
 
 [node name="HoldPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2724506, 1.5496216, 0)
@@ -674,3 +771,6 @@ parameters/Hold/blend_position = 0.0
 parameters/Idle/blend_position = 0.0
 parameters/Slash/blend_position = 0.0
 parameters/Walk/blend_position = 0.0
+
+[node name="CharacterAudio" parent="." instance=ExtResource("5_ok2bs")]
+char_voice_lines = Array[ExtResource("6_cwl7g")]([SubResource("Resource_4okn1"), SubResource("Resource_0ldd3"), SubResource("Resource_h0dit"), SubResource("Resource_7qd1e"), SubResource("Resource_aepcm"), SubResource("Resource_76boc"), SubResource("Resource_gagdc"), SubResource("Resource_ee0w3"), SubResource("Resource_c1ilg"), SubResource("Resource_dabhh"), SubResource("Resource_hy3ik"), SubResource("Resource_x2g1a")])
