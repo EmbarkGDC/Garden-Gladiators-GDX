@@ -1,0 +1,40 @@
+# Util.gd
+
+extends Node
+
+enum PlayerCharacter {
+	ANAGO,
+	BLADEZ,
+	MAGURO,
+	SYLKIE
+}
+
+enum SCENES {
+	TITLE,
+	SETTINGS,
+	MINIGAME_SELECT,
+	CHARACTER_SELECT,
+	SUSHIDO,
+	GAMEPLAY_RESULTS	
+}
+
+enum FISH {
+	BLUNA,
+	PALGRAM,
+	SQUIPPER,
+	MOONTAIL,
+	HELIOUCH
+}
+
+enum CUTS {
+	MISS,
+	BASIC,
+	PERFECT
+}
+
+enum AUDIO_BUSES {
+	MASTER,
+	SFX,
+	SPEECH,
+	MUSIC
+}

@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://kcpilqmr7xaf"]
+[gd_scene load_steps=14 format=3 uid="uid://kcpilqmr7xaf"]
 
 [ext_resource type="Material" uid="uid://sbrsdkqfhhe4" path="res://Graphics/Materials/cut_meter.tres" id="1_jyguu"]
 [ext_resource type="Script" uid="uid://pl3nc2taffre" path="res://Code/cut_meter.gd" id="1_tbuqg"]
 [ext_resource type="Texture2D" uid="uid://cigpbg30y0rdo" path="res://Graphics/UI/cut_pointer_UI.png" id="3_1co62"]
 [ext_resource type="Texture2D" uid="uid://c6unwf75b4wa8" path="res://Graphics/UI/cut_frame_UI.png" id="3_ms8cc"]
+[ext_resource type="AudioStream" uid="uid://c0ub06f0p7f4y" path="res://Audio/SFX/SFX_Cut_Meter_(Hyōshigi).ogg" id="5_ob5ip"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_tbuqg"]
 material = ExtResource("1_jyguu")
@@ -99,3 +100,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17662328, 0)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.037882924, -0.018427014)
 mesh = SubResource("QuadMesh_ob5ip")
+
+[node name="SFX_Cut_Meter_Hyōshigi" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_ob5ip")
+bus = &"SFX"

@@ -1,11 +1,23 @@
-[gd_scene load_steps=96 format=3 uid="uid://cdi7ld4cq2dwu"]
+[gd_scene load_steps=120 format=3 uid="uid://cdi7ld4cq2dwu"]
 
 [ext_resource type="Texture2D" uid="uid://bw53ghb22rmc4" path="res://Graphics/Sprites/PlayerChar/Sylkie/Sylkie_Idle_SpriteSheet.png" id="1_m5kwv"]
 [ext_resource type="Texture2D" uid="uid://dfi875argdmua" path="res://Graphics/Sprites/PlayerChar/Sylkie/Sylkie_Action_SpriteSheet.png" id="2_ygge4"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="3_ndf68"]
 [ext_resource type="AnimationLibrary" uid="uid://bagpuxalkkp5h" path="res://Scenes/Components/Character/animations/Sylkie_animations.res" id="3_yvxx6"]
-[ext_resource type="AudioStream" uid="uid://cgqrvy7tyiwr0" path="res://Audio/Voice/Sylkie/Gameplay/Sylkie_Win.ogg" id="5_ngjtu"]
-[ext_resource type="Script" uid="uid://drayt88uh0hn8" path="res://Code/characater_audio.gd" id="5_yvxx6"]
+[ext_resource type="Script" uid="uid://dlj3ormcob3jy" path="res://Code/Audio/SoundEffectSetting.gd" id="6_eosxu"]
+[ext_resource type="AudioStream" uid="uid://2vsubc3oaam5" path="res://Audio/Voice/Sylkie/Gameplay/Sylkie_Attack1.ogg" id="7_dckbq"]
+[ext_resource type="PackedScene" uid="uid://b634ji0ols64c" path="res://Scenes/Components/Audio/character_audio.tscn" id="7_m3or2"]
+[ext_resource type="AudioStream" uid="uid://diokbntlu81xw" path="res://Audio/Voice/Sylkie/Gameplay/Sylkie_Attack2.ogg" id="8_ab1ip"]
+[ext_resource type="AudioStream" uid="uid://ds5nypkf6elqx" path="res://Audio/Voice/Sylkie/Gameplay/Sylkie_BattleStart1.ogg" id="9_8clvg"]
+[ext_resource type="AudioStream" uid="uid://dx7loy0ugbuc7" path="res://Audio/Voice/Sylkie/Gameplay/Sylkie_BattleStart2.ogg" id="10_petqt"]
+[ext_resource type="AudioStream" uid="uid://kkmma1dygpyl" path="res://Audio/Voice/Sylkie/Gameplay/Sylkie_CharacterSelected.ogg" id="11_rj58u"]
+[ext_resource type="AudioStream" uid="uid://buaavrunjevm6" path="res://Audio/Voice/Sylkie/Gameplay/Sylkie_Lose1.ogg" id="12_2bxmn"]
+[ext_resource type="AudioStream" uid="uid://cnkfnpxb6ayti" path="res://Audio/Voice/Sylkie/Gameplay/Sylkie_Lose2.ogg" id="13_oa2pa"]
+[ext_resource type="AudioStream" uid="uid://ss0ijo33t7re" path="res://Audio/Voice/Sylkie/Gameplay/Sylkie_MissHit1.ogg" id="14_rdevp"]
+[ext_resource type="AudioStream" uid="uid://c1tr5kcrlsys1" path="res://Audio/Voice/Sylkie/Gameplay/Sylkie_MissHit2.ogg" id="15_n3bf8"]
+[ext_resource type="AudioStream" uid="uid://nlb7lp06caee" path="res://Audio/Voice/Sylkie/Gameplay/Sylkie_PerfectHit.ogg" id="16_r7hf8"]
+[ext_resource type="AudioStream" uid="uid://cgqrvy7tyiwr0" path="res://Audio/Voice/Sylkie/Gameplay/Sylkie_Win1.ogg" id="17_sm2k8"]
+[ext_resource type="AudioStream" uid="uid://bqh6gpnbwf6fj" path="res://Audio/Voice/Sylkie/Gameplay/Sylkie_Win2.ogg" id="18_jermr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5kwv"]
 atlas = ExtResource("1_m5kwv")
@@ -702,7 +714,91 @@ _data = {
 &"RESET": SubResource("Animation_ngjtu")
 }
 
-[node name="Sylkie_AnimatedSprite3D" type="AnimatedSprite3D"]
+[sub_resource type="Resource" id="Resource_qjqox"]
+script = ExtResource("6_eosxu")
+type = 7
+sound_effect = ExtResource("7_dckbq")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_sgnke"]
+script = ExtResource("6_eosxu")
+type = 8
+sound_effect = ExtResource("8_ab1ip")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_ux68r"]
+script = ExtResource("6_eosxu")
+type = 9
+sound_effect = ExtResource("9_8clvg")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_oo3k1"]
+script = ExtResource("6_eosxu")
+type = 10
+sound_effect = ExtResource("10_petqt")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_ew0jp"]
+script = ExtResource("6_eosxu")
+type = 11
+sound_effect = ExtResource("11_rj58u")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_hmu3b"]
+script = ExtResource("6_eosxu")
+type = 12
+sound_effect = ExtResource("12_2bxmn")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_ouq86"]
+script = ExtResource("6_eosxu")
+type = 13
+sound_effect = ExtResource("13_oa2pa")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_tqux4"]
+script = ExtResource("6_eosxu")
+type = 14
+sound_effect = ExtResource("14_rdevp")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_g2lxb"]
+script = ExtResource("6_eosxu")
+type = 15
+sound_effect = ExtResource("15_n3bf8")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_2ulif"]
+script = ExtResource("6_eosxu")
+type = 16
+sound_effect = ExtResource("16_r7hf8")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_4xixu"]
+script = ExtResource("6_eosxu")
+type = 17
+sound_effect = ExtResource("17_sm2k8")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_45q5w"]
+script = ExtResource("6_eosxu")
+type = 18
+sound_effect = ExtResource("18_jermr")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D"]
 sorting_offset = -0.1
 offset = Vector2(0, 228.14)
 billboard = 1
@@ -741,7 +837,5 @@ parameters/Idle/blend_position = 0.0
 parameters/Slash/blend_position = 0.0
 parameters/Walk/blend_position = 0.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_ngjtu")
-script = ExtResource("5_yvxx6")
-chosen_character = null
+[node name="CharacterAudio" parent="." instance=ExtResource("7_m3or2")]
+char_voice_lines = Array[ExtResource("6_eosxu")]([SubResource("Resource_qjqox"), SubResource("Resource_sgnke"), SubResource("Resource_ux68r"), SubResource("Resource_oo3k1"), SubResource("Resource_ew0jp"), SubResource("Resource_hmu3b"), SubResource("Resource_ouq86"), SubResource("Resource_tqux4"), SubResource("Resource_g2lxb"), SubResource("Resource_2ulif"), SubResource("Resource_4xixu"), SubResource("Resource_45q5w")])
