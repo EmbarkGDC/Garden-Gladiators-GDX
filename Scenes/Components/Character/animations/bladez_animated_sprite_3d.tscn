@@ -1,9 +1,23 @@
-[gd_scene load_steps=128 format=3 uid="uid://cml7amem26ak0"]
+[gd_scene load_steps=154 format=3 uid="uid://cml7amem26ak0"]
 
 [ext_resource type="Texture2D" uid="uid://b88aeenoq40uf" path="res://Graphics/Sprites/PlayerChar/Bladez/Bladez_Action_SpriteSheet.png" id="1_lp0uq"]
 [ext_resource type="Texture2D" uid="uid://dt4rufyox4urg" path="res://Graphics/Sprites/PlayerChar/Bladez/Bladez_Idle_SpriteSheet.png" id="2_hu1ps"]
 [ext_resource type="AnimationLibrary" uid="uid://bltufge74ass1" path="res://Scenes/Components/Character/animations/Bladez_animations.res" id="3_xrpic"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="4_0g53m"]
+[ext_resource type="PackedScene" uid="uid://b634ji0ols64c" path="res://Scenes/Components/Audio/character_audio.tscn" id="5_0g53m"]
+[ext_resource type="Script" uid="uid://dlj3ormcob3jy" path="res://Code/Audio/SoundEffectSetting.gd" id="6_x4ecr"]
+[ext_resource type="AudioStream" uid="uid://b42ukavi7manf" path="res://Audio/Voice/Bladez/Gameplay/Bladez_Attack1.ogg" id="7_r5qm7"]
+[ext_resource type="AudioStream" uid="uid://bro34jaoy83ur" path="res://Audio/Voice/Bladez/Gameplay/Bladez_Attack2.ogg" id="8_o3jhe"]
+[ext_resource type="AudioStream" uid="uid://belrsyi28f6uu" path="res://Audio/Voice/Bladez/Gameplay/Bladez_BattleStart1.ogg" id="9_wpsh7"]
+[ext_resource type="AudioStream" uid="uid://djk4dmix1xwq8" path="res://Audio/Voice/Bladez/Gameplay/Bladez_BattleStart2.ogg" id="10_8ntv3"]
+[ext_resource type="AudioStream" uid="uid://ckg3jbpauf3l1" path="res://Audio/Voice/Bladez/Gameplay/Bladez_CharacterSelected.ogg" id="11_l623f"]
+[ext_resource type="AudioStream" uid="uid://dwf3n1eoxhohj" path="res://Audio/Voice/Bladez/Gameplay/Bladez_Lose1.ogg" id="12_n303e"]
+[ext_resource type="AudioStream" uid="uid://cj27goe4up8s1" path="res://Audio/Voice/Bladez/Gameplay/Bladez_Lose2.ogg" id="13_51cq2"]
+[ext_resource type="AudioStream" uid="uid://cpaf0intv5j0r" path="res://Audio/Voice/Bladez/Gameplay/Bladez_MissHit1.ogg" id="14_w3hct"]
+[ext_resource type="AudioStream" uid="uid://c5pl2hcq0mdhf" path="res://Audio/Voice/Bladez/Gameplay/Bladez_MissHit2.ogg" id="15_w72ed"]
+[ext_resource type="AudioStream" uid="uid://33xyaln2wvop" path="res://Audio/Voice/Bladez/Gameplay/Bladez_PerfectHit.ogg" id="16_8cyng"]
+[ext_resource type="AudioStream" uid="uid://dbk22g32vlwfm" path="res://Audio/Voice/Bladez/Gameplay/Bladez_Win1.ogg" id="17_hqq43"]
+[ext_resource type="AudioStream" uid="uid://whdxdj0gt56q" path="res://Audio/Voice/Bladez/Gameplay/Bladez_Win2.ogg" id="18_vvob6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_clbiv"]
 atlas = ExtResource("1_lp0uq")
@@ -948,14 +962,98 @@ _data = {
 &"RESET": SubResource("Animation_xrpic")
 }
 
-[node name="Bladez_AnimatedSprite3D" type="AnimatedSprite3D"]
+[sub_resource type="Resource" id="Resource_wq2o1"]
+script = ExtResource("6_x4ecr")
+type = 7
+sound_effect = ExtResource("7_r5qm7")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_l0c5t"]
+script = ExtResource("6_x4ecr")
+type = 8
+sound_effect = ExtResource("8_o3jhe")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_djlnm"]
+script = ExtResource("6_x4ecr")
+type = 9
+sound_effect = ExtResource("9_wpsh7")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_pmqur"]
+script = ExtResource("6_x4ecr")
+type = 10
+sound_effect = ExtResource("10_8ntv3")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_cwsjd"]
+script = ExtResource("6_x4ecr")
+type = 11
+sound_effect = ExtResource("11_l623f")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_w770t"]
+script = ExtResource("6_x4ecr")
+type = 12
+sound_effect = ExtResource("12_n303e")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_hkrkj"]
+script = ExtResource("6_x4ecr")
+type = 13
+sound_effect = ExtResource("13_51cq2")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_6etxt"]
+script = ExtResource("6_x4ecr")
+type = 14
+sound_effect = ExtResource("14_w3hct")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_ug6pi"]
+script = ExtResource("6_x4ecr")
+type = 15
+sound_effect = ExtResource("15_w72ed")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_hv3e7"]
+script = ExtResource("6_x4ecr")
+type = 16
+sound_effect = ExtResource("16_8cyng")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_848vs"]
+script = ExtResource("6_x4ecr")
+type = 17
+sound_effect = ExtResource("17_hqq43")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_i2wb6"]
+script = ExtResource("6_x4ecr")
+type = 18
+sound_effect = ExtResource("18_vvob6")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D"]
 offset = Vector2(0, 211.955)
 billboard = 2
 alpha_cut = 2
 alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
-frame = 5
+frame = 3
 
 [node name="HoldPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1136495, 2.1487668, 0)
@@ -984,3 +1082,6 @@ parameters/Hold/blend_position = 0.0
 parameters/Idle/blend_position = 0.0
 parameters/Slash/blend_position = 0.0
 parameters/Walk/blend_position = 0.0
+
+[node name="CharacterAudio" parent="." instance=ExtResource("5_0g53m")]
+char_voice_lines = Array[ExtResource("6_x4ecr")]([SubResource("Resource_wq2o1"), SubResource("Resource_l0c5t"), SubResource("Resource_djlnm"), SubResource("Resource_pmqur"), SubResource("Resource_cwsjd"), SubResource("Resource_w770t"), SubResource("Resource_hkrkj"), SubResource("Resource_6etxt"), SubResource("Resource_ug6pi"), SubResource("Resource_hv3e7"), SubResource("Resource_848vs"), SubResource("Resource_i2wb6")])

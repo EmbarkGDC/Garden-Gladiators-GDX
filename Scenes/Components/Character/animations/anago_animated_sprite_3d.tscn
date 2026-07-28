@@ -1,11 +1,23 @@
-[gd_scene load_steps=131 format=3 uid="uid://byluudcct606"]
+[gd_scene load_steps=155 format=3 uid="uid://byluudcct606"]
 
 [ext_resource type="Texture2D" uid="uid://d2786a47ffxip" path="res://Graphics/Sprites/PlayerChar/Anago/Anago_Action_SpriteSheet.png" id="1_imf3a"]
 [ext_resource type="Texture2D" uid="uid://kv3ln5brbjou" path="res://Graphics/Sprites/PlayerChar/Anago/Anago_Idle_SpriteSheet.png" id="2_ttp4u"]
 [ext_resource type="AnimationLibrary" uid="uid://dseiby0xvaeqs" path="res://Scenes/Components/Character/animations/Anago_animations.res" id="3_f5nsl"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="4_nl8tt"]
-[ext_resource type="Script" uid="uid://drayt88uh0hn8" path="res://Code/Audio/character_audio.gd" id="5_nl8tt"]
+[ext_resource type="PackedScene" uid="uid://b634ji0ols64c" path="res://Scenes/Components/Audio/character_audio.tscn" id="5_max6w"]
 [ext_resource type="Script" uid="uid://dlj3ormcob3jy" path="res://Code/Audio/SoundEffectSetting.gd" id="6_max6w"]
+[ext_resource type="AudioStream" uid="uid://bobf6rj2ym66b" path="res://Audio/Voice/Anago/Gameplay/Anago_Attack1.ogg" id="7_dvdbf"]
+[ext_resource type="AudioStream" uid="uid://cxm0dq2b47yd7" path="res://Audio/Voice/Anago/Gameplay/Anago_Attack2.ogg" id="8_6ermv"]
+[ext_resource type="AudioStream" uid="uid://bddh3gd480isc" path="res://Audio/Voice/Anago/Gameplay/Anago_BattleStart1.ogg" id="9_82mo4"]
+[ext_resource type="AudioStream" uid="uid://bgh4cuo5vcx0l" path="res://Audio/Voice/Anago/Gameplay/Anago_BattleStart2.ogg" id="10_pka4u"]
+[ext_resource type="AudioStream" uid="uid://oqtkaod7sfdm" path="res://Audio/Voice/Anago/Gameplay/Anago_CharacterSelected.ogg" id="11_2xq80"]
+[ext_resource type="AudioStream" uid="uid://c0l2pimkikoor" path="res://Audio/Voice/Anago/Gameplay/Anago_Lose1.ogg" id="12_rfs87"]
+[ext_resource type="AudioStream" uid="uid://cvbjlfs5adlqy" path="res://Audio/Voice/Anago/Gameplay/Anago_Lose2.ogg" id="13_bswqg"]
+[ext_resource type="AudioStream" uid="uid://bs4bxi3to2i7w" path="res://Audio/Voice/Anago/Gameplay/Anago_MissHit1.ogg" id="14_y6he5"]
+[ext_resource type="AudioStream" uid="uid://csod0ht20n0ra" path="res://Audio/Voice/Anago/Gameplay/Anago_MissHit2.ogg" id="15_uobaw"]
+[ext_resource type="AudioStream" uid="uid://vwwgpgjl3i4n" path="res://Audio/Voice/Anago/Gameplay/Anago_PerfectHit.ogg" id="16_nlrrw"]
+[ext_resource type="AudioStream" uid="uid://cdle8djcxcee1" path="res://Audio/Voice/Anago/Gameplay/Anago_Win1.ogg" id="17_4lsb2"]
+[ext_resource type="AudioStream" uid="uid://brvd4a72x0tbj" path="res://Audio/Voice/Anago/Gameplay/Anago_Win2.ogg" id="18_a4eoo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3cxta"]
 atlas = ExtResource("1_imf3a")
@@ -1052,7 +1064,91 @@ _data = {
 &"RESET": SubResource("Animation_nl8tt")
 }
 
-[node name="Anago_AnimatedSprite3D" type="AnimatedSprite3D"]
+[sub_resource type="Resource" id="Resource_pka4u"]
+script = ExtResource("6_max6w")
+type = 7
+sound_effect = ExtResource("7_dvdbf")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_2xq80"]
+script = ExtResource("6_max6w")
+type = 8
+sound_effect = ExtResource("8_6ermv")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_rfs87"]
+script = ExtResource("6_max6w")
+type = 9
+sound_effect = ExtResource("9_82mo4")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_bswqg"]
+script = ExtResource("6_max6w")
+type = 10
+sound_effect = ExtResource("10_pka4u")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_y6he5"]
+script = ExtResource("6_max6w")
+type = 11
+sound_effect = ExtResource("11_2xq80")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_uobaw"]
+script = ExtResource("6_max6w")
+type = 12
+sound_effect = ExtResource("12_rfs87")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_nlrrw"]
+script = ExtResource("6_max6w")
+type = 13
+sound_effect = ExtResource("13_bswqg")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_4lsb2"]
+script = ExtResource("6_max6w")
+type = 14
+sound_effect = ExtResource("14_y6he5")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_a4eoo"]
+script = ExtResource("6_max6w")
+type = 15
+sound_effect = ExtResource("15_uobaw")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_3tjqy"]
+script = ExtResource("6_max6w")
+type = 16
+sound_effect = ExtResource("16_nlrrw")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_i1ppl"]
+script = ExtResource("6_max6w")
+type = 17
+sound_effect = ExtResource("17_4lsb2")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[sub_resource type="Resource" id="Resource_fnu82"]
+script = ExtResource("6_max6w")
+type = 18
+sound_effect = ExtResource("18_a4eoo")
+audio_bus = 2
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D"]
 offset = Vector2(0, 251.895)
 billboard = 2
 alpha_cut = 2
@@ -1060,7 +1156,7 @@ alpha_scissor_threshold = 0.49
 alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
-frame = 6
+frame = 7
 
 [node name="HoldPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81413376, 2.1966953, 0)
@@ -1090,7 +1186,5 @@ parameters/Idle/blend_position = 0.0
 parameters/Slash/blend_position = 0.0
 parameters/Walk/blend_position = 0.0
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-script = ExtResource("5_nl8tt")
-chosen_character = 0
-char_voicelines = Array[ExtResource("6_max6w")]([null, null, null, null, null, null, null])
+[node name="CharacterAudio" parent="." instance=ExtResource("5_max6w")]
+char_voice_lines = Array[ExtResource("6_max6w")]([SubResource("Resource_pka4u"), SubResource("Resource_2xq80"), SubResource("Resource_rfs87"), SubResource("Resource_bswqg"), SubResource("Resource_y6he5"), SubResource("Resource_uobaw"), SubResource("Resource_nlrrw"), SubResource("Resource_4lsb2"), SubResource("Resource_a4eoo"), SubResource("Resource_3tjqy"), SubResource("Resource_i1ppl"), SubResource("Resource_fnu82")])
