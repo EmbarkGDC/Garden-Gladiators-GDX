@@ -7,7 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://2jff65ikec3a" path="res://Audio/SFX/SFX_Fish_Pick_Up.ogg" id="5_6kgic"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_urn1o"]
-radius = 1.0
 
 [sub_resource type="Animation" id="Animation_4fqy1"]
 length = 0.001
@@ -64,9 +63,6 @@ _data = {
 script = ExtResource("1_bf0jc")
 fish_sprite = NodePath("FishSprite3D")
 sushi_sprite = NodePath("SushiSprite3D")
-hit_area = 5.0
-perfect_hit_area = 4.0
-speed = 0.75
 penalty_value = -1
 score_value = 5
 perfect_value = 10
@@ -84,9 +80,7 @@ libraries = {
 
 [node name="FishSprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.4136418, 0)
-sorting_offset = 0.1
 billboard = 1
-render_priority = 5
 texture = ExtResource("3_p27ol")
 
 [node name="SushiSprite3D" type="Sprite3D" parent="."]

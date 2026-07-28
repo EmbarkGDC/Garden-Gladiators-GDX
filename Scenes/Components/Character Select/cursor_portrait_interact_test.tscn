@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjof55thh0kv5"]
+
+[ext_resource type="PackedScene" uid="uid://btcojqyy08rpm" path="res://Scenes/Components/Character Select/BaseCursor.tscn" id="1_bh0q6"]
+[ext_resource type="PackedScene" uid="uid://rhisk5kjf0ll" path="res://Scenes/Components/Character Select/base_portrait.tscn" id="2_0dkoc"]
+
+[node name="Cursor Portrait Interact test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cursor" parent="." instance=ExtResource("1_bh0q6")]
+position = Vector2(623, 90)
+
+[node name="BasePortrait" parent="." instance=ExtResource("2_0dkoc")]
+layout_mode = 0
