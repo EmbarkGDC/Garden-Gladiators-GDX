@@ -19,7 +19,9 @@ func _process(_delta: float) -> void:
 
 func start_cut_sequence(target: holdable) -> void:
 	hit_area = target.hit_area * 0.1
-	offset = randf_range(-cut.cut_hit_area / 2, cut.cut_hit_area / 2)
+	#offset = randf_range(-cut.cut_hit_area / 2, cut.cut_hit_area / 2) - cut.cut_hit_area
+	# Zero offset for testing
+	offset = 0.0 - hit_area
 	print(offset)
 	cut_fish = target as fish
 	if !is_instance_valid(cut_fish):

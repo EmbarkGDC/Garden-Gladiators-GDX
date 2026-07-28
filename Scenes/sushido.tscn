@@ -143,6 +143,7 @@ shape = SubResource("BoxShape3D_ifpe6")
 [node name="Player" parent="." instance=ExtResource("1_c41nv")]
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38450742, 0, 2.5418181)
+using_device = -1
 
 [node name="InteractingComponent" parent="Player" index="4" node_paths=PackedStringArray("mechanic_node")]
 mechanic_node = NodePath("../hold_mechanic")

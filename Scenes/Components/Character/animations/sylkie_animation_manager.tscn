@@ -1,0 +1,320 @@
+[gd_scene load_steps=20 format=3 uid="uid://xjy4dmn67ghn"]
+
+[ext_resource type="Script" uid="uid://rj4l6vlmfh01" path="res://Code/animation_manager.gd" id="1_tydum"]
+[ext_resource type="Texture2D" uid="uid://biskb2yyschlq" path="res://Graphics/Sprites/Props/bluna_rough.png" id="2_djkjf"]
+[ext_resource type="PackedScene" uid="uid://cdi7ld4cq2dwu" path="res://Scenes/Components/Character/animations/sylkie_animated_sprite_3d.tscn" id="2_yc8cu"]
+[ext_resource type="AnimationNodeBlendSpace1D" uid="uid://bx458dabic33w" path="res://Scenes/Components/Character/animations/carry.tres" id="4_djkjf"]
+
+[sub_resource type="Animation" id="Animation_lo7at"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationManager/hold_position:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.485, 2.035, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationManager/AnimatedSprite3D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hold_pX"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationManager/AnimatedSprite3D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_djkjf"]
+resource_name = "carry_nX"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationManager/hold_position:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.92, 1.93, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationManager/AnimatedSprite3D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"carry_nX"]
+}
+
+[sub_resource type="Animation" id="Animation_yc8cu"]
+resource_name = "carry_pX"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationManager/hold_position:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.705, 1.93, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationManager/AnimatedSprite3D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"carry_pX"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationManager/AnimatedSprite3D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_8uom3"]
+resource_name = "grab_nX"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationManager/hold_position:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.085, 2.06, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationManager/AnimatedSprite3D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"grab_nX"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationManager/AnimatedSprite3D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_qgf1i"]
+resource_name = "grab_pX"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationManager/hold_position:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.47, 1.87, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationManager/AnimatedSprite3D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"grab_pX"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationManager/AnimatedSprite3D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_yl2h2"]
+resource_name = "hold_nX"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationManager/hold_position:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.485, 2.035, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationManager/AnimatedSprite3D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hold_nX"]
+}
+
+[sub_resource type="Animation" id="Animation_hctjd"]
+resource_name = "hold_pX"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationManager/hold_position:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.445, 2.035, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationManager/AnimatedSprite3D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"hold_pX", &"hold_pX"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qgf1i"]
+_data = {
+&"RESET": SubResource("Animation_lo7at"),
+&"carry_nX": SubResource("Animation_djkjf"),
+&"carry_pX": SubResource("Animation_yc8cu"),
+&"grab_nX": SubResource("Animation_8uom3"),
+&"grab_pX": SubResource("Animation_qgf1i"),
+&"hold_nX": SubResource("Animation_yl2h2"),
+&"hold_pX": SubResource("Animation_hctjd")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5cg2b"]
+animation = &"grab_nX"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_13w21"]
+animation = &"grab_pX"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_3comi"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_5cg2b")
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_13w21")
+blend_point_1/pos = 1.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fnjrl"]
+animation = &"hold_nX"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tlwi1"]
+animation = &"hold_pX"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_hfi1r"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_fnjrl")
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_tlwi1")
+blend_point_1/pos = 1.0
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_7v1dt"]
+states/Carry/node = ExtResource("4_djkjf")
+states/Carry/position = Vector2(519, 69)
+states/End/position = Vector2(1051, 194)
+states/Grab/node = SubResource("AnimationNodeBlendSpace1D_3comi")
+states/Grab/position = Vector2(519, 189)
+states/Hold/node = SubResource("AnimationNodeBlendSpace1D_hfi1r")
+states/Hold/position = Vector2(347, 189)
+states/Start/position = Vector2(134, 362)
+
+[node name="AnimationManager" type="AnimationPlayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_qgf1i")
+}
+script = ExtResource("1_tydum")
+
+[node name="hold_position" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.485, 2.035, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="hold_position"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6495271)
+texture = ExtResource("2_djkjf")
+
+[node name="AnimatedSprite3D" parent="." instance=ExtResource("2_yc8cu")]
+animation = &"hold_pX"
+frame_progress = 0.0
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeStateMachine_7v1dt")
+anim_player = NodePath("..")
+parameters/Carry/blend_position = -0.7835007
+parameters/Grab/blend_position = 0.0
+parameters/Hold/blend_position = 0.0

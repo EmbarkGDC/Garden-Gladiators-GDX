@@ -1,10 +1,20 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://sbrsdkqfhhe4"]
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://sbrsdkqfhhe4"]
 
-[ext_resource type="Shader" uid="uid://cd7j8j64r1jsq" path="res://Code/Shaders/cut_meter.gdshader" id="1_h5bjm"]
+[ext_resource type="Shader" uid="uid://cd7j8j64r1jsq" path="res://Code/Shaders/cut_meter.gdshader" id="1_10yep"]
+
+[sub_resource type="Gradient" id="Gradient_s0yhc"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.46153846, 0.89903843)
+colors = PackedColorArray(0.3529412, 0, 1, 1, 0.08627451, 0.87058824, 0.59607846, 1, 0.9607843, 0.8392157, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pvwsj"]
+gradient = SubResource("Gradient_s0yhc")
+width = 32
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_h5bjm")
+shader = ExtResource("1_10yep")
 shader_parameter/offset = 0.0
 shader_parameter/difficulty = 1.0
 shader_parameter/perfect_difficulty = 1.0
+shader_parameter/colorMap = SubResource("GradientTexture1D_pvwsj")

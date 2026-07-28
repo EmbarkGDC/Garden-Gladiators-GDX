@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cj8xwn0a46yg7"]
+
+[ext_resource type="Shader" uid="uid://bpmscmd23ywae" path="res://Code/Shaders/sprite_recolor.gdshader" id="1_vbnra"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_vbnra")
+shader_parameter/new_color = Color(2.117753e-06, 0.8693699, 0.91558236, 1)
