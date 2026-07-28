@@ -18,15 +18,6 @@ var PlayersReady: bool = false
 var ReadyPlayers: int = 0
 var playerdropped: bool = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _input(event: InputEvent) -> void:
 	if playerdropped:
 		playerdropped = false
@@ -64,7 +55,7 @@ func _input(event: InputEvent) -> void:
 		else:
 			if device == 0:
 				if PlayersReady and event.is_action_pressed("ui_accept"):
-					pass
+					all_players_ready.emit()
 
 func find_cursor(id: int) -> Cursor:
 	for i:int in cursors.size():
@@ -77,7 +68,6 @@ func new_ready_player() -> void:
 	ReadyPlayers += 1
 	if ReadyPlayers == cursors.size():
 		PlayersReady = true
-		all_players_ready.emit()
 
 func not_ready_player() -> void:
 	ReadyPlayers -= 1
@@ -90,6 +80,8 @@ func remove_cursor(cursor:Cursor) -> void:
 	
 	DeviceAssign.player_dropout(cursor.controllerID)
 	cursors.erase(cursor)
+	if cursor.hasChosen:
+		not_ready_player()
 	cursor.queue_free()
 	player_dropout.emit()
 	playerdropped = true
