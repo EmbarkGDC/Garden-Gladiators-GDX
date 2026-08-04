@@ -21,6 +21,7 @@ Util="*res://Code/Autoload/Util.gd"
 MultiplayerInput="*res://addons/multiplayer_input/multiplayer_input.gd"
 PlayerManager="*res://Code/player_manager.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+SceneLoader="*res://Code/Autoload/Scene_Loader.gd"
 
 [debug]
 
