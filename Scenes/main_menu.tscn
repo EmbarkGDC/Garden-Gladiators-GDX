@@ -1,38 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://dg0hauswjmtn"]
+[gd_scene load_steps=8 format=3 uid="uid://dg0hauswjmtn"]
 
 [ext_resource type="Texture2D" uid="uid://bj8l7502yi8qu" path="res://Graphics/UI/GG_TitleArt.svg" id="1_28flt"]
 [ext_resource type="Script" uid="uid://dq84yilipupnx" path="res://Code/main_menu.gd" id="1_48xlc"]
-[ext_resource type="FontFile" uid="uid://bgd1ydpqw50e6" path="res://Graphics/UI/Fonts/UI_Fonts.zip (Unzipped Files)/Header_Sigmar.ttf" id="2_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://5mxcgcg1pmyb" path="res://Graphics/UI/Artwork/Main_SplashArt.png" id="2_ce3w2"]
+[ext_resource type="PackedScene" uid="uid://besr42h4cs87m" path="res://Scenes/Components/UI/ui_button_mainmenu.tscn" id="4_n45e2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ce3w2"]
 texture = ExtResource("2_ce3w2")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3w2"]
 bg_color = Color(0, 0, 0, 0.29411766)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erv1k"]
-bg_color = Color(11.708, 11.708, 11.708, 1)
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.775)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28flt"]
-bg_color = Color(0.5459915, 0.5459915, 0.5459915, 1)
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.775)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
-bg_color = Color(0.73, 0.73, 0.73, 0.89411765)
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.775)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28flt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ehe0"]
 texture = ExtResource("1_28flt")
@@ -47,6 +24,7 @@ grow_vertical = 2
 script = ExtResource("1_48xlc")
 
 [node name="Panel3" type="Panel" parent="."]
+z_index = -5
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,61 +46,35 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ce3w2")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = -1
+anchor_left = 0.36600003
+anchor_top = 0.47900003
+anchor_right = 0.633
 anchor_bottom = 1.0
-offset_top = -255.0
-offset_right = 461.45734
-offset_bottom = -83.0
+offset_left = 0.27996826
+offset_top = 9.679993
+offset_right = 511.64
+offset_bottom = 581.0
 grow_vertical = 0
-theme_override_constants/separation = 20
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = -196
 
-[node name="Minigames" type="Button" parent="VBoxContainer"]
+[node name="minigame" parent="VBoxContainer2" instance=ExtResource("4_n45e2")]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.20403318, 0.20403318, 0.20403318, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_1ehe0")
-theme_override_font_sizes/font_size = 17
-theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_28flt")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1ehe0")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
-text = "MINIGAMES"
+size_flags_horizontal = 1
+size_flags_vertical = 1
 
-[node name="Credits" type="Button" parent="VBoxContainer"]
+[node name="credit" parent="VBoxContainer2" instance=ExtResource("4_n45e2")]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.20403318, 0.20403318, 0.20403318, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_1ehe0")
-theme_override_font_sizes/font_size = 17
-theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_28flt")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1ehe0")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
-text = "CREDITS"
+size_flags_horizontal = 1
+size_flags_vertical = 1
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
+[node name="exit" parent="VBoxContainer2" instance=ExtResource("4_n45e2")]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.20403318, 0.20403318, 0.20403318, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_1ehe0")
-theme_override_font_sizes/font_size = 17
-theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_28flt")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1ehe0")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
-text = "EXIT"
+size_flags_horizontal = 1
+size_flags_vertical = 1
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -137,6 +89,6 @@ rotation = -0.07853982
 theme_override_styles/panel = SubResource("StyleBoxTexture_1ehe0")
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="VBoxContainer/Minigames" to="." method="_on_minigames_pressed"]
-[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer2/minigame" to="." method="_on_minigame_pressed"]
+[connection signal="pressed" from="VBoxContainer2/credit" to="." method="_on_credit_pressed"]
+[connection signal="pressed" from="VBoxContainer2/exit" to="." method="_on_exit_pressed"]
