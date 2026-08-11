@@ -1,4 +1,4 @@
-[gd_resource type="AnimationNodeStateMachine" load_steps=40 format=3 uid="uid://den80y2xpsces"]
+[gd_resource type="AnimationNodeStateMachine" format=3 uid="uid://den80y2xpsces"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ab1ip"]
 animation = &"PC_animations/anticipslash_nX"
@@ -7,11 +7,13 @@ animation = &"PC_animations/anticipslash_nX"
 animation = &"PC_animations/anticipslash_pX"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_petqt"]
+blend_mode = 1
 blend_point_0/node = SubResource("AnimationNodeAnimation_ab1ip")
 blend_point_0/pos = -1.0
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_8clvg")
 blend_point_1/pos = 1.0
-blend_mode = 1
+blend_point_1/name = &"1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rj58u"]
 animation = &"PC_animations/carry_nX"
@@ -20,11 +22,13 @@ animation = &"PC_animations/carry_nX"
 animation = &"carry_pX"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_oa2pa"]
+blend_mode = 1
 blend_point_0/node = SubResource("AnimationNodeAnimation_rj58u")
 blend_point_0/pos = -1.0
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_2bxmn")
 blend_point_1/pos = 1.0
-blend_mode = 1
+blend_point_1/name = &"1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rdevp"]
 animation = &"PC_animations/grab_nX"
@@ -33,11 +37,13 @@ animation = &"PC_animations/grab_nX"
 animation = &"PC_animations/grab_pX"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_r7hf8"]
+blend_mode = 1
 blend_point_0/node = SubResource("AnimationNodeAnimation_rdevp")
 blend_point_0/pos = -1.0
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_n3bf8")
 blend_point_1/pos = 1.0
-blend_mode = 1
+blend_point_1/name = &"1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sm2k8"]
 animation = &"PC_animations/hold_nX"
@@ -46,11 +52,13 @@ animation = &"PC_animations/hold_nX"
 animation = &"PC_animations/hold_pX"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_qjqox"]
+blend_mode = 1
 blend_point_0/node = SubResource("AnimationNodeAnimation_sm2k8")
 blend_point_0/pos = -1.0
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_jermr")
 blend_point_1/pos = 1.0
-blend_mode = 1
+blend_point_1/name = &"1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8eqod"]
 animation = &"PC_animations/idle_nX"
@@ -59,11 +67,13 @@ animation = &"PC_animations/idle_nX"
 animation = &"PC_animations/idle_pX"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_oo3k1"]
+blend_mode = 1
 blend_point_0/node = SubResource("AnimationNodeAnimation_8eqod")
 blend_point_0/pos = -0.90000004
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_cctwk")
 blend_point_1/pos = 0.90000004
-blend_mode = 1
+blend_point_1/name = &"1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ew0jp"]
 animation = &"PC_animations/slash_nX"
@@ -72,11 +82,13 @@ animation = &"PC_animations/slash_nX"
 animation = &"PC_animations/slash_pX"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_ouq86"]
+blend_mode = 1
 blend_point_0/node = SubResource("AnimationNodeAnimation_ew0jp")
 blend_point_0/pos = -1.0
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_hmu3b")
 blend_point_1/pos = 1.0
-blend_mode = 1
+blend_point_1/name = &"1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tqux4"]
 animation = &"PC_animations/walk_nX"
@@ -85,13 +97,15 @@ animation = &"PC_animations/walk_nX"
 animation = &"PC_animations/walk_pX"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_2ulif"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_tqux4")
-blend_point_0/pos = -1.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_g2lxb")
-blend_point_1/pos = 1.0
 min_space = -1.05
 max_space = 1.05
 blend_mode = 1
+blend_point_0/node = SubResource("AnimationNodeAnimation_tqux4")
+blend_point_0/pos = -1.0
+blend_point_0/name = &"0"
+blend_point_1/node = SubResource("AnimationNodeAnimation_g2lxb")
+blend_point_1/pos = 1.0
+blend_point_1/name = &"1"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4xixu"]
 advance_mode = 2
