@@ -18,6 +18,7 @@ config/icon="uid://c8al1j6moioy6"
 [autoload]
 
 Util="*res://Code/Autoload/Util.gd"
+Global="*res://Code/Autoload/Global.gd"
 MultiplayerInput="*res://addons/multiplayer_input/multiplayer_input.gd"
 PlayerManager="*res://Code/player_manager.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
