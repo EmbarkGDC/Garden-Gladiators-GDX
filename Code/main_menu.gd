@@ -9,7 +9,7 @@ func _ready() -> void:
 	minigame.label.text = "minigame"
 	credit.label.text = "credit"
 	exit.label.text = "exit"
-
+	minigame.grab_focus()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

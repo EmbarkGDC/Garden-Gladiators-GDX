@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dg0hauswjmtn"]
+[gd_scene format=3 uid="uid://dg0hauswjmtn"]
 
 [ext_resource type="Texture2D" uid="uid://bj8l7502yi8qu" path="res://Graphics/UI/GG_TitleArt.svg" id="1_28flt"]
 [ext_resource type="Script" uid="uid://dq84yilipupnx" path="res://Code/main_menu.gd" id="1_48xlc"]
@@ -14,7 +14,7 @@ bg_color = Color(0, 0, 0, 0.29411766)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ehe0"]
 texture = ExtResource("1_28flt")
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=352720660]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,7 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_48xlc")
 
-[node name="Panel3" type="Panel" parent="."]
+[node name="Panel3" type="Panel" parent="." unique_id=1517353838]
 z_index = -5
 layout_mode = 1
 anchors_preset = 15
@@ -35,7 +35,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ce3w2")
 
-[node name="Panel2" type="Panel" parent="."]
+[node name="Panel2" type="Panel" parent="." unique_id=1597832227]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,7 +46,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ce3w2")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=443602469]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.36600003
@@ -61,22 +61,22 @@ grow_vertical = 0
 scale = Vector2(0.5, 0.5)
 theme_override_constants/separation = -196
 
-[node name="minigame" parent="VBoxContainer2" instance=ExtResource("4_n45e2")]
+[node name="minigame" parent="VBoxContainer2" unique_id=1907689091 instance=ExtResource("4_n45e2")]
 layout_mode = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="credit" parent="VBoxContainer2" instance=ExtResource("4_n45e2")]
+[node name="credit" parent="VBoxContainer2" unique_id=518863492 instance=ExtResource("4_n45e2")]
 layout_mode = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="exit" parent="VBoxContainer2" instance=ExtResource("4_n45e2")]
+[node name="exit" parent="VBoxContainer2" unique_id=997057806 instance=ExtResource("4_n45e2")]
 layout_mode = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1655426526]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5451389
