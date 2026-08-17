@@ -1,3 +1,4 @@
+class_name DeviceAssign
 extends Node
 
 var using_device: Array

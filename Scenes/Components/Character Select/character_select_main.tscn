@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjlylqebsw67m"]
+
+[ext_resource type="PackedScene" uid="uid://rhisk5kjf0ll" path="res://Scenes/Components/Character Select/base_portrait.tscn" id="1_16r56"]
+[ext_resource type="Script" uid="uid://cgtlffyhje30h" path="res://Code/Character Select/character_select_main.gd" id="1_fsati"]
+[ext_resource type="PackedScene" uid="uid://btcojqyy08rpm" path="res://Scenes/Components/Character Select/BaseCursor.tscn" id="2_716px"]
+[ext_resource type="Script" uid="uid://c8i53iwomntt3" path="res://Code/device_assign.gd" id="4_jcuwg"]
+[ext_resource type="PackedScene" uid="uid://bnp188dndfyrx" path="res://Scenes/Components/Character Select/drop_button.tscn" id="6_nprsy"]
+
+[node name="CharacterSelectMain" type="Control" node_paths=PackedStringArray("DeviceAssign")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fsati")
+DeviceAssign = NodePath("DeviceAssign")
+packed_cursor = ExtResource("2_716px")
+
+[node name="CursorSpawn" type="Node2D" parent="."]
+visible = false
+position = Vector2(577, 327)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -442.0
+offset_top = -174.5
+offset_right = 442.0
+offset_bottom = 174.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="BasePortrait" parent="HBoxContainer" instance=ExtResource("1_16r56")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="HBoxContainer/BasePortrait"]
+z_index = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "Anago"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BasePortrait2" parent="HBoxContainer" instance=ExtResource("1_16r56")]
+layout_mode = 2
+size_flags_vertical = 4
+CharacterID = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/BasePortrait2"]
+z_index = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "Blades"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BasePortrait3" parent="HBoxContainer" instance=ExtResource("1_16r56")]
+layout_mode = 2
+size_flags_vertical = 4
+CharacterID = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/BasePortrait3"]
+z_index = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "Maguro"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BasePortrait4" parent="HBoxContainer" instance=ExtResource("1_16r56")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="HBoxContainer/BasePortrait4"]
+z_index = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "Sylkie"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Drop Button" parent="." instance=ExtResource("6_nprsy")]
+layout_mode = 1
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="DeviceAssign" type="Node" parent="."]
+script = ExtResource("4_jcuwg")

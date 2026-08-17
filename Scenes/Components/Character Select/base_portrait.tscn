@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://rhisk5kjf0ll"]
+
+[ext_resource type="Script" uid="uid://dvisryx5bxltt" path="res://Code/Character Select/base_portrait.gd" id="1_rjnni"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_m41dy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjnni"]
+size = Vector2(218, 349)
+
+[node name="BasePortrait" type="MarginContainer"]
+custom_minimum_size = Vector2(218, 349.027)
+offset_right = 218.0
+offset_bottom = 349.02716
+size_flags_horizontal = 4
+script = ExtResource("1_rjnni")
+
+[node name="ColorTex" type="TextureRect" parent="."]
+layout_mode = 2
+texture = SubResource("CanvasTexture_m41dy")
+
+[node name="CharTex" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 2
+
+[node name="PortraitCollision" type="Area2D" parent="."]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PortraitCollision"]
+position = Vector2(109, 174.5)
+shape = SubResource("RectangleShape2D_rjnni")
+
+[connection signal="area_entered" from="PortraitCollision" to="." method="_on_portrait_collision_area_entered"]
+[connection signal="area_exited" from="PortraitCollision" to="." method="_on_portrait_collision_area_exited"]

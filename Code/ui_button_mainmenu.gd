@@ -11,6 +11,8 @@ func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 	pressed.connect(_on_pressed)
+	focus_entered.connect(_focus_entered)
+	focus_exited.connect(_focus_exited)
 
 ## Pivot update
 func set_pivot() -> void:
@@ -21,6 +23,12 @@ func _on_mouse_entered() -> void:
 	create_tween().tween_property(self, "scale", Vector2(1.1,1.1), 0.1)
 	#change_label_enter()
 func _on_mouse_exited() -> void:
+	create_tween().tween_property(self, "scale", Vector2(1,1), 0.1)
+	#change_label_exit()
+func _focus_entered() -> void:
+	create_tween().tween_property(self, "scale", Vector2(1.1,1.1), 0.1)
+	#change_label_enter()
+func _focus_exited() -> void:
 	create_tween().tween_property(self, "scale", Vector2(1,1), 0.1)
 	#change_label_exit()
 

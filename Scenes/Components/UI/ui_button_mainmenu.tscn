@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://besr42h4cs87m"]
+[gd_scene format=3 uid="uid://besr42h4cs87m"]
 
 [ext_resource type="Texture2D" uid="uid://d3s037q126fwb" path="res://Graphics/UI/Artwork/Button_Base_UI.png" id="1_a3jxo"]
 [ext_resource type="Texture2D" uid="uid://jjstbukr1g3c" path="res://Graphics/UI/Artwork/Button_Hover_UI.png" id="2_h2age"]
 [ext_resource type="Script" uid="uid://bufdx5jxmnrbf" path="res://Code/ui_button_mainmenu.gd" id="3_8xqwq"]
 [ext_resource type="FontFile" uid="uid://bgd1ydpqw50e6" path="res://Graphics/UI/Fonts/UI_Fonts.zip (Unzipped Files)/Header_Sigmar.ttf" id="3_h2age"]
 
-[node name="MenuButton" type="TextureButton"]
+[node name="MenuButton" type="TextureButton" unique_id=972038282]
 custom_minimum_size = Vector2(1024, 512)
 offset_right = 1024.0
 offset_bottom = 512.0
@@ -14,10 +14,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("1_a3jxo")
 texture_hover = ExtResource("2_h2age")
+texture_focused = ExtResource("2_h2age")
 stretch_mode = 3
 script = ExtResource("3_8xqwq")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1608244824]
 z_index = -1
 layout_mode = 1
 anchors_preset = 8
@@ -34,7 +35,7 @@ grow_vertical = 2
 scale = Vector2(2, 2)
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1388954817]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.35351563
