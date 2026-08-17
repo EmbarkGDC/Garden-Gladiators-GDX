@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dqswu0k5wb2qq"]
+
+[ext_resource type="Texture2D" uid="uid://dbw5g4q3r2cqq" path="res://Graphics/UI/Cursor_Badge.png" id="1_n00cx"]
+[ext_resource type="Script" uid="uid://dxsl7rggcvcko" path="res://Code/Character Select/base_token.gd" id="2_n00cx"]
+
+[node name="Token" type="Sprite2D" unique_id=1937530319]
+position = Vector2(1.9073486e-06, -5.722046e-06)
+scale = Vector2(0.7777778, 0.7777778)
+texture = ExtResource("1_n00cx")
+script = ExtResource("2_n00cx")

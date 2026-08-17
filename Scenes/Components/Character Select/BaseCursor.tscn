@@ -1,25 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://btcojqyy08rpm"]
+[gd_scene format=3 uid="uid://btcojqyy08rpm"]
 
-[ext_resource type="Texture2D" uid="uid://dc2k6i2f8ov88" path="res://Scenes/Components/Character Select/Placeholder assets/Placeholder cursor tex.png" id="1_qes2a"]
+[ext_resource type="Texture2D" uid="uid://8xy00khk6u5k" path="res://Graphics/UI/Cursor.png" id="1_51gh2"]
 [ext_resource type="Script" uid="uid://cxq1dxy7djab1" path="res://Code/Character Select/base_cursor.gd" id="2_51gh2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_51gh2"]
 radius = 109.612495
 height = 624.79114
 
-[node name="Cursor" type="Sprite2D"]
+[node name="Cursor" type="Sprite2D" unique_id=1782746279]
 z_index = 4096
 scale = Vector2(0.18246095, 0.18246095)
-texture = ExtResource("1_qes2a")
+texture = ExtResource("1_51gh2")
 offset = Vector2(0, 300)
 script = ExtResource("2_51gh2")
 cursor_speed = 25.0
 
-[node name="CursorCollision" type="Area2D" parent="."]
+[node name="CursorCollision" type="Area2D" parent="." unique_id=850767582]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CursorCollision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CursorCollision" unique_id=529058502]
 position = Vector2(0, 306.91498)
 shape = SubResource("CapsuleShape2D_51gh2")
 
-[node name="BadgeCoord" type="Node2D" parent="."]
+[node name="BadgeCoord" type="Node2D" parent="." unique_id=331669538]
 position = Vector2(0, 478.5924)
