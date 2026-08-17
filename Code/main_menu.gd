@@ -23,7 +23,7 @@ func _on_exit_pressed() -> void:
 
 func _on_minigame_pressed() -> void:
 	print("Sushido")
-	get_tree().change_scene_to_file("res://Scenes/minigames.tscn")
+	get_tree().change_scene_to_file("res://Scenes/player_select.tscn")
 
 
 func _on_credit_pressed() -> void:
