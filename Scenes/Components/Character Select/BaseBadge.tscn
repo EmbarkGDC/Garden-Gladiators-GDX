@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0j1ilgocdfps"]
+[gd_scene load_steps=3 format=3 uid="uid://d3wpy7u5vrdf6"]
 
 [ext_resource type="Texture2D" uid="uid://bbo1ddxgf6112" path="res://Scenes/Components/Character Select/Placeholder assets/Placeholder token tex.png" id="1_j4aqa"]
 [ext_resource type="Script" uid="uid://dxsl7rggcvcko" path="res://Code/Character Select/base_Badge.gd" id="2_n00cx"]

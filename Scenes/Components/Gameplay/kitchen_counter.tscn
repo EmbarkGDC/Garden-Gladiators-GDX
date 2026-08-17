@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dxf7fem281gi0"]
+[gd_scene load_steps=5 format=3 uid="uid://dxf7fem281gi0"]
 
 [ext_resource type="PackedScene" uid="uid://b0dr0u0jqfx8d" path="res://Models/KitchenCounter.glb" id="1_s821o"]
 [ext_resource type="Material" uid="uid://cpvrh5yim5k8c" path="res://Graphics/Materials/countertop_m.tres" id="2_5b4rh"]

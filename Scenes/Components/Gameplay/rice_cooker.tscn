@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bisj412oltc2q"]
+[gd_scene load_steps=6 format=3 uid="uid://bisj412oltc2q"]
 
 [ext_resource type="PackedScene" uid="uid://oo1hm6ig3kwm" path="res://Models/Ricecooker.glb" id="1_uxge1"]
 [ext_resource type="Material" uid="uid://bbjopmm1bmqo4" path="res://Graphics/Materials/ricecooker_m.tres" id="2_im6io"]

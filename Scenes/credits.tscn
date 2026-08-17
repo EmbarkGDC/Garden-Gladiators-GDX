@@ -6,7 +6,7 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gryuy"]
 texture = ExtResource("1_r18jl")
 
-[node name="Credits" type="Control"]
+[node name="Credits" type="Control" unique_id=1877519175]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1136800226]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -25,7 +25,7 @@ offset_bottom = 166.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_gryuy")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=865694168]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,7 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_gryuy")
 
-[node name="TextEdit" type="TextEdit" parent="."]
+[node name="TextEdit" type="TextEdit" parent="." unique_id=1132830955]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

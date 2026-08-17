@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://dg0hauswjmtn"]
+
+[ext_resource type="Texture2D" uid="uid://bj8l7502yi8qu" path="res://Graphics/UI/GG_TitleArt.svg" id="1_28flt"]
+[ext_resource type="Script" uid="uid://dq84yilipupnx" path="res://Code/main_menu.gd" id="1_48xlc"]
+[ext_resource type="Texture2D" uid="uid://5mxcgcg1pmyb" path="res://Graphics/UI/Artwork/Main_SplashArt.png" id="2_ce3w2"]
+[ext_resource type="PackedScene" uid="uid://besr42h4cs87m" path="res://Scenes/Components/UI/ui_button_mainmenu.tscn" id="4_n45e2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ce3w2"]
+texture = ExtResource("2_ce3w2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3w2"]
+bg_color = Color(0, 0, 0, 0.29411766)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ehe0"]
+texture = ExtResource("1_28flt")
+
+[node name="MainMenu" type="Control" unique_id=352720660]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48xlc")
+
+[node name="Panel3" type="Panel" parent="." unique_id=1517353838]
+z_index = -5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -0.00012207031
+offset_bottom = 6.1035156e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ce3w2")
+
+[node name="Panel2" type="Panel" parent="." unique_id=1597832227]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -0.00012207031
+offset_bottom = 6.1035156e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ce3w2")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=443602469]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36600003
+anchor_top = 0.47900003
+anchor_right = 0.633
+anchor_bottom = 1.0
+offset_left = 0.27996826
+offset_top = 9.679993
+offset_right = 511.64
+offset_bottom = 581.0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = -196
+
+[node name="minigame" parent="VBoxContainer2" unique_id=1907689091 instance=ExtResource("4_n45e2")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="credit" parent="VBoxContainer2" unique_id=518863492 instance=ExtResource("4_n45e2")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="exit" parent="VBoxContainer2" unique_id=997057806 instance=ExtResource("4_n45e2")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=1655426526]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5451389
+anchor_top = 0.1095679
+anchor_right = 0.90970546
+anchor_bottom = 0.44684073
+offset_right = -18.857178
+offset_bottom = 32.940796
+rotation = -0.07853982
+theme_override_styles/panel = SubResource("StyleBoxTexture_1ehe0")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="VBoxContainer2/minigame" to="." method="_on_minigame_pressed"]
+[connection signal="pressed" from="VBoxContainer2/credit" to="." method="_on_credit_pressed"]
+[connection signal="pressed" from="VBoxContainer2/exit" to="." method="_on_exit_pressed"]

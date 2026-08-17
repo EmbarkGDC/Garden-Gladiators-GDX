@@ -6,11 +6,11 @@ signal character_chosen
 signal character_unchosen
 signal player_dropout
 signal all_players_ready
-
-@onready var DeviceAssign: device_assign = $DeviceAssign
+ 
 @onready var cursor_spawn: Node2D = $CursorSpawn
-@onready var player_colors: PlayerColors = $PlayerColors
+@onready var player_colors : PackedColorArray = Global.PlayerUIColors
 
+@export var DeviceAssign: DeviceAssign
 @export var packed_cursor : PackedScene
 
 var cursors : Array[Cursor]
@@ -48,7 +48,7 @@ func _input(event: InputEvent) -> void:
 			newCursor.unchosen.connect(character_unchosen.emit)
 			newCursor.PlayerDrop.connect(remove_cursor)
 			cursors.append(newCursor)
-			newCursor.PlayerColor = player_colors.PlayerColorList[num]
+			newCursor.PlayerColor = Global.PlayerUIColors[num]
 			add_child(newCursor)
 			newCursor.position = cursor_spawn.position
 			player_joined.emit()

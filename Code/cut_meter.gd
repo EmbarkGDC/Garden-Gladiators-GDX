@@ -21,7 +21,7 @@ var cut_offset: float = 0.0
 #
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	look_at(camera.global_position, camera.global_transform.basis.y)
+	look_at(camera.global_position, Vector3.UP)
 	#var out_str: String = "%f"
 	#$Label3D.text = out_str % result
 	#if Input.is_key_pressed(Key.KEY_SPACE):
@@ -40,6 +40,7 @@ func start_meter(hit: float, perfecrt: float) -> void:
 	mat.set_shader_parameter("offset", cut_offset)
 	mat.set_shader_parameter("difficulty", cut_hit_area)
 	mat.set_shader_parameter("perfect_difficulty", perfect_hit_area)
+	print(cut_offset)
 
 func cut() -> cut_result:
 	#char_anim_tree["parameters/conditions/ready_to_cut"] = false
@@ -50,8 +51,8 @@ func cut() -> cut_result:
 	result = ((location * cut_hit_area) - (cut_hit_area - 1.0) / 2.0) + cut_offset
 	#result = snappedf(abs(result), 0.5)
 	result = abs(result)
-	if result <= 0.2:
-		if result <= perfect_hit_area * 0.2:
+	if result <= cut_hit_area:
+		if result <= perfect_hit_area * cut_hit_area:
 			print("Perfect!")
 			return cut_result.Perfect
 		print("Hit")

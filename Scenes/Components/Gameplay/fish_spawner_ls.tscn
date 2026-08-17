@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cqwhqvgbfmd56"]
+[gd_scene load_steps=4 format=3 uid="uid://cqwhqvgbfmd56"]
 
 [ext_resource type="Script" uid="uid://u23f1j117vll" path="res://Code/fish_spawner_ls.gd" id="1_c6107"]
 
