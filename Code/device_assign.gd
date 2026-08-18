@@ -1,6 +1,8 @@
 class_name DeviceAssign
 extends Node
 
+signal send_device(device: int, playernum)
+
 var using_device: Array
 var searching: bool = false
 
@@ -20,7 +22,13 @@ func _input(event: InputEvent) -> void:
 		return
 	for i:int in using_device:
 		if using_device[i] < -1:
-			using_device[i] = event.device
+			var device: int
+			if event is InputEventKey:
+				device = -1
+			else:
+				device = event.device
+			using_device[i] = device
+			send_device.emit(device, i)
 			return
 
 func player_dropout(player: int) -> void:
