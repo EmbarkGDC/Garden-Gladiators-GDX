@@ -7,14 +7,16 @@ signal character_unchosen
 signal player_dropout
 signal all_players_ready
 
-@onready var DeviceAssign: device_assign = $DeviceAssign
 @onready var cursor_spawn: Node2D = $CursorSpawn
-@onready var player_colors: PlayerColors = $PlayerColors
 
-@export var packed_cursor : PackedScene
+@export var packed_cursor: PackedScene
+@export var device_assign: DeviceAssign
+@export var StartBanner: TextureRect
 
 var cursors : Array[Cursor]
-var PlayersReady: bool = false
+var PlayersReady: bool = false:
+	set(ready):
+		StartBanner.visible = ready
 var ReadyPlayers: int = 0
 var playerdropped: bool = false
 
@@ -40,8 +42,8 @@ func _input(event: InputEvent) -> void:
 		device = event.device
 	var same : bool = false
 	var num : int = 0
-	while !same and num < DeviceAssign.using_device.size():
-		if device == DeviceAssign.using_device[num]:
+	while !same and num < device_assign.using_device.size():
+		if device == device_assign.using_device[num]:
 			same = true
 		else:
 			num += 1
@@ -57,7 +59,7 @@ func _input(event: InputEvent) -> void:
 			newCursor.unchosen.connect(character_unchosen.emit)
 			newCursor.PlayerDrop.connect(remove_cursor)
 			cursors.append(newCursor)
-			newCursor.PlayerColor = player_colors.PlayerColorList[num]
+			newCursor.PlayerColor = Global.PlayerUIColors[num]
 			add_child(newCursor)
 			newCursor.position = cursor_spawn.position
 			player_joined.emit()
@@ -88,7 +90,7 @@ func remove_cursor(cursor:Cursor) -> void:
 	if cursor.get_child_count() == 0:
 		cursor.add_child(cursor.badge)
 	
-	DeviceAssign.player_dropout(cursor.controllerID)
+	device_assign.player_dropout(cursor.controllerID)
 	cursors.erase(cursor)
 	cursor.queue_free()
 	player_dropout.emit()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjlylqebsw67m"]
+[gd_scene format=3 uid="uid://cjlylqebsw67m"]
 
 [ext_resource type="PackedScene" uid="uid://rhisk5kjf0ll" path="res://Scenes/Components/Character Select/base_portrait.tscn" id="1_16r56"]
 [ext_resource type="Script" uid="uid://cgtlffyhje30h" path="res://Code/Character Select/character_select_main.gd" id="1_fsati"]
@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://c8i53iwomntt3" path="res://Code/device_assign.gd" id="4_jcuwg"]
 [ext_resource type="PackedScene" uid="uid://bnp188dndfyrx" path="res://Scenes/Components/Character Select/drop_button.tscn" id="6_nprsy"]
 
-[node name="CharacterSelectMain" type="Control" node_paths=PackedStringArray("DeviceAssign")]
+[sub_resource type="CanvasTexture" id="CanvasTexture_bfdir"]
+
+[node name="CharacterSelectMain" type="Control" unique_id=1354892556 node_paths=PackedStringArray("device_assign", "StartBanner")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,14 +16,48 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fsati")
-DeviceAssign = NodePath("DeviceAssign")
 packed_cursor = ExtResource("2_716px")
+device_assign = NodePath("DeviceAssign")
+StartBanner = NodePath("StartBanner")
 
-[node name="CursorSpawn" type="Node2D" parent="."]
+[node name="CursorSpawn" type="Node2D" parent="." unique_id=747913620]
 visible = false
 position = Vector2(577, 327)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="StartBanner" type="TextureRect" parent="." unique_id=1089231023]
+visible = false
+z_index = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.448
+anchor_right = 1.0
+anchor_bottom = 0.59000003
+offset_top = -2.8400269
+offset_bottom = 0.7999878
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_bfdir")
+
+[node name="Label" type="Label" parent="StartBanner" unique_id=2032857712]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "Test Start Banner"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=201267860]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -36,12 +72,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="BasePortrait" parent="HBoxContainer" instance=ExtResource("1_16r56")]
+[node name="BasePortrait" parent="HBoxContainer" unique_id=690390975 instance=ExtResource("1_16r56")]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="HBoxContainer/BasePortrait"]
+[node name="Label" type="Label" parent="HBoxContainer/BasePortrait" unique_id=340497238]
 z_index = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -50,12 +86,12 @@ text = "Anago"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BasePortrait2" parent="HBoxContainer" instance=ExtResource("1_16r56")]
+[node name="BasePortrait2" parent="HBoxContainer" unique_id=266174617 instance=ExtResource("1_16r56")]
 layout_mode = 2
 size_flags_vertical = 4
 CharacterID = 1
 
-[node name="Label" type="Label" parent="HBoxContainer/BasePortrait2"]
+[node name="Label" type="Label" parent="HBoxContainer/BasePortrait2" unique_id=718987296]
 z_index = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -64,12 +100,12 @@ text = "Blades"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BasePortrait3" parent="HBoxContainer" instance=ExtResource("1_16r56")]
+[node name="BasePortrait3" parent="HBoxContainer" unique_id=1240096995 instance=ExtResource("1_16r56")]
 layout_mode = 2
 size_flags_vertical = 4
 CharacterID = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/BasePortrait3"]
+[node name="Label" type="Label" parent="HBoxContainer/BasePortrait3" unique_id=646748934]
 z_index = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -78,11 +114,11 @@ text = "Maguro"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BasePortrait4" parent="HBoxContainer" instance=ExtResource("1_16r56")]
+[node name="BasePortrait4" parent="HBoxContainer" unique_id=2107653954 instance=ExtResource("1_16r56")]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="HBoxContainer/BasePortrait4"]
+[node name="Label" type="Label" parent="HBoxContainer/BasePortrait4" unique_id=985837013]
 z_index = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -91,10 +127,10 @@ text = "Sylkie"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Drop Button" parent="." instance=ExtResource("6_nprsy")]
+[node name="Drop Button" parent="." unique_id=1074461815 instance=ExtResource("6_nprsy")]
 layout_mode = 1
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="DeviceAssign" type="Node" parent="."]
+[node name="DeviceAssign" type="Node" parent="." unique_id=846703383]
 script = ExtResource("4_jcuwg")
