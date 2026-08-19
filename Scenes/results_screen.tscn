@@ -34,7 +34,6 @@ texture = ExtResource("1_5w2wm")
 region_rect = Rect2(-1.1618958, -1.1073723, 2634.1619, 2614.1074)
 
 [node name="ColorRect" type="ColorRect" parent="ResultPanel" unique_id=213110422]
-visible = false
 z_index = -1
 custom_minimum_size = Vector2(1024, 1024)
 layout_mode = 1
@@ -51,6 +50,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.935, 0.935)
 pivot_offset = Vector2(512, 512)
+color = Color(0.33964092, 0.2764376, 0.31907108, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="ResultPanel" unique_id=1265393644]
@@ -70,6 +70,9 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="ResultPanel/MarginContainer/VBoxContainer" unique_id=740234561]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.34901962)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
 theme_override_fonts/font = ExtResource("2_7qbmv")
 theme_override_font_sizes/font_size = 75
 text = "Results"
