@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnp188dndfyrx"]
+[gd_scene format=3 uid="uid://bnp188dndfyrx"]
 
 [ext_resource type="Script" uid="uid://c5vjvv12ybyex" path="res://Code/Character Select/drop_button.gd" id="1_3kcv3"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_bordn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_whyu8"]
-size = Vector2(1152, 133)
+size = Vector2(1920, 221.99197)
 
-[node name="Drop Button" type="TextureRect"]
+[node name="Drop Button" type="TextureRect" unique_id=593420457]
 anchors_preset = -1
 anchor_top = 0.794
 anchor_right = 1.0
@@ -18,7 +18,7 @@ grow_vertical = 2
 texture = SubResource("CanvasTexture_bordn")
 script = ExtResource("1_3kcv3")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1921350170]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -31,10 +31,10 @@ text = "Drop"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1385729563]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(576, 66.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1855801592]
+position = Vector2(960, 110.99603)
 shape = SubResource("RectangleShape2D_whyu8")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

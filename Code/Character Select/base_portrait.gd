@@ -1,4 +1,4 @@
-class_name Portrait
+class_name portrait
 extends MarginContainer
 
 @onready var color_tex: TextureRect = $ColorTex
@@ -16,6 +16,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+
 func _on_portrait_collision_area_entered(area: Area2D) -> void:
 	print("Enter")
 	var entered_cursor : Cursor = area.get_parent()
@@ -27,13 +28,11 @@ func _on_portrait_collision_area_entered(area: Area2D) -> void:
 
 func _on_portrait_collision_area_exited(area: Area2D) -> void:
 	print("Exit")
-	var found := false
-	var cursorptr :=0
-	while cursorptr < current_cursors.size() and !found:
-		if current_cursors[cursorptr] == area.get_parent():
-			current_cursors[cursorptr].currentHoverPortrait = null
-			current_cursors.pop_at(cursorptr)
-			found = true
+	var exited_cursor : Cursor = area.get_parent()
+	for i:int in current_cursors.size():
+		if current_cursors[i-1] == exited_cursor:
+			current_cursors[i-1].currentHoverPortrait = null
+			current_cursors.pop_at(i-1)
 	if !isChosen:
 		if current_cursors.size() > 0:
 			var priorityCursor : Cursor = current_cursors[0]
