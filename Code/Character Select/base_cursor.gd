@@ -15,7 +15,7 @@ var controllerID: int:
 		controllerID = ID
 		if badge != null:
 			badge.controllerID = controllerID
-var badge: PlayerBadge
+var badge: base_badge
 var currentHoverPortrait: Portrait
 var hasChosen: bool= false
 var PlayerColor: Color = Color(0.0, 0.0, 0.0, 1.0)

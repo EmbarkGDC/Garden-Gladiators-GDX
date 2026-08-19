@@ -1,4 +1,4 @@
-class_name PlayerBadge
+class_name base_badge
 extends Sprite2D
 
 var controllerID : int
