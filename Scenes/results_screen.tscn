@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://cm76krk30cpfs"]
+
+[ext_resource type="Texture2D" uid="uid://b2qxvxje6kkq0" path="res://Graphics/UI/Artwork/Panel_1_UI.png" id="1_5w2wm"]
+[ext_resource type="Script" uid="uid://c1oavwd7hj5c5" path="res://Code/results_screen.gd" id="1_erkp5"]
+[ext_resource type="FontFile" uid="uid://bgd1ydpqw50e6" path="res://Graphics/UI/Fonts/UI_Fonts.zip (Unzipped Files)/Header_Sigmar.ttf" id="2_7qbmv"]
+[ext_resource type="PackedScene" uid="uid://dsymv47hxyyqy" path="res://Scenes/Components/UI/player_results.tscn" id="3_anr18"]
+
+[node name="Results_Screen" type="Control" unique_id=678352229]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_erkp5")
+
+[node name="ResultPanel" type="NinePatchRect" parent="." unique_id=1200618539]
+custom_minimum_size = Vector2(1024, 1024)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -512.0
+offset_right = 512.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.95, 0.95)
+pivot_offset = Vector2(512, 512)
+texture = ExtResource("1_5w2wm")
+region_rect = Rect2(-1.1618958, -1.1073723, 2634.1619, 2614.1074)
+
+[node name="ColorRect" type="ColorRect" parent="ResultPanel" unique_id=213110422]
+visible = false
+z_index = -1
+custom_minimum_size = Vector2(1024, 1024)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -512.0
+offset_right = 512.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.935, 0.935)
+pivot_offset = Vector2(512, 512)
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="ResultPanel" unique_id=1265393644]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ResultPanel/MarginContainer" unique_id=751435402]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ResultPanel/MarginContainer/VBoxContainer" unique_id=740234561]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7qbmv")
+theme_override_font_sizes/font_size = 75
+text = "Results"
+horizontal_alignment = 1
+
+[node name="P1" parent="ResultPanel/MarginContainer/VBoxContainer" unique_id=634097463 instance=ExtResource("3_anr18")]
+layout_mode = 2
+
+[node name="P2" parent="ResultPanel/MarginContainer/VBoxContainer" unique_id=1880391648 instance=ExtResource("3_anr18")]
+layout_mode = 2
+
+[node name="P3" parent="ResultPanel/MarginContainer/VBoxContainer" unique_id=174906021 instance=ExtResource("3_anr18")]
+layout_mode = 2
+
+[node name="P4" parent="ResultPanel/MarginContainer/VBoxContainer" unique_id=993165305 instance=ExtResource("3_anr18")]
+layout_mode = 2

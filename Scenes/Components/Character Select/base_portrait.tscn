@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://rhisk5kjf0ll"]
+[gd_scene format=3 uid="uid://rhisk5kjf0ll"]
 
 [ext_resource type="Script" uid="uid://dvisryx5bxltt" path="res://Code/Character Select/base_portrait.gd" id="1_rjnni"]
 
@@ -7,25 +7,25 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjnni"]
 size = Vector2(218, 349)
 
-[node name="BasePortrait" type="MarginContainer"]
+[node name="BasePortrait" type="MarginContainer" unique_id=277708136]
 custom_minimum_size = Vector2(218, 349.027)
 offset_right = 218.0
 offset_bottom = 349.02716
 size_flags_horizontal = 4
 script = ExtResource("1_rjnni")
 
-[node name="ColorTex" type="TextureRect" parent="."]
+[node name="ColorTex" type="TextureRect" parent="." unique_id=602435588]
 layout_mode = 2
 texture = SubResource("CanvasTexture_m41dy")
 
-[node name="CharTex" type="TextureRect" parent="."]
+[node name="CharTex" type="TextureRect" parent="." unique_id=1463079082]
 z_index = 1
 layout_mode = 2
 
-[node name="PortraitCollision" type="Area2D" parent="."]
+[node name="PortraitCollision" type="Area2D" parent="." unique_id=527388430]
 z_index = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PortraitCollision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PortraitCollision" unique_id=1820096519]
 position = Vector2(109, 174.5)
 shape = SubResource("RectangleShape2D_rjnni")
 
