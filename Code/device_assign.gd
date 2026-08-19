@@ -1,10 +1,10 @@
 class_name DeviceAssign
 extends Node
 
-signal send_device(device: int, playernum)
+signal send_device(device: int, playernum: int)
 
 var using_device: Array
-var searching: bool = false
+var searching: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,13 +20,18 @@ func _process(_delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if not searching:
 		return
-	for i:int in using_device:
-		if using_device[i] < -1:
-			var device: int
-			if event is InputEventKey:
-				device = -1
-			else:
-				device = event.device
+	var device: int
+	if event is InputEventMouse or event is InputEventJoypadMotion:
+		return
+	elif event is InputEventKey:
+		device = -1
+	else:
+		device = event.device
+	
+	for i:int in using_device.size():
+		if using_device[i] == device:
+			return
+		elif using_device[i] < -1:
 			using_device[i] = device
 			send_device.emit(device, i)
 			return

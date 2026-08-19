@@ -29,45 +29,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _input(event: InputEvent) -> void:
-	if playerdropped:
-		playerdropped = false
-		return
-	var device:int
-	if event is InputEventMouseMotion:
-		return
-	if event is InputEventKey:
-		device = -1
-	else:
-		device = event.device
-	var same : bool = false
-	var num : int = 0
-	while !same and num < device_assign.using_device.size():
-		if device == device_assign.using_device[num]:
-			same = true
-		else:
-			num += 1
-	if same:
-		var search: Cursor = find_cursor(device)
-		if search == null:
-			var newCursor : Cursor
-			newCursor = packed_cursor.instantiate()
-			newCursor.controllerID = device
-			newCursor.chosen.connect(new_ready_player)
-			newCursor.chosen.connect(character_chosen.emit)
-			newCursor.unchosen.connect(not_ready_player)
-			newCursor.unchosen.connect(character_unchosen.emit)
-			newCursor.PlayerDrop.connect(remove_cursor)
-			cursors.append(newCursor)
-			newCursor.PlayerColor = Global.PlayerUIColors[num]
-			add_child(newCursor)
-			newCursor.position = cursor_spawn.position
-			player_joined.emit()
-		else:
-			if device == 0:
-				if PlayersReady and event.is_action_pressed("ui_accept"):
-					pass
-
 func find_cursor(id: int) -> Cursor:
 	for i:int in cursors.size():
 		var cursor: Cursor = cursors[i]
@@ -95,3 +56,23 @@ func remove_cursor(cursor:Cursor) -> void:
 	cursor.queue_free()
 	player_dropout.emit()
 	playerdropped = true
+
+
+func _on_device_assign_send_device(device: int, playernum: int) -> void:
+	var newCursor : Cursor = packed_cursor.instantiate()
+	newCursor.controllerID = device
+	newCursor.chosen.connect(new_ready_player)
+	newCursor.chosen.connect(character_chosen.emit)
+	newCursor.unchosen.connect(not_ready_player)
+	newCursor.unchosen.connect(character_unchosen.emit)
+	newCursor.PlayerDrop.connect(remove_cursor)
+	newCursor.StartPressed.connect(start_game)
+	cursors.append(newCursor)
+	newCursor.PlayerColor = Global.PlayerUIColors[playernum]
+	add_child(newCursor)
+	newCursor.position = cursor_spawn.position
+	player_joined.emit()
+
+func start_game() -> void:
+	if PlayersReady:
+		pass

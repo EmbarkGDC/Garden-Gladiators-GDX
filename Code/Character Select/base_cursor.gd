@@ -4,6 +4,7 @@ extends Sprite2D
 signal chosen
 signal unchosen
 signal PlayerDrop(Self:Cursor)
+signal StartPressed
 
 @onready var badge_coord: Node2D = $BadgeCoord
 
@@ -55,3 +56,5 @@ func _input(event: InputEvent) -> void:
 				badge.position = badge_coord.position
 				hasChosen = false
 				unchosen.emit()
+		elif event.is_action_pressed("Start"):
+			StartPressed.emit()

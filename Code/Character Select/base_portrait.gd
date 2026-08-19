@@ -16,6 +16,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+
 func _on_portrait_collision_area_entered(area: Area2D) -> void:
 	print("Enter")
 	var entered_cursor : Cursor = area.get_parent()
