@@ -13,7 +13,7 @@ scale = Vector2(0.18246095, 0.18246095)
 texture = ExtResource("1_qes2a")
 offset = Vector2(0, 300)
 script = ExtResource("2_51gh2")
-cursor_speed = 25.0
+cursor_speed = 400.0
 
 [node name="CursorCollision" type="Area2D" parent="." unique_id=1315141276]
 

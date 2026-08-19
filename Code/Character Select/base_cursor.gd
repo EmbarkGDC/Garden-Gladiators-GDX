@@ -27,9 +27,9 @@ func _ready() -> void:
 	add_child(badge)
 	badge.position = badge_coord.position
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	var move: Vector2 = MultiplayerInput.get_vector(controllerID, "move_left", "move_right","move_up","move_down")
-	position = position + move * cursor_speed
+	position = position + move * cursor_speed * delta
 
 func _input(event: InputEvent) -> void:
 	print(event.device)
