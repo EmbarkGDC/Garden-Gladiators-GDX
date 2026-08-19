@@ -69,9 +69,9 @@ func _on_device_assign_send_device(device: int, playernum: int) -> void:
 	newCursor.StartPressed.connect(start_game)
 	cursors.append(newCursor)
 	newCursor.PlayerColor = Global.PlayerUIColors[playernum]
-	add_child(newCursor)
 	newCursor.position = cursor_spawn.position
 	player_joined.emit()
+	call_deferred("add_child", newCursor)
 
 func start_game() -> void:
 	if PlayersReady:

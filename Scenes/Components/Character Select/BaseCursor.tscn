@@ -8,6 +8,7 @@ radius = 109.612495
 height = 624.79114
 
 [node name="Cursor" type="Sprite2D" unique_id=1453915568]
+process_mode = 3
 z_index = 4096
 scale = Vector2(0.18246095, 0.18246095)
 texture = ExtResource("1_qes2a")
