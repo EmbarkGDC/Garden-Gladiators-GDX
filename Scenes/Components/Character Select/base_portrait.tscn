@@ -21,6 +21,7 @@ texture = SubResource("CanvasTexture_yih1u")
 layout_mode = 2
 
 [node name="PortraitCollision" type="Area2D" parent="." unique_id=1996494996]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PortraitCollision" unique_id=1757505219]
 position = Vector2(108.75, 174.5)
