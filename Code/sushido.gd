@@ -23,6 +23,10 @@ func _process(delta: float) -> void:
 	timer_label.text = "%02d:%02d" % [minutes, seconds]
 	
 	if time_left <= 0.0:
+		
+		#send to results screen
+		Global.pScores = $ScoreManager.scores
+		
 		after_countdown = false
 		$GameScreen.visible = true
 		$Player.process_mode = Node.PROCESS_MODE_DISABLED
@@ -36,6 +40,9 @@ func _process(delta: float) -> void:
 		else:
 			$GameScreen.on_game_end($ScoreManager.scores[winner], winner+1)
 		#$FishSpawner.process_mode = Node.PROCESS_MODE_DISABLED
+		
+		#test for result screen
+		get_tree().change_scene_to_file("res://Scenes/results_screen.tscn")
 
 func countdown() -> void:
 	$Countdown.visible = true
