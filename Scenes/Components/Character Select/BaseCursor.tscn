@@ -10,7 +10,7 @@ radius = 23.15
 z_index = 4096
 texture = ExtResource("1_51gh2")
 script = ExtResource("2_51gh2")
-cursor_speed = 25.0
+cursor_speed = 400.0
 
 [node name="CursorCollision" type="Area2D" parent="." unique_id=850767582]
 collision_mask = 2

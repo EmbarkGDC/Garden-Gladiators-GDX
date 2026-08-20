@@ -1,8 +1,8 @@
 class_name Cursor
 extends Sprite2D
 
-signal chosen
-signal unchosen
+signal chosen(player: int)
+signal unchosen(player: int)
 signal PlayerDrop(Self:Cursor)
 signal StartPressed
 
@@ -10,6 +10,7 @@ signal StartPressed
 @onready var collider: Area2D = $CursorCollision
 
 @export var cursor_speed: float
+var input_handler: DeviceInput
 
 var controllerID: int:
 	set(ID):
@@ -26,6 +27,7 @@ var overdropbutton: bool = false
 var  cooldown_on_start: float = 0.5
 
 func _ready() -> void:
+	input_handler = DeviceInput.new(controllerID)
 	var newbadge: Resource = preload("res://Scenes/Components/Character Select/BaseBadge.tscn")
 	badge = newbadge.instantiate()
 	add_child(badge)
@@ -35,17 +37,15 @@ func _process(delta: float) -> void:
 	cooldown_on_start -= delta
 
 func _physics_process(delta: float) -> void:
-	var move: Vector2 = MultiplayerInput.get_vector(controllerID, "move_left", "move_right","move_up","move_down")
+	var move: Vector2 = input_handler.get_vector("move_left", "move_right","move_up","move_down")
 	position = position + move * cursor_speed * delta
 
-func _input(event: InputEvent) -> void:
-	if event.device != controllerID:
-		return
+func _unhandled_input(event: InputEvent) -> void:
 	if cooldown_on_start > 0:
 		return
 	
-	if MultiplayerInput.is_action_pressed(controllerID, "ui_accept"):
-		print("button down")
+	if event.is_action_pressed("ui_accept") and input_handler.is_action_pressed("ui_accept"):
+		print("player %d selected"% controllerID)
 		#Determine whether the cursor is hover over a portrait and hasen't droppedit's token yet
 		if currentHoverPortrait != null and !hasChosen:
 			badge.reparent(currentHoverPortrait)
@@ -54,7 +54,10 @@ func _input(event: InputEvent) -> void:
 			chosen.emit()
 		elif overdropbutton:
 			PlayerDrop.emit(self)
-	elif MultiplayerInput.is_action_pressed(controllerID, "ui_cancel"):
+		# prevents the keyboard being pressed when the controller selects
+		get_viewport().set_input_as_handled()
+		
+	elif event.is_action_pressed("ui_cancel") and input_handler.is_action_pressed("ui_cancel"):
 		#determines whether the token is dropped on a portrait
 		if hasChosen:
 			badge.remove()
@@ -62,5 +65,7 @@ func _input(event: InputEvent) -> void:
 			badge.position = badge_coord.position
 			hasChosen = false
 			unchosen.emit()
-	elif MultiplayerInput.is_action_pressed(controllerID, "Start"):
+		get_viewport().set_input_as_handled()
+	elif event.is_action_pressed("Start") and input_handler.is_action_pressed("Start"):
 		StartPressed.emit()
+		get_viewport().set_input_as_handled()

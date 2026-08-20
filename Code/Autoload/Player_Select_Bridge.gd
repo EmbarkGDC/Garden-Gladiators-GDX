@@ -15,4 +15,6 @@ var player_alt_colors: Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	player_using_device = [-1, 0, 1, 2]
+	player_active = [true, false, false, false]
 	player_human_or_cpu = [true, true, true, true]
