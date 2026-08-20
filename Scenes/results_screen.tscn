@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c1oavwd7hj5c5" path="res://Code/results_screen.gd" id="1_erkp5"]
 [ext_resource type="FontFile" uid="uid://bgd1ydpqw50e6" path="res://Graphics/UI/Fonts/UI_Fonts.zip (Unzipped Files)/Header_Sigmar.ttf" id="2_7qbmv"]
 [ext_resource type="PackedScene" uid="uid://dsymv47hxyyqy" path="res://Scenes/Components/UI/player_results.tscn" id="3_anr18"]
+[ext_resource type="PackedScene" uid="uid://besr42h4cs87m" path="res://Scenes/Components/UI/ui_button_mainmenu.tscn" id="5_isile"]
 
 [node name="Results_Screen" type="Control" unique_id=678352229]
 layout_mode = 3
@@ -89,3 +90,37 @@ layout_mode = 2
 
 [node name="P4" parent="ResultPanel/MarginContainer/VBoxContainer" unique_id=993165305 instance=ExtResource("3_anr18")]
 layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResultPanel" unique_id=10119471]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1028.0
+offset_top = -512.0
+offset_right = 1028.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -105)
+offset_transform_scale = Vector2(0.275, 0.275)
+offset_transform_pivot_ratio = Vector2(0.5, 1)
+offset_transform_visual_only = false
+theme_override_constants/separation = 75
+
+[node name="Play Again" parent="ResultPanel/HBoxContainer" unique_id=972038282 instance=ExtResource("5_isile")]
+layout_mode = 2
+text = "Play Again"
+
+[node name="New Characters" parent="ResultPanel/HBoxContainer" unique_id=975381174 instance=ExtResource("5_isile")]
+layout_mode = 2
+text = "New Bugs"
+
+[node name="Main Menu" parent="ResultPanel/HBoxContainer" unique_id=162134730 instance=ExtResource("5_isile")]
+layout_mode = 2
+text = "Main Menu"
+
+[connection signal="pressed" from="ResultPanel/HBoxContainer/Play Again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="ResultPanel/HBoxContainer/New Characters" to="." method="_on_new_characters_pressed"]
+[connection signal="pressed" from="ResultPanel/HBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
