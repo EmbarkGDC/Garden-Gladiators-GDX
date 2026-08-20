@@ -3,6 +3,8 @@ extends TextureButton
 @onready var color_rect: ColorRect = $ColorRect
 @onready var label: Label = $Label
 
+@export var text: String
+
 
 ## Initialization
 func _ready() -> void:
@@ -35,11 +37,8 @@ func _focus_exited() -> void:
 #
 #Text Change
 #
-func change_label_enter() -> void:
-	label.text = "Button"
-
-func change_label_exit() -> void:
-	label.text = "no"
+func change_text() -> void:
+	label.text = text
 
 #
 #
