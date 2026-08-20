@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://d3wpy7u5vrdf6"]
 
-[ext_resource type="Texture2D" uid="uid://bbo1ddxgf6112" path="res://Scenes/Components/Character Select/Placeholder assets/Placeholder token tex.png" id="1_j4aqa"]
-[ext_resource type="Script" uid="uid://c6pgrxp2kuflr" path="res://Code/Character Select/base_badge.gd" id="2_tyksg"]
+[ext_resource type="Texture2D" uid="uid://dbw5g4q3r2cqq" path="res://Graphics/UI/Cursor_Badge.png" id="1_tyksg"]
+[ext_resource type="Script" uid="uid://c6pgrxp2kuflr" path="res://Code/Character Select/base_Badge.gd" id="2_tyksg"]
+[ext_resource type="Texture2D" uid="uid://dcsc7kyg8ascq" path="res://Graphics/UI/BadgeLabel_P1.png" id="3_7dhjq"]
 
 [node name="Token" type="Sprite2D" unique_id=170853418]
-scale = Vector2(0.55228764, 0.55228764)
-texture = ExtResource("1_j4aqa")
+z_index = -5
+texture = ExtResource("1_tyksg")
 script = ExtResource("2_tyksg")
+
+[node name="BadgeLabel" type="Sprite2D" parent="." unique_id=2062474255]
+position = Vector2(7, 9)
+texture = ExtResource("3_7dhjq")
