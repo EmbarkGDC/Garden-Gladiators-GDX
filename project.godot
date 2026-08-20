@@ -27,6 +27,7 @@ MultiplayerInput="*uid://dhmg75mp5e4s4"
 PlayerManager="*res://Code/player_manager.gd"
 PhantomCameraManager="*uid://duq6jhf6unyis"
 SceneLoader="*res://Code/Autoload/Scene_Loader.gd"
+PlayerSelectBridge="*uid://dywvs54qx0bu5"
 
 [debug]
 

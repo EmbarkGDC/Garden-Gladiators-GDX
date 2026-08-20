@@ -12,10 +12,9 @@ func _ready() -> void:
 	# anything less than -1 is considered unassigned
 	using_device = [-128, -128, -128, -128]
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+# called when we exit the scene
+func _exit_tree() -> void:
+	PlayerSelectBridge.player_using_device = using_device
 
 func _input(event: InputEvent) -> void:
 	if not searching:
