@@ -41,6 +41,7 @@ func _input(event: InputEvent) -> void:
 		elif using_device[i] < -1:
 			using_device[i] = device
 			send_device.emit(device, i)
+			get_viewport().set_input_as_handled()
 			return
 
 func player_dropout(player: int) -> void:

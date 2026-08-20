@@ -19,7 +19,7 @@ var controllerID: int:
 			badge.controllerID = controllerID
 var badge: base_badge
 var currentHoverPortrait: portrait
-var hasChosen: bool= false
+var hasChosen: bool
 var PlayerColor: Color = Color(0.0, 0.0, 0.0, 1.0)
 var overdropbutton: bool = false
 
@@ -28,6 +28,7 @@ var  cooldown_on_start: float = 0.5
 
 func _ready() -> void:
 	input_handler = DeviceInput.new(controllerID)
+	hasChosen = false
 	var newbadge: Resource = preload("res://Scenes/Components/Character Select/BaseBadge.tscn")
 	badge = newbadge.instantiate()
 	add_child(badge)
