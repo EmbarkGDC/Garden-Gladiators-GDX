@@ -3,9 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dc2k6i2f8ov88" path="res://Scenes/Components/Character Select/Placeholder assets/Placeholder cursor tex.png" id="1_qes2a"]
 [ext_resource type="Script" uid="uid://cxq1dxy7djab1" path="res://Code/Character Select/base_cursor.gd" id="2_51gh2"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_51gh2"]
-radius = 109.612495
-height = 624.79114
+[sub_resource type="CircleShape2D" id="CircleShape2D_rjnni"]
+radius = 20.0
 
 [node name="Cursor" type="Sprite2D" unique_id=1453915568]
 process_mode = 3
@@ -20,8 +19,7 @@ cursor_speed = 400.0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CursorCollision" unique_id=452131096]
-position = Vector2(0, 306.91498)
-shape = SubResource("CapsuleShape2D_51gh2")
+shape = SubResource("CircleShape2D_rjnni")
 
 [node name="BadgeCoord" type="Node2D" parent="." unique_id=1683797545]
 position = Vector2(0, 478.5924)
