@@ -8,7 +8,7 @@ var currentPort : portrait
 func getCharacter() -> void:
 	currentPort = get_parent()
 	currentPort.isChosen = true
-	characterID = currentPort.characterID
+	characterID = currentPort.CharacterID
 
 func remove() -> void:
 	currentPort.isChosen = false
