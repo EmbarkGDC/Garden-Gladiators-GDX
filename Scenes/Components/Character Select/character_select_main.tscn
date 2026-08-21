@@ -3,7 +3,11 @@
 [ext_resource type="Script" uid="uid://cgtlffyhje30h" path="res://Code/Character Select/character_select_main.gd" id="1_fsati"]
 [ext_resource type="PackedScene" uid="uid://btcojqyy08rpm" path="res://Scenes/Components/Character Select/BaseCursor.tscn" id="2_716px"]
 [ext_resource type="PackedScene" uid="uid://8cpyygutxo6c" path="res://Scenes/Components/Character Select/base_portrait.tscn" id="3_5jgah"]
+[ext_resource type="Material" uid="uid://0h7bs763n7f1" path="res://Graphics/Materials/player_color1.tres" id="3_apotu"]
+[ext_resource type="Material" uid="uid://cjvd0s0heo2ns" path="res://Graphics/Materials/player_color2.tres" id="4_ctnbe"]
 [ext_resource type="Script" uid="uid://c8i53iwomntt3" path="res://Code/device_assign.gd" id="4_jcuwg"]
+[ext_resource type="Material" uid="uid://dxfo2c1d4lfdq" path="res://Graphics/Materials/player_color3.tres" id="5_b5l1a"]
+[ext_resource type="Material" uid="uid://bsfcvjlauy4mc" path="res://Graphics/Materials/player_color4.tres" id="6_mqc1o"]
 [ext_resource type="PackedScene" uid="uid://bnp188dndfyrx" path="res://Scenes/Components/Character Select/drop_button.tscn" id="6_nprsy"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_bfdir"]
@@ -18,6 +22,7 @@ grow_vertical = 2
 script = ExtResource("1_fsati")
 packed_cursor = ExtResource("2_716px")
 StartBanner = NodePath("StartBanner")
+cursor_materials = Array[Material]([ExtResource("3_apotu"), ExtResource("4_ctnbe"), ExtResource("5_b5l1a"), ExtResource("6_mqc1o")])
 
 [node name="CursorSpawn" type="Node2D" parent="." unique_id=747913620]
 visible = false
