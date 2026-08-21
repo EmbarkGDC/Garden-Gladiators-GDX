@@ -17,7 +17,7 @@ func _ready():
 # Load and replace the AnimatedSprite3D based on the character type
 func load_character_animation(chosen_character):
 	# Convert enum to string and lowercase for filename
-	var character_name = Enums.PlayerCharacter.keys()[chosen_character].to_lower()
+	var character_name = Util.PlayerCharacter.keys()[chosen_character].to_lower()
 	var scene_path = ANIMATION_SCENE_PATH + character_name + "_animated_sprite_3d.tscn"
 	
 	# Check if the scene file exists
@@ -54,7 +54,7 @@ func use_default_sprite():
 			print("Warning: No default AnimatedSprite3D node found in scene")
 
 # Optional: Function to change character at runtime
-func set_character(character: Enums.PlayerCharacter):
+func set_character(character: Util.PlayerCharacter):
 	chosen_character = character
 	load_character_animation(chosen_character)
 
