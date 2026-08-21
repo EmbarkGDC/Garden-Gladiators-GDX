@@ -2,6 +2,7 @@ class_name DeviceAssign
 extends Node
 
 signal send_device(device: int, playernum: int)
+signal drop_player(player: int)
 
 var using_device: Array
 var searching: bool = true
@@ -19,8 +20,13 @@ func _exit_tree() -> void:
 func _input(event: InputEvent) -> void:
 	if not searching:
 		return
+	# don't look for mouse input
+	if event is InputEventMouse:
+		return
+	# which device are we working with?
 	var device: int
-	if event is InputEventMouse or event is InputEventJoypadMotion:
+	if event is InputEventJoypadMotion:
+		# ignore analog joystick inputs for now
 		return
 	elif event is InputEventKey:
 		device = -1
@@ -28,12 +34,16 @@ func _input(event: InputEvent) -> void:
 		device = event.device
 	
 	for i:int in using_device.size():
+		# first check if this device has already been assigned
 		if using_device[i] == device:
 			return
+		# otherwise, assign device in the first availible player slot
 		elif using_device[i] < -1:
 			using_device[i] = device
 			send_device.emit(device, i)
+			get_viewport().set_input_as_handled()
 			return
 
 func player_dropout(player: int) -> void:
 	using_device[player] = -128
+	drop_player.emit(player)

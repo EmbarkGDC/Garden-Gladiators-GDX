@@ -8,7 +8,7 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_bfdir"]
 
-[node name="CharacterSelectMain" type="Control" unique_id=1354892556 node_paths=PackedStringArray("device_assign", "StartBanner")]
+[node name="CharacterSelectMain" type="Control" unique_id=1354892556 node_paths=PackedStringArray("StartBanner")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +17,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fsati")
 packed_cursor = ExtResource("2_716px")
-device_assign = NodePath("DeviceAssign")
 StartBanner = NodePath("StartBanner")
 
 [node name="CursorSpawn" type="Node2D" parent="." unique_id=747913620]
@@ -130,4 +129,5 @@ grow_vertical = 1
 [node name="DeviceAssign" type="Node" parent="." unique_id=846703383]
 script = ExtResource("4_jcuwg")
 
+[connection signal="drop_player" from="DeviceAssign" to="." method="_on_device_assign_drop_player"]
 [connection signal="send_device" from="DeviceAssign" to="." method="_on_device_assign_send_device"]
