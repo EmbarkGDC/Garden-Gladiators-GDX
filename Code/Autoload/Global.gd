@@ -16,3 +16,6 @@ var PlayerUIColors : PackedColorArray = [
 	Player3Color,
 	Player4Color
 ]
+
+#storing score array to access in result screen
+var pScores: Array
