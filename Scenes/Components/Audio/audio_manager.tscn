@@ -62,10 +62,10 @@ sound_effect = ExtResource("9_42cun")
 audio_bus = 1
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
-[node name="AudioManager" type="Node3D"]
+[node name="AudioManager" type="Node3D" unique_id=40951663]
 script = ExtResource("1_24ltg")
 sound_effects = Array[ExtResource("2_gl20g")]([SubResource("Resource_pfs4k"), SubResource("Resource_r51ia"), SubResource("Resource_vhi3u"), SubResource("Resource_rtmy4"), SubResource("Resource_sko21"), SubResource("Resource_4y4fi"), SubResource("Resource_1ejfx")])
 music = Array[AudioStreamOggVorbis]([ExtResource("2_j8u30"), ExtResource("3_3ssdy"), ExtResource("4_4w518"), ExtResource("5_7j3bo")])
 
-[node name="BGM" type="AudioStreamPlayer" parent="."]
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=962506467]
 bus = &"Music"
