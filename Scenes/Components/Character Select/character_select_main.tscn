@@ -3,8 +3,14 @@
 [ext_resource type="Script" uid="uid://cgtlffyhje30h" path="res://Code/Character Select/character_select_main.gd" id="1_fsati"]
 [ext_resource type="PackedScene" uid="uid://btcojqyy08rpm" path="res://Scenes/Components/Character Select/BaseCursor.tscn" id="2_716px"]
 [ext_resource type="PackedScene" uid="uid://8cpyygutxo6c" path="res://Scenes/Components/Character Select/base_portrait.tscn" id="3_5jgah"]
+[ext_resource type="Texture2D" uid="uid://btfetoo7avaij" path="res://Graphics/UI/Panel_3_UI.png" id="3_b5l1a"]
+[ext_resource type="Texture2D" uid="uid://suv24ikxs1kx" path="res://Graphics/UI/Artwork/CharacterSelectArt/Anago_final.png" id="4_apotu"]
 [ext_resource type="Script" uid="uid://c8i53iwomntt3" path="res://Code/device_assign.gd" id="4_jcuwg"]
+[ext_resource type="FontFile" uid="uid://bgd1ydpqw50e6" path="res://Graphics/UI/Fonts/UI_Fonts.zip (Unzipped Files)/Header_Sigmar.ttf" id="5_b5l1a"]
+[ext_resource type="Texture2D" uid="uid://cpid47p8oemdj" path="res://Graphics/UI/Artwork/CharacterSelectArt/Bladez_final.png" id="5_ctnbe"]
+[ext_resource type="Texture2D" uid="uid://3ppx3dtys8u" path="res://Graphics/UI/Artwork/CharacterSelectArt/Maguro_final.png" id="6_b5l1a"]
 [ext_resource type="PackedScene" uid="uid://bnp188dndfyrx" path="res://Scenes/Components/Character Select/drop_button.tscn" id="6_nprsy"]
+[ext_resource type="Texture2D" uid="uid://7ni4wqfn1saj" path="res://Graphics/UI/Artwork/CharacterSelectArt/Sylkie_final.png" id="7_mqc1o"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_bfdir"]
 
@@ -51,10 +57,26 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_b5l1a")
 theme_override_font_sizes/font_size = 56
-text = "Test Start Banner"
+text = "Begin The Show!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="StartBanner" unique_id=1146716073]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1212.5
+offset_top = -26.345
+offset_right = 1212.5
+offset_bottom = 526.655
+grow_horizontal = 2
+scale = Vector2(0.465, 0.465)
+pivot_offset_ratio = Vector2(0.5, 0)
+offset_transform_pivot_ratio = Vector2(0.5, 0)
+texture = ExtResource("3_b5l1a")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=201267860]
 layout_mode = 1
@@ -74,10 +96,14 @@ theme_override_constants/separation = 10
 [node name="BasePortrait2_1" parent="HBoxContainer" unique_id=1612965906 instance=ExtResource("3_5jgah")]
 layout_mode = 2
 CharacterID = 1
+bug_tex = ExtResource("4_apotu")
 
 [node name="Label" type="Label" parent="HBoxContainer/BasePortrait2_1" unique_id=1701183854]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 225)
+theme_override_fonts/font = ExtResource("5_b5l1a")
 theme_override_font_sizes/font_size = 21
 text = "Anago
 "
@@ -87,10 +113,14 @@ vertical_alignment = 1
 [node name="BasePortrait2_2" parent="HBoxContainer" unique_id=404189081 instance=ExtResource("3_5jgah")]
 layout_mode = 2
 CharacterID = 2
+bug_tex = ExtResource("5_ctnbe")
 
 [node name="Label" type="Label" parent="HBoxContainer/BasePortrait2_2" unique_id=537199117]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 225)
+theme_override_fonts/font = ExtResource("5_b5l1a")
 theme_override_font_sizes/font_size = 21
 text = "Bladez
 "
@@ -100,10 +130,14 @@ vertical_alignment = 1
 [node name="BasePortrait2_3" parent="HBoxContainer" unique_id=741357120 instance=ExtResource("3_5jgah")]
 layout_mode = 2
 CharacterID = 3
+bug_tex = ExtResource("6_b5l1a")
 
 [node name="Label" type="Label" parent="HBoxContainer/BasePortrait2_3" unique_id=747498861]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 205)
+theme_override_fonts/font = ExtResource("5_b5l1a")
 theme_override_font_sizes/font_size = 21
 text = "Maguro"
 horizontal_alignment = 1
@@ -112,10 +146,14 @@ vertical_alignment = 1
 [node name="BasePortrait2_4" parent="HBoxContainer" unique_id=1714184099 instance=ExtResource("3_5jgah")]
 layout_mode = 2
 CharacterID = 4
+bug_tex = ExtResource("7_mqc1o")
 
 [node name="Label" type="Label" parent="HBoxContainer/BasePortrait2_4" unique_id=1925009327]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 225)
+theme_override_fonts/font = ExtResource("5_b5l1a")
 theme_override_font_sizes/font_size = 21
 text = "Sylkie
 "
