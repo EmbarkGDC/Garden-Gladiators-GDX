@@ -6,7 +6,6 @@
 [ext_resource type="FontFile" uid="uid://bgd1ydpqw50e6" path="res://Graphics/UI/Fonts/UI_Fonts.zip (Unzipped Files)/Header_Sigmar.ttf" id="3_h2age"]
 
 [node name="MenuButton" type="TextureButton" unique_id=972038282]
-custom_minimum_size = Vector2(1024, 512)
 offset_right = 1024.0
 offset_bottom = 512.0
 scale = Vector2(0.5, 0.5)

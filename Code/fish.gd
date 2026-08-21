@@ -17,6 +17,7 @@ func _ready() -> void:
 	interact_obj.interact = _on_interact
 
 func change_to_sushi() -> void:
+	AudioManager.create_3d_audio_at_location(position, SoundEffect.SOUND_EFFECT_TYPE.SUSHI_CHIME)
 	fish_sprite.visible = false
 	sushi_sprite.visible = true
 	$Interactable.process_mode = Node.PROCESS_MODE_DISABLED

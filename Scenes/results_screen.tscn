@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://cm76krk30cpfs"]
+
+[ext_resource type="Texture2D" uid="uid://b2qxvxje6kkq0" path="res://Graphics/UI/Artwork/Panel_1_UI.png" id="1_5w2wm"]
+[ext_resource type="Script" uid="uid://c1oavwd7hj5c5" path="res://Code/results_screen.gd" id="1_erkp5"]
+[ext_resource type="FontFile" uid="uid://bgd1ydpqw50e6" path="res://Graphics/UI/Fonts/UI_Fonts.zip (Unzipped Files)/Header_Sigmar.ttf" id="2_7qbmv"]
+[ext_resource type="PackedScene" uid="uid://dsymv47hxyyqy" path="res://Scenes/Components/UI/player_results.tscn" id="3_anr18"]
+[ext_resource type="PackedScene" uid="uid://besr42h4cs87m" path="res://Scenes/Components/UI/ui_button_mainmenu.tscn" id="5_isile"]
+
+[node name="Results_Screen" type="Control" unique_id=678352229]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_erkp5")
+
+[node name="ResultPanel" type="NinePatchRect" parent="." unique_id=1200618539]
+custom_minimum_size = Vector2(1024, 1024)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -512.0
+offset_right = 512.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.95, 0.95)
+pivot_offset = Vector2(512, 512)
+texture = ExtResource("1_5w2wm")
+region_rect = Rect2(-1.1618958, -1.1073723, 2634.1619, 2614.1074)
+
+[node name="ColorRect" type="ColorRect" parent="ResultPanel" unique_id=213110422]
+z_index = -1
+custom_minimum_size = Vector2(1024, 1024)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -512.0
+offset_right = 512.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.935, 0.935)
+pivot_offset = Vector2(512, 512)
+color = Color(0.33964092, 0.2764376, 0.31907108, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="ResultPanel" unique_id=1265393644]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ResultPanel/MarginContainer" unique_id=751435402]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ResultPanel/MarginContainer/VBoxContainer" unique_id=740234561]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.34901962)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("2_7qbmv")
+theme_override_font_sizes/font_size = 75
+text = "Results"
+horizontal_alignment = 1
+
+[node name="P1" parent="ResultPanel/MarginContainer/VBoxContainer" unique_id=634097463 instance=ExtResource("3_anr18")]
+layout_mode = 2
+
+[node name="P2" parent="ResultPanel/MarginContainer/VBoxContainer" unique_id=1880391648 instance=ExtResource("3_anr18")]
+layout_mode = 2
+
+[node name="P3" parent="ResultPanel/MarginContainer/VBoxContainer" unique_id=174906021 instance=ExtResource("3_anr18")]
+layout_mode = 2
+
+[node name="P4" parent="ResultPanel/MarginContainer/VBoxContainer" unique_id=993165305 instance=ExtResource("3_anr18")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResultPanel" unique_id=10119471]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1028.0
+offset_top = -512.0
+offset_right = 1028.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -105)
+offset_transform_scale = Vector2(0.275, 0.275)
+offset_transform_pivot_ratio = Vector2(0.5, 1)
+offset_transform_visual_only = false
+theme_override_constants/separation = 75
+
+[node name="Play Again" parent="ResultPanel/HBoxContainer" unique_id=972038282 instance=ExtResource("5_isile")]
+layout_mode = 2
+text = "Play Again"
+
+[node name="New Characters" parent="ResultPanel/HBoxContainer" unique_id=975381174 instance=ExtResource("5_isile")]
+layout_mode = 2
+text = "New Bugs"
+
+[node name="Main Menu" parent="ResultPanel/HBoxContainer" unique_id=162134730 instance=ExtResource("5_isile")]
+layout_mode = 2
+text = "Main Menu"
+
+[connection signal="pressed" from="ResultPanel/HBoxContainer/Play Again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="ResultPanel/HBoxContainer/New Characters" to="." method="_on_new_characters_pressed"]
+[connection signal="pressed" from="ResultPanel/HBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

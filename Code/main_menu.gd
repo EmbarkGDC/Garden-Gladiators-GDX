@@ -10,6 +10,7 @@ func _ready() -> void:
 	credit.label.text = "credit"
 	exit.label.text = "exit"
 	minigame.grab_focus()
+	AudioManager.play_BGM(Util.SCENES.TITLE)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -23,7 +24,7 @@ func _on_exit_pressed() -> void:
 
 func _on_minigame_pressed() -> void:
 	print("Sushido")
-	get_tree().change_scene_to_file("res://Scenes/player_select.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Components/Character Select/character_select_main.tscn")
 
 
 func _on_credit_pressed() -> void:
