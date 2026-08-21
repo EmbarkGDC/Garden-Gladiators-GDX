@@ -14,6 +14,7 @@ func _ready() -> void:
 	players = [$Player, $Player2, $Player3, $Player4]
 	print(PlayerSelectBridge.player_using_device)
 	setup_players()
+	AudioManager.play_BGM(Util.SCENES.SUSHIDO)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
