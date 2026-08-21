@@ -19,8 +19,11 @@ texture = SubResource("CanvasTexture_yih1u")
 
 [node name="CharTex" type="TextureRect" parent="." unique_id=331064021]
 layout_mode = 2
+expand_mode = 4
+stretch_mode = 6
 
 [node name="PortraitCollision" type="Area2D" parent="." unique_id=1996494996]
+visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PortraitCollision" unique_id=1757505219]
