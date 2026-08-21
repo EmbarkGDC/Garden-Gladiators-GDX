@@ -324,8 +324,9 @@ using_device = -1
 [node name="InteractingComponent" parent="Player" index="4" node_paths=PackedStringArray("mechanic_node")]
 mechanic_node = NodePath("../hold_mechanic")
 
-[node name="hold_mechanic" type="Node3D" parent="Player" unique_id=1689420292]
+[node name="hold_mechanic" type="Node3D" parent="Player" unique_id=1689420292 node_paths=PackedStringArray("hold_point")]
 script = ExtResource("10_dkwre")
+hold_point = NodePath("../AnimationManager/AnimatedSprite3D/HoldPosition")
 metadata/_custom_type_script = "uid://1fieyi1rotuk"
 
 [node name="Player2" parent="." unique_id=512120919 instance=ExtResource("20_uhsb4")]
@@ -338,8 +339,9 @@ player_id = 1
 [node name="InteractingComponent" parent="Player2" index="4" node_paths=PackedStringArray("mechanic_node")]
 mechanic_node = NodePath("../hold_mechanic")
 
-[node name="hold_mechanic" type="Node3D" parent="Player2" unique_id=2116599125]
+[node name="hold_mechanic" type="Node3D" parent="Player2" unique_id=2116599125 node_paths=PackedStringArray("hold_point")]
 script = ExtResource("10_dkwre")
+hold_point = NodePath("../AnimationManager/AnimatedSprite3D/HoldPosition")
 metadata/_custom_type_script = "uid://1fieyi1rotuk"
 
 [node name="Player3" parent="." unique_id=387581924 instance=ExtResource("21_xilja")]
@@ -350,8 +352,9 @@ visible = false
 [node name="InteractingComponent" parent="Player3" index="4" unique_id=1528224327 node_paths=PackedStringArray("mechanic_node")]
 mechanic_node = NodePath("../hold_mechanic")
 
-[node name="hold_mechanic" type="Node3D" parent="Player3" unique_id=1200071636]
+[node name="hold_mechanic" type="Node3D" parent="Player3" unique_id=1200071636 node_paths=PackedStringArray("hold_point")]
 script = ExtResource("10_dkwre")
+hold_point = NodePath("../HoldPosition")
 metadata/_custom_type_script = "uid://1fieyi1rotuk"
 
 [node name="Player4" parent="." unique_id=698154421 instance=ExtResource("22_k1f5r")]
@@ -362,8 +365,9 @@ visible = false
 [node name="InteractingComponent" parent="Player4" index="4" unique_id=1698299589 node_paths=PackedStringArray("mechanic_node")]
 mechanic_node = NodePath("../hold_mechanic")
 
-[node name="hold_mechanic" type="Node3D" parent="Player4" unique_id=1677136489]
+[node name="hold_mechanic" type="Node3D" parent="Player4" unique_id=1677136489 node_paths=PackedStringArray("hold_point")]
 script = ExtResource("10_dkwre")
+hold_point = NodePath("../HoldPosition")
 metadata/_custom_type_script = "uid://1fieyi1rotuk"
 
 [node name="PhantomCamera3D" type="Node3D" parent="." unique_id=1857612698 node_paths=PackedStringArray("follow_targets")]

@@ -62,13 +62,17 @@ func countdown() -> void:
 func setup_players() -> void:
 	if PlayerSelectBridge.player_active[0]:
 		players[0].visible = true
+		players[0].using_device = PlayerSelectBridge.player_using_device[0]
 	if not single_player:
 		if PlayerSelectBridge.player_active[1]:
 			players[1].visible = true
+			players[1].using_device = PlayerSelectBridge.player_using_device[1]
 		if PlayerSelectBridge.player_active[2]:
 			players[2].visible = true
+			players[2].using_device = PlayerSelectBridge.player_using_device[2]
 		if PlayerSelectBridge.player_active[3]:
 			players[3].visible = true
+			players[3].using_device = PlayerSelectBridge.player_using_device[3]
 
 func enable_players() -> void:
 	if PlayerSelectBridge.player_active[0]:
