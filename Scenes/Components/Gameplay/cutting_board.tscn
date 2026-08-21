@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfpjfnol8r0u6"]
+[gd_scene format=3 uid="uid://dfpjfnol8r0u6"]
 
 [ext_resource type="Script" uid="uid://uo2liwq6xaxf" path="res://Code/cutting_board.gd" id="1_0mqgb"]
 [ext_resource type="PackedScene" uid="uid://bklil44bcm1yg" path="res://Scenes/Components/Gameplay/interactable.tscn" id="2_8sgqr"]
@@ -8,30 +8,30 @@
 [ext_resource type="PackedScene" uid="uid://kcpilqmr7xaf" path="res://Scenes/Components/Gameplay/cut_meter.tscn" id="6_ht8fl"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_oncj3"]
-radius = 2.5
+radius = 2.3
 
-[node name="CuttingBoard" type="Node3D"]
+[node name="CuttingBoard" type="Node3D" unique_id=1898296278]
 script = ExtResource("1_0mqgb")
 
-[node name="cuttingboard" parent="." instance=ExtResource("2_n4jer")]
+[node name="cuttingboard" parent="." unique_id=1968542807 instance=ExtResource("2_n4jer")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9019165, 0)
 
 [node name="Cuttingboard" parent="cuttingboard" index="0"]
 surface_material_override/0 = ExtResource("3_pcdu8")
 
-[node name="Interactable" parent="." instance=ExtResource("2_8sgqr")]
+[node name="Interactable" parent="." unique_id=2060620178 instance=ExtResource("2_8sgqr")]
 priority = 10
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=135631749]
 shape = SubResource("SphereShape3D_oncj3")
 
-[node name="HoldingPosition" type="Node3D" parent="."]
+[node name="HoldingPosition" type="Node3D" parent="." unique_id=870034620]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2235049, 0)
 
-[node name="SushidoScoringCalculator" parent="." node_paths=PackedStringArray("cut") instance=ExtResource("5_uexg8")]
+[node name="SushidoScoringCalculator" parent="." unique_id=400463986 node_paths=PackedStringArray("cut") instance=ExtResource("5_uexg8")]
 cut = NodePath("../CutMeter")
 
-[node name="CutMeter" parent="." instance=ExtResource("6_ht8fl")]
+[node name="CutMeter" parent="." unique_id=525634741 instance=ExtResource("6_ht8fl")]
 transform = Transform3D(1.51, 0, 0, 0, 1.51, 0, 0, 0, 1.51, 0.41891587, 4.0241675, 0.39676285)
 visible = false
 

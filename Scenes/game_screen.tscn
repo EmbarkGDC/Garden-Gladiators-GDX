@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgpllce1hw02q"]
+[gd_scene format=3 uid="uid://dgpllce1hw02q"]
 
 [ext_resource type="Script" uid="uid://7qhq1e7grvhw" path="res://Code/game_screen.gd" id="1_h8xao"]
 
@@ -11,7 +11,7 @@ font_size = 24
 [sub_resource type="LabelSettings" id="LabelSettings_a68iv"]
 font_size = 25
 
-[node name="GameScreen" type="Control"]
+[node name="GameScreen" type="Control" unique_id=67662913]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h8xao")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1439946693]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,7 +30,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.25882354)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=282162749]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -45,26 +45,26 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Control" type="VBoxContainer" parent="VBoxContainer"]
+[node name="Control" type="VBoxContainer" parent="VBoxContainer" unique_id=1999071495]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Control"]
+[node name="Label" type="Label" parent="VBoxContainer/Control" unique_id=870067430]
 layout_mode = 2
 text = "Time's Up!"
 label_settings = SubResource("LabelSettings_5224c")
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="VBoxContainer/Control"]
+[node name="Label2" type="Label" parent="VBoxContainer/Control" unique_id=1948753791]
 layout_mode = 2
 text = "Your Score:"
 label_settings = SubResource("LabelSettings_h8xao")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1480979977]
 layout_mode = 2
 text = "New Game"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1371679606]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

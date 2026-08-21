@@ -12,12 +12,14 @@ signal all_players_ready
 var cursors : Array[Cursor]
 var active_players: Array[bool]
 var ready_players: Array[bool]
+var characters: Array[Util.PlayerCharacter]
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	active_players = [false, false, false, false]
 	ready_players = [false, false, false, false]
+	characters = [Util.PlayerCharacter.NONE, Util.PlayerCharacter.NONE, Util.PlayerCharacter.NONE, Util.PlayerCharacter.NONE]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,11 +43,19 @@ func ready_check() -> bool:
 	
 	return players_are_ready
 
-func character_chosen(player: int) -> void:
+func character_chosen(player: int, character: Util.PlayerCharacter) -> void:
 	ready_players[player] = true
+	characters[player] = character
+	
+	if ready_check():
+		$StartBanner.visible = true
 
 func character_unchosen(player: int) -> void:
 	ready_players[player] = false
+	characters[player] = Util.PlayerCharacter.NONE
+	
+	if $StartBanner.visible:
+		$StartBanner.visible = false
 
 func remove_cursor(cursor:Cursor) -> void:
 	if cursor.get_child_count() == 0:
@@ -60,12 +70,12 @@ func _on_device_assign_send_device(device: int, playernum: int) -> void:
 	active_players[playernum] = true
 	var newCursor : Cursor = packed_cursor.instantiate()
 	newCursor.controllerID = device
-	#newCursor.chosen.connect(new_ready_player)
-	newCursor.chosen.connect(Callable(self, "character_chosen").bind(playernum))
-	#newCursor.unchosen.connect(not_ready_player)
-	newCursor.unchosen.connect(Callable(self, "character_unchosen").bind(playernum))
-	newCursor.PlayerDrop.connect(remove_cursor)
-	newCursor.StartPressed.connect(start_game)
+	newCursor.player_slot = playernum
+	
+	newCursor.chosen.connect(Callable(self, "character_chosen"))
+	newCursor.unchosen.connect(Callable(self, "character_unchosen"))
+	newCursor.player_drop.connect(remove_cursor)
+	newCursor.start_pressed.connect(start_game)
 	cursors.append(newCursor)
 	newCursor.PlayerColor = Global.PlayerUIColors[playernum]
 	newCursor.position = cursor_spawn.position
@@ -77,7 +87,14 @@ func _on_device_assign_drop_player(player: int) -> void:
 	remove_cursor(dropped)
 	active_players[player] = false
 	ready_players[player] = false
+	characters[player] = Util.PlayerCharacter.NONE
 
 func start_game() -> void:
 	if ready_check():
-		pass
+		PlayerSelectBridge.player_using_device = $DeviceAssign.using_device
+		PlayerSelectBridge.player_active = active_players
+		PlayerSelectBridge.player_characters = characters
+		PlayerSelectBridge.immediate_start = true
+		
+		# Switch scenes
+		get_tree().change_scene_to_file("res://Scenes/multiplayer_sushido.tscn")
