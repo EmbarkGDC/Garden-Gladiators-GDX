@@ -32,6 +32,7 @@ func start_meter(hit: float, perfecrt: float) -> void:
 	#char_anim_tree["parameters/conditions/grabs"] = false
 	#char_anim_tree["parameters/conditions/drops_item"] = true
 	#char_anim_tree["parameters/conditions/ready_to_cut"] = true
+	AudioManager.create_3d_audio_at_location(position, SoundEffect.SOUND_EFFECT_TYPE.CUT_METER_APPEAR)
 	cut_hit_area = hit
 	perfect_hit_area = perfecrt
 	anim.play("back_and_forth")
@@ -46,6 +47,7 @@ func cut() -> cut_result:
 	#char_anim_tree["parameters/conditions/ready_to_cut"] = false
 	#char_anim_tree["parameters/conditions/cuts"] = true
 	anim.pause()
+	
 	var location: float = anim.current_animation_position / anim.current_animation_length
 	location = location * 2.0 - 1.0
 	result = ((location * cut_hit_area) - (cut_hit_area - 1.0) / 2.0) + cut_offset
@@ -54,8 +56,11 @@ func cut() -> cut_result:
 	if result <= cut_hit_area:
 		if result <= perfect_hit_area * cut_hit_area:
 			print("Perfect!")
+			AudioManager.create_3d_audio_at_location(position, SoundEffect.SOUND_EFFECT_TYPE.SLASH_PERFECT)
 			return cut_result.Perfect
 		print("Hit")
+		AudioManager.create_3d_audio_at_location(position, SoundEffect.SOUND_EFFECT_TYPE.SLASH_NORMAL)
 		return cut_result.Hit
 	print("Miss")
+	AudioManager.create_3d_audio_at_location(position, SoundEffect.SOUND_EFFECT_TYPE.SLASH_MISS)
 	return cut_result.Miss

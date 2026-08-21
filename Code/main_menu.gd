@@ -10,6 +10,7 @@ func _ready() -> void:
 	credit.label.text = "credit"
 	exit.label.text = "exit"
 	minigame.grab_focus()
+	AudioManager.play_BGM(Util.SCENES.TITLE)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
