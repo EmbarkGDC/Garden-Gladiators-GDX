@@ -23,6 +23,7 @@ func set_pivot() -> void:
 ## Scale Button
 func _on_mouse_entered() -> void:
 	create_tween().tween_property(self, "scale", Vector2(1.1,1.1), 0.1)
+	grab_focus()
 	#change_label_enter()
 func _on_mouse_exited() -> void:
 	create_tween().tween_property(self, "scale", Vector2(1,1), 0.1)

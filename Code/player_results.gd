@@ -41,7 +41,7 @@ func get_player_number():
 
 func get_score() -> void:
 	#test for debug purpose
-	scores = [0001, 0002, 0003, 0004]
+	scores = Global.pScores
 	#define future functionality: Access global score manager.
 
 #copied from score_manager.gd
@@ -59,4 +59,4 @@ func determine_winner() -> int:
 	return winner
 
 func change_score() -> void:
-	score.text = str(scores[playerN])
+	score.text = str(scores[playerN]).pad_zeros(4)
