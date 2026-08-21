@@ -15,6 +15,10 @@ func _ready() -> void:
 	print(PlayerSelectBridge.player_using_device)
 	setup_players()
 	AudioManager.play_BGM(Util.SCENES.SUSHIDO)
+	
+	# Start game
+	if PlayerSelectBridge.immediate_start:
+		_on_game_screen_new_game()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -64,8 +68,6 @@ func countdown() -> void:
 	await  get_tree().create_timer(1.0).timeout
 	$Countdown.visible = false
 	after_countdown = true
-	"$FishSpawner.spawn_number(5)"
-	#$FishSpawner.process_mode = Node.PROCESS_MODE_PAUSABLE
 
 func setup_players() -> void:
 	if PlayerSelectBridge.player_active[0]:
@@ -105,8 +107,10 @@ func _on_game_screen_new_game() -> void:
 	time_left = time_limit
 	countdown()
 	#$FishSpawner.reset_area()
-	$Player.reset()
+	players[0].reset()
 	if not single_player:
-		$Player2.reset()
+		players[1].reset()
+		players[2].reset()
+		players[3].reset()
 	$ScoreManager.reset()
 	$UI.reset()

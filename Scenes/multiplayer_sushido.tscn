@@ -101,7 +101,7 @@ script = ExtResource("24_ndkw1")
 [node name="Sushido" type="Node3D" unique_id=1776939283 node_paths=PackedStringArray("timer_label")]
 script = ExtResource("1_0pslh")
 single_player = false
-time_limit = 12.0
+time_limit = 120.0
 timer_label = NodePath("Time")
 
 [node name="ScoreManager" type="Node" parent="." unique_id=743065475]
@@ -261,16 +261,16 @@ shape = SubResource("BoxShape3D_ifpe6")
 transform = Transform3D(0.9370384, 0, -0.34922633, 0, 1, 0, 0.34922633, 0, 0.9370384, 1.6536617, 0.110912085, -21.79818)
 
 [node name="CuttingBoard" parent="." unique_id=320082985 instance=ExtResource("4_k781c")]
-transform = Transform3D(0.3340701, 0, -0.9425482, 0, 1, 0, 0.9425482, 0, 0.3340701, 4.8852844, 0.78042245, -5.9110193)
+transform = Transform3D(0.3340701, 0, -0.9425482, 0, 1, 0, 0.9425482, 0, 0.3340701, 5.3799257, 0.78042245, -5.8204374)
 
 [node name="CuttingBoard2" parent="." unique_id=1820216829 instance=ExtResource("4_k781c")]
 transform = Transform3D(0.9431125, 0, 0.33247396, 0, 1, 0, -0.33247396, 0, 0.9431125, -5.7591124, 0.78042436, -4.8592434)
 
 [node name="CuttingBoard3" parent="." unique_id=1737420858 instance=ExtResource("4_k781c")]
-transform = Transform3D(0.9233108, 0, -0.3840536, 0, 1, 0, 0.3840536, 0, 0.9233108, -4.504876, 0.78042436, 5.3926663)
+transform = Transform3D(0.9233108, 0, -0.3840536, 0, 1, 0, 0.3840536, 0, 0.9233108, -4.0976024, 0.78042436, 6.1670785)
 
 [node name="CuttingBoard4" parent="." unique_id=902456488 instance=ExtResource("4_k781c")]
-transform = Transform3D(-0.61680233, 0, -0.787118, 0, 1, 0, 0.787118, 0, -0.61680233, 4.7965775, 0.78042436, 5.4327908)
+transform = Transform3D(-0.61680233, 0, -0.787118, 0, 1, 0, 0.787118, 0, -0.61680233, 4.4798684, 0.78042436, 5.735194)
 
 [node name="UI" parent="." unique_id=2762844 instance=ExtResource("5_kfyma")]
 
@@ -385,7 +385,7 @@ align_position_with_view = Callable()
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=264098253]
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.83580613, 0.54902196, 0, -0.54902196, 0.83580613, -0.54014707, 8.186594, 9.511053)
+transform = Transform3D(1, 0, 0, 0, 0.8358073, 0.54902285, 0, -0.54902285, 0.8358073, -0.54014707, 8.186594, 9.511053)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=447834150]

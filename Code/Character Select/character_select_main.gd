@@ -94,6 +94,7 @@ func start_game() -> void:
 		PlayerSelectBridge.player_using_device = $DeviceAssign.using_device
 		PlayerSelectBridge.player_active = active_players
 		PlayerSelectBridge.player_characters = characters
+		PlayerSelectBridge.immediate_start = true
 		
 		# Switch scenes
 		get_tree().change_scene_to_file("res://Scenes/multiplayer_sushido.tscn")
