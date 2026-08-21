@@ -64,3 +64,5 @@ func cut() -> cut_result:
 	print("Miss")
 	AudioManager.create_3d_audio_at_location(position, SoundEffect.SOUND_EFFECT_TYPE.SLASH_MISS)
 	return cut_result.Miss
+	
+	AudioManager.create_3d_audio_at_location(position, SoundEffect.SOUND_EFFECT_TYPE.FISH_CUT)
