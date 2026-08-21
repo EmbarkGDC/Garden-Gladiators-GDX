@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://cxq1dxy7djab1" path="res://Code/Character Select/base_cursor.gd" id="2_51gh2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7lkga"]
-radius = 23.15
 
 [node name="Cursor" type="Sprite2D" unique_id=1782746279]
 z_index = 4096
