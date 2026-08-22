@@ -11,6 +11,7 @@ signal start_pressed
 
 @export var cursor_speed: float
 var input_handler: DeviceInput
+var material_to_set: Material
 
 var controllerID: int:
 	set(ID):
@@ -34,6 +35,8 @@ func _ready() -> void:
 	badge = newbadge.instantiate()
 	add_child(badge)
 	badge.position = badge_coord.position
+	badge.set_label(player_slot)
+	set_all_materials(material_to_set)
 
 func _process(delta: float) -> void:
 	cooldown_on_start -= delta
@@ -71,3 +74,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			hasChosen = false
 			unchosen.emit(player_slot)
 		get_viewport().set_input_as_handled()
+
+func set_all_materials(mat: Material) -> void:
+	set_material(mat)
+	badge.set_material(mat)
+	

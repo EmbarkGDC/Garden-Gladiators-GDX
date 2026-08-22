@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://btcojqyy08rpm"]
 
 [ext_resource type="Texture2D" uid="uid://8xy00khk6u5k" path="res://Graphics/UI/Cursor.png" id="1_51gh2"]
-[ext_resource type="Material" uid="uid://0h7bs763n7f1" path="res://Graphics/Materials/player_color.tres" id="1_rbjcs"]
+[ext_resource type="Material" uid="uid://0h7bs763n7f1" path="res://Graphics/Materials/player_color1.tres" id="1_rbjcs"]
 [ext_resource type="Script" uid="uid://cxq1dxy7djab1" path="res://Code/Character Select/base_cursor.gd" id="2_51gh2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7lkga"]

@@ -8,6 +8,7 @@ signal all_players_ready
 @export var packed_cursor: PackedScene
 #@export var device_assign: DeviceAssign
 @export var StartBanner: Control
+@export var cursor_materials: Array[Material]
 
 var cursors : Array[Cursor]
 var active_players: Array[bool]
@@ -72,12 +73,15 @@ func _on_device_assign_send_device(device: int, playernum: int) -> void:
 	newCursor.controllerID = device
 	newCursor.player_slot = playernum
 	
+	# connect signals
 	newCursor.chosen.connect(Callable(self, "character_chosen"))
 	newCursor.unchosen.connect(Callable(self, "character_unchosen"))
 	newCursor.player_drop.connect(remove_cursor)
 	newCursor.start_pressed.connect(start_game)
+	
 	cursors.append(newCursor)
 	newCursor.PlayerColor = Global.PlayerUIColors[playernum]
+	newCursor.material_to_set = cursor_materials[playernum]
 	newCursor.position = cursor_spawn.position
 	#player_joined.emit()
 	call_deferred("add_child", newCursor)

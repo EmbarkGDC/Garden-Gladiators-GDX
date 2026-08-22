@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://d3wpy7u5vrdf6"]
 
-[ext_resource type="Material" uid="uid://0h7bs763n7f1" path="res://Graphics/Materials/player_color.tres" id="1_timmu"]
+[ext_resource type="Material" uid="uid://0h7bs763n7f1" path="res://Graphics/Materials/player_color1.tres" id="1_timmu"]
 [ext_resource type="Texture2D" uid="uid://dbw5g4q3r2cqq" path="res://Graphics/UI/Cursor_Badge.png" id="1_tyksg"]
 [ext_resource type="Script" uid="uid://c6pgrxp2kuflr" path="res://Code/Character Select/base_Badge.gd" id="2_tyksg"]
 [ext_resource type="Texture2D" uid="uid://dcsc7kyg8ascq" path="res://Graphics/UI/BadgeLabel_P1.png" id="3_7dhjq"]
+[ext_resource type="Texture2D" uid="uid://b41nk6k71hdq6" path="res://Graphics/UI/BadgeLabel_P2.png" id="5_u7h76"]
+[ext_resource type="Texture2D" uid="uid://otleo16bvlyq" path="res://Graphics/UI/BadgeLabel_P3.png" id="6_c4nbb"]
+[ext_resource type="Texture2D" uid="uid://c6fgjjnjsgett" path="res://Graphics/UI/BadgeLabel_P4.png" id="7_o3jrf"]
 
 [node name="Token" type="Sprite2D" unique_id=170853418]
 z_index = -5
@@ -11,6 +14,22 @@ material = ExtResource("1_timmu")
 texture = ExtResource("1_tyksg")
 script = ExtResource("2_tyksg")
 
-[node name="BadgeLabel" type="Sprite2D" parent="." unique_id=2062474255]
+[node name="BadgeLabelP1" type="Sprite2D" parent="." unique_id=2062474255]
+visible = false
 position = Vector2(7, 9)
 texture = ExtResource("3_7dhjq")
+
+[node name="BadgeLabelP2" type="Sprite2D" parent="." unique_id=595879675]
+visible = false
+position = Vector2(7, 9)
+texture = ExtResource("5_u7h76")
+
+[node name="BadgeLabelP3" type="Sprite2D" parent="." unique_id=1427475482]
+visible = false
+position = Vector2(7, 9)
+texture = ExtResource("6_c4nbb")
+
+[node name="BadgeLabelP4" type="Sprite2D" parent="." unique_id=1903535583]
+visible = false
+position = Vector2(7, 9)
+texture = ExtResource("7_o3jrf")
