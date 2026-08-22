@@ -92,9 +92,6 @@ size = Vector3(4, 1, 4)
 [sub_resource type="LabelSettings" id="LabelSettings_he5xv"]
 font_size = 120
 
-[sub_resource type="LabelSettings" id="LabelSettings_ifpe6"]
-font_size = 60
-
 [sub_resource type="Resource" id="Resource_rkpu0"]
 script = ExtResource("24_ndkw1")
 
@@ -102,7 +99,7 @@ script = ExtResource("24_ndkw1")
 script = ExtResource("1_0pslh")
 single_player = false
 time_limit = 120.0
-timer_label = NodePath("Time")
+timer_label = NodePath("UI/HBoxContainer/Time")
 
 [node name="ScoreManager" type="Node" parent="." unique_id=743065475]
 script = ExtResource("2_drnuo")
@@ -303,17 +300,6 @@ label_settings = SubResource("LabelSettings_he5xv")
 
 [node name="GameScreen" parent="." unique_id=576126539 instance=ExtResource("13_wvftd")]
 
-[node name="Time" type="Label" parent="." unique_id=1653014264]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.5
-offset_right = 20.5
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "00:00"
-label_settings = SubResource("LabelSettings_ifpe6")
-
 [node name="Player" parent="." unique_id=1711578602 instance=ExtResource("3_7w6xu")]
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6367872, 0, 3.4688025)
@@ -400,6 +386,7 @@ script = ExtResource("25_dkwre")
 [connection signal="player_scored" from="CuttingBoard4" to="ScoreManager" method="_on_player_scored"]
 [connection signal="new_game" from="GameScreen" to="." method="_on_game_screen_new_game"]
 
+[editable path="UI"]
 [editable path="Player"]
 [editable path="Player/AnimationManager/AnimatedSprite3D"]
 [editable path="Player2"]
