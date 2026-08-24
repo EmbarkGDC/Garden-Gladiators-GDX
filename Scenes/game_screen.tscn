@@ -8,9 +8,6 @@ font_size = 50
 [sub_resource type="LabelSettings" id="LabelSettings_h8xao"]
 font_size = 24
 
-[sub_resource type="LabelSettings" id="LabelSettings_a68iv"]
-font_size = 25
-
 [node name="GameScreen" type="Control" unique_id=67662913]
 layout_mode = 3
 anchors_preset = 15
@@ -63,19 +60,5 @@ horizontal_alignment = 1
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=1480979977]
 layout_mode = 2
 text = "New Game"
-
-[node name="Label" type="Label" parent="." unique_id=1371679606]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -211.0
-offset_top = -35.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Sushido v: INDEV "
-label_settings = SubResource("LabelSettings_a68iv")
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
