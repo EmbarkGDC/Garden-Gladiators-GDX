@@ -2,6 +2,7 @@ extends Node3D
 
 @export var single_player: bool = true
 @export var time_limit: float
+@export var wait_time_after_round: float = 2.0
 @export var timer_label: Label
 
 var time_left: float
@@ -44,6 +45,7 @@ func _process(delta: float) -> void:
 		#REPLACE THIS LATER
 		var winner: int = $ScoreManager.determine_winner()
 		
+		$GameScreen.hide_extra_ui()
 		if single_player:
 			$GameScreen.on_game_end($ScoreManager.scores[0], 1)
 		else:
@@ -51,6 +53,7 @@ func _process(delta: float) -> void:
 		#$FishSpawner.process_mode = Node.PROCESS_MODE_DISABLED
 		
 		#test for result screen
+		await  get_tree().create_timer(wait_time_after_round).timeout
 		get_tree().change_scene_to_file("res://Scenes/results_screen.tscn")
 
 func countdown() -> void:

@@ -4,7 +4,7 @@ var score_displays: Array[player_score]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	score_displays = [$PlayerScore, $PlayerScore2, $PlayerScore3, $PlayerScore4]
+	score_displays = [$HBoxContainer/PlayerScore, $HBoxContainer/PlayerScore2, $HBoxContainer/PlayerScore3, $HBoxContainer/PlayerScore4]
 	score_displays[0].set_player_name("Player 1")
 	score_displays[1].set_player_name("Player 2")
 	score_displays[2].set_player_name("Player 3")
