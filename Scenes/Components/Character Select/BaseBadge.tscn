@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c6fgjjnjsgett" path="res://Graphics/UI/BadgeLabel_P4.png" id="7_o3jrf"]
 
 [node name="Token" type="Sprite2D" unique_id=170853418]
-z_index = -5
+z_index = 5
 material = ExtResource("1_timmu")
 texture = ExtResource("1_tyksg")
 script = ExtResource("2_tyksg")

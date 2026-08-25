@@ -307,12 +307,11 @@ visible = false
 floor_block_on_wall = false
 using_device = -1
 
-[node name="InteractingComponent" parent="Player" index="4" node_paths=PackedStringArray("mechanic_node")]
+[node name="InteractingComponent" parent="Player" index="3" unique_id=1015018225 node_paths=PackedStringArray("mechanic_node")]
 mechanic_node = NodePath("../hold_mechanic")
 
-[node name="hold_mechanic" type="Node3D" parent="Player" unique_id=1689420292 node_paths=PackedStringArray("hold_point")]
+[node name="hold_mechanic" type="Node3D" parent="Player" unique_id=1689420292]
 script = ExtResource("10_dkwre")
-hold_point = NodePath("../AnimationManager/AnimatedSprite3D/HoldPosition")
 metadata/_custom_type_script = "uid://1fieyi1rotuk"
 
 [node name="Player2" parent="." unique_id=512120919 instance=ExtResource("20_uhsb4")]
@@ -322,12 +321,11 @@ visible = false
 script = ExtResource("21_ndkw1")
 player_id = 1
 
-[node name="InteractingComponent" parent="Player2" index="4" node_paths=PackedStringArray("mechanic_node")]
+[node name="InteractingComponent" parent="Player2" index="3" unique_id=908629339 node_paths=PackedStringArray("mechanic_node")]
 mechanic_node = NodePath("../hold_mechanic")
 
-[node name="hold_mechanic" type="Node3D" parent="Player2" unique_id=2116599125 node_paths=PackedStringArray("hold_point")]
+[node name="hold_mechanic" type="Node3D" parent="Player2" unique_id=2116599125]
 script = ExtResource("10_dkwre")
-hold_point = NodePath("../AnimationManager/AnimatedSprite3D/HoldPosition")
 metadata/_custom_type_script = "uid://1fieyi1rotuk"
 
 [node name="Player3" parent="." unique_id=387581924 instance=ExtResource("21_xilja")]
@@ -335,7 +333,7 @@ process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.285459, 0.2785989, -3.1279964)
 visible = false
 
-[node name="InteractingComponent" parent="Player3" index="4" unique_id=1528224327 node_paths=PackedStringArray("mechanic_node")]
+[node name="InteractingComponent" parent="Player3" index="3" unique_id=1528224327 node_paths=PackedStringArray("mechanic_node")]
 mechanic_node = NodePath("../hold_mechanic")
 
 [node name="hold_mechanic" type="Node3D" parent="Player3" unique_id=1200071636 node_paths=PackedStringArray("hold_point")]
@@ -348,7 +346,7 @@ process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.205165, 0.27859795, -3.1343918)
 visible = false
 
-[node name="InteractingComponent" parent="Player4" index="4" unique_id=1698299589 node_paths=PackedStringArray("mechanic_node")]
+[node name="InteractingComponent" parent="Player4" index="3" unique_id=1698299589 node_paths=PackedStringArray("mechanic_node")]
 mechanic_node = NodePath("../hold_mechanic")
 
 [node name="hold_mechanic" type="Node3D" parent="Player4" unique_id=1677136489 node_paths=PackedStringArray("hold_point")]
@@ -388,8 +386,6 @@ script = ExtResource("25_dkwre")
 
 [editable path="UI"]
 [editable path="Player"]
-[editable path="Player/AnimationManager/AnimatedSprite3D"]
 [editable path="Player2"]
-[editable path="Player2/AnimationManager/AnimatedSprite3D"]
 [editable path="Player3"]
 [editable path="Player4"]
