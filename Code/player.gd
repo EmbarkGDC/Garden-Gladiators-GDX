@@ -10,6 +10,7 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 var initial_position: Vector3
+var hold_pos: Node3D
 
 var is_cutting: bool = false
 
@@ -58,3 +59,9 @@ func _physics_process(delta: float) -> void:
 
 func reset() -> void:
 	global_position = initial_position
+
+func set_character(char_scene: PackedScene) -> void:
+	$GrayPill.visible = false
+	var instance: PlayerCharacterSprite = char_scene.instantiate()
+	hold_pos = instance.find_child("HoldPosition")
+	add_child(instance)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=128 format=3 uid="uid://cml7amem26ak0"]
+[gd_scene format=3 uid="uid://cml7amem26ak0"]
 
 [ext_resource type="Texture2D" uid="uid://b88aeenoq40uf" path="res://Graphics/Sprites/PlayerChar/Bladez/Bladez_Action_SpriteSheet.png" id="1_lp0uq"]
 [ext_resource type="Texture2D" uid="uid://dt4rufyox4urg" path="res://Graphics/Sprites/PlayerChar/Bladez/Bladez_Idle_SpriteSheet.png" id="2_hu1ps"]
+[ext_resource type="Script" uid="uid://dafan8irq5dix" path="res://Code/player_character_sprite.gd" id="3_0g53m"]
 [ext_resource type="AnimationLibrary" uid="uid://bltufge74ass1" path="res://Scenes/Components/Character/animations/Bladez_animations.res" id="3_xrpic"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="4_0g53m"]
 
@@ -512,7 +513,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cueqt")
 }],
-"loop": true,
+"loop": 1,
 "name": &"anticipSlash_nX",
 "speed": 12.0
 }, {
@@ -541,7 +542,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fgtww")
 }],
-"loop": true,
+"loop": 1,
 "name": &"anticipSlash_pX",
 "speed": 12.0
 }, {
@@ -570,7 +571,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1005x")
 }],
-"loop": true,
+"loop": 1,
 "name": &"carry_nX",
 "speed": 12.0
 }, {
@@ -599,7 +600,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xcjt5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"carry_pX",
 "speed": 12.0
 }, {
@@ -616,7 +617,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0g53m")
 }],
-"loop": false,
+"loop": 0,
 "name": &"grab_nX",
 "speed": 12.0
 }, {
@@ -633,7 +634,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w6six")
 }],
-"loop": false,
+"loop": 0,
 "name": &"grab_pX",
 "speed": 12.0
 }, {
@@ -662,7 +663,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p2tjm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"hold_nX",
 "speed": 12.0
 }, {
@@ -691,7 +692,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_abarf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"hold_pX",
 "speed": 12.0
 }, {
@@ -720,7 +721,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xopsi")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_nX",
 "speed": 12.0
 }, {
@@ -749,7 +750,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_51cq2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_pX",
 "speed": 12.0
 }, {
@@ -778,7 +779,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fmd51")
 }],
-"loop": false,
+"loop": 0,
 "name": &"slash_nX",
 "speed": 12.0
 }, {
@@ -807,7 +808,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h4myq")
 }],
-"loop": false,
+"loop": 0,
 "name": &"slash_pX",
 "speed": 12.0
 }, {
@@ -836,7 +837,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_djlnm")
 }],
-"loop": false,
+"loop": 0,
 "name": &"taunt_nx",
 "speed": 12.0
 }, {
@@ -865,7 +866,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_848vs")
 }],
-"loop": false,
+"loop": 0,
 "name": &"taunt_px",
 "speed": 12.0
 }, {
@@ -894,7 +895,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vkdu3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_nX",
 "speed": 12.0
 }, {
@@ -923,7 +924,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2aj6i")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_pX",
 "speed": 12.0
 }]
@@ -948,25 +949,24 @@ _data = {
 &"RESET": SubResource("Animation_xrpic")
 }
 
-[node name="Bladez_AnimatedSprite3D" type="AnimatedSprite3D"]
+[node name="Bladez_AnimatedSprite3D" type="AnimatedSprite3D" unique_id=1050047929]
 offset = Vector2(0, 211.955)
 billboard = 2
 alpha_cut = 2
 alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
-frame = 5
+frame = 6
+script = ExtResource("3_0g53m")
 
-[node name="HoldPosition" type="Node3D" parent="."]
+[node name="HoldPosition" type="Node3D" parent="." unique_id=974076667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1136495, 2.1487668, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_0g53m"),
-&"PC_animations": ExtResource("3_xrpic")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2131042057]
+libraries/ = SubResource("AnimationLibrary_0g53m")
+libraries/PC_animations = ExtResource("3_xrpic")
 
-[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer" unique_id=713784661]
 root_node = NodePath("../..")
 tree_root = ExtResource("4_0g53m")
 anim_player = NodePath("..")

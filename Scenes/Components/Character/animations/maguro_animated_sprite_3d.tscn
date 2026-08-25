@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dtlsoboqwly0y" path="res://Graphics/Sprites/PlayerChar/Maguro/Maguro_ActionIdle_Spritesheet.png" id="1_kgryj"]
 [ext_resource type="Texture2D" uid="uid://d3l5xgpuuyxkw" path="res://Graphics/Sprites/PlayerChar/Maguro/Maguro_Slice_spritesheet.png" id="2_bkne4"]
 [ext_resource type="AnimationLibrary" uid="uid://kbvo7bvy1hh4" path="res://Scenes/Components/Character/animations/Maguro_animations.res" id="3_f5kft"]
+[ext_resource type="Script" uid="uid://dafan8irq5dix" path="res://Code/player_character_sprite.gd" id="3_ok2bs"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="4_ok2bs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f5kft"]
@@ -638,26 +639,28 @@ _data = {
 &"RESET": SubResource("Animation_ok2bs")
 }
 
-[node name="Maguro_AnimatedSprite3D" type="AnimatedSprite3D" unique_id=1706900161]
+[node name="Maguro_AnimatedSprite3D" type="AnimatedSprite3D" unique_id=1503555226]
 offset = Vector2(0, 223.985)
 billboard = 2
 alpha_cut = 2
 alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
+frame = 5
+script = ExtResource("3_ok2bs")
 
-[node name="HoldPosition" type="Node3D" parent="." unique_id=1512601259]
+[node name="HoldPosition" type="Node3D" parent="." unique_id=526053671]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2724506, 1.5496216, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1676940774]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1620937022]
 libraries/ = SubResource("AnimationLibrary_a0pkk")
 libraries/PC_animations = ExtResource("3_f5kft")
 
-[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer" unique_id=794180443]
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer" unique_id=58982064]
 root_node = NodePath("../..")
 tree_root = ExtResource("4_ok2bs")
 anim_player = NodePath("..")
-parameters/conditions/cuts = true
+parameters/conditions/cuts = false
 parameters/conditions/drops_item = false
 parameters/conditions/gameend = false
 parameters/conditions/grabs = false

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://nxe1nj3536xw"]
 
 [ext_resource type="Script" uid="uid://ct2w0nhoh3kp4" path="res://Code/player.gd" id="1_mi03y"]
-[ext_resource type="PackedScene" uid="uid://c2avm3xsxbd71" path="res://Scenes/Components/Character/animations/alternates/tealky_animated_sprite_3d.tscn" id="2_mi03y"]
 [ext_resource type="PackedScene" uid="uid://dhfmx5sfx1rek" path="res://Scenes/Components/Gameplay/interacting_component.tscn" id="3_r1gpd"]
 [ext_resource type="PackedScene" uid="uid://dhd1ganu0nhb0" path="res://Scenes/Components/Gameplay/sushido_scoring_calculator.tscn" id="4_7v2ek"]
 [ext_resource type="PackedScene" uid="uid://kcpilqmr7xaf" path="res://Scenes/Components/Gameplay/cut_meter.tscn" id="5_db0ak"]
@@ -17,17 +16,12 @@ script = ExtResource("1_mi03y")
 player_id = 3
 using_device = 2
 
-[node name="AnimationManager" type="Node3D" parent="." unique_id=142325088]
-
-[node name="AnimatedSprite3D" parent="AnimationManager" unique_id=1676256791 instance=ExtResource("2_mi03y")]
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1051056412]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3005371, 0)
 shape = SubResource("CapsuleShape3D_f60y1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1524100227]
+[node name="GrayPill" type="MeshInstance3D" parent="." unique_id=1524100227]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-visible = false
 mesh = SubResource("CapsuleMesh_v0iea")
 
 [node name="HoldPosition" type="Node3D" parent="." unique_id=1756047421]
