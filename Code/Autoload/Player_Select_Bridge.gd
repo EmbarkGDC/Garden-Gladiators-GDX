@@ -20,3 +20,4 @@ func _ready() -> void:
 	player_using_device = [-1, 0, 1, 2]
 	player_active = [true, false, false, false]
 	player_human_or_cpu = [true, true, true, true]
+	player_characters = [Util.PlayerCharacter.SYLKIE, Util.PlayerCharacter.BLADEZ, Util.PlayerCharacter.MAGURO, Util.PlayerCharacter.ANAGO]

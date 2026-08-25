@@ -8,6 +8,10 @@ extends Node3D
 var time_left: float
 var after_countdown: bool = false
 var players: Array
+var anago_scene_path: PackedScene = preload("res://Scenes/Components/Character/animations/anago_animated_sprite_3d.tscn")
+var bladez_scene_path: PackedScene = preload("res://Scenes/Components/Character/animations/bladez_animated_sprite_3d.tscn")
+var maguro_scene_path: PackedScene = preload("res://Scenes/Components/Character/animations/maguro_animated_sprite_3d.tscn")
+var sylkie_scene_path: PackedScene = preload("res://Scenes/Components/Character/animations/sylkie_animated_sprite_3d.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,6 +20,22 @@ func _ready() -> void:
 	print(PlayerSelectBridge.player_using_device)
 	setup_players()
 	AudioManager.play_BGM(Util.SCENES.SUSHIDO)
+	
+	# Set player characters
+	for i:int in players.size():
+		match PlayerSelectBridge.player_characters[i]:
+			Util.PlayerCharacter.NONE:
+				continue
+			Util.PlayerCharacter.ANAGO:
+				players[i].set_character(anago_scene_path)
+			Util.PlayerCharacter.BLADEZ:
+				players[i].set_character(bladez_scene_path)
+			Util.PlayerCharacter.MAGURO:
+				players[i].set_character(maguro_scene_path)
+			Util.PlayerCharacter.SYLKIE:
+				players[i].set_character(sylkie_scene_path)
+			_:
+				continue
 	
 	# Start game
 	if PlayerSelectBridge.immediate_start:
