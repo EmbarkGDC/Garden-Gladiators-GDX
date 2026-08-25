@@ -36,6 +36,9 @@ func _ready() -> void:
 				players[i].set_character(sylkie_scene_path)
 			_:
 				continue
+		# Set hold point
+		var mechanic: hold_mechanic = players[i].find_child("hold_mechanic") as hold_mechanic
+		mechanic.hold_point = players[i].hold_pos
 	
 	# Start game
 	if PlayerSelectBridge.immediate_start:
