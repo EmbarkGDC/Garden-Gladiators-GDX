@@ -7,13 +7,14 @@ signal all_players_ready
 
 @export var packed_cursor: PackedScene
 #@export var device_assign: DeviceAssign
-@export var StartBanner: Control
+@export var start_banner: Control
 @export var cursor_materials: Array[Material]
 
 var cursors : Array[Cursor]
 var active_players: Array[bool]
 var ready_players: Array[bool]
 var characters: Array[Util.PlayerCharacter]
+var multiplayer_path: String = "res://Scenes/multiplayer_sushido.tscn"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -49,14 +50,14 @@ func character_chosen(player: int, character: Util.PlayerCharacter) -> void:
 	characters[player] = character
 	
 	if ready_check():
-		$StartBanner.visible = true
+		start_banner.visible = true
 
 func character_unchosen(player: int) -> void:
 	ready_players[player] = false
 	characters[player] = Util.PlayerCharacter.NONE
 	
-	if $StartBanner.visible:
-		$StartBanner.visible = false
+	if start_banner.visible:
+		start_banner.visible = false
 
 func remove_cursor(cursor:Cursor) -> void:
 	if cursor.get_child_count() == 0:
@@ -85,6 +86,10 @@ func _on_device_assign_send_device(device: int, playernum: int) -> void:
 	newCursor.position = cursor_spawn.position
 	#player_joined.emit()
 	call_deferred("add_child", newCursor)
+	if ready_check():
+		start_banner.visible = true
+	else:
+		start_banner.visible = false
 
 func _on_device_assign_drop_player(player: int) -> void:
 	var dropped: Cursor = find_cursor(player)
@@ -92,6 +97,10 @@ func _on_device_assign_drop_player(player: int) -> void:
 	active_players[player] = false
 	ready_players[player] = false
 	characters[player] = Util.PlayerCharacter.NONE
+	if ready_check():
+		start_banner.visible = true
+	else:
+		start_banner.visible = false
 
 func start_game() -> void:
 	if ready_check():
@@ -101,4 +110,5 @@ func start_game() -> void:
 		PlayerSelectBridge.immediate_start = true
 		
 		# Switch scenes
-		get_tree().change_scene_to_file("res://Scenes/multiplayer_sushido.tscn")
+		#get_tree().change_scene_to_file("res://Scenes/multiplayer_sushido.tscn")
+		SceneLoader.load_scene(multiplayer_path)

@@ -8,9 +8,14 @@ var loaded_resource: PackedScene
 var scene_path: String
 var progress: Array = []
 var use_sub_threads: bool = true
+var new_load_screen: LoadingScreen
+static var call_amount: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	new_load_screen = loading_screen.instantiate()
+	progress_changed.connect(new_load_screen._on_progress_changed)
+	load_finished.connect(new_load_screen._on_load_finished)
 	set_process(false)
 
 
@@ -27,13 +32,11 @@ func _process(_delta: float) -> void:
 			load_finished.emit()
 
 func load_scene(_scene_path:String) -> void:
+	call_amount += 1
+	prints("Calls:",call_amount)
 	scene_path = _scene_path
 	
-	var new_load_screen: LoadingScreen = loading_screen.instantiate()
 	add_child(new_load_screen)
-	progress_changed.connect(new_load_screen._on_progress_changed)
-	load_finished.connect(new_load_screen._on_load_finished)
-	
 	await  new_load_screen.loading_screen_ready
 	
 	start_load()

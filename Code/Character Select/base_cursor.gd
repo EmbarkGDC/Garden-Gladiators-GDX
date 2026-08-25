@@ -24,6 +24,7 @@ var currentHoverPortrait: portrait
 var hasChosen: bool
 var PlayerColor: Color = Color(0.0, 0.0, 0.0, 1.0)
 var overdropbutton: bool = false
+var wait: bool = true
 
 # prevents selecting a character immediately on spawn
 var  cooldown_on_start: float = 0.5
@@ -46,7 +47,12 @@ func _physics_process(delta: float) -> void:
 	position = position + move * cursor_speed * delta
 	
 	if input_handler.is_action_pressed("Start"):
-		start_pressed.emit()
+		if wait:
+			wait = false
+		else:
+			start_pressed.emit()
+	else:
+		wait = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	if cooldown_on_start > 0:

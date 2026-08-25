@@ -18,7 +18,7 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_bfdir"]
 
-[node name="CharacterSelectMain" type="Control" unique_id=1354892556 node_paths=PackedStringArray("StartBanner")]
+[node name="CharacterSelectMain" type="Control" unique_id=1354892556 node_paths=PackedStringArray("start_banner")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,7 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fsati")
 packed_cursor = ExtResource("2_716px")
-StartBanner = NodePath("StartBanner")
+start_banner = NodePath("StartBanner")
 cursor_materials = Array[Material]([ExtResource("3_apotu"), ExtResource("4_ctnbe"), ExtResource("5_b5l1a"), ExtResource("6_mqc1o")])
 
 [node name="CursorSpawn" type="Node2D" parent="." unique_id=747913620]
