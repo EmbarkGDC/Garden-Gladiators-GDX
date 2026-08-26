@@ -38,6 +38,12 @@ func _ready() -> void:
 	badge.set_label(player_slot)
 	set_all_materials(material_to_set)
 
+func _exit_tree() -> void:
+	if is_instance_valid(badge):
+		if is_instance_valid(badge.currentPort):
+			badge.currentPort.reset()
+		badge.queue_free()
+
 func _process(delta: float) -> void:
 	cooldown_on_start -= delta
 

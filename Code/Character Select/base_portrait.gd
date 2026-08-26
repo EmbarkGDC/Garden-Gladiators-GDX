@@ -7,10 +7,10 @@ extends MarginContainer
 @export var bug_tex: CompressedTexture2D
 
 var currentController: int
-var isChosen := false
+var isChosen :bool = false
 var current_cursors: Array[Cursor]
-var hovered := false
-var stillHovered = 0
+var hovered :bool = false
+var stillHovered: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,7 +19,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
@@ -38,7 +38,11 @@ func _on_portrait_collision_area_entered(area: Area2D) -> void:
 func _on_portrait_collision_area_exited(area: Area2D) -> void:
 	print("Exit")
 	var exited_cursor : Cursor = area.get_parent()
-	check_hovered()
+	stillHovered -= 1
+	if stillHovered <= 0:
+		stillHovered = 0
+		hovered = false
+		add_sillouette()
 	for i:int in current_cursors.size():
 		if current_cursors[i-1] == exited_cursor:
 			current_cursors[i-1].currentHoverPortrait = null
@@ -59,8 +63,9 @@ func add_sillouette() -> void:
 func remove_sillouette() -> void:
 	char_tex.modulate = Color(1.0, 1.0, 1.0, 1.0)
 
-func check_hovered() -> void:
-	stillHovered -= 1
-	if stillHovered == 0:
-		hovered = false
-		add_sillouette()
+func reset() -> void:
+	if stillHovered > 0:
+		return
+	change_portrait()
+	add_sillouette()
+	color_tex.modulate = Color(1.0, 1.0, 1.0, 1.0)

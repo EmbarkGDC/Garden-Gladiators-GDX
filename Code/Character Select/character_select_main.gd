@@ -6,6 +6,7 @@ signal all_players_ready
 @export var StartBanner: Control
 
 var active_players: Array[bool]
+var num_active_players: int = 0
 var ready_players: Array[bool]
 var characters: Array[Util.PlayerCharacter]
 
@@ -17,6 +18,8 @@ func _ready() -> void:
 
 func ready_check() -> bool:
 	var players_are_ready: bool = true
+	if num_active_players == 0:
+		return false
 	
 	for i:int in active_players.size():
 		if ready_players[i] != active_players[i]:
@@ -51,15 +54,18 @@ func start_game() -> void:
 
 
 func _on_device_assign_send_device(playernum: int) -> void:
+	num_active_players += 1
 	active_players[playernum] = true
 	if !ready_check():
 		$StartBanner.visible = false
 
 func _on_device_assign_drop_player(player: int) -> void:
+	num_active_players -= 1
 	active_players[player] = false
 	ready_players[player] = false
 	characters[player] = Util.PlayerCharacter.NONE
-
+	if num_active_players == 0:
+		$StartBanner.visible = false
 
 func _on_device_assign_start_game_input() -> void:
 	start_game()
