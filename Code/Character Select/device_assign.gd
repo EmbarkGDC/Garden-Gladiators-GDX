@@ -5,7 +5,6 @@ signal send_device(device: int, playernum: int)
 signal drop_player(player: int)
 
 var using_device: Array[int]
-var searching: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,8 +13,6 @@ func _ready() -> void:
 	using_device = [-128, -128, -128, -128]
 
 func _input(event: InputEvent) -> void:
-	if not searching:
-		return
 	# don't look for mouse input
 	if event is InputEventMouse:
 		return
@@ -40,6 +37,7 @@ func _input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 			return
 
-func player_dropout(player: int) -> void:
-	using_device[player] = -128
-	drop_player.emit(player)
+func player_dropout(player: Cursor) -> void:
+	using_device[player.player_slot] = -128
+	print(using_device)
+	#drop_player.emit(player)

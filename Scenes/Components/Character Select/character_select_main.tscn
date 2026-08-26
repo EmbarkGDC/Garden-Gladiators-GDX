@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://btfetoo7avaij" path="res://Graphics/UI/Panel_3_UI.png" id="3_b5l1a"]
 [ext_resource type="Texture2D" uid="uid://suv24ikxs1kx" path="res://Graphics/UI/Artwork/CharacterSelectArt/Anago_final.png" id="4_apotu"]
 [ext_resource type="Material" uid="uid://cjvd0s0heo2ns" path="res://Graphics/Materials/player_color2.tres" id="4_ctnbe"]
-[ext_resource type="Script" uid="uid://c8i53iwomntt3" path="res://Code/device_assign.gd" id="4_jcuwg"]
+[ext_resource type="Script" uid="uid://c8i53iwomntt3" path="res://Code/Character Select/device_assign.gd" id="4_jcuwg"]
 [ext_resource type="Material" uid="uid://dxfo2c1d4lfdq" path="res://Graphics/Materials/player_color3.tres" id="5_b5l1a"]
 [ext_resource type="Texture2D" uid="uid://cpid47p8oemdj" path="res://Graphics/UI/Artwork/CharacterSelectArt/Bladez_final.png" id="5_ctnbe"]
 [ext_resource type="Texture2D" uid="uid://3ppx3dtys8u" path="res://Graphics/UI/Artwork/CharacterSelectArt/Maguro_final.png" id="6_b5l1a"]
