@@ -26,12 +26,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fsati")
-packed_cursor = ExtResource("2_716px")
 StartBanner = NodePath("StartBanner")
-cursor_materials = Array[Material]([ExtResource("3_apotu"), ExtResource("4_ctnbe"), ExtResource("5_b5l1a"), ExtResource("6_mqc1o")])
 
-[node name="CursorSpawn" type="Node2D" parent="." unique_id=747913620]
-visible = false
+[node name="CursorSpawn" type="Marker2D" parent="." unique_id=166079260]
 position = Vector2(577, 327)
 
 [node name="StartBanner" type="TextureRect" parent="." unique_id=1089231023]
@@ -188,8 +185,14 @@ layout_mode = 1
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="DeviceAssign" type="Node" parent="." unique_id=846703383]
+[node name="DeviceAssign" type="Node" parent="." unique_id=846703383 node_paths=PackedStringArray("cursor_spawn")]
 script = ExtResource("4_jcuwg")
+cursor_spawn = NodePath("../CursorSpawn")
+packed_cursor = ExtResource("2_716px")
+cursor_materials = Array[Material]([ExtResource("3_apotu"), ExtResource("4_ctnbe"), ExtResource("5_b5l1a"), ExtResource("6_mqc1o")])
 
+[connection signal="character_chosen_input" from="DeviceAssign" to="." method="_on_device_assign_character_chosen_input"]
+[connection signal="character_unchosen_input" from="DeviceAssign" to="." method="_on_device_assign_character_unchosen_input"]
 [connection signal="drop_player" from="DeviceAssign" to="." method="_on_device_assign_drop_player"]
 [connection signal="send_device" from="DeviceAssign" to="." method="_on_device_assign_send_device"]
+[connection signal="start_game_input" from="DeviceAssign" to="." method="_on_device_assign_start_game_input"]
