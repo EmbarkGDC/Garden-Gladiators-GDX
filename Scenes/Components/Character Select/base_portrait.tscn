@@ -5,12 +5,14 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_yih1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bfdir"]
-size = Vector2(186.5, 317)
+size = Vector2(283.5, 477)
 
 [node name="BasePortrait2" type="MarginContainer" unique_id=1612965906]
 custom_minimum_size = Vector2(218, 349)
-offset_right = 218.0
-offset_bottom = 349.0
+offset_right = 318.0
+offset_bottom = 509.09177
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_16ooi")
 
 [node name="ColorTex" type="TextureRect" parent="." unique_id=972444568]
@@ -26,7 +28,7 @@ stretch_mode = 6
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PortraitCollision" unique_id=1757505219]
-position = Vector2(108.75, 174.5)
+position = Vector2(157.25, 254.5)
 shape = SubResource("RectangleShape2D_bfdir")
 
 [connection signal="area_entered" from="PortraitCollision" to="." method="_on_portrait_collision_area_entered"]
