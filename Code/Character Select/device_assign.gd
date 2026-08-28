@@ -4,6 +4,7 @@ extends Node
 signal send_device(playernum: int)
 signal drop_player(player: int)
 signal start_game_input
+signal go_back_input
 signal character_chosen_input
 signal character_unchosen_input
 
@@ -84,9 +85,10 @@ func add_cursor(device: int, playernum: int) -> void:
 	newCursor.unchosen.connect(Callable(self, "character_unchosen"))
 	newCursor.player_drop.connect(remove_cursor)
 	newCursor.start_pressed.connect(start_game)
+	newCursor.go_back.connect(go_back)
 	
 	cursors.append(newCursor)
-	newCursor.PlayerColor = Global.PlayerUIColors[playernum]
+	newCursor.player_color = Global.PlayerUIColors[playernum]
 	newCursor.material_to_set = cursor_materials[playernum]
 	newCursor.position = cursor_spawn.position
 	#player_joined.emit()
@@ -109,3 +111,6 @@ func character_unchosen(player: int) -> void:
 
 func start_game() -> void:
 	start_game_input.emit()
+
+func go_back() -> void:
+	go_back_input.emit()

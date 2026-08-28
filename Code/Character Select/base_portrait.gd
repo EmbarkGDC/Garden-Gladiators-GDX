@@ -1,4 +1,4 @@
-class_name portrait
+class_name Portrait
 extends MarginContainer
 
 @onready var color_tex: TextureRect = $ColorTex
@@ -29,8 +29,8 @@ func _on_portrait_collision_area_entered(area: Area2D) -> void:
 	stillHovered += 1
 	var entered_cursor : Cursor = area.get_parent()
 	if current_cursors.size() == 0:
-		color_tex.modulate = entered_cursor.PlayerColor
-	entered_cursor.currentHoverPortrait = self
+		color_tex.modulate = entered_cursor.player_color
+	entered_cursor.current_hover_portrait = self
 	current_cursors.append(area.get_parent())
 	remove_sillouette()
 
@@ -45,12 +45,12 @@ func _on_portrait_collision_area_exited(area: Area2D) -> void:
 		add_sillouette()
 	for i:int in current_cursors.size():
 		if current_cursors[i-1] == exited_cursor:
-			current_cursors[i-1].currentHoverPortrait = null
+			current_cursors[i-1].current_hover_portrait = null
 			current_cursors.pop_at(i-1)
 	if !isChosen:
 		if current_cursors.size() > 0:
 			var priorityCursor : Cursor = current_cursors[0]
-			priorityCursor.currentHoverPortrait = self
+			priorityCursor.current_hover_portrait = self
 			color_tex.modulate = priorityCursor.PlayerColor
 		else :
 			color_tex.modulate = Color(1.0, 1.0, 1.0, 1.0)

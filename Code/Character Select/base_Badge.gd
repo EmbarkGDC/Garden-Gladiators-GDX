@@ -3,7 +3,7 @@ extends Sprite2D
 
 var controllerID : int
 var characterID : Util.PlayerCharacter
-var currentPort : portrait
+var currentPort : Portrait
 var badge_labels: Array[Node2D]
 
 func _ready() -> void:

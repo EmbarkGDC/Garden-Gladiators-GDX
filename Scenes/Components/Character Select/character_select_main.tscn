@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cgtlffyhje30h" path="res://Code/Character Select/character_select_main.gd" id="1_fsati"]
 [ext_resource type="PackedScene" uid="uid://btcojqyy08rpm" path="res://Scenes/Components/Character Select/BaseCursor.tscn" id="2_716px"]
+[ext_resource type="PackedScene" uid="uid://cr5kcovda17uk" path="res://Scenes/Components/Character Select/back_button.tscn" id="2_kkb5k"]
 [ext_resource type="PackedScene" uid="uid://8cpyygutxo6c" path="res://Scenes/Components/Character Select/base_portrait.tscn" id="3_5jgah"]
 [ext_resource type="Material" uid="uid://0h7bs763n7f1" path="res://Graphics/Materials/player_color1.tres" id="3_apotu"]
 [ext_resource type="Texture2D" uid="uid://btfetoo7avaij" path="res://Graphics/UI/Panel_3_UI.png" id="3_b5l1a"]
@@ -54,6 +55,9 @@ StartBanner = NodePath("StartBanner")
 
 [node name="CursorSpawn" type="Marker2D" parent="." unique_id=166079260]
 position = Vector2(959, 162)
+
+[node name="Drop Button2" parent="." unique_id=593420457 instance=ExtResource("2_kkb5k")]
+layout_mode = 0
 
 [node name="StartBanner" type="TextureRect" parent="." unique_id=1089231023]
 visible = false
@@ -211,5 +215,6 @@ cursor_materials = Array[Material]([ExtResource("3_apotu"), ExtResource("4_ctnbe
 [connection signal="character_chosen_input" from="DeviceAssign" to="." method="_on_device_assign_character_chosen_input"]
 [connection signal="character_unchosen_input" from="DeviceAssign" to="." method="_on_device_assign_character_unchosen_input"]
 [connection signal="drop_player" from="DeviceAssign" to="." method="_on_device_assign_drop_player"]
+[connection signal="go_back_input" from="DeviceAssign" to="." method="_on_device_assign_go_back_input"]
 [connection signal="send_device" from="DeviceAssign" to="." method="_on_device_assign_send_device"]
 [connection signal="start_game_input" from="DeviceAssign" to="." method="_on_device_assign_start_game_input"]

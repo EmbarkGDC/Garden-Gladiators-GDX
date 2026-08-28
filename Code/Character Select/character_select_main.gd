@@ -52,6 +52,9 @@ func start_game() -> void:
 		# Switch scenes
 		get_tree().change_scene_to_file("res://Scenes/multiplayer_sushido.tscn")
 
+func back() -> void:
+	pass
+
 
 func _on_device_assign_send_device(playernum: int) -> void:
 	num_active_players += 1
@@ -77,3 +80,7 @@ func _on_device_assign_character_chosen_input(player: int, character: Util.Playe
 
 func _on_device_assign_character_unchosen_input(player: int) -> void:
 	character_unchosen(player)
+
+
+func _on_device_assign_go_back_input() -> void:
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Garden Gladiators GDX"
-run/main_scene="uid://ckgj8ao3gbuxc"
+run/main_scene="uid://dg0hauswjmtn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://c8al1j6moioy6"
 
