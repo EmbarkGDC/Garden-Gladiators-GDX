@@ -4,6 +4,7 @@ extends Sprite2D
 signal chosen(player: int, character: Util.PlayerCharacter)
 signal unchosen(player: int)
 signal player_drop(Self:Cursor)
+signal go_back
 signal start_pressed
 
 @onready var badge_coord: Node2D = $BadgeCoord
@@ -20,23 +21,30 @@ var controllerID: int:
 			badge.controllerID = controllerID
 var player_slot: int
 var badge: base_badge
-var currentHoverPortrait: portrait
-var hasChosen: bool
-var PlayerColor: Color = Color(0.0, 0.0, 0.0, 1.0)
-var overdropbutton: bool = false
+var current_hover_portrait: Portrait
+var has_chosen: bool
+var player_color: Color = Color(0.0, 0.0, 0.0, 1.0)
+var over_drop_button: bool = false
+var over_back_button: bool = false
 
 # prevents selecting a character immediately on spawn
 var  cooldown_on_start: float = 0.5
 
 func _ready() -> void:
 	input_handler = DeviceInput.new(controllerID)
-	hasChosen = false
+	has_chosen = false
 	var newbadge: Resource = preload("res://Scenes/Components/Character Select/BaseBadge.tscn")
 	badge = newbadge.instantiate()
 	add_child(badge)
 	badge.position = badge_coord.position
 	badge.set_label(player_slot)
 	set_all_materials(material_to_set)
+
+func _exit_tree() -> void:
+	if is_instance_valid(badge):
+		if is_instance_valid(badge.currentPort):
+			badge.currentPort.reset()
+		badge.queue_free()
 
 func _process(delta: float) -> void:
 	cooldown_on_start -= delta
@@ -55,23 +63,26 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") and input_handler.is_action_pressed("ui_accept"):
 		print("player %d selected"% controllerID)
 		#Determine whether the cursor is hover over a portrait and hasen't droppedit's token yet
-		if currentHoverPortrait != null and !hasChosen:
-			badge.reparent(currentHoverPortrait)
+		if current_hover_portrait != null and !has_chosen:
+			badge.reparent(current_hover_portrait)
 			badge.getCharacter()
-			hasChosen = true
+			has_chosen = true
 			chosen.emit(player_slot, badge.characterID)
-		elif overdropbutton:
+		elif over_drop_button:
 			player_drop.emit(self)
+		elif over_back_button:
+			go_back.emit()
+			return
 		# prevents the keyboard being pressed when the controller selects
 		get_viewport().set_input_as_handled()
 		
 	elif event.is_action_pressed("ui_cancel") and input_handler.is_action_pressed("ui_cancel"):
 		#determines whether the token is dropped on a portrait
-		if hasChosen:
+		if has_chosen:
 			badge.remove()
 			badge.reparent(self)
 			badge.position = badge_coord.position
-			hasChosen = false
+			has_chosen = false
 			unchosen.emit(player_slot)
 		get_viewport().set_input_as_handled()
 

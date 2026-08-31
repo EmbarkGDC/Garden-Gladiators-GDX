@@ -18,16 +18,17 @@ void vertex() {
 void fragment() {
 	// Called for every pixel the material is visible on.
 	//vec2 coord = ((UV * difficulty) - (difficulty - 1.0) / 2.0) + offset;
-	vec2 coord = ((local_pos.xy * difficulty) - (difficulty - 1.0) / 2.0) + offset;
+	float coord = local_pos.x + offset;
 	//vec3 output = texture(tex, coord).rgb;
-	float hit_area = step(abs(coord.x), 0.2);
-	float perfect_area = step(abs(coord.x), perfect_difficulty * 0.2);
+	float hit_area = float(coord < difficulty && coord > -difficulty);
+	float perfect_area = float(coord < perfect_difficulty && coord > -perfect_difficulty);
+	// output is a greyscale 
 	float output = (0.5 * hit_area) + min(0.9, perfect_area);
 	float newOutput = clamp(output, 0.0, 1.0);
 	
 	vec3 col = texture(colorMap, vec2(newOutput, 0.5)).rgb;
 	
-	//ALBEDO = vec3(newOutput);
+	//ALBEDO = vec3(abs(coord.x));
 	//ALBEDO = vec3(hit_area - perfect_area);
 	ALBEDO = col;
 }

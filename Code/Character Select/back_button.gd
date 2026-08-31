@@ -1,4 +1,4 @@
-class_name DropButton
+class_name BackButton
 extends TextureRect
 
 # Called when the node enters the scene tree for the first time.
@@ -15,11 +15,11 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	var object: Node = area.get_parent()
 	if object is Cursor:
 		var cursor: Cursor = object
-		cursor.over_drop_button = true
+		cursor.over_back_button = true
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	var object: Node = area.get_parent()
 	if object is Cursor:
 		var cursor: Cursor = object
-		cursor.over_drop_button = false
+		cursor.over_back_button = false

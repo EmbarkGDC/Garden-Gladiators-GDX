@@ -1,41 +1,40 @@
-[gd_scene format=3 uid="uid://bnp188dndfyrx"]
+[gd_scene format=3 uid="uid://cr5kcovda17uk"]
 
-[ext_resource type="Script" uid="uid://c5vjvv12ybyex" path="res://Code/Character Select/drop_button.gd" id="1_3kcv3"]
+[ext_resource type="Script" uid="uid://ii0tgnn4sbmk" path="res://Code/Character Select/back_button.gd" id="1_wp0xi"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_bordn"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_rhgvy"]
+font_size = 28
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_whyu8"]
-size = Vector2(372, 151.99997)
+size = Vector2(203, 93.999985)
 
 [node name="Drop Button" type="TextureRect" unique_id=593420457]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -149.5
-offset_right = 370.0
-grow_vertical = 0
+offset_right = 203.0
+offset_bottom = 94.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = SubResource("CanvasTexture_bordn")
-script = ExtResource("1_3kcv3")
+script = ExtResource("1_wp0xi")
 
 [node name="Label" type="Label" parent="." unique_id=1921350170]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 66
-text = "Dropout"
+text = "Back"
+label_settings = SubResource("LabelSettings_rhgvy")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1385729563]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1855801592]
-position = Vector2(186, 76)
+position = Vector2(101.5, 47.000008)
 shape = SubResource("RectangleShape2D_whyu8")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

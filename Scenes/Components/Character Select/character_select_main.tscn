@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cgtlffyhje30h" path="res://Code/Character Select/character_select_main.gd" id="1_fsati"]
 [ext_resource type="PackedScene" uid="uid://btcojqyy08rpm" path="res://Scenes/Components/Character Select/BaseCursor.tscn" id="2_716px"]
+[ext_resource type="PackedScene" uid="uid://cr5kcovda17uk" path="res://Scenes/Components/Character Select/back_button.tscn" id="2_kkb5k"]
 [ext_resource type="PackedScene" uid="uid://8cpyygutxo6c" path="res://Scenes/Components/Character Select/base_portrait.tscn" id="3_5jgah"]
 [ext_resource type="Material" uid="uid://0h7bs763n7f1" path="res://Graphics/Materials/player_color1.tres" id="3_apotu"]
 [ext_resource type="Texture2D" uid="uid://btfetoo7avaij" path="res://Graphics/UI/Panel_3_UI.png" id="3_b5l1a"]
 [ext_resource type="Texture2D" uid="uid://suv24ikxs1kx" path="res://Graphics/UI/Artwork/CharacterSelectArt/Anago_final.png" id="4_apotu"]
 [ext_resource type="Material" uid="uid://cjvd0s0heo2ns" path="res://Graphics/Materials/player_color2.tres" id="4_ctnbe"]
-[ext_resource type="Script" uid="uid://c8i53iwomntt3" path="res://Code/device_assign.gd" id="4_jcuwg"]
+[ext_resource type="Script" uid="uid://c8i53iwomntt3" path="res://Code/Character Select/device_assign.gd" id="4_jcuwg"]
 [ext_resource type="Material" uid="uid://dxfo2c1d4lfdq" path="res://Graphics/Materials/player_color3.tres" id="5_b5l1a"]
 [ext_resource type="Texture2D" uid="uid://cpid47p8oemdj" path="res://Graphics/UI/Artwork/CharacterSelectArt/Bladez_final.png" id="5_ctnbe"]
 [ext_resource type="Texture2D" uid="uid://3ppx3dtys8u" path="res://Graphics/UI/Artwork/CharacterSelectArt/Maguro_final.png" id="6_b5l1a"]
@@ -18,6 +19,30 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_bfdir"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_kkb5k"]
+font = ExtResource("7_orm8m")
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_qdok8"]
+font = ExtResource("7_orm8m")
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_8273w"]
+font = ExtResource("7_orm8m")
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_f58fl"]
+font = ExtResource("7_orm8m")
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+
 [node name="CharacterSelectMain" type="Control" unique_id=1354892556 node_paths=PackedStringArray("StartBanner")]
 layout_mode = 3
 anchors_preset = 15
@@ -26,13 +51,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fsati")
-packed_cursor = ExtResource("2_716px")
 StartBanner = NodePath("StartBanner")
-cursor_materials = Array[Material]([ExtResource("3_apotu"), ExtResource("4_ctnbe"), ExtResource("5_b5l1a"), ExtResource("6_mqc1o")])
 
-[node name="CursorSpawn" type="Node2D" parent="." unique_id=747913620]
-visible = false
-position = Vector2(577, 327)
+[node name="CursorSpawn" type="Marker2D" parent="." unique_id=166079260]
+position = Vector2(959, 162)
+
+[node name="Drop Button2" parent="." unique_id=593420457 instance=ExtResource("2_kkb5k")]
+layout_mode = 0
 
 [node name="StartBanner" type="TextureRect" parent="." unique_id=1089231023]
 visible = false
@@ -108,10 +133,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -442.0
-offset_top = -174.5
-offset_right = 442.0
-offset_bottom = 174.5
+offset_left = -656.0
+offset_top = -256.0
+offset_right = 656.0
+offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
@@ -122,14 +147,13 @@ CharacterID = 1
 bug_tex = ExtResource("4_apotu")
 
 [node name="Label" type="Label" parent="HBoxContainer/BasePortrait2_1" unique_id=1701183854]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 225)
-theme_override_fonts/font = ExtResource("7_orm8m")
-theme_override_font_sizes/font_size = 21
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 text = "Anago
 "
+label_settings = SubResource("LabelSettings_kkb5k")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -139,14 +163,12 @@ CharacterID = 2
 bug_tex = ExtResource("5_ctnbe")
 
 [node name="Label" type="Label" parent="HBoxContainer/BasePortrait2_2" unique_id=537199117]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 225)
-theme_override_fonts/font = ExtResource("7_orm8m")
-theme_override_font_sizes/font_size = 21
 text = "Bladez
 "
+label_settings = SubResource("LabelSettings_qdok8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -156,13 +178,11 @@ CharacterID = 3
 bug_tex = ExtResource("6_b5l1a")
 
 [node name="Label" type="Label" parent="HBoxContainer/BasePortrait2_3" unique_id=747498861]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 205)
-theme_override_fonts/font = ExtResource("7_orm8m")
-theme_override_font_sizes/font_size = 21
 text = "Maguro"
+label_settings = SubResource("LabelSettings_8273w")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -172,24 +192,29 @@ CharacterID = 4
 bug_tex = ExtResource("7_mqc1o")
 
 [node name="Label" type="Label" parent="HBoxContainer/BasePortrait2_4" unique_id=1925009327]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 225)
-theme_override_fonts/font = ExtResource("7_orm8m")
-theme_override_font_sizes/font_size = 21
 text = "Sylkie
 "
+label_settings = SubResource("LabelSettings_f58fl")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Drop Button" parent="." unique_id=1074461815 instance=ExtResource("6_nprsy")]
 layout_mode = 1
-grow_horizontal = 1
-grow_vertical = 1
+offset_top = -153.0
+offset_right = 372.0
 
-[node name="DeviceAssign" type="Node" parent="." unique_id=846703383]
+[node name="DeviceAssign" type="Node" parent="." unique_id=846703383 node_paths=PackedStringArray("cursor_spawn")]
 script = ExtResource("4_jcuwg")
+cursor_spawn = NodePath("../CursorSpawn")
+packed_cursor = ExtResource("2_716px")
+cursor_materials = Array[Material]([ExtResource("3_apotu"), ExtResource("4_ctnbe"), ExtResource("5_b5l1a"), ExtResource("6_mqc1o")])
 
+[connection signal="character_chosen_input" from="DeviceAssign" to="." method="_on_device_assign_character_chosen_input"]
+[connection signal="character_unchosen_input" from="DeviceAssign" to="." method="_on_device_assign_character_unchosen_input"]
 [connection signal="drop_player" from="DeviceAssign" to="." method="_on_device_assign_drop_player"]
+[connection signal="go_back_input" from="DeviceAssign" to="." method="_on_device_assign_go_back_input"]
 [connection signal="send_device" from="DeviceAssign" to="." method="_on_device_assign_send_device"]
+[connection signal="start_game_input" from="DeviceAssign" to="." method="_on_device_assign_start_game_input"]
