@@ -27,9 +27,9 @@ func start_cut_sequence(target: holdable) -> void:
 	if !is_instance_valid(cut_fish):
 		printerr("Fish is null")
 	cut.speed = target.speed
-	cut.cut_offset = offset
+	#cut.cut_offset = offset
 	cut.visible = true
-	cut.start_meter(target.hit_area * 0.1, target.perfect_hit_area * 0.1)
+	cut.start_meter(target.hit_area, target.perfect_hit_area)
 
 func get_cut_result() -> Dictionary:
 	print(self)

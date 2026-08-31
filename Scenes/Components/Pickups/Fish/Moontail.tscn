@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bykdkmw0wbf6v"]
+[gd_scene format=3 uid="uid://bykdkmw0wbf6v"]
 
 [ext_resource type="Script" uid="uid://cvubvd5btl87h" path="res://Code/fish.gd" id="1_jh10w"]
 [ext_resource type="PackedScene" uid="uid://bklil44bcm1yg" path="res://Scenes/Components/Gameplay/interactable.tscn" id="2_4ie5t"]
@@ -59,29 +59,27 @@ _data = {
 &"despawn": SubResource("Animation_c4ibo")
 }
 
-[node name="Moontail" type="Node3D" node_paths=PackedStringArray("fish_sprite", "sushi_sprite")]
+[node name="Moontail" type="Node3D" unique_id=1680809833 node_paths=PackedStringArray("fish_sprite", "sushi_sprite")]
 script = ExtResource("1_jh10w")
 fish_sprite = NodePath("FishSprite3D")
 sushi_sprite = NodePath("SushiSprite3D")
-hit_area = 3.0
-perfect_hit_area = 1.5
+hit_area = 0.3
+perfect_hit_area = 0.15
 speed = 1.5
 penalty_value = -10
 score_value = 5
 perfect_value = 50
 
-[node name="Interactable" parent="." instance=ExtResource("2_4ie5t")]
+[node name="Interactable" parent="." unique_id=2066167592 instance=ExtResource("2_4ie5t")]
 interact_name = "Pickup Fish"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=141336050]
 shape = SubResource("SphereShape3D_urn1o")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_urn1o")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=78227340]
+libraries/ = SubResource("AnimationLibrary_urn1o")
 
-[node name="FishSprite3D" type="Sprite3D" parent="."]
+[node name="FishSprite3D" type="Sprite3D" parent="." unique_id=1312935996]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.28958637, 0)
 sorting_offset = 0.1
 billboard = 1
@@ -90,7 +88,7 @@ alpha_antialiasing_mode = 1
 render_priority = 5
 texture = ExtResource("3_7up1g")
 
-[node name="SushiSprite3D" type="Sprite3D" parent="."]
+[node name="SushiSprite3D" type="Sprite3D" parent="." unique_id=331598760]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.33296233, 0)
 visible = false
 billboard = 1

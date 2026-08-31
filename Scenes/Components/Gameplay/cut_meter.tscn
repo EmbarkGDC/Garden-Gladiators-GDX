@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://kcpilqmr7xaf"]
+[gd_scene format=3 uid="uid://kcpilqmr7xaf"]
 
 [ext_resource type="Material" uid="uid://sbrsdkqfhhe4" path="res://Graphics/Materials/cut_meter.tres" id="1_jyguu"]
 [ext_resource type="Script" uid="uid://pl3nc2taffre" path="res://Code/cut_meter.gd" id="1_tbuqg"]
@@ -67,39 +67,37 @@ albedo_texture = ExtResource("3_ms8cc")
 material = SubResource("StandardMaterial3D_1co62")
 size = Vector2(2.31, 0.55)
 
-[node name="CutMeter" type="Node3D"]
+[node name="CutMeter" type="Node3D" unique_id=354256947]
 transform = Transform3D(1.51, 0, 0, 0, 1.51, 0, 0, 0, 1.51, 0, 0, 0)
 script = ExtResource("1_tbuqg")
 
-[node name="Bar" type="MeshInstance3D" parent="."]
+[node name="Bar" type="MeshInstance3D" parent="." unique_id=421277209]
 transform = Transform3D(1, 0, 0, 0, 1.9405038, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("QuadMesh_tbuqg")
 
-[node name="Cursor" type="Node3D" parent="."]
+[node name="Cursor" type="Node3D" parent="." unique_id=373592587]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cursor"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cursor" unique_id=602492724]
 transform = Transform3D(0.10163528, 0, 0, 0, 0.37836218, 0, 0, 0, 1, 0, -0.08201137, -0.06575978)
 sorting_offset = 2.0
 mesh = SubResource("QuadMesh_n3o68")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_lyylk")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1644257295]
+libraries/ = SubResource("AnimationLibrary_lyylk")
 
-[node name="Marker3D" type="Marker3D" parent="."]
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1581036018]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 
-[node name="Marker3D2" type="Marker3D" parent="."]
+[node name="Marker3D2" type="Marker3D" parent="." unique_id=379511799]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 
-[node name="Label3D" type="Label3D" parent="."]
+[node name="Label3D" type="Label3D" parent="." unique_id=987341191]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17662328, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2055568691]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.037882924, -0.018427014)
 mesh = SubResource("QuadMesh_ob5ip")
 
-[node name="SFX_Cut_Meter_Hyōshigi" type="AudioStreamPlayer3D" parent="."]
+[node name="SFX_Cut_Meter_Hyōshigi" type="AudioStreamPlayer3D" parent="." unique_id=2146389]
 stream = ExtResource("5_ob5ip")

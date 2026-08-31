@@ -19,3 +19,6 @@ var PlayerUIColors : PackedColorArray = [
 
 #storing score array to access in result screen
 var pScores: Array
+
+func  _ready() -> void:
+	rng = RandomNumberGenerator.new()
