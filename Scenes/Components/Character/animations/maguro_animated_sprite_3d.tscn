@@ -641,7 +641,7 @@ _data = {
 
 [node name="Maguro_AnimatedSprite3D" type="AnimatedSprite3D" unique_id=1503555226]
 offset = Vector2(0, 223.985)
-billboard = 2
+billboard = 1
 alpha_cut = 2
 alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
