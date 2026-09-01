@@ -1059,7 +1059,7 @@ alpha_scissor_threshold = 0.49
 alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
-frame = 7
+frame = 6
 script = ExtResource("3_nl8tt")
 
 [node name="HoldPosition" type="Node3D" parent="." unique_id=3465294]
@@ -1072,6 +1072,7 @@ libraries/PC_animations = ExtResource("3_f5nsl")
 [node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer" unique_id=1493524252]
 root_node = NodePath("../..")
 tree_root = ExtResource("4_nl8tt")
+advance_expression_base_node = NodePath("../..")
 anim_player = NodePath("..")
 parameters/conditions/game_end = false
 parameters/conditions/is_holding = false
