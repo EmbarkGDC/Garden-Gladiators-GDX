@@ -1,11 +1,21 @@
 [gd_scene format=3 uid="uid://besr42h4cs87m"]
 
 [ext_resource type="Texture2D" uid="uid://d3s037q126fwb" path="res://Graphics/UI/Artwork/Button_Base_UI.png" id="1_a3jxo"]
+[ext_resource type="Shader" uid="uid://cjeyf3uh8y435" path="res://Graphics/ui_color_remapping.gdshader" id="1_wqom7"]
 [ext_resource type="Texture2D" uid="uid://jjstbukr1g3c" path="res://Graphics/UI/Artwork/Button_Hover_UI.png" id="2_h2age"]
 [ext_resource type="Script" uid="uid://bufdx5jxmnrbf" path="res://Code/ui_button_mainmenu.gd" id="3_8xqwq"]
 [ext_resource type="FontFile" uid="uid://bgd1ydpqw50e6" path="res://Graphics/UI/Fonts/UI_Fonts.zip (Unzipped Files)/Header_Sigmar.ttf" id="3_h2age"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s0yhc"]
+shader = ExtResource("1_wqom7")
+shader_parameter/color1_original = Color(0.32941177, 0.33333334, 0.33333334, 1)
+shader_parameter/color2_original = Color(0.24705882, 0.2509804, 0.2509804, 1)
+shader_parameter/new_color1 = Color(0.78, 0.08580001, 0.44447014, 1)
+shader_parameter/new_color2 = Color(0.52, 0, 0.39866653, 1)
+shader_parameter/threshold = 0.10000000475
+
 [node name="MenuButton" type="TextureButton" unique_id=972038282]
+material = SubResource("ShaderMaterial_s0yhc")
 offset_right = 1024.0
 offset_bottom = 512.0
 scale = Vector2(0.5, 0.5)
@@ -33,6 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 mouse_filter = 2
+color = Color(0.95, 0.779, 0.26599997, 0.827451)
 
 [node name="Label" type="Label" parent="." unique_id=1388954817]
 layout_mode = 1
@@ -47,7 +58,10 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.21, 0.21, 0.21, 1)
+theme_override_colors/font_color = Color(0.33333334, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.13333334)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
 theme_override_fonts/font = ExtResource("3_h2age")
 theme_override_font_sizes/font_size = 126
 text = "Test"

@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://c8i53iwomntt3" path="res://Code/Character Select/device_assign.gd" id="4_jcuwg"]
 [ext_resource type="Material" uid="uid://dxfo2c1d4lfdq" path="res://Graphics/Materials/player_color3.tres" id="5_b5l1a"]
 [ext_resource type="Texture2D" uid="uid://cpid47p8oemdj" path="res://Graphics/UI/Artwork/CharacterSelectArt/Bladez_final.png" id="5_ctnbe"]
+[ext_resource type="Shader" uid="uid://cjeyf3uh8y435" path="res://Graphics/ui_color_remapping.gdshader" id="5_qdok8"]
 [ext_resource type="Texture2D" uid="uid://3ppx3dtys8u" path="res://Graphics/UI/Artwork/CharacterSelectArt/Maguro_final.png" id="6_b5l1a"]
 [ext_resource type="Material" uid="uid://bsfcvjlauy4mc" path="res://Graphics/Materials/player_color4.tres" id="6_mqc1o"]
 [ext_resource type="PackedScene" uid="uid://bnp188dndfyrx" path="res://Scenes/Components/Character Select/drop_button.tscn" id="6_nprsy"]
@@ -18,6 +19,14 @@
 [ext_resource type="FontFile" uid="uid://bgd1ydpqw50e6" path="res://Graphics/UI/Fonts/UI_Fonts.zip (Unzipped Files)/Header_Sigmar.ttf" id="7_orm8m"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_bfdir"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8273w"]
+shader = ExtResource("5_qdok8")
+shader_parameter/color1_original = Color(0.24705882, 0.24705882, 0.24705882, 1)
+shader_parameter/color2_original = Color(0.32941177, 0.32941177, 0.32941177, 1)
+shader_parameter/new_color1 = Color(0.36078432, 0, 0.27450982, 1)
+shader_parameter/new_color2 = Color(0.49019608, 0.05490196, 0.23529412, 1)
+shader_parameter/threshold = 0.10000000475
 
 [sub_resource type="LabelSettings" id="LabelSettings_kkb5k"]
 font = ExtResource("7_orm8m")
@@ -60,7 +69,6 @@ position = Vector2(959, 162)
 layout_mode = 0
 
 [node name="StartBanner" type="TextureRect" parent="." unique_id=1089231023]
-visible = false
 z_index = 7
 layout_mode = 1
 anchors_preset = -1
@@ -74,7 +82,7 @@ grow_vertical = 2
 texture = SubResource("CanvasTexture_bfdir")
 
 [node name="Label" type="Label" parent="StartBanner" unique_id=2032857712]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0.32941177, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -112,6 +120,7 @@ offset_transform_pivot_ratio = Vector2(0.5, 0)
 texture = ExtResource("3_b5l1a")
 
 [node name="TextureRect" type="TextureRect" parent="StartBanner" unique_id=1146716073]
+material = SubResource("ShaderMaterial_8273w")
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

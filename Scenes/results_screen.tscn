@@ -1,10 +1,19 @@
 [gd_scene format=3 uid="uid://cm76krk30cpfs"]
 
 [ext_resource type="Texture2D" uid="uid://b2qxvxje6kkq0" path="res://Graphics/UI/Artwork/Panel_1_UI.png" id="1_5w2wm"]
+[ext_resource type="Shader" uid="uid://cjeyf3uh8y435" path="res://Graphics/ui_color_remapping.gdshader" id="1_bmsfq"]
 [ext_resource type="Script" uid="uid://c1oavwd7hj5c5" path="res://Code/results_screen.gd" id="1_erkp5"]
 [ext_resource type="FontFile" uid="uid://bgd1ydpqw50e6" path="res://Graphics/UI/Fonts/UI_Fonts.zip (Unzipped Files)/Header_Sigmar.ttf" id="2_7qbmv"]
 [ext_resource type="PackedScene" uid="uid://dsymv47hxyyqy" path="res://Scenes/Components/UI/player_results.tscn" id="3_anr18"]
 [ext_resource type="PackedScene" uid="uid://besr42h4cs87m" path="res://Scenes/Components/UI/ui_button_mainmenu.tscn" id="5_isile"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bmsfq"]
+shader = ExtResource("1_bmsfq")
+shader_parameter/color1_original = Color(0.24705882, 0.24705882, 0.24705882, 1)
+shader_parameter/color2_original = Color(1, 1, 1, 1)
+shader_parameter/new_color1 = Color(0.49019608, 0.05490196, 0.23529412, 1)
+shader_parameter/new_color2 = Color(1, 1, 1, 1)
+shader_parameter/threshold = 0.05
 
 [node name="Results_Screen" type="Control" unique_id=678352229]
 layout_mode = 3
@@ -16,6 +25,7 @@ grow_vertical = 2
 script = ExtResource("1_erkp5")
 
 [node name="ResultPanel" type="NinePatchRect" parent="." unique_id=1200618539]
+material = SubResource("ShaderMaterial_bmsfq")
 custom_minimum_size = Vector2(1024, 1024)
 layout_mode = 1
 anchors_preset = 8

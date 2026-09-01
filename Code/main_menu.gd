@@ -30,3 +30,19 @@ func _on_minigame_pressed() -> void:
 func _on_credit_pressed() -> void:
 	print("Credits")
 	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
+
+
+func _on_minigame_focus_entered() -> void:
+	minigame.new_color()
+func _on_minigame_focus_exited() -> void:
+	minigame.og_color()
+
+func _on_credit_focus_entered() -> void:
+	credit.new_color()
+func _on_credit_focus_exited() -> void:
+	credit.og_color()
+
+func _on_exit_focus_entered() -> void:
+	exit.new_color()
+func _on_exit_focus_exited() -> void:
+	exit.og_color()
