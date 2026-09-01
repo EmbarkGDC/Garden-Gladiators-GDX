@@ -42,3 +42,6 @@ func new_color() -> void:
 func _on_pressed() -> void:
 	create_tween().tween_property(self, "scale", Vector2(0.8,0.8), 0.1)
 	create_tween().tween_property(self, "scale", Vector2(1.1,1.1), 0.3)
+
+func change_text() -> void:
+	label.text = text

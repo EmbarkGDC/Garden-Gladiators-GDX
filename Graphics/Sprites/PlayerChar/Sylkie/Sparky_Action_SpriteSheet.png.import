@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://djwijg50qwvkg"
 path.s3tc="res://.godot/imported/Sparky_Action_SpriteSheet.png-0fe9cf39686eb736b380f510fb92de4c.s3tc.ctex"
+path.etc2="res://.godot/imported/Sparky_Action_SpriteSheet.png-0fe9cf39686eb736b380f510fb92de4c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Sprites/PlayerChar/Sylkie/Sparky_Action_SpriteSheet.png"
-dest_files=["res://.godot/imported/Sparky_Action_SpriteSheet.png-0fe9cf39686eb736b380f510fb92de4c.s3tc.ctex"]
+dest_files=["res://.godot/imported/Sparky_Action_SpriteSheet.png-0fe9cf39686eb736b380f510fb92de4c.s3tc.ctex", "res://.godot/imported/Sparky_Action_SpriteSheet.png-0fe9cf39686eb736b380f510fb92de4c.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6unwf75b4wa8"
 path.s3tc="res://.godot/imported/cut_frame_UI.png-5316e2ddee316167fbbb63d893df8463.s3tc.ctex"
+path.etc2="res://.godot/imported/cut_frame_UI.png-5316e2ddee316167fbbb63d893df8463.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/UI/cut_frame_UI.png"
-dest_files=["res://.godot/imported/cut_frame_UI.png-5316e2ddee316167fbbb63d893df8463.s3tc.ctex"]
+dest_files=["res://.godot/imported/cut_frame_UI.png-5316e2ddee316167fbbb63d893df8463.s3tc.ctex", "res://.godot/imported/cut_frame_UI.png-5316e2ddee316167fbbb63d893df8463.etc2.ctex"]
 
 [params]
 

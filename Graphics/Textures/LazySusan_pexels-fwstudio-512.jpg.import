@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1gf4dyfxcmp"
 path.s3tc="res://.godot/imported/LazySusan_pexels-fwstudio-512.jpg-ae7222f9e4ef4ead0b17f4b7e45fa2a6.s3tc.ctex"
+path.etc2="res://.godot/imported/LazySusan_pexels-fwstudio-512.jpg-ae7222f9e4ef4ead0b17f4b7e45fa2a6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Graphics/Textures/LazySusan_pexels-fwstudio-512.jpg"
-dest_files=["res://.godot/imported/LazySusan_pexels-fwstudio-512.jpg-ae7222f9e4ef4ead0b17f4b7e45fa2a6.s3tc.ctex"]
+dest_files=["res://.godot/imported/LazySusan_pexels-fwstudio-512.jpg-ae7222f9e4ef4ead0b17f4b7e45fa2a6.s3tc.ctex", "res://.godot/imported/LazySusan_pexels-fwstudio-512.jpg-ae7222f9e4ef4ead0b17f4b7e45fa2a6.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bw53ghb22rmc4"
 path.s3tc="res://.godot/imported/Sylkie_Idle_SpriteSheet.png-824c5c8ff5652acbeb2cd8d741b5380c.s3tc.ctex"
+path.etc2="res://.godot/imported/Sylkie_Idle_SpriteSheet.png-824c5c8ff5652acbeb2cd8d741b5380c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Sprites/PlayerChar/Sylkie/Sylkie_Idle_SpriteSheet.png"
-dest_files=["res://.godot/imported/Sylkie_Idle_SpriteSheet.png-824c5c8ff5652acbeb2cd8d741b5380c.s3tc.ctex"]
+dest_files=["res://.godot/imported/Sylkie_Idle_SpriteSheet.png-824c5c8ff5652acbeb2cd8d741b5380c.s3tc.ctex", "res://.godot/imported/Sylkie_Idle_SpriteSheet.png-824c5c8ff5652acbeb2cd8d741b5380c.etc2.ctex"]
 
 [params]
 
