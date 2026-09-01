@@ -14,7 +14,7 @@ var hold_pos: Node3D
 
 var is_cutting: bool = false
 
-signal player_move
+signal player_move(direction: Vector2)
 signal player_interact
 signal player_action
 
@@ -42,15 +42,14 @@ func _physics_process(delta: float) -> void:
 	if direction && not is_cutting:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		
-		player_move.emit()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+	player_move.emit(Vector2(direction.x, direction.z))
 	
 	if MultiplayerInput.is_action_just_pressed(using_device, "interact"):
-		player_interact.emit()
 		interactor.interact_input()
+		player_interact.emit()
 	
 	if MultiplayerInput.is_action_just_pressed(using_device, "action"):
 		player_action.emit(self)
