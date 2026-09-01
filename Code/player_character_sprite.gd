@@ -30,21 +30,22 @@ func _process(delta: float) -> void:
 
 func interact_animation() -> void:
 	player_interacts = true
-	is_holding = hold_node.now_holding
-	if is_holding == false && player_node.find_child("CutMeter").visible:
-		player_action = true
-		ready_to_cut = true
+	set_is_holding(hold_node.now_holding)
+	if !is_holding:
+		set_player_action(true)
+		set_ready_to_cut(true)
+	pass
 
 func move_animation(direction: Vector2) -> void:
-	#print(direction)
-	set_blend(direction.x)
+	#print(direction.length())
 	if direction.length() > 0:
-		is_walking = true
+		set_blend(direction.x)
+		set_walking(true)
 	else:
-		is_walking = false
+		set_walking(false)
 
-func action_animation() -> void:
-	ready_to_cut = false
+func action_animation(_player: Player) -> void:
+	set_ready_to_cut(false)
 	#animation_tree
 
 func set_blend(direction: float) -> void:
@@ -56,9 +57,27 @@ func set_blend(direction: float) -> void:
 	animation_tree.set("parameters/Idle/blend_position", direction)
 	animation_tree.set("parameters/Slash/blend_position", direction)
 	animation_tree.set("parameters/Walk/blend_position", direction)
-	pass
 
 func set_walking(status: bool) -> void:
 	is_walking = status
-	animation_tree.set("parameters/conditions/is_walking", is_walking)
-	pass
+	animation_tree.set("parameters/conditions/is_walking", status)
+
+func set_game_end(status: bool) -> void:
+	game_end = status
+	animation_tree.set("parameters/conditions/game_end", status)
+
+func set_is_holding(status: bool) -> void:
+	is_holding = status
+	animation_tree.set("parameters/conditions/is_holding", status)
+
+func set_player_action(status: bool) -> void:
+	player_action = status
+	animation_tree.set("parameters/conditions/player_action", status)
+
+func set_player_interacts(status: bool) -> void:
+	player_interacts = status
+	animation_tree.set("parameters/conditions/player_interacts", status)
+
+func set_ready_to_cut(status: bool) -> void:
+	ready_to_cut = status
+	animation_tree.set("parameters/conditions/ready_to_cut", status)

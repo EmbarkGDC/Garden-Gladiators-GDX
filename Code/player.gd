@@ -48,8 +48,8 @@ func _physics_process(delta: float) -> void:
 	player_move.emit(Vector2(direction.x, direction.z))
 	
 	if MultiplayerInput.is_action_just_pressed(using_device, "interact"):
-		player_interact.emit()
 		interactor.interact_input()
+		player_interact.emit()
 	
 	if MultiplayerInput.is_action_just_pressed(using_device, "action"):
 		player_action.emit(self)
