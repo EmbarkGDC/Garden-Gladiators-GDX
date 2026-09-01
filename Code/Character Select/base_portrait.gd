@@ -51,7 +51,7 @@ func _on_portrait_collision_area_exited(area: Area2D) -> void:
 		if current_cursors.size() > 0:
 			var priorityCursor : Cursor = current_cursors[0]
 			priorityCursor.current_hover_portrait = self
-			color_tex.modulate = priorityCursor.PlayerColor
+			color_tex.modulate = priorityCursor.player_color
 		else :
 			color_tex.modulate = Color(1.0, 1.0, 1.0, 1.0)
 
