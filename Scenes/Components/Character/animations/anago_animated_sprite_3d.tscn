@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://kv3ln5brbjou" path="res://Graphics/Sprites/PlayerChar/Anago/Anago_Idle_SpriteSheet.png" id="2_ttp4u"]
 [ext_resource type="AnimationLibrary" uid="uid://dseiby0xvaeqs" path="res://Scenes/Components/Character/animations/Anago_animations.res" id="3_f5nsl"]
 [ext_resource type="Script" uid="uid://dafan8irq5dix" path="res://Code/player_character_sprite.gd" id="3_nl8tt"]
-[ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="4_nl8tt"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://djr641f3k2cf4" path="res://Scenes/Components/Character/animations/sushido_anim_blend_tree.tres" id="5_nl8tt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3cxta"]
 atlas = ExtResource("1_imf3a")
@@ -1059,6 +1059,7 @@ alpha_scissor_threshold = 0.49
 alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
+frame_progress = 0.4218564
 script = ExtResource("3_nl8tt")
 
 [node name="HoldPosition" type="Node3D" parent="." unique_id=3465294]
@@ -1067,22 +1068,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81413376, 2.1966953, 0)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=682853962]
 libraries/ = SubResource("AnimationLibrary_max6w")
 libraries/PC_animations = ExtResource("3_f5nsl")
+autoplay = &"PC_animations/idle_nX"
 
 [node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer" unique_id=1493524252]
 root_node = NodePath("../..")
-tree_root = ExtResource("4_nl8tt")
+tree_root = ExtResource("5_nl8tt")
 advance_expression_base_node = NodePath("../..")
 anim_player = NodePath("..")
-parameters/conditions/game_end = false
-parameters/conditions/is_holding = false
-parameters/conditions/is_walking = false
-parameters/conditions/player_action = false
-parameters/conditions/player_interacts = false
-parameters/conditions/ready_to_cut = false
-parameters/Anticipslash/blend_position = 0.0
-parameters/Carry/blend_position = 0.0
+parameters/Idle/blend_position = 0.0
+parameters/Walk/blend_position = 0.0
 parameters/Grab/blend_position = 0.0
 parameters/Hold/blend_position = 0.0
-parameters/Idle/blend_position = 0.0
+parameters/Carry/blend_position = 0.0
+parameters/Anticipslash/blend_position = 0.0
 parameters/Slash/blend_position = 0.0
-parameters/Walk/blend_position = 0.0
+parameters/grab_shot/active = false
+parameters/grab_shot/internal_active = false
+parameters/grab_shot/request = 0
+parameters/state/current_state = ""
+parameters/state/transition_request = ""
+parameters/state/current_index = -1
+parameters/movement_hold/current_state = ""
+parameters/movement_hold/transition_request = ""
+parameters/movement_hold/current_index = -1
+parameters/movement_empty/current_state = ""
+parameters/movement_empty/transition_request = ""
+parameters/movement_empty/current_index = -1
+parameters/slash_shot/active = false
+parameters/slash_shot/internal_active = false
+parameters/slash_shot/request = 0

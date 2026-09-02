@@ -1,0 +1,173 @@
+[gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://djr641f3k2cf4"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sbsqh"]
+animation = &"PC_animations/anticipslash_nX"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6dajp"]
+animation = &"PC_animations/anticipslash_pX"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_xuhlk"]
+blend_mode = 1
+blend_point_0/node = SubResource("AnimationNodeAnimation_sbsqh")
+blend_point_0/pos = -1.0
+blend_point_0/name = &"PC_animations_anticipslash_nX"
+blend_point_1/node = SubResource("AnimationNodeAnimation_6dajp")
+blend_point_1/pos = 1.0
+blend_point_1/name = &"PC_animations_anticipslash_pX"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_adnml"]
+animation = &"PC_animations/carry_nX"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uk0j0"]
+animation = &"PC_animations/carry_pX"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_sbsqh"]
+blend_mode = 1
+blend_point_0/node = SubResource("AnimationNodeAnimation_adnml")
+blend_point_0/pos = -1.0
+blend_point_0/name = &"PC_animations_carry_nX"
+blend_point_1/node = SubResource("AnimationNodeAnimation_uk0j0")
+blend_point_1/pos = 1.0
+blend_point_1/name = &"PC_animations_carry_pX"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_egdfd"]
+animation = &"PC_animations/grab_nX"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6xk4k"]
+animation = &"PC_animations/grab_pX"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_6dajp"]
+blend_mode = 1
+blend_point_0/node = SubResource("AnimationNodeAnimation_egdfd")
+blend_point_0/pos = -1.0
+blend_point_0/name = &"PC_animations_grab_nX"
+blend_point_1/node = SubResource("AnimationNodeAnimation_6xk4k")
+blend_point_1/pos = 1.0
+blend_point_1/name = &"PC_animations_grab_pX"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xuhlk"]
+animation = &"PC_animations/hold_nX"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6pj8e"]
+animation = &"PC_animations/hold_pX"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_i5dgf"]
+blend_mode = 1
+blend_point_0/node = SubResource("AnimationNodeAnimation_xuhlk")
+blend_point_0/pos = -1.0
+blend_point_0/name = &"PC_animations_hold_nX"
+blend_point_1/node = SubResource("AnimationNodeAnimation_6pj8e")
+blend_point_1/pos = 1.0
+blend_point_1/name = &"PC_animations_hold_pX"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sp3ef"]
+animation = &"PC_animations/idle_nX"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bd62x"]
+animation = &"PC_animations/idle_pX"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_inuir"]
+blend_mode = 1
+blend_point_0/node = SubResource("AnimationNodeAnimation_sp3ef")
+blend_point_0/pos = -1.0
+blend_point_0/name = &"PC_animations_idle_nX"
+blend_point_1/node = SubResource("AnimationNodeAnimation_bd62x")
+blend_point_1/pos = 1.0
+blend_point_1/name = &"PC_animations_idle_pX"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_inuir"]
+animation = &"PC_animations/slash_nX"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_758tk"]
+animation = &"PC_animations/slash_pX"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_3rxf5"]
+blend_mode = 1
+blend_point_0/node = SubResource("AnimationNodeAnimation_inuir")
+blend_point_0/pos = -1.0
+blend_point_0/name = &"PC_animations_slash_nX"
+blend_point_1/node = SubResource("AnimationNodeAnimation_758tk")
+blend_point_1/pos = 1.0
+blend_point_1/name = &"PC_animations_slash_pX"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l61cm"]
+animation = &"PC_animations/walk_nX"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1jmcr"]
+animation = &"PC_animations/walk_pX"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_758tk"]
+blend_mode = 1
+blend_point_0/node = SubResource("AnimationNodeAnimation_l61cm")
+blend_point_0/pos = -1.0
+blend_point_0/name = &"PC_animations_walk_nX"
+blend_point_1/node = SubResource("AnimationNodeAnimation_1jmcr")
+blend_point_1/pos = 1.0
+blend_point_1/name = &"PC_animations_walk_pX"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_6pj8e"]
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_i5dgf"]
+input_0/name = "idle"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "moving"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_sp3ef"]
+input_0/name = "idle"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "moving"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_adnml"]
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_firwg"]
+input_0/name = "holding_item"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "empty_handed"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+input_2/name = "cutting"
+input_2/auto_advance = false
+input_2/break_loop_at_end = false
+input_2/reset = true
+
+[resource]
+graph_offset = Vector2(-472.91266, -58.815063)
+nodes/output/position = Vector2(880, 220)
+nodes/Idle/node = SubResource("AnimationNodeBlendSpace1D_inuir")
+nodes/Idle/position = Vector2(-460, 300)
+nodes/Walk/node = SubResource("AnimationNodeBlendSpace1D_758tk")
+nodes/Walk/position = Vector2(-460, 500)
+nodes/Grab/node = SubResource("AnimationNodeBlendSpace1D_6dajp")
+nodes/Grab/position = Vector2(-540, -320)
+nodes/Hold/node = SubResource("AnimationNodeBlendSpace1D_i5dgf")
+nodes/Hold/position = Vector2(-620, -140)
+nodes/Carry/node = SubResource("AnimationNodeBlendSpace1D_sbsqh")
+nodes/Carry/position = Vector2(-620, 40)
+nodes/Anticipslash/node = SubResource("AnimationNodeBlendSpace1D_xuhlk")
+nodes/Anticipslash/position = Vector2(37.97796, 522.3534)
+nodes/Slash/node = SubResource("AnimationNodeBlendSpace1D_3rxf5")
+nodes/Slash/position = Vector2(40, 700)
+nodes/grab_shot/node = SubResource("AnimationNodeOneShot_6pj8e")
+nodes/grab_shot/position = Vector2(-140, -160)
+nodes/state/node = SubResource("AnimationNodeTransition_firwg")
+nodes/state/position = Vector2(360, 140)
+nodes/movement_hold/node = SubResource("AnimationNodeTransition_sp3ef")
+nodes/movement_hold/position = Vector2(-400, -20)
+nodes/movement_empty/node = SubResource("AnimationNodeTransition_i5dgf")
+nodes/movement_empty/position = Vector2(-186.91676, 393.11)
+nodes/slash_shot/node = SubResource("AnimationNodeOneShot_adnml")
+nodes/slash_shot/position = Vector2(620, 240)
+node_connections = [&"output", 0, &"slash_shot", &"grab_shot", 0, &"movement_hold", &"grab_shot", 1, &"Grab", &"state", 0, &"grab_shot", &"state", 1, &"movement_empty", &"state", 2, &"Anticipslash", &"movement_hold", 0, &"Hold", &"movement_hold", 1, &"Carry", &"movement_empty", 0, &"Idle", &"movement_empty", 1, &"Walk", &"slash_shot", 0, &"state", &"slash_shot", 1, &"Slash"]

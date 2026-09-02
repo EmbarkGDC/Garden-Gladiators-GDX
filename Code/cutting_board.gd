@@ -1,3 +1,4 @@
+class_name CuttingBoard
 extends Node3D
 
 @onready var interact_obj: Area3D = $Interactable

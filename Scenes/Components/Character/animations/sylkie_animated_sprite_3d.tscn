@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://bw53ghb22rmc4" path="res://Graphics/Sprites/PlayerChar/Sylkie/Sylkie_Idle_SpriteSheet.png" id="1_m5kwv"]
 [ext_resource type="Texture2D" uid="uid://dfi875argdmua" path="res://Graphics/Sprites/PlayerChar/Sylkie/Sylkie_Action_SpriteSheet.png" id="2_ygge4"]
-[ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="3_ndf68"]
 [ext_resource type="Script" uid="uid://dafan8irq5dix" path="res://Code/player_character_sprite.gd" id="3_ngjtu"]
 [ext_resource type="AnimationLibrary" uid="uid://bagpuxalkkp5h" path="res://Scenes/Components/Character/animations/Sylkie_animations.res" id="3_yvxx6"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://djr641f3k2cf4" path="res://Scenes/Components/Character/animations/sushido_anim_blend_tree.tres" id="5_yvxx6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5kwv"]
 atlas = ExtResource("1_m5kwv")
@@ -710,7 +710,6 @@ alpha_antialiasing_mode = 1
 render_priority = 5
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
-frame = 4
 script = ExtResource("3_ngjtu")
 
 [node name="HoldPosition" type="Node3D" parent="." unique_id=683570547]
@@ -719,22 +718,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8704053, 1.4280639, 0)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=643809383]
 libraries/ = SubResource("AnimationLibrary_m3or2")
 libraries/PC_animations = ExtResource("3_yvxx6")
+autoplay = &"PC_animations/idle_nX"
 
 [node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer" unique_id=101000281]
 root_node = NodePath("../..")
-tree_root = ExtResource("3_ndf68")
+tree_root = ExtResource("5_yvxx6")
 advance_expression_base_node = NodePath("../..")
 anim_player = NodePath("..")
-parameters/conditions/game_end = false
-parameters/conditions/is_holding = false
-parameters/conditions/is_walking = false
-parameters/conditions/player_action = false
-parameters/conditions/player_interacts = false
-parameters/conditions/ready_to_cut = false
-parameters/Anticipslash/blend_position = 0.0
-parameters/Carry/blend_position = 0.0
+parameters/Idle/blend_position = 0.0
+parameters/Walk/blend_position = 0.0
 parameters/Grab/blend_position = 0.0
 parameters/Hold/blend_position = 0.0
-parameters/Idle/blend_position = 0.0
+parameters/Carry/blend_position = 0.0
+parameters/Anticipslash/blend_position = 0.0
 parameters/Slash/blend_position = 0.0
-parameters/Walk/blend_position = 0.0
+parameters/grab_shot/active = false
+parameters/grab_shot/internal_active = false
+parameters/grab_shot/request = 0
+parameters/state/current_state = "empty_handed"
+parameters/state/transition_request = ""
+parameters/state/current_index = 1
+parameters/movement_hold/current_state = ""
+parameters/movement_hold/transition_request = "idle"
+parameters/movement_hold/current_index = -1
+parameters/movement_empty/current_state = "idle"
+parameters/movement_empty/transition_request = ""
+parameters/movement_empty/current_index = 0
+parameters/slash_shot/active = false
+parameters/slash_shot/internal_active = false
+parameters/slash_shot/request = 0

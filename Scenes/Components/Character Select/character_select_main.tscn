@@ -76,6 +76,7 @@ offset_transform_position = Vector2(0, -146.17)
 offset_transform_scale = Vector2(0.475, 0.475)
 texture = ExtResource("2_8273w")
 stretch_mode = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=484064973]
 layout_mode = 1
@@ -99,6 +100,7 @@ position = Vector2(959, 162)
 layout_mode = 0
 
 [node name="StartBanner" type="TextureRect" parent="." unique_id=1089231023]
+visible = false
 z_index = 7
 layout_mode = 1
 anchors_preset = -1

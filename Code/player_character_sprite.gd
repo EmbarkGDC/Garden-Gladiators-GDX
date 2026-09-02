@@ -5,14 +5,9 @@ var player_node: Player
 var hold_node: hold_mechanic
 @onready var animation_tree: AnimationTree = $AnimationPlayer/AnimationTree
 
-var is_holding: bool = false
-var is_walking: bool = false
-var ready_to_cut: bool = false
-var game_end: bool = false
-var player_interacts: bool = false
-var player_action: bool = false
-
-
+var last_direction_moved: int = 0
+var is_now_holding: bool = false
+var can_player_action: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,7 +16,7 @@ func _ready() -> void:
 	player_node.player_move.connect(move_animation)
 	player_node.player_interact.connect(interact_animation)
 	player_node.player_action.connect(action_animation)
-
+	set_idle()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -29,24 +24,31 @@ func _process(delta: float) -> void:
 	
 
 func interact_animation() -> void:
-	player_interacts = true
-	set_is_holding(hold_node.now_holding)
-	if !is_holding:
-		set_player_action(true)
-		set_ready_to_cut(true)
-	pass
+	if player_node.interactor.current_interactions.is_empty():
+		return
+	
+	if hold_node.now_holding and !is_now_holding:
+		set_is_holding()
+		is_now_holding = true
+		return
+	else:
+		set_ready_to_cut()
+		return
 
 func move_animation(direction: Vector2) -> void:
 	#print(direction.length())
-	if direction.length() > 0:
-		set_blend(direction.x)
-		set_walking(true)
+	if direction.length() > 0.01:
+		# Before setting anything, check if we're moving on the X axis
+		var x_move: int = int(sign(direction.x))
+		if x_move != 0:
+			last_direction_moved = x_move
+		set_blend(direction.x + last_direction_moved)
+		set_walking()
 	else:
-		set_walking(false)
+		set_idle()
 
 func action_animation(_player: Player) -> void:
-	set_ready_to_cut(false)
-	#animation_tree
+	set_player_action()
 
 func set_blend(direction: float) -> void:
 	animation_tree.set("parameters/Grab/blend_position", direction)
@@ -58,26 +60,30 @@ func set_blend(direction: float) -> void:
 	animation_tree.set("parameters/Slash/blend_position", direction)
 	animation_tree.set("parameters/Walk/blend_position", direction)
 
-func set_walking(status: bool) -> void:
-	is_walking = status
-	animation_tree.set("parameters/conditions/is_walking", status)
+func set_walking() -> void:
+	animation_tree.set("parameters/movement_empty/transition_request", "moving")
+	animation_tree.set("parameters/movement_hold/transition_request", "moving")
 
-func set_game_end(status: bool) -> void:
-	game_end = status
-	animation_tree.set("parameters/conditions/game_end", status)
+func set_idle() -> void:
+	animation_tree.set("parameters/movement_empty/transition_request", "idle")
+	animation_tree.set("parameters/movement_hold/transition_request", "idle")
 
-func set_is_holding(status: bool) -> void:
-	is_holding = status
-	animation_tree.set("parameters/conditions/is_holding", status)
+func set_is_holding() -> void:
+	animation_tree.set("parameters/state/transition_request", "holding_item")
+	animation_tree.set("parameters/grab_shot/request", AnimationNodeOneShot.OneShotRequest.ONE_SHOT_REQUEST_FIRE)
+	can_player_action = true
 
-func set_player_action(status: bool) -> void:
-	player_action = status
-	animation_tree.set("parameters/conditions/player_action", status)
+func set_empty_handed() -> void:
+	animation_tree.set("parameters/state/transition_request", "empty_handed")
+	is_now_holding = false
 
-func set_player_interacts(status: bool) -> void:
-	player_interacts = status
-	animation_tree.set("parameters/conditions/player_interacts", status)
+func set_player_action() -> void:
+	if !can_player_action:
+		return
+	
+	set_empty_handed()
+	animation_tree.set("parameters/slash_shot/request", AnimationNodeOneShot.OneShotRequest.ONE_SHOT_REQUEST_FIRE)
+	can_player_action = false
 
-func set_ready_to_cut(status: bool) -> void:
-	ready_to_cut = status
-	animation_tree.set("parameters/conditions/ready_to_cut", status)
+func set_ready_to_cut() -> void:
+	animation_tree.set("parameters/state/transition_request", "cutting")

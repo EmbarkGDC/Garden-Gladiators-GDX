@@ -23,10 +23,10 @@ func _ready() -> void:
 
 func start_holding(obj: holdable) -> void:
 	held_object = obj
-	
-	
 	if !is_instance_valid(obj):
 		return
+	
+	now_holding = true
 	
 	AudioManager.create_3d_audio_at_location(obj.position, SoundEffect.SOUND_EFFECT_TYPE.FISH_PICKUP)
 	
@@ -44,6 +44,7 @@ func holding_what() -> holdable:
 	return held_object
 
 func stop_holding() -> void:
+	now_holding = false
 	held_object.put_down()
 	held_object = null
 	put_down.emit()
