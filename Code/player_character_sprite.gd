@@ -16,7 +16,7 @@ func _ready() -> void:
 	player_node.player_move.connect(move_animation)
 	player_node.player_interact.connect(interact_animation)
 	player_node.player_action.connect(action_animation)
-	set_idle()
+	set_empty_handed()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
