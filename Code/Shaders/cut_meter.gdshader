@@ -2,9 +2,9 @@ shader_type spatial;
 render_mode unshaded, cull_disabled;
 
 //uniform sampler2D tex: filter_nearest, repeat_disable;
-uniform float offset = 0.0;
-uniform float difficulty = 1.0;
-uniform float perfect_difficulty = 1.0;
+instance uniform float offset = 0.0;
+instance uniform float difficulty = 1.0;
+instance uniform float perfect_difficulty = 1.0;
 
 uniform sampler2D colorMap: repeat_disable;
 

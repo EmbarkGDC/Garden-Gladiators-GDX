@@ -41,10 +41,13 @@ func start_meter(hit: float, perfecrt: float) -> void:
 	perfect_hit_area = perfecrt
 	anim.play("back_and_forth")
 	anim.speed_scale = speed
-	var mat: Material = bar.get_active_material(0)
-	mat.set_shader_parameter("offset", cut_offset)
-	mat.set_shader_parameter("difficulty", cut_hit_area)
-	mat.set_shader_parameter("perfect_difficulty", perfect_hit_area)
+	#var mat: Material = bar.get_active_material(0)
+	#mat.set_shader_parameter("offset", cut_offset)
+	#mat.set_shader_parameter("difficulty", cut_hit_area)
+	#mat.set_shader_parameter("perfect_difficulty", perfect_hit_area)
+	bar.set_instance_shader_parameter("offset", cut_offset)
+	bar.set_instance_shader_parameter("difficulty", cut_hit_area)
+	bar.set_instance_shader_parameter("perfect_difficulty", perfect_hit_area)
 	print(cut_offset)
 
 func cut() -> cut_result:

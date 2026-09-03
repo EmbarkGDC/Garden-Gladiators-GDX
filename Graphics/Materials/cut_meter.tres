@@ -14,7 +14,4 @@ width = 32
 [resource]
 render_priority = 0
 shader = ExtResource("1_10yep")
-shader_parameter/offset = 0.0
-shader_parameter/difficulty = 0.58
-shader_parameter/perfect_difficulty = 0.33
 shader_parameter/colorMap = SubResource("GradientTexture1D_pvwsj")
