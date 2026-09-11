@@ -16,6 +16,7 @@ func _ready() -> void:
 	player_node.player_move.connect(move_animation)
 	player_node.player_interact.connect(interact_animation)
 	player_node.player_action.connect(action_animation)
+	player_node.player_voice.connect(play_voice)
 	set_empty_handed()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -87,3 +88,12 @@ func set_player_action() -> void:
 
 func set_ready_to_cut() -> void:
 	animation_tree.set("parameters/state/transition_request", "cutting")
+
+func play_voice(result: cut_meter.cut_result) -> void:
+	match result:
+		cut_meter.cut_result.Miss:
+			$CharacterAudio.play_voice_line(SoundEffect.SOUND_EFFECT_TYPE._MissHit1)
+		cut_meter.cut_result.Hit:
+			$CharacterAudio.play_voice_line(SoundEffect.SOUND_EFFECT_TYPE._Attack1)
+		cut_meter.cut_result.Perfect:
+			$CharacterAudio.play_voice_line(SoundEffect.SOUND_EFFECT_TYPE._PerfectHit)

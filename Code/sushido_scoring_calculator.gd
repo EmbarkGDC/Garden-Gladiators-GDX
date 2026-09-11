@@ -51,5 +51,5 @@ func get_cut_result() -> Dictionary:
 	cut_fish.change_to_sushi()
 	cut.visible = false
 	#self.process_mode = Node.PROCESS_MODE_DISABLED
-	var final_result := {"score": score, "multiply": multiply}
+	var final_result := {"score": score, "multiply": multiply, "result": result}
 	return final_result

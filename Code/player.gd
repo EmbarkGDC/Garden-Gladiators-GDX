@@ -13,10 +13,14 @@ var initial_position: Vector3
 var hold_pos: Node3D
 
 var is_cutting: bool = false
+var last_cut_result: int:
+	set(new_value):
+		player_voice.emit(new_value as cut_meter.cut_result)
 
 signal player_move(direction: Vector2)
 signal player_interact
 signal player_action
+signal player_voice
 
 func _ready() -> void:
 	initial_position = global_position

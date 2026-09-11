@@ -36,6 +36,7 @@ func _on_interact(mechanic: Node3D) -> void:
 func player_cut(player: Player) -> void:
 	if player.is_cutting:
 		var score: Dictionary = await calculator.get_cut_result()
+		player.last_cut_result = score["result"]
 		player.is_cutting = false
 		player.player_action.disconnect(player_cut)
 		player_scored.emit(player.player_id, score["score"], score["multiply"])

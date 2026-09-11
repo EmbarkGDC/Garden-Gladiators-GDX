@@ -5,6 +5,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://dseiby0xvaeqs" path="res://Scenes/Components/Character/animations/Anago_animations.res" id="3_f5nsl"]
 [ext_resource type="Script" uid="uid://dafan8irq5dix" path="res://Code/player_character_sprite.gd" id="3_nl8tt"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://djr641f3k2cf4" path="res://Scenes/Components/Character/animations/sushido_anim_blend_tree.tres" id="5_nl8tt"]
+[ext_resource type="PackedScene" uid="uid://b634ji0ols64c" path="res://Scenes/Components/Audio/character_audio.tscn" id="6_ervr4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3cxta"]
 atlas = ExtResource("1_imf3a")
@@ -1058,8 +1059,7 @@ alpha_cut = 2
 alpha_scissor_threshold = 0.49
 alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
-animation = &"idle_nX"
-frame_progress = 0.4218564
+animation = &""
 script = ExtResource("3_nl8tt")
 
 [node name="HoldPosition" type="Node3D" parent="." unique_id=3465294]
@@ -1097,3 +1097,6 @@ parameters/movement_empty/current_index = -1
 parameters/slash_shot/active = false
 parameters/slash_shot/internal_active = false
 parameters/slash_shot/request = 0
+
+[node name="CharacterAudio" parent="." unique_id=40890389 instance=ExtResource("6_ervr4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5328703, 0)
