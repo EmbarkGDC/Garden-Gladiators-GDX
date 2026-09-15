@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://ca0dmxuw8wkel"]
+[gd_scene format=3 uid="uid://ca0dmxuw8wkel"]
 
 [ext_resource type="Texture2D" uid="uid://2euyjq5lw6jl" path="res://Graphics/Sprites/NPC/NPC_Caterpillars/Spicebush Swallowtail/Spicebush_spritesheet.png" id="1_bpb64"]
 
@@ -171,7 +171,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d3suy")
 }],
-"loop": true,
+"loop": 1,
 "name": &"amazed",
 "speed": 12.0
 }, {
@@ -182,7 +182,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gkamq")
 }],
-"loop": true,
+"loop": 1,
 "name": &"applause",
 "speed": 12.0
 }, {
@@ -211,7 +211,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0fyxi")
 }],
-"loop": true,
+"loop": 1,
 "name": &"boo",
 "speed": 12.0
 }, {
@@ -228,7 +228,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xycw4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"gross",
 "speed": 12.0
 }, {
@@ -257,7 +257,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1n8lc")
 }],
-"loop": true,
+"loop": 1,
 "name": &"unsure",
 "speed": 12.0
 }, {
@@ -286,7 +286,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ma8f6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 12.0
 }, {
@@ -315,13 +315,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nw0sn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"yum",
 "speed": 12.0
 }]
 
-[node name="NPC_SpicebushSwallowtail_Caterpillar_AnimatedSprite3D" type="AnimatedSprite3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1148934, 0)
-billboard = 2
+[node name="NPC_SpicebushSwallowtail_Caterpillar_AnimatedSprite3D" type="AnimatedSprite3D" unique_id=2119441688]
+offset = Vector2(0, 205.23)
+billboard = 1
 sprite_frames = SubResource("SpriteFrames_hr0pi")
 animation = &"yum"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://5mc1m3d0wnke"]
+[gd_scene format=3 uid="uid://5mc1m3d0wnke"]
 
 [ext_resource type="Texture2D" uid="uid://h3naiwuiflxw" path="res://Graphics/Sprites/NPC/SpiderWaiter/SpiderWaiter_SpriteSheet_Decend.png" id="1_rbc25"]
 [ext_resource type="Texture2D" uid="uid://diog2ecbamc42" path="res://Graphics/Sprites/NPC/SpiderWaiter/SpiderWaiter_SpriteSheet_Land.png" id="2_6jksv"]
@@ -223,7 +223,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_peg2u")
 }],
-"loop": true,
+"loop": 1,
 "name": &"descend_nX",
 "speed": 12.0
 }, {
@@ -252,7 +252,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ggcsp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"descend_pX",
 "speed": 12.0
 }, {
@@ -281,7 +281,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ph2ib")
 }],
-"loop": true,
+"loop": 1,
 "name": &"land_nX",
 "speed": 12.0
 }, {
@@ -310,7 +310,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o6kns")
 }],
-"loop": true,
+"loop": 1,
 "name": &"land_pX",
 "speed": 12.0
 }, {
@@ -339,7 +339,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h2lxd")
 }],
-"loop": true,
+"loop": 1,
 "name": &"recoil_nX",
 "speed": 12.0
 }, {
@@ -368,14 +368,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4w357")
 }],
-"loop": true,
+"loop": 1,
 "name": &"recoil_pX",
 "speed": 12.0
 }]
 
-[node name="NPC_SpiderWaiter_AnimatedSprite3D" type="AnimatedSprite3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0224566, 0)
-billboard = 2
+[node name="NPC_SpiderWaiter_AnimatedSprite3D" type="AnimatedSprite3D" unique_id=451427054]
+billboard = 1
 sprite_frames = SubResource("SpriteFrames_hr0pi")
 animation = &"recoil_pX"
 frame = 2

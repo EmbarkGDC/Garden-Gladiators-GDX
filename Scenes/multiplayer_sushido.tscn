@@ -15,10 +15,15 @@
 [ext_resource type="PackedScene" uid="uid://cs6xa6jwq28s" path="res://Scenes/Components/Pickups/Fish/Heliouch.tscn" id="7_v40ff"]
 [ext_resource type="Script" uid="uid://b04vn8hodm3tr" path="res://Code/spawn_entry.gd" id="8_b7hrd"]
 [ext_resource type="PackedScene" uid="uid://bykdkmw0wbf6v" path="res://Scenes/Components/Pickups/Fish/Moontail.tscn" id="9_2w3yi"]
+[ext_resource type="PackedScene" uid="uid://bscjbiuvf3vun" path="res://Scenes/Components/Character/animations/NPC Animations/npc_painted_lady_caterpillar_animated_sprite_3d.tscn" id="9_uqqqi"]
 [ext_resource type="Script" uid="uid://1fieyi1rotuk" path="res://Code/hold_mechanic.gd" id="10_dkwre"]
 [ext_resource type="PackedScene" uid="uid://cycpmwaln76yq" path="res://Scenes/Components/Pickups/Fish/Squipper.tscn" id="10_uhsb4"]
+[ext_resource type="PackedScene" uid="uid://e2okdifv3y4b" path="res://Scenes/Components/Character/animations/NPC Animations/npc_white_admiral_caterpillar_animated_sprite_3d.tscn" id="10_xclnw"]
+[ext_resource type="PackedScene" uid="uid://blnvrij2aufup" path="res://Scenes/Components/Character/animations/NPC Animations/npc_purple_emperor_caterpillar_animated_sprite_3d.tscn" id="11_nmwti"]
 [ext_resource type="PackedScene" uid="uid://crqpk2dxk2iy2" path="res://Scenes/Components/Pickups/Fish/Palgram.tscn" id="11_xilja"]
 [ext_resource type="PackedScene" uid="uid://dbx4bcuqlhaoq" path="res://Scenes/Components/Pickups/Fish/Bluna.tscn" id="12_k1f5r"]
+[ext_resource type="PackedScene" uid="uid://7hcxc3sp7d01" path="res://Scenes/Components/Character/animations/NPC Animations/npc_monarch_caterpillar_animated_sprite_3d.tscn" id="12_ms47j"]
+[ext_resource type="PackedScene" uid="uid://ca0dmxuw8wkel" path="res://Scenes/Components/Character/animations/NPC Animations/npc_spicebush_swallowtail_caterpillar_animated_sprite_3d.tscn" id="13_ge7u0"]
 [ext_resource type="PackedScene" uid="uid://dgpllce1hw02q" path="res://Scenes/game_screen.tscn" id="13_wvftd"]
 [ext_resource type="PackedScene" uid="uid://wsvkisnd2y5k" path="res://Scenes/Components/Character/player2.tscn" id="20_uhsb4"]
 [ext_resource type="Script" uid="uid://ct2w0nhoh3kp4" path="res://Code/player.gd" id="21_ndkw1"]
@@ -56,6 +61,16 @@ data = PackedVector3Array(15, 0, 7.5, -15, 0, 7.5, 15, 0, -7.5, -15, 0, 7.5, -15
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ifpe6"]
 size = Vector3(3.654, 2.292, 1)
+
+[sub_resource type="Animation" id="Animation_43x6w"]
+resource_name = "Caterpillar_mingle"
+length = 30.0
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ps6e2"]
+_data = {
+&"Caterpillar_mingle": SubResource("Animation_43x6w")
+}
 
 [sub_resource type="Resource" id="Resource_hvfsd"]
 script = ExtResource("8_b7hrd")
@@ -256,6 +271,26 @@ shape = SubResource("BoxShape3D_ifpe6")
 
 [node name="RiceCooker" parent="World" unique_id=1449780282 instance=ExtResource("7_r6o08")]
 transform = Transform3D(0.9370384, 0, -0.34922633, 0, 1, 0, 0.34922633, 0, 0.9370384, 1.6536617, 0.110912085, -21.79818)
+
+[node name="NPC Animation" type="Node" parent="World" unique_id=339451371]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World/NPC Animation" unique_id=1657663864]
+libraries/ = SubResource("AnimationLibrary_ps6e2")
+
+[node name="NPC_Painted_Lady_caterpillar_animated_sprite_3d" parent="World/NPC Animation" unique_id=1503919943 instance=ExtResource("9_uqqqi")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.294392, 0, 0)
+
+[node name="NPC_WhiteAdmiral_Caterpillar_AnimatedSprite3D" parent="World/NPC Animation" unique_id=1719132540 instance=ExtResource("10_xclnw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.503155, 0, 0)
+
+[node name="NPC_PurpleEmperorCaterpillar_AnimatedSprite3D" parent="World/NPC Animation" unique_id=1984571170 instance=ExtResource("11_nmwti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.375061, 0, 0)
+
+[node name="NPC_Monarch_Caterpillar_AnimatedSprite3D" parent="World/NPC Animation" unique_id=431481870 instance=ExtResource("12_ms47j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.506763, 0, 0)
+
+[node name="NPC_SpicebushSwallowtail_Caterpillar_AnimatedSprite3D" parent="World/NPC Animation" unique_id=2119441688 instance=ExtResource("13_ge7u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.891476, 0, 0)
 
 [node name="CuttingBoard" parent="." unique_id=320082985 instance=ExtResource("4_k781c")]
 transform = Transform3D(0.3340701, 0, -0.9425482, 0, 1, 0, 0.9425482, 0, 0.3340701, 5.3799257, 0.78042245, -5.8204374)
