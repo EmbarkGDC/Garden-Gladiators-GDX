@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dgpllce1hw02q"]
 
 [ext_resource type="Script" uid="uid://7qhq1e7grvhw" path="res://Code/game_screen.gd" id="1_h8xao"]
+[ext_resource type="FontFile" uid="uid://cm5sl7ifmclna" path="res://Graphics/UI/Fonts/UI_Fonts.zip (Unzipped Files)/DialogueAndCaptions_DynaPuff.ttf" id="2_kuxdk"]
+[ext_resource type="FontFile" uid="uid://ctlkn35by2uhp" path="res://Graphics/UI/Fonts/UI_Fonts.zip (Unzipped Files)/Body_TiltWarp.ttf" id="3_76bm4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5224c"]
 font_size = 50
@@ -47,12 +49,14 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/Control" unique_id=870067430]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kuxdk")
 text = "Time's Up!"
 label_settings = SubResource("LabelSettings_5224c")
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer/Control" unique_id=1948753791]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_76bm4")
 text = "Your Score:"
 label_settings = SubResource("LabelSettings_h8xao")
 horizontal_alignment = 1

@@ -4,25 +4,25 @@ extends Resource
 
 ## Stores the different types of sounds effects available to be played to distinguish them from another. Each new SoundEffect resource created should add to this enum, to allow them to be easily instantiated via [method AudioManager.create_2d_audio_at_location()] and [method AudioManager.create_audio()].
 enum SOUND_EFFECT_TYPE {
-	CUT_METER_APPEAR,
-	FISH_CUT,
-	FISH_PICKUP,
-	SUSHI_CHIME, #The sound that plays when a fish is turned into Sushi
-	SLASH_MISS,
-	SLASH_NORMAL,
-	SLASH_PERFECT,
-	_Attack1,
-	_Attack2,
-	_BattleStart1,
-	_BattleStart2,
-	_CharacterSelected,
-	_Lose1,
-	_Lose2,
-	_MissHit1,
-	_MissHit2,
-	_PerfectHit,
-	_Win1,
-	_Win2
+	CUT_METER_APPEAR, #called in cut mete scene
+	FISH_CUT, #as above
+	FISH_PICKUP, #called in fish scene
+	SUSHI_CHIME, #The sound that plays when a fish is turned into Sushi, called in the fish scene
+	SLASH_MISS, #Called in player scene
+	SLASH_NORMAL, #Called in player scene
+	SLASH_PERFECT, #Called in player scene
+	_Attack1, #Called in character animation scene
+	_Attack2, # as above
+	_BattleStart1, # as above
+	_BattleStart2, # as above
+	_CharacterSelected, # as above
+	_Lose1,# as above
+	_Lose2,# as above
+	_MissHit1,# as above
+	_MissHit2,# as above
+	_PerfectHit,# as above
+	_Win1, # as above
+	_Win2 # as above
 }
 
 @export_range(0, 10) var limit: int = 5 ## Maximum number of this SoundEffect to play simultaneously before culled.
