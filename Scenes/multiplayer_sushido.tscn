@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://7hcxc3sp7d01" path="res://Scenes/Components/Character/animations/NPC Animations/npc_monarch_caterpillar_animated_sprite_3d.tscn" id="12_ms47j"]
 [ext_resource type="PackedScene" uid="uid://ca0dmxuw8wkel" path="res://Scenes/Components/Character/animations/NPC Animations/npc_spicebush_swallowtail_caterpillar_animated_sprite_3d.tscn" id="13_ge7u0"]
 [ext_resource type="PackedScene" uid="uid://dgpllce1hw02q" path="res://Scenes/game_screen.tscn" id="13_wvftd"]
+[ext_resource type="FontFile" uid="uid://bgd1ydpqw50e6" path="res://Graphics/UI/Fonts/UI_Fonts.zip (Unzipped Files)/Header_Sigmar.ttf" id="16_xclnw"]
 [ext_resource type="PackedScene" uid="uid://wsvkisnd2y5k" path="res://Scenes/Components/Character/player2.tscn" id="20_uhsb4"]
 [ext_resource type="Script" uid="uid://ct2w0nhoh3kp4" path="res://Code/player.gd" id="21_ndkw1"]
 [ext_resource type="PackedScene" uid="uid://dsa0g70vv8r4d" path="res://Scenes/Components/Character/player3.tscn" id="21_xilja"]
@@ -306,6 +307,13 @@ transform = Transform3D(-0.61680233, 0, -0.787118, 0, 1, 0, 0.787118, 0, -0.6168
 
 [node name="UI" parent="." unique_id=2762844 instance=ExtResource("5_kfyma")]
 
+[node name="Time" parent="UI/HBoxContainer" parent_id_path=PackedInt32Array(2762844, 768413645) index="2" unique_id=1046637088]
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 7
+theme_override_fonts/font = ExtResource("16_xclnw")
+
 [node name="FishSpawner" parent="." unique_id=1540181058 instance=ExtResource("6_r6o08")]
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19761527, 1.5765765, 0.42407417)
@@ -330,6 +338,7 @@ offset_bottom = 82.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("16_xclnw")
 text = "3"
 label_settings = SubResource("LabelSettings_he5xv")
 
@@ -405,7 +414,6 @@ align_position_with_view = Callable()
 [node name="Camera3D" type="Camera3D" parent="." unique_id=264098253]
 physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 0.83580613, 0.54902196, 0, -0.54902196, 0.83580613, -0.54014707, 8.186594, 9.511053)
-top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=447834150]
 process_priority = 300
