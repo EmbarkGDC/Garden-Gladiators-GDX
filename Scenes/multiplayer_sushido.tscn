@@ -280,6 +280,18 @@ libraries/ = SubResource("AnimationLibrary_ps6e2")
 
 [node name="NPC_Painted_Lady_caterpillar_animated_sprite_3d" parent="World/NPC Animation" unique_id=1503919943 instance=ExtResource("9_uqqqi")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.294392, 0, 0)
+frame = 7
+frame_progress = 0.0046118586
+
+[node name="NPC_Painted_Lady_caterpillar_animated_sprite_3d2" parent="World/NPC Animation" unique_id=48769561 instance=ExtResource("9_uqqqi")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -13.452793, 3.6499925, -12.180645)
+frame = 7
+frame_progress = 0.0046118586
+
+[node name="NPC_Painted_Lady_caterpillar_animated_sprite_3d3" parent="World/NPC Animation" unique_id=503542050 instance=ExtResource("9_uqqqi")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.539661, 3.852068, -12.105632)
+frame = 7
+frame_progress = 0.0046118586
 
 [node name="NPC_WhiteAdmiral_Caterpillar_AnimatedSprite3D" parent="World/NPC Animation" unique_id=1719132540 instance=ExtResource("10_xclnw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.503155, 0, 0)
@@ -287,11 +299,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.503155, 0, 0)
 [node name="NPC_PurpleEmperorCaterpillar_AnimatedSprite3D" parent="World/NPC Animation" unique_id=1984571170 instance=ExtResource("11_nmwti")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.375061, 0, 0)
 
+[node name="NPC_PurpleEmperorCaterpillar_AnimatedSprite3D3" parent="World/NPC Animation" unique_id=1541126583 instance=ExtResource("11_nmwti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.048152, 1.4153857, -8.1000595)
+
+[node name="NPC_PurpleEmperorCaterpillar_AnimatedSprite3D2" parent="World/NPC Animation" unique_id=345279215 instance=ExtResource("11_nmwti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.978221, 3.736895, -9.854814)
+
 [node name="NPC_Monarch_Caterpillar_AnimatedSprite3D" parent="World/NPC Animation" unique_id=431481870 instance=ExtResource("12_ms47j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.506763, 0, 0)
 
+[node name="NPC_Monarch_Caterpillar_AnimatedSprite3D2" parent="World/NPC Animation" unique_id=351872308 instance=ExtResource("12_ms47j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.990178, 1.2980824, -10.635524)
+
 [node name="NPC_SpicebushSwallowtail_Caterpillar_AnimatedSprite3D" parent="World/NPC Animation" unique_id=2119441688 instance=ExtResource("13_ge7u0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.891476, 0, 0)
+
+[node name="NPC_SpicebushSwallowtail_Caterpillar_AnimatedSprite3D3" parent="World/NPC Animation" unique_id=162789302 instance=ExtResource("13_ge7u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.15116, 3.7262802, -10.865911)
+
+[node name="NPC_SpicebushSwallowtail_Caterpillar_AnimatedSprite3D2" parent="World/NPC Animation" unique_id=1311402555 instance=ExtResource("13_ge7u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.031731, 1.3440595, -9.422616)
 
 [node name="CuttingBoard" parent="." unique_id=320082985 instance=ExtResource("4_k781c")]
 transform = Transform3D(0.3340701, 0, -0.9425482, 0, 1, 0, 0.9425482, 0, 0.3340701, 5.3799257, 0.78042245, -5.8204374)
@@ -414,6 +441,7 @@ align_position_with_view = Callable()
 [node name="Camera3D" type="Camera3D" parent="." unique_id=264098253]
 physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 0.83580613, 0.54902196, 0, -0.54902196, 0.83580613, -0.54014707, 8.186594, 9.511053)
+top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=447834150]
 process_priority = 300
