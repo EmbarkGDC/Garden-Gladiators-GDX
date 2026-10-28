@@ -3,6 +3,7 @@
 extends Node
 
 enum PlayerCharacter {
+	NONE,
 	ANAGO,
 	BLADEZ,
 	MAGURO,

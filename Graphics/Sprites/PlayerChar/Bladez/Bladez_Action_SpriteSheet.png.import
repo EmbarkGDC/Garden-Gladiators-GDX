@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b88aeenoq40uf"
 path.s3tc="res://.godot/imported/Bladez_Action_SpriteSheet.png-d0e846a3b0591418a3fd504c37559c26.s3tc.ctex"
+path.etc2="res://.godot/imported/Bladez_Action_SpriteSheet.png-d0e846a3b0591418a3fd504c37559c26.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Sprites/PlayerChar/Bladez/Bladez_Action_SpriteSheet.png"
-dest_files=["res://.godot/imported/Bladez_Action_SpriteSheet.png-d0e846a3b0591418a3fd504c37559c26.s3tc.ctex"]
+dest_files=["res://.godot/imported/Bladez_Action_SpriteSheet.png-d0e846a3b0591418a3fd504c37559c26.s3tc.ctex", "res://.godot/imported/Bladez_Action_SpriteSheet.png-d0e846a3b0591418a3fd504c37559c26.etc2.ctex"]
 
 [params]
 

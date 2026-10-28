@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://e2okdifv3y4b"]
+[gd_scene format=3 uid="uid://e2okdifv3y4b"]
 
 [ext_resource type="Texture2D" uid="uid://dbyblgky3t4kv" path="res://Graphics/Sprites/NPC/NPC_Caterpillars/White Admiral/WhiteAdmiral_Spritesheet.png" id="1_uyf88"]
 
@@ -171,7 +171,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i4u20")
 }],
-"loop": true,
+"loop": 1,
 "name": &"amazed",
 "speed": 12.0
 }, {
@@ -182,7 +182,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gyye8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"applause",
 "speed": 12.0
 }, {
@@ -211,7 +211,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_c0bij")
 }],
-"loop": true,
+"loop": 1,
 "name": &"boo",
 "speed": 12.0
 }, {
@@ -228,7 +228,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0qcwi")
 }],
-"loop": true,
+"loop": 1,
 "name": &"gross",
 "speed": 12.0
 }, {
@@ -257,7 +257,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qju1b")
 }],
-"loop": true,
+"loop": 1,
 "name": &"unsure",
 "speed": 12.0
 }, {
@@ -286,7 +286,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qf15g")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 12.0
 }, {
@@ -315,14 +315,14 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g1ebn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"yum",
 "speed": 12.0
 }]
 
-[node name="NPC_WhiteAdmiral_Caterpillar_AnimatedSprite3D" type="AnimatedSprite3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9749308, 0)
-billboard = 2
+[node name="NPC_WhiteAdmiral_Caterpillar_AnimatedSprite3D" type="AnimatedSprite3D" unique_id=1719132540]
+offset = Vector2(0, 185.94)
+billboard = 1
 sprite_frames = SubResource("SpriteFrames_hr0pi")
 animation = &"amazed"
 frame_progress = 0.69882846

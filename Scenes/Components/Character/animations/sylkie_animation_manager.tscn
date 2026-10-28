@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://xjy4dmn67ghn"]
+[gd_scene format=3 uid="uid://xjy4dmn67ghn"]
 
 [ext_resource type="Script" uid="uid://rj4l6vlmfh01" path="res://Code/animation_manager.gd" id="1_tydum"]
 [ext_resource type="Texture2D" uid="uid://biskb2yyschlq" path="res://Graphics/Sprites/Props/bluna_rough.png" id="2_djkjf"]

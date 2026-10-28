@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmixlhlyt5isi"
 path.s3tc="res://.godot/imported/heliouch_rough.png-09231dc696dc6d6465f717d582223d44.s3tc.ctex"
+path.etc2="res://.godot/imported/heliouch_rough.png-09231dc696dc6d6465f717d582223d44.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Sprites/Props/heliouch_rough.png"
-dest_files=["res://.godot/imported/heliouch_rough.png-09231dc696dc6d6465f717d582223d44.s3tc.ctex"]
+dest_files=["res://.godot/imported/heliouch_rough.png-09231dc696dc6d6465f717d582223d44.s3tc.ctex", "res://.godot/imported/heliouch_rough.png-09231dc696dc6d6465f717d582223d44.etc2.ctex"]
 
 [params]
 

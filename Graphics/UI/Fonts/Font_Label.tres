@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://chneqn4bmrcj6"]
+
+[ext_resource type="FontFile" uid="uid://bgd1ydpqw50e6" path="res://Graphics/UI/Fonts/UI_Fonts.zip (Unzipped Files)/Header_Sigmar.ttf" id="1_6knp1"]
+
+[resource]
+font = ExtResource("1_6knp1")
+font_size = 126
+font_color = Color(0.33333334, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.13333334)
+shadow_offset = Vector2(10, 10)

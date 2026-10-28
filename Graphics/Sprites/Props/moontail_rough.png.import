@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://2pxqgxda1ue7"
 path.s3tc="res://.godot/imported/moontail_rough.png-a06a4a8439fe2f2c9cc59643db32069c.s3tc.ctex"
+path.etc2="res://.godot/imported/moontail_rough.png-a06a4a8439fe2f2c9cc59643db32069c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Sprites/Props/moontail_rough.png"
-dest_files=["res://.godot/imported/moontail_rough.png-a06a4a8439fe2f2c9cc59643db32069c.s3tc.ctex"]
+dest_files=["res://.godot/imported/moontail_rough.png-a06a4a8439fe2f2c9cc59643db32069c.s3tc.ctex", "res://.godot/imported/moontail_rough.png-a06a4a8439fe2f2c9cc59643db32069c.etc2.ctex"]
 
 [params]
 

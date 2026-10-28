@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bha0e5a62h4hw"]
+[gd_scene format=3 uid="uid://bha0e5a62h4hw"]
 
 [ext_resource type="PackedScene" uid="uid://c6ukaiox0uae" path="res://Models/BasketPavillion.glb" id="1_lk3lh"]
 [ext_resource type="Material" uid="uid://13f6dul6o00k" path="res://Graphics/Materials/wood_m.tres" id="2_76s2l"]

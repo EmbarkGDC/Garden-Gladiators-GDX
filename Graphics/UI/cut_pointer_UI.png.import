@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cigpbg30y0rdo"
 path.s3tc="res://.godot/imported/cut_pointer_UI.png-419ee8fcb06fd89881c0036dbfdd4464.s3tc.ctex"
+path.etc2="res://.godot/imported/cut_pointer_UI.png-419ee8fcb06fd89881c0036dbfdd4464.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/UI/cut_pointer_UI.png"
-dest_files=["res://.godot/imported/cut_pointer_UI.png-419ee8fcb06fd89881c0036dbfdd4464.s3tc.ctex"]
+dest_files=["res://.godot/imported/cut_pointer_UI.png-419ee8fcb06fd89881c0036dbfdd4464.s3tc.ctex", "res://.godot/imported/cut_pointer_UI.png-419ee8fcb06fd89881c0036dbfdd4464.etc2.ctex"]
 
 [params]
 

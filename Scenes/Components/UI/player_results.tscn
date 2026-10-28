@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dsymv47hxyyqy"]
+
+[ext_resource type="Script" uid="uid://ujv7gbs3p0w7" path="res://Code/player_results.gd" id="1_3vqql"]
+[ext_resource type="FontFile" uid="uid://bgd1ydpqw50e6" path="res://Graphics/UI/Fonts/UI_Fonts.zip (Unzipped Files)/Header_Sigmar.ttf" id="1_k4omw"]
+[ext_resource type="Texture2D" uid="uid://dcsc7kyg8ascq" path="res://Graphics/UI/BadgeLabel_P1.png" id="2_6txfk"]
+
+[node name="Player Results" type="HBoxContainer" unique_id=634097463]
+offset_right = 916.0
+offset_bottom = 123.0
+size_flags_horizontal = 5
+theme_override_constants/separation = 32
+script = ExtResource("1_3vqql")
+
+[node name="PlayerNumber1" type="TextureRect" parent="." unique_id=747666144]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_6txfk")
+expand_mode = 1
+
+[node name="PlayerName" type="Label" parent="." unique_id=1594063943]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.34901962)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("1_k4omw")
+theme_override_font_sizes/font_size = 75
+text = "P#"
+
+[node name="Score" type="Label" parent="." unique_id=1569751885]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.34901962)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("1_k4omw")
+theme_override_font_sizes/font_size = 75
+text = "0000"
+horizontal_alignment = 1

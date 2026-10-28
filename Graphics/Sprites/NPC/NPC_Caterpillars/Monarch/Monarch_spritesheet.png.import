@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://fn1oguosptbh"
 path.s3tc="res://.godot/imported/Monarch_spritesheet.png-250d2e133e9bdd4db1b8ac50158e75c7.s3tc.ctex"
+path.etc2="res://.godot/imported/Monarch_spritesheet.png-250d2e133e9bdd4db1b8ac50158e75c7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Sprites/NPC/NPC_Caterpillars/Monarch/Monarch_spritesheet.png"
-dest_files=["res://.godot/imported/Monarch_spritesheet.png-250d2e133e9bdd4db1b8ac50158e75c7.s3tc.ctex"]
+dest_files=["res://.godot/imported/Monarch_spritesheet.png-250d2e133e9bdd4db1b8ac50158e75c7.s3tc.ctex", "res://.godot/imported/Monarch_spritesheet.png-250d2e133e9bdd4db1b8ac50158e75c7.etc2.ctex"]
 
 [params]
 

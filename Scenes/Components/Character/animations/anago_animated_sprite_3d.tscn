@@ -1,23 +1,10 @@
-[gd_scene load_steps=155 format=3 uid="uid://byluudcct606"]
+[gd_scene format=3 uid="uid://byluudcct606"]
 
 [ext_resource type="Texture2D" uid="uid://d2786a47ffxip" path="res://Graphics/Sprites/PlayerChar/Anago/Anago_Action_SpriteSheet.png" id="1_imf3a"]
 [ext_resource type="Texture2D" uid="uid://kv3ln5brbjou" path="res://Graphics/Sprites/PlayerChar/Anago/Anago_Idle_SpriteSheet.png" id="2_ttp4u"]
 [ext_resource type="AnimationLibrary" uid="uid://dseiby0xvaeqs" path="res://Scenes/Components/Character/animations/Anago_animations.res" id="3_f5nsl"]
-[ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="4_nl8tt"]
-[ext_resource type="PackedScene" uid="uid://b634ji0ols64c" path="res://Scenes/Components/Audio/character_audio.tscn" id="5_max6w"]
-[ext_resource type="Script" uid="uid://dlj3ormcob3jy" path="res://Code/Audio/SoundEffectSetting.gd" id="6_max6w"]
-[ext_resource type="AudioStream" uid="uid://bobf6rj2ym66b" path="res://Audio/Voice/Anago/Gameplay/Anago_Attack1.ogg" id="7_dvdbf"]
-[ext_resource type="AudioStream" uid="uid://cxm0dq2b47yd7" path="res://Audio/Voice/Anago/Gameplay/Anago_Attack2.ogg" id="8_6ermv"]
-[ext_resource type="AudioStream" uid="uid://bddh3gd480isc" path="res://Audio/Voice/Anago/Gameplay/Anago_BattleStart1.ogg" id="9_82mo4"]
-[ext_resource type="AudioStream" uid="uid://bgh4cuo5vcx0l" path="res://Audio/Voice/Anago/Gameplay/Anago_BattleStart2.ogg" id="10_pka4u"]
-[ext_resource type="AudioStream" uid="uid://oqtkaod7sfdm" path="res://Audio/Voice/Anago/Gameplay/Anago_CharacterSelected.ogg" id="11_2xq80"]
-[ext_resource type="AudioStream" uid="uid://c0l2pimkikoor" path="res://Audio/Voice/Anago/Gameplay/Anago_Lose1.ogg" id="12_rfs87"]
-[ext_resource type="AudioStream" uid="uid://cvbjlfs5adlqy" path="res://Audio/Voice/Anago/Gameplay/Anago_Lose2.ogg" id="13_bswqg"]
-[ext_resource type="AudioStream" uid="uid://bs4bxi3to2i7w" path="res://Audio/Voice/Anago/Gameplay/Anago_MissHit1.ogg" id="14_y6he5"]
-[ext_resource type="AudioStream" uid="uid://csod0ht20n0ra" path="res://Audio/Voice/Anago/Gameplay/Anago_MissHit2.ogg" id="15_uobaw"]
-[ext_resource type="AudioStream" uid="uid://vwwgpgjl3i4n" path="res://Audio/Voice/Anago/Gameplay/Anago_PerfectHit.ogg" id="16_nlrrw"]
-[ext_resource type="AudioStream" uid="uid://cdle8djcxcee1" path="res://Audio/Voice/Anago/Gameplay/Anago_Win1.ogg" id="17_4lsb2"]
-[ext_resource type="AudioStream" uid="uid://brvd4a72x0tbj" path="res://Audio/Voice/Anago/Gameplay/Anago_Win2.ogg" id="18_a4eoo"]
+[ext_resource type="Script" uid="uid://dafan8irq5dix" path="res://Code/player_character_sprite.gd" id="3_nl8tt"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://djr641f3k2cf4" path="res://Scenes/Components/Character/animations/sushido_anim_blend_tree.tres" id="5_nl8tt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3cxta"]
 atlas = ExtResource("1_imf3a")
@@ -533,7 +520,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3cxta")
 }],
-"loop": true,
+"loop": 1,
 "name": &"anticipSlash_nX",
 "speed": 12.0
 }, {
@@ -565,7 +552,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6nov1")
 }],
-"loop": true,
+"loop": 1,
 "name": &"anticipSlash_pX",
 "speed": 12.0
 }, {
@@ -594,7 +581,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kdvml")
 }],
-"loop": true,
+"loop": 1,
 "name": &"carry_nX",
 "speed": 12.0
 }, {
@@ -623,7 +610,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x272o")
 }],
-"loop": true,
+"loop": 1,
 "name": &"carry_pX",
 "speed": 12.0
 }, {
@@ -640,7 +627,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_25xlw")
 }],
-"loop": false,
+"loop": 0,
 "name": &"grab_nX",
 "speed": 12.0
 }, {
@@ -657,7 +644,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ncfro")
 }],
-"loop": false,
+"loop": 0,
 "name": &"grab_pX",
 "speed": 12.0
 }, {
@@ -686,7 +673,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rilcv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"hold_nX",
 "speed": 12.0
 }, {
@@ -715,7 +702,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0ajtk")
 }],
-"loop": true,
+"loop": 1,
 "name": &"hold_pX",
 "speed": 12.0
 }, {
@@ -822,7 +809,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vbtht")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_nX",
 "speed": 12.0
 }, {
@@ -923,7 +910,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_82lyp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_pX",
 "speed": 12.0
 }, {
@@ -952,7 +939,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y2ww4")
 }],
-"loop": false,
+"loop": 0,
 "name": &"slash_nX",
 "speed": 12.0
 }, {
@@ -981,7 +968,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ldkon")
 }],
-"loop": false,
+"loop": 0,
 "name": &"slash_pX",
 "speed": 12.0
 }, {
@@ -1010,7 +997,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rhh3t")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_nX",
 "speed": 12.0
 }, {
@@ -1039,7 +1026,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_c3rv4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_pX",
 "speed": 12.0
 }]
@@ -1064,114 +1051,49 @@ _data = {
 &"RESET": SubResource("Animation_nl8tt")
 }
 
-[sub_resource type="Resource" id="Resource_31dua"]
-script = ExtResource("6_max6w")
-type = 7
-sound_effect = ExtResource("7_dvdbf")
-metadata/_custom_type_script = "uid://dlj3ormcob3jy"
-
-[sub_resource type="Resource" id="Resource_s6idi"]
-script = ExtResource("6_max6w")
-type = 8
-sound_effect = ExtResource("8_6ermv")
-metadata/_custom_type_script = "uid://dlj3ormcob3jy"
-
-[sub_resource type="Resource" id="Resource_44ya0"]
-script = ExtResource("6_max6w")
-type = 9
-sound_effect = ExtResource("9_82mo4")
-metadata/_custom_type_script = "uid://dlj3ormcob3jy"
-
-[sub_resource type="Resource" id="Resource_3tjqy"]
-script = ExtResource("6_max6w")
-type = 10
-sound_effect = ExtResource("10_pka4u")
-metadata/_custom_type_script = "uid://dlj3ormcob3jy"
-
-[sub_resource type="Resource" id="Resource_i1ppl"]
-script = ExtResource("6_max6w")
-type = 11
-sound_effect = ExtResource("11_2xq80")
-metadata/_custom_type_script = "uid://dlj3ormcob3jy"
-
-[sub_resource type="Resource" id="Resource_fnu82"]
-script = ExtResource("6_max6w")
-type = 12
-sound_effect = ExtResource("12_rfs87")
-metadata/_custom_type_script = "uid://dlj3ormcob3jy"
-
-[sub_resource type="Resource" id="Resource_ffgbr"]
-script = ExtResource("6_max6w")
-type = 13
-sound_effect = ExtResource("13_bswqg")
-metadata/_custom_type_script = "uid://dlj3ormcob3jy"
-
-[sub_resource type="Resource" id="Resource_ku0mn"]
-script = ExtResource("6_max6w")
-type = 14
-sound_effect = ExtResource("14_y6he5")
-metadata/_custom_type_script = "uid://dlj3ormcob3jy"
-
-[sub_resource type="Resource" id="Resource_i8b0o"]
-script = ExtResource("6_max6w")
-type = 15
-sound_effect = ExtResource("15_uobaw")
-metadata/_custom_type_script = "uid://dlj3ormcob3jy"
-
-[sub_resource type="Resource" id="Resource_ltuer"]
-script = ExtResource("6_max6w")
-type = 16
-sound_effect = ExtResource("16_nlrrw")
-metadata/_custom_type_script = "uid://dlj3ormcob3jy"
-
-[sub_resource type="Resource" id="Resource_7svsh"]
-script = ExtResource("6_max6w")
-type = 17
-sound_effect = ExtResource("17_4lsb2")
-metadata/_custom_type_script = "uid://dlj3ormcob3jy"
-
-[sub_resource type="Resource" id="Resource_pxsmt"]
-script = ExtResource("6_max6w")
-type = 18
-sound_effect = ExtResource("18_a4eoo")
-metadata/_custom_type_script = "uid://dlj3ormcob3jy"
-
-[node name="Anago_AnimatedSprite3D" type="AnimatedSprite3D"]
+[node name="Anago_AnimatedSprite3D" type="AnimatedSprite3D" unique_id=1237899071]
 offset = Vector2(0, 251.895)
-billboard = 2
+billboard = 1
 alpha_cut = 2
 alpha_scissor_threshold = 0.49
 alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
+frame_progress = 0.4218564
+script = ExtResource("3_nl8tt")
 
-[node name="HoldPosition" type="Node3D" parent="."]
+[node name="HoldPosition" type="Node3D" parent="." unique_id=3465294]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81413376, 2.1966953, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_max6w"),
-&"PC_animations": ExtResource("3_f5nsl")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=682853962]
+libraries/ = SubResource("AnimationLibrary_max6w")
+libraries/PC_animations = ExtResource("3_f5nsl")
+autoplay = &"PC_animations/idle_nX"
 
-[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer" unique_id=1493524252]
 root_node = NodePath("../..")
-tree_root = ExtResource("4_nl8tt")
+tree_root = ExtResource("5_nl8tt")
+advance_expression_base_node = NodePath("../..")
 anim_player = NodePath("..")
-parameters/conditions/cuts = false
-parameters/conditions/drops_item = false
-parameters/conditions/gameend = false
-parameters/conditions/grabs = false
-parameters/conditions/is_idle = false
-parameters/conditions/is_walking = false
-parameters/conditions/ready_to_cut = false
-parameters/Anticipslash/blend_position = 0.0
-parameters/Carry/blend_position = 0.0
+parameters/Idle/blend_position = 0.0
+parameters/Walk/blend_position = 0.0
 parameters/Grab/blend_position = 0.0
 parameters/Hold/blend_position = 0.0
-parameters/Idle/blend_position = 0.0
+parameters/Carry/blend_position = 0.0
+parameters/Anticipslash/blend_position = 0.0
 parameters/Slash/blend_position = 0.0
-parameters/Walk/blend_position = 0.0
-
-[node name="CharacterAudio" parent="." instance=ExtResource("5_max6w")]
-char_voicelines = Array[ExtResource("6_max6w")]([SubResource("Resource_31dua"), SubResource("Resource_s6idi"), SubResource("Resource_44ya0"), SubResource("Resource_3tjqy"), SubResource("Resource_i1ppl"), SubResource("Resource_fnu82"), SubResource("Resource_ffgbr"), SubResource("Resource_ku0mn"), SubResource("Resource_i8b0o"), SubResource("Resource_ltuer"), SubResource("Resource_7svsh"), SubResource("Resource_pxsmt")])
+parameters/grab_shot/active = false
+parameters/grab_shot/internal_active = false
+parameters/grab_shot/request = 0
+parameters/state/current_state = ""
+parameters/state/transition_request = ""
+parameters/state/current_index = -1
+parameters/movement_hold/current_state = ""
+parameters/movement_hold/transition_request = ""
+parameters/movement_hold/current_index = -1
+parameters/movement_empty/current_state = ""
+parameters/movement_empty/transition_request = ""
+parameters/movement_empty/current_index = -1
+parameters/slash_shot/active = false
+parameters/slash_shot/internal_active = false
+parameters/slash_shot/request = 0

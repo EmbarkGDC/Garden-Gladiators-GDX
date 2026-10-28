@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cpvrh5yim5k8c"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cpvrh5yim5k8c"]
 
 [ext_resource type="Material" uid="uid://chj2g13mnjixf" path="res://Graphics/Materials/wood_outline_m.tres" id="1_jks03"]
 [ext_resource type="Shader" uid="uid://bhh38nb4pcjmi" path="res://Code/Shaders/celshader.gdshader" id="2_sapo6"]

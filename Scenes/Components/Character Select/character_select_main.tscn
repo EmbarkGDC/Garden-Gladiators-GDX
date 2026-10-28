@@ -1,0 +1,261 @@
+[gd_scene format=3 uid="uid://cjlylqebsw67m"]
+
+[ext_resource type="Script" uid="uid://cgtlffyhje30h" path="res://Code/Character Select/character_select_main.gd" id="1_fsati"]
+[ext_resource type="PackedScene" uid="uid://btcojqyy08rpm" path="res://Scenes/Components/Character Select/BaseCursor.tscn" id="2_716px"]
+[ext_resource type="Texture2D" uid="uid://c16sb37g30pyk" path="res://Graphics/UI/Artwork/GG_promo_FULL.png" id="2_8273w"]
+[ext_resource type="PackedScene" uid="uid://cr5kcovda17uk" path="res://Scenes/Components/Character Select/back_button.tscn" id="2_kkb5k"]
+[ext_resource type="PackedScene" uid="uid://8cpyygutxo6c" path="res://Scenes/Components/Character Select/base_portrait.tscn" id="3_5jgah"]
+[ext_resource type="Material" uid="uid://0h7bs763n7f1" path="res://Graphics/Materials/player_color1.tres" id="3_apotu"]
+[ext_resource type="Texture2D" uid="uid://btfetoo7avaij" path="res://Graphics/UI/Panel_3_UI.png" id="3_b5l1a"]
+[ext_resource type="Texture2D" uid="uid://b2ua7lu32hyah" path="res://Graphics/UI/SushidoTitle.svg" id="3_f58fl"]
+[ext_resource type="Texture2D" uid="uid://suv24ikxs1kx" path="res://Graphics/UI/Artwork/CharacterSelectArt/Anago_final.png" id="4_apotu"]
+[ext_resource type="Material" uid="uid://cjvd0s0heo2ns" path="res://Graphics/Materials/player_color2.tres" id="4_ctnbe"]
+[ext_resource type="Script" uid="uid://c8i53iwomntt3" path="res://Code/Character Select/device_assign.gd" id="4_jcuwg"]
+[ext_resource type="Material" uid="uid://dxfo2c1d4lfdq" path="res://Graphics/Materials/player_color3.tres" id="5_b5l1a"]
+[ext_resource type="Texture2D" uid="uid://cpid47p8oemdj" path="res://Graphics/UI/Artwork/CharacterSelectArt/Bladez_final.png" id="5_ctnbe"]
+[ext_resource type="Shader" uid="uid://cjeyf3uh8y435" path="res://Graphics/ui_color_remapping.gdshader" id="5_qdok8"]
+[ext_resource type="Texture2D" uid="uid://3ppx3dtys8u" path="res://Graphics/UI/Artwork/CharacterSelectArt/Maguro_final.png" id="6_b5l1a"]
+[ext_resource type="Material" uid="uid://bsfcvjlauy4mc" path="res://Graphics/Materials/player_color4.tres" id="6_mqc1o"]
+[ext_resource type="PackedScene" uid="uid://bnp188dndfyrx" path="res://Scenes/Components/Character Select/drop_button.tscn" id="6_nprsy"]
+[ext_resource type="Texture2D" uid="uid://7ni4wqfn1saj" path="res://Graphics/UI/Artwork/CharacterSelectArt/Sylkie_final.png" id="7_mqc1o"]
+[ext_resource type="FontFile" uid="uid://bgd1ydpqw50e6" path="res://Graphics/UI/Fonts/UI_Fonts.zip (Unzipped Files)/Header_Sigmar.ttf" id="7_orm8m"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bfdir"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8273w"]
+shader = ExtResource("5_qdok8")
+shader_parameter/color1_original = Color(0.24705882, 0.24705882, 0.24705882, 1)
+shader_parameter/color2_original = Color(0.32941177, 0.32941177, 0.32941177, 1)
+shader_parameter/new_color1 = Color(0.36078432, 0, 0.27450982, 1)
+shader_parameter/new_color2 = Color(0.49019608, 0.05490196, 0.23529412, 1)
+shader_parameter/threshold = 0.10000000475
+
+[sub_resource type="LabelSettings" id="LabelSettings_kkb5k"]
+font = ExtResource("7_orm8m")
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_qdok8"]
+font = ExtResource("7_orm8m")
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_8273w"]
+font = ExtResource("7_orm8m")
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_f58fl"]
+font = ExtResource("7_orm8m")
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+
+[node name="CharacterSelectMain" type="Control" unique_id=1354892556 node_paths=PackedStringArray("StartBanner")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fsati")
+StartBanner = NodePath("StartBanner")
+
+[node name="SplashArt" type="TextureRect" parent="." unique_id=2112973973]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -146.17)
+offset_transform_scale = Vector2(0.475, 0.475)
+texture = ExtResource("2_8273w")
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=484064973]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -415.99988
+offset_top = 57.99998
+offset_right = 1476.0
+offset_bottom = 913.0
+grow_horizontal = 0
+rotation = 0.25150582
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_f58fl")
+stretch_mode = 3
+
+[node name="CursorSpawn" type="Marker2D" parent="." unique_id=166079260]
+position = Vector2(959, 162)
+
+[node name="Drop Button2" parent="." unique_id=593420457 instance=ExtResource("2_kkb5k")]
+layout_mode = 0
+
+[node name="StartBanner" type="TextureRect" parent="." unique_id=1089231023]
+visible = false
+z_index = 7
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.448
+anchor_right = 1.0
+anchor_bottom = 0.59000003
+offset_top = -2.8400269
+offset_bottom = 0.7999878
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_bfdir")
+
+[node name="Label" type="Label" parent="StartBanner" unique_id=2032857712]
+modulate = Color(0.32941177, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.039215688)
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("7_orm8m")
+theme_override_font_sizes/font_size = 56
+text = "Begin The Show!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="StartBanner" unique_id=785105557]
+modulate = Color(0, 0, 0, 0.23137255)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1213.0
+offset_top = -9.0
+offset_right = 1212.0
+offset_bottom = 544.0
+grow_horizontal = 2
+scale = Vector2(0.465, 0.465)
+pivot_offset_ratio = Vector2(0.5, 0)
+offset_transform_pivot_ratio = Vector2(0.5, 0)
+texture = ExtResource("3_b5l1a")
+
+[node name="TextureRect" type="TextureRect" parent="StartBanner" unique_id=1146716073]
+material = SubResource("ShaderMaterial_8273w")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1212.5
+offset_top = -26.345
+offset_right = 1212.5
+offset_bottom = 526.655
+grow_horizontal = 2
+scale = Vector2(0.465, 0.465)
+pivot_offset_ratio = Vector2(0.5, 0)
+offset_transform_pivot_ratio = Vector2(0.5, 0)
+texture = ExtResource("3_b5l1a")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=201267860]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -656.0
+offset_top = -256.0
+offset_right = 656.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="BasePortrait2_1" parent="HBoxContainer" unique_id=1612965906 instance=ExtResource("3_5jgah")]
+layout_mode = 2
+CharacterID = 1
+bug_tex = ExtResource("4_apotu")
+
+[node name="Label" type="Label" parent="HBoxContainer/BasePortrait2_1" unique_id=1701183854]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 225)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "Anago
+"
+label_settings = SubResource("LabelSettings_kkb5k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BasePortrait2_2" parent="HBoxContainer" unique_id=404189081 instance=ExtResource("3_5jgah")]
+layout_mode = 2
+CharacterID = 2
+bug_tex = ExtResource("5_ctnbe")
+
+[node name="Label" type="Label" parent="HBoxContainer/BasePortrait2_2" unique_id=537199117]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 225)
+text = "Bladez
+"
+label_settings = SubResource("LabelSettings_qdok8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BasePortrait2_3" parent="HBoxContainer" unique_id=741357120 instance=ExtResource("3_5jgah")]
+layout_mode = 2
+CharacterID = 3
+bug_tex = ExtResource("6_b5l1a")
+
+[node name="Label" type="Label" parent="HBoxContainer/BasePortrait2_3" unique_id=747498861]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 205)
+text = "Maguro"
+label_settings = SubResource("LabelSettings_8273w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BasePortrait2_4" parent="HBoxContainer" unique_id=1714184099 instance=ExtResource("3_5jgah")]
+layout_mode = 2
+CharacterID = 4
+bug_tex = ExtResource("7_mqc1o")
+
+[node name="Label" type="Label" parent="HBoxContainer/BasePortrait2_4" unique_id=1925009327]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 225)
+text = "Sylkie
+"
+label_settings = SubResource("LabelSettings_f58fl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Drop Button" parent="." unique_id=1074461815 instance=ExtResource("6_nprsy")]
+layout_mode = 1
+offset_top = -153.0
+offset_right = 372.0
+
+[node name="DeviceAssign" type="Node" parent="." unique_id=846703383 node_paths=PackedStringArray("cursor_spawn")]
+script = ExtResource("4_jcuwg")
+cursor_spawn = NodePath("../CursorSpawn")
+packed_cursor = ExtResource("2_716px")
+cursor_materials = Array[Material]([ExtResource("3_apotu"), ExtResource("4_ctnbe"), ExtResource("5_b5l1a"), ExtResource("6_mqc1o")])
+
+[connection signal="character_chosen_input" from="DeviceAssign" to="." method="_on_device_assign_character_chosen_input"]
+[connection signal="character_unchosen_input" from="DeviceAssign" to="." method="_on_device_assign_character_unchosen_input"]
+[connection signal="drop_player" from="DeviceAssign" to="." method="_on_device_assign_drop_player"]
+[connection signal="go_back_input" from="DeviceAssign" to="." method="_on_device_assign_go_back_input"]
+[connection signal="send_device" from="DeviceAssign" to="." method="_on_device_assign_send_device"]
+[connection signal="start_game_input" from="DeviceAssign" to="." method="_on_device_assign_start_game_input"]
