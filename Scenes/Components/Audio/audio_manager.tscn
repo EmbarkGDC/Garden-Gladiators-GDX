@@ -68,4 +68,5 @@ sound_effects = Array[ExtResource("2_gl20g")]([SubResource("Resource_pfs4k"), Su
 music = Array[AudioStreamOggVorbis]([ExtResource("2_j8u30"), ExtResource("3_3ssdy"), ExtResource("4_4w518"), ExtResource("5_7j3bo")])
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=962506467]
+volume_db = -17.19
 bus = &"Music"

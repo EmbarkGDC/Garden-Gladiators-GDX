@@ -5,13 +5,13 @@ var location: Vector3 = Vector3.ZERO
 
 #set file path based on the character of this scene
 @export var chosen_character := Util.PlayerCharacter.SYLKIE
-var chosen_char_string: String = Util.PlayerCharacter.keys()[chosen_character]
-var char_voice_filepath: String = "res://Audio/Voice/" + chosen_char_string + "/Gameplay/"
+var chosen_char_string: String
+var char_voice_filepath: String
 @export var char_voice_lines: Array[SoundEffect]
 var speech_effect: SoundEffect
 var speech_effect_type: SoundEffect.SOUND_EFFECT_TYPE 
 @export var speech_type_position: int = 7 ## The position in the Sound Effects enum where speech sound effects start
-	
+var new_stream: AudioStream
 	
 	
 
@@ -28,6 +28,20 @@ func _ready() -> void:
 	for voice_line: SoundEffect in char_voice_lines:
 		voice_line_dict[voice_line.type] = voice_line
 		print("Added " + str(voice_line.type) + " to the voice lines dictionary.")
+	
+
+func load_voice_line(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
+	var type_string: String = SoundEffect.SOUND_EFFECT_TYPE.keys()[type]
+	chosen_char_string = Util.PlayerCharacter.keys()[chosen_character]
+	chosen_char_string = chosen_char_string.capitalize()
+	char_voice_filepath = "res://Audio/Voice/" + chosen_char_string + "/Gameplay/" + chosen_char_string + type_string + ".ogg"
+	if char_voice_lines[0].sound_effect != null:
+		char_voice_lines[0].sound_effect.load_from_file(char_voice_filepath)
+		new_stream = load(char_voice_filepath)
+		stream = new_stream
+		print ("Successfully loaded ogg vorbis at: " + char_voice_filepath)
+	else:
+		print ("Tried to load ogg vorbis at " + char_voice_filepath + " But was not successful.")
 
 func _rand_voice_line(type: SoundEffect.SOUND_EFFECT_TYPE) -> SoundEffect.SOUND_EFFECT_TYPE: #Returns random integer value as ennum for the random character voice lines.
 		match type:
@@ -40,7 +54,11 @@ func _rand_voice_line(type: SoundEffect.SOUND_EFFECT_TYPE) -> SoundEffect.SOUND_
 				return type
 	
 func play_voice_line (type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
-	location = get_parent().global_position
+	if get_parent().global_position is not Vector3:
+		var parent_location_2D = get_parent().global_position
+		location = Vector3(parent_location_2D.x, parent_location_2D.y, 0.0)
+	else:
+		location = get_parent().global_position
 	type = _rand_voice_line(type)
 	if voice_line_dict.has(type):
 		var sound_effect: SoundEffect = voice_line_dict[type]
@@ -57,5 +75,6 @@ func play_voice_line (type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
 			new_3d_audio.finished.connect(sound_effect.on_audio_finished)
 			new_3d_audio.finished.connect(new_3d_audio.queue_free)
 			new_3d_audio.play()
+			print ("Voice line is playing.")
 	else:
 		push_error("Audio Manager failed to find setting for type ", type)

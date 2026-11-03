@@ -144,7 +144,7 @@ input_2/break_loop_at_end = false
 input_2/reset = true
 
 [resource]
-graph_offset = Vector2(-472.91266, -58.815063)
+graph_offset = Vector2(-539.68677, -212.60266)
 nodes/output/position = Vector2(880, 220)
 nodes/Idle/node = SubResource("AnimationNodeBlendSpace1D_inuir")
 nodes/Idle/position = Vector2(-460, 300)

@@ -1156,7 +1156,7 @@ alpha_cut = 2
 alpha_scissor_threshold = 0.49
 alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
-animation = &""
+animation = &"slash_pX"
 script = ExtResource("3_nl8tt")
 
 [node name="HoldPosition" type="Node3D" parent="." unique_id=3465294]

@@ -5,6 +5,7 @@ extends MarginContainer
 @export var CharacterID: Util.PlayerCharacter
 @onready var char_tex: TextureRect = $CharTex
 @export var bug_tex: CompressedTexture2D
+@onready var character_audio = $CharacterAudio
 
 var currentController: int
 var isChosen :bool = false
@@ -16,6 +17,8 @@ var stillHovered: int = 0
 func _ready() -> void:
 	change_portrait()
 	add_sillouette()
+	character_audio.chosen_character = CharacterID
+	character_audio.load_voice_line(11)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,6 +33,7 @@ func _on_portrait_collision_area_entered(area: Area2D) -> void:
 	var entered_cursor : Cursor = area.get_parent()
 	if current_cursors.size() == 0:
 		color_tex.modulate = entered_cursor.player_color
+		character_audio.play_voice_line(11)
 	entered_cursor.current_hover_portrait = self
 	current_cursors.append(area.get_parent())
 	remove_sillouette()

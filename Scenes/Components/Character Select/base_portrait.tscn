@@ -1,11 +1,20 @@
 [gd_scene format=3 uid="uid://8cpyygutxo6c"]
 
 [ext_resource type="Script" uid="uid://c1dincubl5v27" path="res://Code/Character Select/base_portrait.gd" id="1_16ooi"]
+[ext_resource type="PackedScene" uid="uid://b634ji0ols64c" path="res://Scenes/Components/Audio/character_audio 2.tscn" id="2_xgskg"]
+[ext_resource type="Script" uid="uid://dlj3ormcob3jy" path="res://Code/Audio/SoundEffectSetting.gd" id="3_78dhl"]
+[ext_resource type="AudioStream" uid="uid://kkmma1dygpyl" path="res://Audio/Voice/Sylkie/Gameplay/Sylkie_CharacterSelected.ogg" id="4_78dhl"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_yih1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bfdir"]
 size = Vector2(283.5, 477)
+
+[sub_resource type="Resource" id="Resource_pmevr"]
+script = ExtResource("3_78dhl")
+type = 11
+sound_effect = ExtResource("4_78dhl")
+metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
 [node name="BasePortrait2" type="MarginContainer" unique_id=1612965906]
 custom_minimum_size = Vector2(218, 349)
@@ -30,6 +39,9 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PortraitCollision" unique_id=1757505219]
 position = Vector2(157.25, 254.5)
 shape = SubResource("RectangleShape2D_bfdir")
+
+[node name="CharacterAudio" parent="." unique_id=233426016 instance=ExtResource("2_xgskg")]
+char_voice_lines = Array[ExtResource("3_78dhl")]([SubResource("Resource_pmevr")])
 
 [connection signal="area_entered" from="PortraitCollision" to="." method="_on_portrait_collision_area_entered"]
 [connection signal="area_exited" from="PortraitCollision" to="." method="_on_portrait_collision_area_exited"]
