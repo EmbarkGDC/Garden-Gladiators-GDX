@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqimusopcd4qm"
 path.s3tc="res://.godot/imported/SpiderWaiter_SpriteSheet_Recoil.png-3bda4ea4f4409f4bec3f9bec90fe13d1.s3tc.ctex"
+path.etc2="res://.godot/imported/SpiderWaiter_SpriteSheet_Recoil.png-3bda4ea4f4409f4bec3f9bec90fe13d1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Sprites/NPC/SpiderWaiter/SpiderWaiter_SpriteSheet_Recoil.png"
-dest_files=["res://.godot/imported/SpiderWaiter_SpriteSheet_Recoil.png-3bda4ea4f4409f4bec3f9bec90fe13d1.s3tc.ctex"]
+dest_files=["res://.godot/imported/SpiderWaiter_SpriteSheet_Recoil.png-3bda4ea4f4409f4bec3f9bec90fe13d1.s3tc.ctex", "res://.godot/imported/SpiderWaiter_SpriteSheet_Recoil.png-3bda4ea4f4409f4bec3f9bec90fe13d1.etc2.ctex"]
 
 [params]
 

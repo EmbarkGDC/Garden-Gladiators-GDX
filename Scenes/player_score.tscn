@@ -1,28 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4beyhqgowfg4"]
+[gd_scene format=3 uid="uid://b4beyhqgowfg4"]
 
 [ext_resource type="Script" uid="uid://msg2xuglrx3j" path="res://Code/player_score.gd" id="1_6k3gh"]
+[ext_resource type="Theme" uid="uid://j8w6juxeiook" path="res://Graphics/UI/Themes/GG_UI.tres" id="2_loa7j"]
 
-[sub_resource type="Theme" id="Theme_wviqb"]
-default_font_size = 20
-
-[sub_resource type="Theme" id="Theme_jxero"]
-default_font_size = 60
-
-[node name="PlayerScore" type="VBoxContainer"]
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 115.0
-offset_bottom = 127.0
+[node name="PlayerScore" type="VBoxContainer" unique_id=581301748]
+propagate_maximum_size = false
+offset_right = 120.0
+offset_bottom = 121.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_6k3gh")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="RichTextLabel" parent="." unique_id=1839704790]
+custom_minimum_size = Vector2(120, 0)
+clip_contents = false
 layout_mode = 2
-theme = SubResource("Theme_wviqb")
-text = "Player"
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("2_loa7j")
+bbcode_enabled = true
+text = "Player 1"
+fit_content = true
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="RichTextLabel" parent="." unique_id=352546074]
+custom_minimum_size = Vector2(112, 0)
+clip_contents = false
 layout_mode = 2
-theme = SubResource("Theme_jxero")
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("2_loa7j")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 42
+bbcode_enabled = true
 text = "0"
+fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1

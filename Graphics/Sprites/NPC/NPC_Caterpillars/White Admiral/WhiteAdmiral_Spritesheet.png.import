@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbyblgky3t4kv"
 path.s3tc="res://.godot/imported/WhiteAdmiral_Spritesheet.png-c700cdc526b30e77171b7eafbeca5821.s3tc.ctex"
+path.etc2="res://.godot/imported/WhiteAdmiral_Spritesheet.png-c700cdc526b30e77171b7eafbeca5821.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Sprites/NPC/NPC_Caterpillars/White Admiral/WhiteAdmiral_Spritesheet.png"
-dest_files=["res://.godot/imported/WhiteAdmiral_Spritesheet.png-c700cdc526b30e77171b7eafbeca5821.s3tc.ctex"]
+dest_files=["res://.godot/imported/WhiteAdmiral_Spritesheet.png-c700cdc526b30e77171b7eafbeca5821.s3tc.ctex", "res://.godot/imported/WhiteAdmiral_Spritesheet.png-c700cdc526b30e77171b7eafbeca5821.etc2.ctex"]
 
 [params]
 

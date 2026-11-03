@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://blnvrij2aufup"]
+[gd_scene format=3 uid="uid://blnvrij2aufup"]
 
 [ext_resource type="Texture2D" uid="uid://daxarraa6e4ow" path="res://Graphics/Sprites/NPC/NPC_Caterpillars/Purple Emperor/PurpleEmperor_Exp_spritesheet.png" id="1_2bei0"]
 [ext_resource type="Texture2D" uid="uid://dvikrlpiuuvyg" path="res://Graphics/Sprites/NPC/NPC_Caterpillars/Purple Emperor/PurpleEmperor_Unsure_spritesheet.png" id="2_y36wd"]
@@ -332,7 +332,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_euglj")
 }],
-"loop": true,
+"loop": 1,
 "name": &"amazed_nX",
 "speed": 12.0
 }, {
@@ -343,7 +343,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rvso1")
 }],
-"loop": true,
+"loop": 1,
 "name": &"amazed_pX",
 "speed": 12.0
 }, {
@@ -354,7 +354,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ine3d")
 }],
-"loop": true,
+"loop": 1,
 "name": &"applause_nX",
 "speed": 12.0
 }, {
@@ -365,7 +365,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5q61x")
 }],
-"loop": true,
+"loop": 1,
 "name": &"applause_pX",
 "speed": 12.0
 }, {
@@ -394,7 +394,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mhvo8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"boo_nX",
 "speed": 12.0
 }, {
@@ -423,7 +423,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jsyem")
 }],
-"loop": true,
+"loop": 1,
 "name": &"boo_pX",
 "speed": 12.0
 }, {
@@ -440,7 +440,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1617x")
 }],
-"loop": true,
+"loop": 1,
 "name": &"gross_nX",
 "speed": 12.0
 }, {
@@ -457,7 +457,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_48g8j")
 }],
-"loop": true,
+"loop": 1,
 "name": &"gross_pX",
 "speed": 12.0
 }, {
@@ -486,7 +486,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3yigo")
 }],
-"loop": true,
+"loop": 1,
 "name": &"unsure_nX",
 "speed": 12.0
 }, {
@@ -515,7 +515,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vwnde")
 }],
-"loop": true,
+"loop": 1,
 "name": &"unsure_pX",
 "speed": 12.0
 }, {
@@ -544,7 +544,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cfyyn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_nX",
 "speed": 12.0
 }, {
@@ -573,7 +573,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vegv5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_pX",
 "speed": 12.0
 }, {
@@ -602,7 +602,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tejce")
 }],
-"loop": true,
+"loop": 1,
 "name": &"yum_nX",
 "speed": 12.0
 }, {
@@ -631,13 +631,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p8q4y")
 }],
-"loop": true,
+"loop": 1,
 "name": &"yum_pX",
 "speed": 12.0
 }]
 
-[node name="NPC_PurpleEmperorCaterpillar_AnimatedSprite3D" type="AnimatedSprite3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0224566, 0)
-billboard = 2
+[node name="NPC_PurpleEmperorCaterpillar_AnimatedSprite3D" type="AnimatedSprite3D" unique_id=1984571170]
+offset = Vector2(0, 195.755)
+billboard = 1
 sprite_frames = SubResource("SpriteFrames_hr0pi")
 animation = &"walk_nX"

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ocvucnovr35k"
 path.s3tc="res://.godot/imported/PaintedLady_Spritesheet.png-bccbffec9144e5ae1e0bb41dada6f10c.s3tc.ctex"
+path.etc2="res://.godot/imported/PaintedLady_Spritesheet.png-bccbffec9144e5ae1e0bb41dada6f10c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Sprites/NPC/NPC_Caterpillars/Painted Lady/PaintedLady_Spritesheet.png"
-dest_files=["res://.godot/imported/PaintedLady_Spritesheet.png-bccbffec9144e5ae1e0bb41dada6f10c.s3tc.ctex"]
+dest_files=["res://.godot/imported/PaintedLady_Spritesheet.png-bccbffec9144e5ae1e0bb41dada6f10c.s3tc.ctex", "res://.godot/imported/PaintedLady_Spritesheet.png-bccbffec9144e5ae1e0bb41dada6f10c.etc2.ctex"]
 
 [params]
 

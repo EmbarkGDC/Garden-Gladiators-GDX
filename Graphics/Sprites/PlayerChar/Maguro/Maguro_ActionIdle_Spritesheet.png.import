@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtlsoboqwly0y"
 path.s3tc="res://.godot/imported/Maguro_ActionIdle_Spritesheet.png-f6b927220be7a35cd3c5d2f1fedda49f.s3tc.ctex"
+path.etc2="res://.godot/imported/Maguro_ActionIdle_Spritesheet.png-f6b927220be7a35cd3c5d2f1fedda49f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Sprites/PlayerChar/Maguro/Maguro_ActionIdle_Spritesheet.png"
-dest_files=["res://.godot/imported/Maguro_ActionIdle_Spritesheet.png-f6b927220be7a35cd3c5d2f1fedda49f.s3tc.ctex"]
+dest_files=["res://.godot/imported/Maguro_ActionIdle_Spritesheet.png-f6b927220be7a35cd3c5d2f1fedda49f.s3tc.ctex", "res://.godot/imported/Maguro_ActionIdle_Spritesheet.png-f6b927220be7a35cd3c5d2f1fedda49f.etc2.ctex"]
 
 [params]
 

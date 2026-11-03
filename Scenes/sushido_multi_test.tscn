@@ -155,7 +155,7 @@ shape = SubResource("BoxShape3D_ifpe6")
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5039861, 0, 2.5418181)
 
-[node name="MeshInstance3D" parent="Player" index="1"]
+[node name="MeshInstance3D" parent="Player" index="2"]
 surface_material_override/0 = SubResource("StandardMaterial3D_pa2k6")
 
 [node name="Player2" parent="." instance=ExtResource("3_pjd64")]
@@ -164,7 +164,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9625003, 0, 2.5418181)
 player_id = 1
 using_device = 0
 
-[node name="MeshInstance3D" parent="Player2" index="1"]
+[node name="MeshInstance3D" parent="Player2" index="2"]
 surface_material_override/0 = SubResource("StandardMaterial3D_5ocxn")
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -246,4 +246,6 @@ align_position_with_view = Callable()
 [connection signal="new_game" from="GameScreen" to="." method="_on_game_screen_new_game"]
 
 [editable path="Player"]
+[editable path="Player/AnimationManager/AnimatedSprite3D"]
 [editable path="Player2"]
+[editable path="Player2/AnimationManager/AnimatedSprite3D"]

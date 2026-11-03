@@ -2,14 +2,47 @@ extends Node3D
 
 @export var single_player: bool = true
 @export var time_limit: float
+@export var wait_time_after_round: float = 2.0
 @export var timer_label: Label
 
 var time_left: float
 var after_countdown: bool = false
+var players: Array
+var anago_scene_path: PackedScene = preload("res://Scenes/Components/Character/animations/anago_animated_sprite_3d.tscn")
+var bladez_scene_path: PackedScene = preload("res://Scenes/Components/Character/animations/bladez_animated_sprite_3d.tscn")
+var maguro_scene_path: PackedScene = preload("res://Scenes/Components/Character/animations/maguro_animated_sprite_3d.tscn")
+var sylkie_scene_path: PackedScene = preload("res://Scenes/Components/Character/animations/sylkie_animated_sprite_3d.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$GameScreen.single_player = single_player
+	players = [$Player, $Player2, $Player3, $Player4]
+	print(PlayerSelectBridge.player_using_device)
+	setup_players()
+	AudioManager.play_BGM(Util.SCENES.SUSHIDO)
+	
+	# Set player characters
+	for i:int in players.size():
+		match PlayerSelectBridge.player_characters[i]:
+			Util.PlayerCharacter.NONE:
+				continue
+			Util.PlayerCharacter.ANAGO:
+				players[i].set_character(anago_scene_path)
+			Util.PlayerCharacter.BLADEZ:
+				players[i].set_character(bladez_scene_path)
+			Util.PlayerCharacter.MAGURO:
+				players[i].set_character(maguro_scene_path)
+			Util.PlayerCharacter.SYLKIE:
+				players[i].set_character(sylkie_scene_path)
+			_:
+				continue
+		# Set hold point
+		var mechanic: hold_mechanic = players[i].find_child("hold_mechanic") as hold_mechanic
+		mechanic.hold_point = players[i].hold_pos
+	
+	# Start game
+	if PlayerSelectBridge.immediate_start:
+		_on_game_screen_new_game()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,19 +56,28 @@ func _process(delta: float) -> void:
 	timer_label.text = "%02d:%02d" % [minutes, seconds]
 	
 	if time_left <= 0.0:
+		
+		#send to results screen
+		Global.pScores = $ScoreManager.scores
+		
 		after_countdown = false
 		$GameScreen.visible = true
-		$Player.process_mode = Node.PROCESS_MODE_DISABLED
-		if not single_player:
-			$Player2.process_mode = Node.PROCESS_MODE_DISABLED
+		
+		disable_players()
+		
 		#REPLACE THIS LATER
 		var winner: int = $ScoreManager.determine_winner()
 		
+		$GameScreen.hide_extra_ui()
 		if single_player:
 			$GameScreen.on_game_end($ScoreManager.scores[0], 1)
 		else:
 			$GameScreen.on_game_end($ScoreManager.scores[winner], winner+1)
 		#$FishSpawner.process_mode = Node.PROCESS_MODE_DISABLED
+		
+		#test for result screen
+		await  get_tree().create_timer(wait_time_after_round).timeout
+		get_tree().change_scene_to_file("res://Scenes/results_screen.tscn")
 
 func countdown() -> void:
 	$Countdown.visible = true
@@ -46,23 +88,55 @@ func countdown() -> void:
 	$Countdown.text = "1"
 	await  get_tree().create_timer(1.0).timeout
 	$Countdown.text = "GO!"
-	$Player.process_mode = Node.PROCESS_MODE_PAUSABLE
-	if not single_player:
-		$Player2.process_mode = Node.PROCESS_MODE_PAUSABLE
+	
+	enable_players()
+	
 	await  get_tree().create_timer(1.0).timeout
 	$Countdown.visible = false
 	after_countdown = true
-	"$FishSpawner.spawn_number(5)"
-	#$FishSpawner.process_mode = Node.PROCESS_MODE_PAUSABLE
 
+func setup_players() -> void:
+	if PlayerSelectBridge.player_active[0]:
+		players[0].visible = true
+		players[0].using_device = PlayerSelectBridge.player_using_device[0]
+	if not single_player:
+		if PlayerSelectBridge.player_active[1]:
+			players[1].visible = true
+			players[1].using_device = PlayerSelectBridge.player_using_device[1]
+		if PlayerSelectBridge.player_active[2]:
+			players[2].visible = true
+			players[2].using_device = PlayerSelectBridge.player_using_device[2]
+		if PlayerSelectBridge.player_active[3]:
+			players[3].visible = true
+			players[3].using_device = PlayerSelectBridge.player_using_device[3]
+
+func enable_players() -> void:
+	if PlayerSelectBridge.player_active[0]:
+		players[0].process_mode = Node.PROCESS_MODE_PAUSABLE
+	if not single_player:
+		if PlayerSelectBridge.player_active[1]:
+			players[1].process_mode = Node.PROCESS_MODE_PAUSABLE
+		if PlayerSelectBridge.player_active[2]:
+			players[2].process_mode = Node.PROCESS_MODE_PAUSABLE
+		if PlayerSelectBridge.player_active[3]:
+			players[3].process_mode = Node.PROCESS_MODE_PAUSABLE
+
+func disable_players() -> void:
+	players[0].process_mode = Node.PROCESS_MODE_DISABLED
+	if not single_player:
+		players[1].process_mode = Node.PROCESS_MODE_DISABLED
+		players[2].process_mode = Node.PROCESS_MODE_DISABLED
+		players[3].process_mode = Node.PROCESS_MODE_DISABLED
 
 func _on_game_screen_new_game() -> void:
 	$GameScreen.visible = false
 	time_left = time_limit
 	countdown()
 	#$FishSpawner.reset_area()
-	$Player.reset()
+	players[0].reset()
 	if not single_player:
-		$Player2.reset()
+		players[1].reset()
+		players[2].reset()
+		players[3].reset()
 	$ScoreManager.reset()
 	$UI.reset()

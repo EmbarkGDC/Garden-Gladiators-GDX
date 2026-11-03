@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://7hcxc3sp7d01"]
+[gd_scene format=3 uid="uid://7hcxc3sp7d01"]
 
 [ext_resource type="Texture2D" uid="uid://fn1oguosptbh" path="res://Graphics/Sprites/NPC/NPC_Caterpillars/Monarch/Monarch_spritesheet.png" id="1_rldls"]
 
@@ -171,7 +171,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mp8g0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"amazed",
 "speed": 12.0
 }, {
@@ -182,7 +182,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gl1te")
 }],
-"loop": true,
+"loop": 1,
 "name": &"applause",
 "speed": 12.0
 }, {
@@ -211,7 +211,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5lqso")
 }],
-"loop": true,
+"loop": 1,
 "name": &"boo",
 "speed": 12.0
 }, {
@@ -228,7 +228,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mm68v")
 }],
-"loop": true,
+"loop": 1,
 "name": &"gross",
 "speed": 12.0
 }, {
@@ -257,7 +257,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yf4wo")
 }],
-"loop": true,
+"loop": 1,
 "name": &"unsure",
 "speed": 12.0
 }, {
@@ -286,7 +286,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_llqac")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 12.0
 }, {
@@ -315,13 +315,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_aehx0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"yum",
 "speed": 12.0
 }]
 
-[node name="NPC_Monarch_Caterpillar_AnimatedSprite3D" type="AnimatedSprite3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0224566, 0)
-billboard = 2
+[node name="NPC_Monarch_Caterpillar_AnimatedSprite3D" type="AnimatedSprite3D" unique_id=431481870]
+offset = Vector2(0, 193.61)
+billboard = 1
 sprite_frames = SubResource("SpriteFrames_hr0pi")
-animation = &"yum"
+animation = &"amazed"

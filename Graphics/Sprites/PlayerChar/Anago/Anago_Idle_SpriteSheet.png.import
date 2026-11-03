@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://kv3ln5brbjou"
 path.s3tc="res://.godot/imported/Anago_Idle_SpriteSheet.png-509583c5c6c0b6e0cf9fb338442eeb12.s3tc.ctex"
+path.etc2="res://.godot/imported/Anago_Idle_SpriteSheet.png-509583c5c6c0b6e0cf9fb338442eeb12.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Sprites/PlayerChar/Anago/Anago_Idle_SpriteSheet.png"
-dest_files=["res://.godot/imported/Anago_Idle_SpriteSheet.png-509583c5c6c0b6e0cf9fb338442eeb12.s3tc.ctex"]
+dest_files=["res://.godot/imported/Anago_Idle_SpriteSheet.png-509583c5c6c0b6e0cf9fb338442eeb12.s3tc.ctex", "res://.godot/imported/Anago_Idle_SpriteSheet.png-509583c5c6c0b6e0cf9fb338442eeb12.etc2.ctex"]
 
 [params]
 

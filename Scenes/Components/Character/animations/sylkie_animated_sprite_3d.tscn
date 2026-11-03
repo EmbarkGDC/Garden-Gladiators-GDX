@@ -1,10 +1,9 @@
-[gd_scene load_steps=120 format=3 uid="uid://cdi7ld4cq2dwu"]
+[gd_scene format=3 uid="uid://cdi7ld4cq2dwu"]
 
 [ext_resource type="Texture2D" uid="uid://bw53ghb22rmc4" path="res://Graphics/Sprites/PlayerChar/Sylkie/Sylkie_Idle_SpriteSheet.png" id="1_m5kwv"]
 [ext_resource type="Texture2D" uid="uid://dfi875argdmua" path="res://Graphics/Sprites/PlayerChar/Sylkie/Sylkie_Action_SpriteSheet.png" id="2_ygge4"]
-[ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="3_ndf68"]
+[ext_resource type="Script" uid="uid://dafan8irq5dix" path="res://Code/player_character_sprite.gd" id="3_ngjtu"]
 [ext_resource type="AnimationLibrary" uid="uid://bagpuxalkkp5h" path="res://Scenes/Components/Character/animations/Sylkie_animations.res" id="3_yvxx6"]
-[ext_resource type="Script" uid="uid://dlj3ormcob3jy" path="res://Code/Audio/SoundEffectSetting.gd" id="6_eosxu"]
 [ext_resource type="AudioStream" uid="uid://2vsubc3oaam5" path="res://Audio/Voice/Sylkie/Gameplay/Sylkie_Attack1.ogg" id="7_dckbq"]
 [ext_resource type="PackedScene" uid="uid://b634ji0ols64c" path="res://Scenes/Components/Audio/character_audio.tscn" id="7_m3or2"]
 [ext_resource type="AudioStream" uid="uid://diokbntlu81xw" path="res://Audio/Voice/Sylkie/Gameplay/Sylkie_Attack2.ogg" id="8_ab1ip"]
@@ -390,7 +389,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u2i2o")
 }],
-"loop": true,
+"loop": 1,
 "name": &"anticipSlash_nX",
 "speed": 12.0
 }, {
@@ -419,7 +418,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k5xd2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"anticipSlash_pX",
 "speed": 12.0
 }, {
@@ -448,7 +447,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oa2pa")
 }],
-"loop": true,
+"loop": 1,
 "name": &"carry_nX",
 "speed": 12.0
 }, {
@@ -477,7 +476,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ux68r")
 }],
-"loop": true,
+"loop": 1,
 "name": &"carry_pX",
 "speed": 12.0
 }, {
@@ -494,7 +493,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ouq86")
 }],
-"loop": false,
+"loop": 0,
 "name": &"grab_nX",
 "speed": 12.0
 }, {
@@ -511,7 +510,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4xixu")
 }],
-"loop": false,
+"loop": 0,
 "name": &"grab_pX",
 "speed": 12.0
 }, {
@@ -525,7 +524,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0id62")
 }],
-"loop": true,
+"loop": 1,
 "name": &"hold_nX",
 "speed": 8.0
 }, {
@@ -539,7 +538,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ti2to")
 }],
-"loop": true,
+"loop": 1,
 "name": &"hold_pX",
 "speed": 8.0
 }, {
@@ -568,7 +567,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_slkvn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_nX",
 "speed": 8.0
 }, {
@@ -597,7 +596,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4f7eo")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_pX",
 "speed": 8.0
 }, {
@@ -614,7 +613,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_enthj")
 }],
-"loop": false,
+"loop": 0,
 "name": &"slash_nX",
 "speed": 12.0
 }, {
@@ -631,7 +630,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y3yjw")
 }],
-"loop": false,
+"loop": 0,
 "name": &"slash_pX",
 "speed": 12.0
 }, {
@@ -660,7 +659,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bsip2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_nX",
 "speed": 12.0
 }, {
@@ -689,7 +688,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n10lx")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_pX",
 "speed": 12.0
 }]
@@ -798,7 +797,6 @@ sound_effect = ExtResource("18_jermr")
 audio_bus = 2
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D"]
 sorting_offset = -0.1
 offset = Vector2(0, 228.14)
 billboard = 1
@@ -807,35 +805,43 @@ alpha_antialiasing_mode = 1
 render_priority = 5
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
-frame = 6
+script = ExtResource("3_ngjtu")
 
-[node name="HoldPosition" type="Node3D" parent="."]
+[node name="HoldPosition" type="Node3D" parent="." unique_id=683570547]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8704053, 1.4280639, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_m3or2"),
-&"PC_animations": ExtResource("3_yvxx6")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=643809383]
+libraries/ = SubResource("AnimationLibrary_m3or2")
+libraries/PC_animations = ExtResource("3_yvxx6")
+autoplay = &"PC_animations/idle_nX"
 
-[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer" unique_id=101000281]
 root_node = NodePath("../..")
-tree_root = ExtResource("3_ndf68")
+tree_root = ExtResource("5_yvxx6")
+advance_expression_base_node = NodePath("../..")
 anim_player = NodePath("..")
-parameters/conditions/cuts = false
-parameters/conditions/drops_item = false
-parameters/conditions/gameend = false
-parameters/conditions/grabs = false
-parameters/conditions/is_idle = false
-parameters/conditions/is_walking = false
-parameters/conditions/ready_to_cut = false
-parameters/Anticipslash/blend_position = 0.0
-parameters/Carry/blend_position = 0.0
+parameters/Idle/blend_position = 0.0
+parameters/Walk/blend_position = 0.0
 parameters/Grab/blend_position = 0.0
 parameters/Hold/blend_position = 0.0
-parameters/Idle/blend_position = 0.0
+parameters/Carry/blend_position = 0.0
+parameters/Anticipslash/blend_position = 0.0
 parameters/Slash/blend_position = 0.0
-parameters/Walk/blend_position = 0.0
 
 [node name="CharacterAudio" parent="." instance=ExtResource("7_m3or2")]
 char_voice_lines = Array[ExtResource("6_eosxu")]([SubResource("Resource_qjqox"), SubResource("Resource_sgnke"), SubResource("Resource_ux68r"), SubResource("Resource_oo3k1"), SubResource("Resource_ew0jp"), SubResource("Resource_hmu3b"), SubResource("Resource_ouq86"), SubResource("Resource_tqux4"), SubResource("Resource_g2lxb"), SubResource("Resource_2ulif"), SubResource("Resource_4xixu"), SubResource("Resource_45q5w")])
+parameters/grab_shot/active = false
+parameters/grab_shot/internal_active = false
+parameters/grab_shot/request = 0
+parameters/state/current_state = "empty_handed"
+parameters/state/transition_request = ""
+parameters/state/current_index = 1
+parameters/movement_hold/current_state = ""
+parameters/movement_hold/transition_request = "idle"
+parameters/movement_hold/current_index = -1
+parameters/movement_empty/current_state = "idle"
+parameters/movement_empty/transition_request = ""
+parameters/movement_empty/current_index = 0
+parameters/slash_shot/active = false
+parameters/slash_shot/internal_active = false
+parameters/slash_shot/request = 0

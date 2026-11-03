@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://2euyjq5lw6jl"
 path.s3tc="res://.godot/imported/Spicebush_spritesheet.png-be19460aaee164ff1ec0a4b0791f9633.s3tc.ctex"
+path.etc2="res://.godot/imported/Spicebush_spritesheet.png-be19460aaee164ff1ec0a4b0791f9633.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Sprites/NPC/NPC_Caterpillars/Spicebush Swallowtail/Spicebush_spritesheet.png"
-dest_files=["res://.godot/imported/Spicebush_spritesheet.png-be19460aaee164ff1ec0a4b0791f9633.s3tc.ctex"]
+dest_files=["res://.godot/imported/Spicebush_spritesheet.png-be19460aaee164ff1ec0a4b0791f9633.s3tc.ctex", "res://.godot/imported/Spicebush_spritesheet.png-be19460aaee164ff1ec0a4b0791f9633.etc2.ctex"]
 
 [params]
 

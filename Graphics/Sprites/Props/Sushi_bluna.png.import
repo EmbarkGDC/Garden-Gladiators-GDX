@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccv0ttiggadji"
 path.s3tc="res://.godot/imported/Sushi_bluna.png-e86d532d81ef63f06f782a02d5b147e3.s3tc.ctex"
+path.etc2="res://.godot/imported/Sushi_bluna.png-e86d532d81ef63f06f782a02d5b147e3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Sprites/Props/Sushi_bluna.png"
-dest_files=["res://.godot/imported/Sushi_bluna.png-e86d532d81ef63f06f782a02d5b147e3.s3tc.ctex"]
+dest_files=["res://.godot/imported/Sushi_bluna.png-e86d532d81ef63f06f782a02d5b147e3.s3tc.ctex", "res://.godot/imported/Sushi_bluna.png-e86d532d81ef63f06f782a02d5b147e3.etc2.ctex"]
 
 [params]
 

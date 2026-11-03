@@ -1,9 +1,9 @@
-[gd_scene load_steps=154 format=3 uid="uid://cml7amem26ak0"]
+[gd_scene format=3 uid="uid://cml7amem26ak0"]
 
 [ext_resource type="Texture2D" uid="uid://b88aeenoq40uf" path="res://Graphics/Sprites/PlayerChar/Bladez/Bladez_Action_SpriteSheet.png" id="1_lp0uq"]
 [ext_resource type="Texture2D" uid="uid://dt4rufyox4urg" path="res://Graphics/Sprites/PlayerChar/Bladez/Bladez_Idle_SpriteSheet.png" id="2_hu1ps"]
+[ext_resource type="Script" uid="uid://dafan8irq5dix" path="res://Code/player_character_sprite.gd" id="3_0g53m"]
 [ext_resource type="AnimationLibrary" uid="uid://bltufge74ass1" path="res://Scenes/Components/Character/animations/Bladez_animations.res" id="3_xrpic"]
-[ext_resource type="AnimationNodeStateMachine" uid="uid://den80y2xpsces" path="res://Scenes/Components/Character/animations/sushido_anim_state_machine.tres" id="4_0g53m"]
 [ext_resource type="PackedScene" uid="uid://b634ji0ols64c" path="res://Scenes/Components/Audio/character_audio.tscn" id="5_0g53m"]
 [ext_resource type="Script" uid="uid://dlj3ormcob3jy" path="res://Code/Audio/SoundEffectSetting.gd" id="6_x4ecr"]
 [ext_resource type="AudioStream" uid="uid://b42ukavi7manf" path="res://Audio/Voice/Bladez/Gameplay/Bladez_Attack1.ogg" id="7_r5qm7"]
@@ -526,7 +526,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cueqt")
 }],
-"loop": true,
+"loop": 1,
 "name": &"anticipSlash_nX",
 "speed": 12.0
 }, {
@@ -555,7 +555,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fgtww")
 }],
-"loop": true,
+"loop": 1,
 "name": &"anticipSlash_pX",
 "speed": 12.0
 }, {
@@ -584,7 +584,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1005x")
 }],
-"loop": true,
+"loop": 1,
 "name": &"carry_nX",
 "speed": 12.0
 }, {
@@ -613,7 +613,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xcjt5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"carry_pX",
 "speed": 12.0
 }, {
@@ -630,7 +630,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0g53m")
 }],
-"loop": false,
+"loop": 0,
 "name": &"grab_nX",
 "speed": 12.0
 }, {
@@ -647,7 +647,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w6six")
 }],
-"loop": false,
+"loop": 0,
 "name": &"grab_pX",
 "speed": 12.0
 }, {
@@ -676,7 +676,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p2tjm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"hold_nX",
 "speed": 12.0
 }, {
@@ -705,7 +705,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_abarf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"hold_pX",
 "speed": 12.0
 }, {
@@ -734,7 +734,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xopsi")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_nX",
 "speed": 12.0
 }, {
@@ -763,7 +763,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_51cq2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_pX",
 "speed": 12.0
 }, {
@@ -792,7 +792,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fmd51")
 }],
-"loop": false,
+"loop": 0,
 "name": &"slash_nX",
 "speed": 12.0
 }, {
@@ -821,7 +821,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h4myq")
 }],
-"loop": false,
+"loop": 0,
 "name": &"slash_pX",
 "speed": 12.0
 }, {
@@ -850,7 +850,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_djlnm")
 }],
-"loop": false,
+"loop": 0,
 "name": &"taunt_nx",
 "speed": 12.0
 }, {
@@ -879,7 +879,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_848vs")
 }],
-"loop": false,
+"loop": 0,
 "name": &"taunt_px",
 "speed": 12.0
 }, {
@@ -908,7 +908,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vkdu3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_nX",
 "speed": 12.0
 }, {
@@ -937,7 +937,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2aj6i")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_pX",
 "speed": 12.0
 }]
@@ -1046,42 +1046,49 @@ sound_effect = ExtResource("18_vvob6")
 audio_bus = 2
 metadata/_custom_type_script = "uid://dlj3ormcob3jy"
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D"]
 offset = Vector2(0, 211.955)
-billboard = 2
+billboard = 1
 alpha_cut = 2
 alpha_antialiasing_mode = 1
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
-frame = 3
+script = ExtResource("3_0g53m")
 
-[node name="HoldPosition" type="Node3D" parent="."]
+[node name="HoldPosition" type="Node3D" parent="." unique_id=974076667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1136495, 2.1487668, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_0g53m"),
-&"PC_animations": ExtResource("3_xrpic")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2131042057]
+libraries/ = SubResource("AnimationLibrary_0g53m")
+libraries/PC_animations = ExtResource("3_xrpic")
+autoplay = &"PC_animations/idle_nX"
 
-[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer" unique_id=713784661]
 root_node = NodePath("../..")
-tree_root = ExtResource("4_0g53m")
+tree_root = ExtResource("5_0g53m")
+advance_expression_base_node = NodePath("../..")
 anim_player = NodePath("..")
-parameters/conditions/cuts = false
-parameters/conditions/drops_item = false
-parameters/conditions/gameend = false
-parameters/conditions/grabs = false
-parameters/conditions/is_idle = false
-parameters/conditions/is_walking = false
-parameters/conditions/ready_to_cut = false
-parameters/Anticipslash/blend_position = 0.0
-parameters/Carry/blend_position = 0.0
+parameters/Idle/blend_position = 0.0
+parameters/Walk/blend_position = 0.0
 parameters/Grab/blend_position = 0.0
 parameters/Hold/blend_position = 0.0
-parameters/Idle/blend_position = 0.0
+parameters/Carry/blend_position = 0.0
+parameters/Anticipslash/blend_position = 0.0
 parameters/Slash/blend_position = 0.0
-parameters/Walk/blend_position = 0.0
 
 [node name="CharacterAudio" parent="." instance=ExtResource("5_0g53m")]
 char_voice_lines = Array[ExtResource("6_x4ecr")]([SubResource("Resource_wq2o1"), SubResource("Resource_l0c5t"), SubResource("Resource_djlnm"), SubResource("Resource_pmqur"), SubResource("Resource_cwsjd"), SubResource("Resource_w770t"), SubResource("Resource_hkrkj"), SubResource("Resource_6etxt"), SubResource("Resource_ug6pi"), SubResource("Resource_hv3e7"), SubResource("Resource_848vs"), SubResource("Resource_i2wb6")])
+parameters/grab_shot/active = false
+parameters/grab_shot/internal_active = false
+parameters/grab_shot/request = 0
+parameters/state/current_state = ""
+parameters/state/transition_request = ""
+parameters/state/current_index = -1
+parameters/movement_hold/current_state = ""
+parameters/movement_hold/transition_request = ""
+parameters/movement_hold/current_index = -1
+parameters/movement_empty/current_state = ""
+parameters/movement_empty/transition_request = ""
+parameters/movement_empty/current_index = -1
+parameters/slash_shot/active = false
+parameters/slash_shot/internal_active = false
+parameters/slash_shot/request = 0
