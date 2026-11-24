@@ -808,7 +808,7 @@ alpha_antialiasing_mode = 1
 render_priority = 5
 sprite_frames = SubResource("SpriteFrames_orfp7")
 animation = &"idle_nX"
-frame = 5
+frame = 7
 script = ExtResource("3_ngjtu")
 
 [node name="HoldPosition" type="Node3D" parent="." unique_id=683570547]
