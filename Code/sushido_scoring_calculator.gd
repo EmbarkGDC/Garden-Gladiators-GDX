@@ -13,6 +13,7 @@ var offset: float
 
 
 signal finished_cutting
+signal cut_made(result: cut_meter.cut_result) ## Emitted as soon as the cut is judged, before the 1 second wait.
 
 func _process(_delta: float) -> void:
 	pass
@@ -36,6 +37,7 @@ func get_cut_result() -> Dictionary:
 	if !is_instance_valid(cut_fish):
 		printerr("Fish is null")
 	var result: = cut.cut()
+	cut_made.emit(result)
 	var score: int = 0
 	var multiply: bool = false
 	match result:

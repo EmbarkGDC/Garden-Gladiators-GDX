@@ -50,7 +50,7 @@ func create_3d_audio_at_location(location: Vector3, type: SoundEffect.SOUND_EFFE
 			sound_effect.change_audio_count(1)
 			var new_3d_audio: AudioStreamPlayer3D = AudioStreamPlayer3D.new()
 			add_child(new_3d_audio)
-			new_3d_audio.bus = str(sound_effect.audio_bus).capitalize()
+			new_3d_audio.bus = Util.AUDIO_BUSES.keys()[sound_effect.audio_bus].capitalize()
 			new_3d_audio.position = location
 			new_3d_audio.stream = sound_effect.sound_effect
 			new_3d_audio.volume_db = sound_effect.volume
@@ -71,7 +71,7 @@ func create_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
 			sound_effect.change_audio_count(1)
 			var new_audio: AudioStreamPlayer = AudioStreamPlayer.new()
 			add_child(new_audio)
-			new_audio.bus = str(sound_effect.audio_bus).capitalize()
+			new_audio.bus = Util.AUDIO_BUSES.keys()[sound_effect.audio_bus].capitalize()
 			new_audio.stream = sound_effect.sound_effect
 			new_audio.volume_db = sound_effect.volume
 			new_audio.pitch_scale = sound_effect.pitch_scale

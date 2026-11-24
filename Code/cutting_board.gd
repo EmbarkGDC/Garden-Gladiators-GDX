@@ -35,7 +35,11 @@ func _on_interact(mechanic: Node3D) -> void:
 
 func player_cut(player: Player) -> void:
 	if player.is_cutting:
+		# Disconnect first so extra action presses during the wait below
+		# can't run the cut (and score it) a second time.
+		player.player_action.disconnect(player_cut)
+		# Let the player who cut react with their own character's voice line.
+		calculator.cut_made.connect(player.react_to_cut, CONNECT_ONE_SHOT)
 		var score: Dictionary = await calculator.get_cut_result()
 		player.is_cutting = false
-		player.player_action.disconnect(player_cut)
 		player_scored.emit(player.player_id, score["score"], score["multiply"])

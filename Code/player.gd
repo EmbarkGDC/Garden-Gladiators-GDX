@@ -11,6 +11,7 @@ const JUMP_VELOCITY = 4.5
 
 var initial_position: Vector3
 var hold_pos: Node3D
+var character_audio: Node ## The CharacterAudio node of the chosen character, set in set_character().
 
 var is_cutting: bool = false
 
@@ -63,4 +64,17 @@ func set_character(char_scene: PackedScene) -> void:
 	$GrayPill.visible = false
 	var instance: PlayerCharacterSprite = char_scene.instantiate()
 	hold_pos = instance.find_child("HoldPosition")
+	character_audio = instance.get_node_or_null("CharacterAudio")
 	add_child(instance)
+
+## Plays this player's character voice line for a cut result. Connected by the cutting board.
+func react_to_cut(result: cut_meter.cut_result) -> void:
+	if !is_instance_valid(character_audio):
+		return
+	match result:
+		cut_meter.cut_result.Miss:
+			character_audio.play_voice_line(SoundEffect.SOUND_EFFECT_TYPE._MissHit1) # 14, randomly 14 or 15
+		cut_meter.cut_result.Hit:
+			character_audio.play_voice_line(SoundEffect.SOUND_EFFECT_TYPE._Attack1) # 7, randomly 7 or 8
+		cut_meter.cut_result.Perfect:
+			character_audio.play_voice_line(SoundEffect.SOUND_EFFECT_TYPE._PerfectHit) # 16
